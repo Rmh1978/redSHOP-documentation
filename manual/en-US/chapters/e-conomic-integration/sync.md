@@ -1,23 +1,13 @@
-## Sync product from redSHOP to economic
+## Product synchronization
 
-<ul>
-<li>Product created from redSHOP administrator will be synced to E-conomic as "Product"
+The optional e-conomic plugin contains product and product-group lookup and storage operations, and redSHOP's integration helper dispatches product and group operations. The product editor provides an e-conomic account-group selection. The implementation uses SOAP; the existence of these calls does not establish that the current provider accepts them or that every product change synchronizes successfully.
 
-<li>Sync Product Group to E-conomic, which product group a product is belong to being set in the field "e-conomic Account Group" as below screenshot:
-<img src="./manual/en-US/chapters/e-conomic-integration/img/img3.png" class="example"/><br><br>
+### Test a product mapping
 
-<li>If the product group does not exist on E-conomic, the system will send a request to E-conomic to create a new one, using below API call:<br>
-https://api.e-conomic.com/secure/api1/EconomicWebService.asmx?op=ProductGroup_CreateFromData <br><br>
+1. Confirm the plugin and provider compatibility and prepare the isolated setup described in [e-conomic Integration](chapters/global-configuration/e-conomic-integration.md).
+2. Configure a test [account group](chapters/e-conomic-integration/account-group.md) and select the intended group on a disposable product. Record its test identifier and expected accounting group.
+3. Exercise product creation and an update in the test shop. Inspect the product and product group in the accounting test account, and compare identifiers, name, price, tax, unit and group.
+4. Test an existing product, a missing group, attributes if enabled, and a controlled failure/retry. Verify whether records are created, updated or duplicated and reconcile both systems.
+5. Investigate errors without sharing credentials or personal data. Do not retry blindly or enable production synchronization until the behavior and accounting consequences have been verified.
 
-<li>If the product group exists on E-conomic,  the system will send a request to E-conomic to update the existing one, using below API call:<br>
-https://api.e-conomic.com/secure/api1/EconomicWebService.asmx?op=ProductGroup_UpdateFromData <br><br>
-
-<li>Sync product data to E-conomic: create new product to E-conomic (when creating new Product in redSHOP) or update info of existing product to E-conomic (in case we edit a redSHOP product).<br>
-https://api.e-conomic.com/secure/api1/EconomicWebService.asmx?op=ProductGroup_CreateFromData <br><br>
-
-https://api.e-conomic.com/secure/api1/EconomicWebService.asmx?op=Product_UpdateFromData
-</ul>
-
-<hr>
-
-<h6>Last updated on August 14, 2020</h6>
+Do not use the historical SOAP operation URLs as a current API contract. Provider compatibility, direction of synchronization, conflicts, retries and invoice handling remain subject to testing for the exact plugin and provider account.

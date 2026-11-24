@@ -1,71 +1,33 @@
 ## Installing redSHOP
-Installing redSHOP and its various modules, plug-ins and templates is simple and follows the same installation principles as any other Joomla! extension. As indicated in Joomla's "Installing an Extension" guide, the procedure for both Joomla 2.5 and 3.x is as follows:
 
-<hr>
+Install redSHOP as a Joomla extension package. Choose an approved package intended for your Joomla, PHP and database versions; the source repository and a release ZIP are not interchangeable. See [Minimum requirements](chapters/getting-started-general/redshop-minimum-requirements.md) before starting.
 
-### Download & Install redSHOP
+### Before installation
 
-<ul>
-<li> Download <a href="https://github.com/redCOMPONENT-COM/redSHOP">redSHOP</a>.
+1. Use a Joomla administrator account authorized to install extensions.
+2. Obtain the redSHOP Core ZIP from the release channel provided by your distributor. Verify its version and integrity against the release information.
+3. Check that the exact Joomla, PHP and database combination is supported by that package and by any payment, shipping and other extensions you plan to use.
+4. Take a restorable backup of the site files and database. For an existing site, rehearse the installation on an isolated copy with real payment, email and accounting integrations disabled or safely mocked.
 
-<li>From the back-end of your Joomla site (administration) select Extensions -> Extension Manager
+### Install the package
 
-<li>From the Upload File tab, Click the Choose File button and select the extension package on your local machine.
+1. In Joomla administration, open the extension installer.
+2. Select **Upload Package File**, choose the redSHOP ZIP and start installation.
+3. Allow the installation and redSHOP's subsequent setup steps to finish. Review the individual results and Joomla's messages or logs; do not assume that a success banner alone confirms every step succeeded.
+4. Open redSHOP in the administrator area and check the installed version, configuration and bundled extensions. Install and configure any separately distributed extensions only after checking their compatibility.
 
-<li>Click the Upload & Install button.
-</ul>
+The current Core manifest defines database installation and update schemas. Its installer also processes bundled libraries, modules and plugins. The clean-install setup includes synchronizing Joomla users, preparing template data and handling configuration. These operations can change the database or files; installation is not just copying code.
 
-If all goes well, you will get a summary of the extension that has been installed, and in the case of redSHOP, you will be presented additionally with three buttons: "Configuration Wizard", "Install Demo Content", and "Cancel". These are discussed further down this page.
+### First configuration
 
-If there was a problem installing, or an error has occurred, a summary will be provided with an indication of the issue. Tackling such installation issues is discussed further in the next section.
+On a new installation, the current installation screen provides **Configuration Wizard**, **Install Demo Content** and **Dashboard** actions. The wizard guides you through general, terms, user and price settings; review and save those values for your shop. See [Configuration Wizard](chapters/getting-started-general/redshop-configuration-wizard.md).
 
-<hr>
+Demo content adds sample data. Use it only when appropriate for the site, preferably on a disposable installation, and do not assume sample content can be removed without consequences. The dashboard opens redSHOP without choosing either action.
 
-### Troubleshooting and Considerations
-This section deals with providing solutions to issues that can arise when installing or using redSHOP or any of its related extensions. As there are many hosting solutions available with multiple various combinations of PHP / MySQL / Apache or IIS, it's important to ensure that the minimum required versions for each have been installed before troubleshooting further.
+Before opening a shop to customers, configure and test catalog, tax, shipping, payments, customer communications, access permissions and backups. Test external integrations with their approved test facilities rather than real transactions.
 
-<ul>
-<li>PHP Settings
+### If installation fails
 
-<li>File / folder permissions
+Record the package and environment versions and the first error from Joomla or the server logs. Check package integrity, supported platform versions, database access and writable directories. Correct the underlying issue and restore the backup where appropriate; do not repeatedly run migrations or insert demo data without understanding the previous result. Remove credentials and personal information before sharing logs.
 
-<li>Host Settings (+plug for redHOST)
-</ul>
-
-<hr>
-
-### Post-Install Options
-Once you have successfully installed redSHOP, a summary will appear along with three "button" links. Descriptions for these button links are as follows:
-
-<hr>
-
-### Configuration Wizard
-Clicking this button will redirect the user to redSHOP's Configuration Wizard. This is a five-section guide that offers the user the ability to configure basic details required to initially set up redSHOP. These include general settings (such as shop name, address and countries that good can be shipped to), setting terms and conditions, configuring user account settings, and price-related settings (such as currency used, tax calculations and any discounts).
-
-This feature is aimed at:
-
-<ul>
-<li>Beginners and newcomers who are setting up their redSHOP for the first time (as this wizard hides many of the additional details that are not necessary),
-
-<li>Those who are re-installing redSHOP and choose to modify their basic configuration settings.
-
-<li>Those who prefer to configure redSHOP and are not comfortable with the "Global Configuration" screen
-</ul>
-
-More information is available in the " Configuration Wizard" section.
-
-<hr>
-
-### Install Demo Content
-Clicking this button will install some sample manufacturers, categories and products into redSHOP's database before redirecting the user into redSHOP's Main Menu. This is to give beginners and newcomers to redSHOP an opportunity to see how redSHOP's catalog is organized and how these three areas are related, as well as providing examples that can be worked with on the front and back-end.
-
-The sample data consists of redCOMPONENT-related items, namely 2 manufacturers, 3 categories and 12 products, each with images and descriptions.
-
-<hr>
-
-### Cancel
-Clicking on this link will take you straight to redSHOP's Main Menu screen. This link is recommended for those who have worked with redSHOP before and do not need to install demo content or work through the "Configuration Wizard".
-
-<hr>
-
-<h6>Last updated on December 31, 2015</h6>
+For an existing redSHOP installation, also follow [Updating redSHOP](chapters/getting-started-general/updating-redshop.md). Clean installation and upgrade behavior, including the exact screen presentation, must be verified for the specific package and Joomla environment.

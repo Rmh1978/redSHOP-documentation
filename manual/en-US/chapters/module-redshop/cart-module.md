@@ -1,25 +1,7 @@
-## redSHOP - Cart Module
+## redSHOP Cart module
 
-[How to install module/plugin on Joomla administrator?](chapters/module-redshop/install-module-plugin.md)
+The optional site module `mod_redshop_cart` displays the current cart. [Install and configure the module](chapters/module-redshop/install-module-plugin.md), assign a position and menu pages, and publish it on a test shop.
 
-<hr>
+The manifest offers simple/extended output, shipping, discount and VAT display controls, a shipping line, an empty-cart checkout button and custom button text. It also exposes a caching option; leave caching disabled unless session isolation has been verified.
 
-<ul>
-<li>Make sure install module Cart redSHOP is successful 
-
-<li>Enable this module, select position and select Module Assignment: Extension → Module → search "Cart module" </li>
-<img src="./manual/en-US/chapters/module-redshop/img/img13.png" class="example"/><br><br>
-
-<li>User go on front-end and find redSHOP - Cart module </li>
-<img src="./manual/en-US/chapters/module-redshop/img/img14.png" class="example"/><br><br>
-
-<li>User add to cart some product and in redshop - Cart module will display "Go to checkout" button have background green color</li>
-<img src="./manual/en-US/chapters/module-redshop/img/img15.png" class="example"/><br><br>
-
-<li>And User click on "Go to Checkout" button Webpage go to Cart page </li> 
-<img src="./manual/en-US/chapters/module-redshop/img/img16.png" class="example"/><br><br>
-</ul>
-
-<hr>
-
-<h6>Last updated on August 20, 2019</h6>
+Test empty and populated carts, quantity changes, discounts, VAT, shipping and the checkout link across separate customer sessions and relevant menu routes. Styling is template-dependent. The inspected module references an `$app` variable without assigning it in the module file on one cart-menu path; verify that path on an isolated Joomla installation before relying on it.

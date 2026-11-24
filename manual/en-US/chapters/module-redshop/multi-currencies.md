@@ -1,28 +1,5 @@
-## redSHOP - Multi Currencies
+## redSHOP Multi Currencies module
 
-[How to install module/plugin on Joomla administrator?](chapters/module-redshop/install-module-plugin.md)
+The optional `mod_redshop_currencies` site module lets visitors select from configured product currencies. [Install and configure the module](chapters/module-redshop/install-module-plugin.md), choose its position and pages, and select the currencies in its options. If no currencies are selected, the inspected helper returns an empty list. Optional introductory text and style settings are also available.
 
-<hr>
-
-<ul>
-<li>Make sure install module redSHOP - Multi Currencies is successful </li>
-
-<li>User enable module, select position, select currency and select Module Assignment redSHOP - Product Slide Show: Extension → Module → search Multi Currencies </li>
-<img src="./manual/en-US/chapters/module-redshop/img/img81.png" class="example"/><br><br>
-
-<li>User go on Front-end and view product list </li>
-<img src="./manual/en-US/chapters/module-redshop/img/img82.png" class="example"/><br><br>
-
-<li>User see redSHOP - Multi Currencies module and user Select Currency: "Euro" </li>
-<img src="./manual/en-US/chapters/module-redshop/img/img83.png" class="example"/><br><br>
-
-<li>Then user click "Change currency" button </li>
-<img src="./manual/en-US/chapters/module-redshop/img/img84.png" class="example"/><br><br>
-
-<li>Webpage change currency and change exchange rate from DKK to EU </li>
-<img src="./manual/en-US/chapters/module-redshop/img/img85.png" class="example"/><br><br>
-</ul>
-
-<hr>
-
-<h6>Last updated on August 23, 2019</h6>
+The active product currency is stored in the redSHOP session and falls back to the configured default. Configure and verify currency rates separately; do not assume the module updates them. On an isolated shop, compare product, cart, tax, shipping and checkout totals in each currency, test separate sessions and verify what currency the payment provider actually accepts. Do not assume changing display currency changes the settlement currency.

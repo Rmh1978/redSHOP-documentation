@@ -1,28 +1,15 @@
 ## Introduction
-redSHOP is an open source e-commerce solution that fits every requirement for a successful webshop. Compatible with Joomla! 3 , redSHOP has a valued and extensive catalogue of accessible features.
 
-- [Order Status List](chapters/orders/order-status-list.md)
-- [redSHOP 2](chapters/changelog/redshop-2.md)
-- [Working With Redshop Categories](chapters/categories/redshop-categories.md)
-- [redSHOP 3.0.1](chapters/changelog/redshop-3.0.1.md)
-- [redSHOP Configuration Wizard](chapters/getting-started-general/redshop-configuration-wizard.md)
-- [redSHOP 2.0.7](chapters/changelog/redshop-2.0.7.md)
-- [redSHOP 3.0](chapters/changelog/redshop-3.0.md)
-- [Working with Products in redSHOP](chapters/product-management/products-redshop.md)
-- [redSHOP 3.0.2](chapters/changelog/redshop-3.0.2.md)
-- [Updating redSHOP](chapters/getting-started-general/updating-redshop.md)
+redSHOP is an e-commerce extension for Joomla. Use this manual to explore product management, checkout, orders, tax, shipping and optional integrations. Features and extension availability depend on the exact package and configuration.
 
-<hr>
+- [Requirements](chapters/getting-started-general/redshop-minimum-requirements.md)
+- [Installation](chapters/getting-started-general/installing-redshop.md) and [updates](chapters/getting-started-general/updating-redshop.md)
+- [Configuration](chapters/global-configuration/start-here.md)
+- [Products](chapters/product-management/products-redshop.md), [categories](chapters/categories/redshop-categories.md) and [orders](chapters/orders/order-list.md)
+- [Plugins and integrations](chapters/plugin-redshop/overview-plugin.md)
 
-## About this documentation
+## About this manual
 
-This documentation available at http://redcomponent-com.github.io/redSHOP/ is generated automatically by Github with Jekyll from this branch: https://github.com/redCOMPONENT-COM/redSHOP/tree/gh-pages/
+The navigation loads Markdown chapters through the manual's JavaScript renderer. Internal chapter links are relative to `manual/en-US/`. Rendering, links and browser history should be tested locally before deploying a documentation change; a Markdown preview alone does not reproduce the renderer.
 
-You can contribute changes sending your pulls to https://github.com/redCOMPONENT-COM/redSHOP/tree/gh-pages/
-
-* Create new chapters at create a new chapter you add it at https://github.com/redCOMPONENT-COM/redSHOP/tree/gh-pages/manual/en-US/chapters
-* Add menu items at: https://github.com/redCOMPONENT-COM/redSHOP/blob/gh-pages/manual/en-US/menu.md
-
-To know more about Github pages check: https://pages.github.com/
-
-To Generate the page in your localhost please check https://help.github.com/articles/using-jekyll-with-pages
+The manual is being checked against the current source, but source inspection does not prove runtime compatibility. Test upgrades, payments, shipping, taxes and external services on an isolated copy before production use.

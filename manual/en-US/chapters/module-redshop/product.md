@@ -1,19 +1,7 @@
-## redSHOP - Product
+## redSHOP Products module
 
-[How to install module/plugin on Joomla administrator?](chapters/module-redshop/install-module-plugin.md)
+The optional `mod_redshop_products` site module displays a configurable selection of products. [Install and configure the module](chapters/module-redshop/install-module-plugin.md), assign its position and pages, then choose a module type and product count.
 
-<hr>
+The manifest offers newest, latest, sold, random, sale, watched, specific products and category ordering modes. It also provides category selection, subcategory and URL-category options, featured and child-product controls, image dimensions, price/VAT, description, stock, wishlist and add-to-cart options. Available results depend on products, configuration, session and template.
 
-<ul>
-<li>Make sure install module redSHOP - Product is successful </li>
-
-<li>User enable module, select position, Number of Products and select Module Assignment redSHOP - Product Slide Show: Extension → Module → search Product </li>
-<img src="./manual/en-US/chapters/module-redshop/img/img52.png" class="example"/><br><br>
-
-<li>User go on Front-end and view product list on module redSHOP-Product </li>
-<img src="./manual/en-US/chapters/module-redshop/img/img53.png" class="example"/><br><br>
-</ul>
-
-<hr>
-
-<h6>Last updated on August 20, 2019</h6>
+Test each selected mode with disposable products, including unpublished and discontinued products, different shopper groups, prices, taxes and direct product links. In particular, do not interpret a displayed sold ranking as a financial report; validate the underlying order selection before using it for decisions.

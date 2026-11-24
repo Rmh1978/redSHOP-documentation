@@ -1,175 +1,26 @@
 ## Currency
-redSHOP supports to define all the currencies to make sure convinient for buying the products around the world.
 
-<hr>
+Currency records define the names and codes available to redSHOP. Configuring a currency name or display symbol does not by itself establish an exchange rate or guarantee correct conversion.
 
-### In this article you will fine
+<a id="overview-1"></a><a id="field-1"></a><a id="action-1"></a>
+### Review currencies
 
-<ul>
-<li><a href="#overview-1">Overview of Currency Management</a>
-    <ul>
-    <li><a href="#field-1">Field</a>
-    <li><a href="#action-1">Action</a>
-    </ul>
-<li><a href="#overview-2">Overview of Currency details</a>
-    <ul>
-    <li><a href="#field-2">Field</a>
-    <li><a href="#action-2">Action</a>
-    </ul>
-    
-<li><a href="#working">Working with Currencies within redSHOP</a>
-    <ul>
-    <li><a href="#create">Create currency item</a>
-    <li><a href="#use-currency">Use currency</a>
-    </ul>
-</ul>
+Open **Currencies** in redSHOP administration. The list can be searched by name or code. Before adding a currency, check whether its code already exists and verify the code required by your payment and accounting integrations.
 
-<hr>
+<a id="overview-2"></a><a id="field-2"></a><a id="action-2"></a><a id="working"></a><a id="create"></a>
+### Add a currency
 
-You have one web-site use Joomla and installed redSHOP component. Access administrator web-site page by (username/password) has been provided.
+1. Select **New** in the currency list.
+2. Enter the currency name and code and save. Both fields are required; the current table validation checks for a duplicate code.
+3. Find the saved entry in the list and verify it against the relevant provider's supported currencies.
 
-<img src="./manual/en-US/chapters/vat/img/administrator.png" class="example"/><br><br>
+<a id="use-currency"></a>
+### Configure shop pricing
 
-User clicks on Components on main menu and then select on "redSHOP" tabs.
+In redSHOP's price configuration, review the shop currency, currency symbol and position, decimal and thousands separators, displayed price decimals and calculation rounding precision. Save only after evaluating the effect on pricing, taxes, payment methods, integrations and reporting. Changing the symbol alone is a presentation change, not a currency conversion.
 
-<img src="./manual/en-US/chapters/vat/img/img1.png" class="example"/><br><br>
+The general configuration includes a **Currency Libraries** choice, including European Central Bank and Currency Layer options; Currency Layer has a separate access-key field. Provider availability, credentials, rate freshness and supported currencies must be checked for the exact installation. Keep access keys out of logs and screenshots.
 
-Web-page will display overview page administrator of redSHOP.
+**Conversion requires particular care:** a source-level defect in the current Currency Layer implementation can return the unchanged amount when an explicit target currency is supplied. Do not rely on that conversion path for payments or accounting until the defect has been resolved and verified.
 
-<img src="./manual/en-US/chapters/vat/img/img44.png" class="example"/><br><br>
-
-<hr>
-
-<!-- Overview of Currency Management -->
-<h2 id="overview-1">Overview of Currency Management</h2>
-
-<h4 id="field-1">Field</h4>
-
-<img src="./manual/en-US/chapters/vat/img/img45.png" class="example"/><br><br>
-
-<ul>
-<li><b>Currency - </b>is a system of money (monetary units) in common use, especially for people in a nation
-
-<li><b>Currency code - </b>which delineates currency designators, country codes (alpha and numeric)
-
-<li><b>ID - </b>ID of the currency
-</ul>
-
-<hr>
-
-<h4 id="action-1">Action</h4>
-
-<img src="./manual/en-US/chapters/vat/img/img46.png" class="example"/><br><br>
-
-<ul>
-<li><b>New - </b>appears when adding a new currency
-
-<li><b>Delete - </b>delete 1 or more items has selected. Items has deleted will remove list currency items 
-
-<li><b>Check-in - </b>will unlock any items currency when someone viewing it 
-</ul>
-
-<hr>
-
-<!-- Overview of Currency details -->
-<h2 id="overview-2">Overview of Currency details</h2>
-
-<h4 id="field-2">Field</h4>
-
-<img src="./manual/en-US/chapters/vat/img/img47.png" class="example"/><br><br>
-
-<ul>
-<li><b>Currency - </b>is a system of money (monetary units) in common use, especially for people in a nation
-
-<li><b>Currency code - </b>which delineates currency designators, country codes (alpha and numeric)
-</ul>
-
-<hr>
-
-<h4 id="action-2">Action</h4>
-
-<img src="./manual/en-US/chapters/vat/img/img48.png" class="example"/><br><br>
-
-<ul>
-<li><b>Save - </b>apply the changes made to the currency details or create new item and show information change latest on the page 
-
-<li><b>Save & Close - </b>apply the changes made to the currency details or create new and return to the currency listing screen 
-
-<li><b>Save & New - </b>apply the changes made to the currency  details or create new and return to the currency create page new items other 
-
-<li><b>ancel - </b>return to the currency listing screen without saving any changes
-</ul>
-
-<hr>
-
-<!-- Working with Currencies within redSHOP -->
-<h2 id="working">Working with Currencies within redSHOP</h2>
-
-<h4 id="create">Create currency item</h4>
-
-<ul>
-<li>Go to backend page of REDSHOP and click Customization then select "Currencies" tab.
-<img src="./manual/en-US/chapters/vat/img/img49.png" class="example"/><br><br>
-
-<li>User click on New button.
-<img src="./manual/en-US/chapters/vat/img/img50.png" class="example"/><br><br>
-
-<li>User click fill in all field as: Currency, Currency Code. Then click on Save & Close button.
-<img src="./manual/en-US/chapters/vat/img/img51.png" class="example"/><br><br>
-
-<li>Webpage will return to Currency management page, User fill in search field with currency or currency code, click on search icon.
-<img src="./manual/en-US/chapters/vat/img/img52.png" class="example"/><br><br>
-
-<li>Webpage will show Currency in Curency Management list.
-<img src="./manual/en-US/chapters/vat/img/img53.png" class="example"/><br><br>
-</ul>
-
-Video for create Currency item: <a href="https://redshop.fleeq.io/l/e4uxrwvq9p-r05fl5facz">Click here</a>
-
-<hr>
-
-<h4 id="use-currency">Use currency</h4>
-
-<ul>
-<li>Go to backend page of REDSHOP and click Configuration then select "redSHOP Configuration" tab.
-<img src="./manual/en-US/chapters/vat/img/img54.png" class="example"/><br><br>
-
-<li>Then user click on Price tab.
-<img src="./manual/en-US/chapters/vat/img/img55.png" class="example"/><br><br>
-
-<li>At Main Price Setting, User click on Currency.
-<img src="./manual/en-US/chapters/vat/img/img56.png" class="example"/><br><br>
-
-<li>Select the currency user want to display.
-<img src="./manual/en-US/chapters/vat/img/img57.png" class="example"/><br><br>
-
-<li>Webpage will display code of currency on Currency Symbol. Click on Save button.
-<img src="./manual/en-US/chapters/vat/img/img58.png" class="example"/><br><br>
-
-<li>To check currency have change or not. User go to front end page and check product item.
-<img src="./manual/en-US/chapters/vat/img/img59.png" class="example"/><br><br>
-
-<li>Or check on product details page.
-<img src="./manual/en-US/chapters/vat/img/img60.png" class="example"/><br><br>
-
-<li>Webpage show message "Configuration Saved".
-<img src="./manual/en-US/chapters/vat/img/img61.png" class="example"/><br><br>
-
-<li>Check currency is "Angola" and click on Product icon then select Product management.
-<img src="./manual/en-US/chapters/vat/img/img62.png" class="example"/><br><br>
-
-<li>View some product has changed currency symbol "AOA". Select any product and click on it to view details.
-<img src="./manual/en-US/chapters/vat/img/img63.png" class="example"/><br><br>
-
-<li>In detail page it has show currency symbol is AOA and click on "Preview" button.
-<img src="./manual/en-US/chapters/vat/img/img64.png" class="example"/><br><br>
-
-<li>In product detail in fronend show currency symbol is AOA.
-<img src="./manual/en-US/chapters/vat/img/img65.png" class="example"/><br><br>
-</ul>
-
-Video for Use Currency in webshop: <a href="https://redshop.fleeq.io/l/bjasi7bs8c-cn77roalnv">Click here</a>
-
-<hr>
-
-<h6>Last updated on October 16, 2019</h6>
+Before any currency change, back up the shop and rehearse it on an isolated copy. Independently calculate representative conversions and test product, cart, checkout, tax, shipping, discounts and payment totals, including unavailable or stale rates and rounding. Check what happens to existing orders and invoices; do not assume past amounts are immutable or automatically converted.

@@ -1,20 +1,7 @@
-## redSHOP Third Party Media Support
-The following plugins and extensions will assist you in managing image files within your Joomla Admin, and may serve to make administering redSHOP media easier.
+## Third-party media tools
 
-<hr>
+redSHOP's own [media management](chapters/media/working-medias.md) handles product and other shop media. Third-party Joomla media and file-management extensions are optional; their presence does not establish compatibility with the current redSHOP or Joomla version.
 
-<ul>
-<li><b>ARI Docs Viewer -</b> http://extensions.joomla.org/extensions/extension/social-web/social-display/ari-docs-viewer <br><br>
+Before installing one, review its publisher's current compatibility, maintenance, permissions and security guidance. Test uploads, file access, image handling and removal on an isolated copy. Restrict administrator access and keep backups.
 
-<li><b>Simple File Upload -</b> http://extensions.joomla.org/extensions/extension/core-enhancements/file-management/simple-file-upload <br><br>
-
-<li><b>JFUploader -</b> http://extensions.joomla.org/extensions/extension/core-enhancements/file-management/jfuploader <br><br>
-
-<li><b>eXtplorer -</b> http://extensions.joomla.org/extensions/extension/core-enhancements/file-management/extplorer <br><br>
-
-<li><b>PHP Image Editor Joomla Lite -</b> http://extensions.joomla.org/extensions/extension/photos-a-images/images/php-image-editor-lite-joomla
-</ul>
-
-<hr>
-
-<h6>Last updated on December 31, 2015</h6>
+Public product media is not a substitute for protected digital downloads. For the separate Product Files workflow and private storage requirements, see [Products](chapters/product-management/products-redshop.md).

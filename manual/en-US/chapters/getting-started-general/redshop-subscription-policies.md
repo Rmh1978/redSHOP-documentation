@@ -1,46 +1,19 @@
-## redSHOP Subscription Policies
-A subscription package is required to download of redSHOP and to access support.  Note that some subscriptions also enable access to additional redCOMPONENT extensions.
+## Subscription and support terms
 
-<hr>
-
-### In this article you will fine:
-<ul>
-<li><a href="#subscriptions">Subscriptions</a>
-<li><a href="#support">Technical Support</a>
-<li><a href="#notCover">What Our Support Service Does Not Cover</a>
-<li><a href="#updates">Updates</a>
-</ul>
-
-<hr>
+Historical redCOMPONENT subscription packages and prices are not reliable guidance for current redSHOP packages. Consult the provider's current written terms before purchasing or relying on support.
 
 <h4 id="subscriptions">Subscriptions</h4>
-There are three subscription packages currently available for purchase:
 
-<ul>
-<li><b>3 month subscription - </b>This subscription provides access to select, limited addons (modules and plugins), and access to submit support tickets.
+Verify the exact product, extension access, duration, license and renewal terms in the applicable agreement.
 
-<li><b>12 Month Pro subscription - </b>is the full package with all extensions (85+), Email support ticket access, FULL ACCESS to ALL extensions on redCOMPONENT.com for a period of 12 months.
-</ul>
+<h4 id="support">Technical support</h4>
 
-<hr>
+Confirm the current support channel, eligibility, response expectations and supported versions with your provider.
 
-<h4 id="support">Technical Support</h4>
-Support is provided for our subscribers only. Our Support Service include assistance with product bugs, including installation problems, problems that may arise during setup, and problems that may arise due to a change in the API of integrated services.
+<h4 id="notCover">Support scope</h4>
 
-<b>Only the latest released version of redSHOP will be supported.</b>
-
-<hr>
-
-<h4 id="notCover">What Our Support Service Does Not Cover</h4>
-We do not provide support for product setup and / or usage unless there is a problem due to a bug in the software. Setup and usage information may be seen in the product Wiki. Please be sure you've read all product setup / usage information prior to submitting a ticket for support.
-
-We do not provide support for redSHOP customizations, including the use of templates, addition of custom code, etc. We are happy to provide help with such things through our consulting services.
-
-<hr>
+Clarify responsibility for custom code, templates, third-party plugins, upgrades and incident recovery; do not assume these are included.
 
 <h4 id="updates">Updates</h4>
-Purchasing a redCOMPONENT subscription entitles subscribers to updates for all extensions designed by redCOMPONENT for the duration of the subscription period.
 
-<hr>
-
-<h6>Last updated on September 6, 2016</h6>
+Check the update channel and entitlement for each Core package and optional extension. Back up, verify restoration and test updates on an isolated copy before changing a live shop. See [Updating redSHOP](chapters/getting-started-general/updating-redshop.md).

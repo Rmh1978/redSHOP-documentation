@@ -1,21 +1,5 @@
-## redSHOP - Product Tab Module
+## redSHOP Product Tab module
 
-[How to install module/plugin on Joomla administrator?](chapters/module-redshop/install-module-plugin.md)
+The optional `mod_redproducttab` site module provides configurable product tabs. [Install and configure the module](chapters/module-redshop/install-module-plugin.md), assign its position and pages, then choose the new, latest, sold and special-product tabs, categories, product count, row count, images, price and cart controls.
 
-<hr>
-
-<ul>
-<li>Make sure install module redSHOP - Product Tab Module is successful </li>
-
-<li>User enable module, select position and select Module Assignment redSHOP - Product Tab Module: Extension → Module → search Product Tab Module </li>
-<img src="./manual/en-US/chapters/module-redshop/img/img48.png" class="example"/><br><br>
-
-<li>User go on Front-end and view product list </li>
-
-<li>User see title redSHOP - Product Tab Module </li>
-<img src="./manual/en-US/chapters/module-redshop/img/img49.png" class="example"/><br><br>
-</ul>
-
-<hr>
-
-<h6>Last updated on August 20, 2019</h6>
+The module source references bundled Bootstrap and jQuery scripts, but the inspected module manifest does not list its `js` directory. Verify the actual installation package and test tab interaction, browser console, styling, keyboard use and compatibility with the Joomla template on an isolated site before use.

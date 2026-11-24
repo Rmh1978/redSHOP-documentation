@@ -1,36 +1,11 @@
 ## Self Pickup
 
-[How to install module/plugin on Joomla administrator?](chapters/module-redshop/install-module-plugin.md)
+The Self Pickup shipping plugin offers pickup rather than a carrier delivery. Enable the installed plugin and open it under redSHOP **Shipping Methods**. Its configuration includes the Pacsoft-label option and a **Shipping Location** action.
 
-<hr>
+1. Open Shipping Location and create a pickup location with a name, description, location information and applicable country/state selections.
+2. Save and reopen the location. Test with disposable products and customer addresses, including different countries and states.
+3. Select pickup at checkout with a mocked or offline payment and inspect the order's shipping method and location. Verify the customer-facing instructions and operational pickup process separately.
 
-<ul>
-<li>Make sure install plugins Self-Pickup is successed.</li>
+The current plugin returns zero shipping cost and zero shipping VAT for its pickup choices. If no locations exist, it supplies a default pickup choice named for the shipping method; verify whether this behavior suits the shop before enabling it. The plugin attaches the configured country and state to location choices, but actual checkout filtering must be verified for the installed checkout and template.
 
-<li>Enable plugins Self-Pickup: Extensions → Plugins → search "Self-Pickup":</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img167.png" class="example"/><br><br>
-
-<li>Create Shipping with name "Demo Self-Pickup": admin redSHOP → Shipping → Shipping Methods → Self-Pickup → Shipping Location → New button:</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img168.png" class="example"/><br><br>
-
-<li>Create product with name "Yogurt": admin redSHOP → menu → Product → Product Management → New button:</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img169.png" class="example"/><br><br>
-
-<li>Add to card for this product and go to checkout, click choose "Self-Pickup":</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img170.png" class="example"/><br><br>
-
-<img src="./manual/en-US/chapters/plugin-redshop/img/img171.png" class="example"/><br><br>
-
-<li>Click Final checkout. Make sure Shipping Method Name in Order Information is "Self-Pickup":</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img172.png" class="example"/><br><br>
-
-<img src="./manual/en-US/chapters/plugin-redshop/img/img173.png" class="example"/><br><br>
-
-<img src="./manual/en-US/chapters/plugin-redshop/img/img174.png" class="example"/><br><br>
-
-<img src="./manual/en-US/chapters/plugin-redshop/img/img175.png" class="example"/><br><br>
-</ul>
-
-<hr>
-
-<h6>Last updated on August 23, 2019</h6>
+See [Shipping Methods](chapters/shipping/shipping-methods.md) for general configuration and test precautions.

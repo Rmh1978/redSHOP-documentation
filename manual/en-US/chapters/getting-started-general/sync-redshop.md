@@ -1,44 +1,9 @@
-## Syncing redSHOP Accounts with Third Party Extensions
-Since redSHOP shoppers will want to come back to your shop again, redSHOP saves their shopper/user information, previous orders, and so forth.  You can sync these shopper accounts with Joomla registration or several Joomla social/membership extensions. This article also includes recommended account administration extensions.
+## Joomla users and redSHOP customers
 
-<hr>
+Joomla accounts and redSHOP customer/address records have different roles. Shopper groups are not Joomla permission groups. See [User management](chapters/users/user-management.md) and [User configuration](chapters/global-configuration/user.md).
 
-## Joomla! Accounts
+The redSHOP user list provides a synchronization action. The inspected synchronization selects Joomla users without any matching redSHOP user-info record and attempts to create shop records for them. It derives first and last names from the first two space-separated parts of the Joomla name and uses the configured default customer type. It does not establish a continuous two-way synchronization with another extension or update every existing redSHOP record.
 
-### redMEMBER
+Synchronization changes customer data. Before running it, back up the database, review privacy and access requirements, and rehearse on an isolated copy with representative names, existing records and restricted accounts. Verify results and any errors before using the records.
 
-<ul>
-<li><b>redMEMBER - </b> http://redcomponent.com/redcomponent/redmember
-
-<li><b>JomSocial - </b> http://extensions.joomla.org/extensions/communities-a-groupware/communities/7608
-
-<li><b>Community Builder - </b> http://extensions.joomla.org/extensions/clients-a-communities/communities/210
-</ul>
-
-<hr>
-
-## Recommende Account Extensions
-
-### Management
-
-<ul>
-<li><b>Xi Registration Redirector - </b> http://extensions.joomla.org/extensions/access-a-security/authentication/12682
-</ul>
-
-### Easier Email Logins
-
-<ul>
-<li><b>Email as Username - </b> http://extensions.joomla.org/extensions/access-a-security/authentication/10343
-
-<li><b>Awo Email Login - </b> http://extensions.joomla.org/extensions/access-a-security/authentication/16096
-</ul>
-
-### Social Media Logins
-
-<ul>
-<li><b>Facebook Graph Connect - </b> http://extensions.joomla.org/extensions/access-a-security/authentication-cloud-based/16350
-</ul>
-
-<hr>
-
-<h6>Last Updated on December 31, 2015</h6>
+Social-login, membership and account extensions are independently maintained. Their presence does not prove that customer details, shopper groups, orders or consent are synchronized. Verify the exact extension's Joomla and redSHOP compatibility, data mapping, authentication and deletion behavior separately before deployment.

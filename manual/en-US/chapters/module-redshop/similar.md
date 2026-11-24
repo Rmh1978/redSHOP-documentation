@@ -1,28 +1,5 @@
-## redSHOP Tags - Similar
+## redSHOP Tags - Similar module
 
-[How to install module/plugin on Joomla administrator?](chapters/module-redshop/install-module-plugin.md)
+The optional `mod_redshop_tags_similar` site module finds tagged content sharing tags with the current item. [Install and configure the module](chapters/module-redshop/install-module-plugin.md), assign a position and pages, and set the maximum results, match type (all, any or half) and ordering.
 
-<hr>
-
-<ul>
-<li>Make sure install module redSHOP Tags - Similar is successful. </li>
-
-<li>User enable module, select position and select Module Assignment redSHOP Tags - Similar: Extension → Module → search redSHOP Tags - Similar</li>
-<img src="./manual/en-US/chapters/module-redshop/img/img54.png" class="example"/><br><br>
-
-<li>User go on Article and add some tag on article </li>
-<img src="./manual/en-US/chapters/module-redshop/img/img55.png" class="example"/><br><br>
-
-<li>User go on Product in backend and add some tag on field tag </li>
-<img src="./manual/en-US/chapters/module-redshop/img/img56.png" class="example"/><br><br>
-
-<li>User go on Frontend see title module and see some article in this module </li>
-<img src="./manual/en-US/chapters/module-redshop/img/img57.png" class="example"/><br><br>
-
-<li>User click on module to view detail module, tag </li>
-<img src="./manual/en-US/chapters/module-redshop/img/img58.png" class="example"/><br><br>
-</ul>
-
-<hr>
-
-<h6>Last updated on August 20, 2019</h6>
+Add relevant tags to test products and content and compare results for different access levels and languages. The inspected helper uses the request's `pid` to identify the current item and returns no list for category views, users or the tags component. Therefore do not assume every Joomla article or route works with this module; verify the exact pages and links in your installation. Test cache behavior across users before enabling caching.

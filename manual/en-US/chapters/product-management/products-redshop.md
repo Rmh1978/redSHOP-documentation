@@ -1,11 +1,11 @@
 ## Working with Products in redSHOP
-One of the main attractions of setting up an online store is letting the world know what you have to offer and making it easy for them to do business with you. With redSHOP you can easily create and manage a catalog of unlimited products ranging from physical tangible goods to digital downloads and subscriptions.
+redSHOP supports a product catalog including physical products, digital downloads and subscriptions. Available functionality depends on configuration and installed plugins.
 
-To access the product management section, click on the product but in the main menu or on the product list link in the left navigation panel.
+Open the product list from redSHOP's Product Management navigation.
 
 <hr>
 
-### In this article you will fine
+### In this article
 
 <ul>
 <li><a href="#listingScreen">Overview of product listing screens</a>
@@ -37,24 +37,14 @@ To access the product management section, click on the product but in the main m
     </ul>
 <li><a href="#priceDiscount">Product price discount</a>
     <ul>
-    <li><a href="#listingScreen">Product Price Discount Listing screen</a>
+    <li><a href="#priceDiscountListing">Product Price Discount Listing screen</a>
     <li><a href="#discountDetails">Add Product Price Discount details</a>
     </ul>
 </ul>
 
 <hr>
 
-Firstly you have one web-site use Joomla and installed redSHOP component. Access your web-site by administrator page by (username/password) has been provided
-
-<img src="./manual/en-US/chapters/product-management/img/administrator.png" class="example"/><br><br>
-
-Secondly you click on Component on main menu and select on "redSHOP"
-
-<img src="./manual/en-US/chapters/product-management/img/img2.png" class="example"/><br><br>
-
-Finally webpage will display overview page administrator of redSHOP and click on Product tab then select Product management
-
-<img src="./manual/en-US/chapters/product-management/img/img3.png" class="example"/>
+Sign in to the Joomla administrator, open redSHOP and select Product Management. Available actions depend on permissions and configuration.
 <hr>
 
 <!-- Overview of Product Listing screens -->
@@ -62,7 +52,7 @@ Finally webpage will display overview page administrator of redSHOP and click on
 
 <h4 id="productListingScreen">Products Listing screen</h4>
 
-<img src="./manual/en-US/chapters/product-management/img/img4.png" class="example"/>
+The current list supports search by product name, number, name and number, category or attribute SKU, as well as category, manufacturer and sort filters. When searching by category, verify the displayed search-field selection after submission: the current template compares a different value when restoring it. Verify bulk actions and their effects on a disposable copy before changing many products.
 
 <ul>
 <li><b>Product Name - </b>the name of the product, as it will appear on the front-end
@@ -71,7 +61,7 @@ Finally webpage will display overview page administrator of redSHOP and click on
 
 <li><b>Price - </b>the price currently stored for this product, displayed with the currency symbol of the store currency set in the global configuration screen 
 
-<li><b>Media - </b>the media library icon with the number of images and files currently associated to the product; click on it to open up a lightbox where you can get a more detailed overview and management panel where you can easily add, remove, and publish on publish related files. (More information is available in the media section) 
+<li><b>Media - </b>open product media management. Product images and public media are separate from protected Product Files downloads.
 
 <li><b>Wrapping Management - </b>the product wrapping listing icon with the number of wrapping options currently assigned to the product; click on it to open up a lightbox where you can add, edit and remove wrapping options on the fly 
 
@@ -81,16 +71,17 @@ Finally webpage will display overview page administrator of redSHOP and click on
 
 <li><b>Manufacturer - </b>the name of the manufacturer that the product is currently assigned to 
 
-<li><b>Customer reviews - </b>an add review link that redirects to the new rating screen within redSHOP, where a shop admin can manually enter a new review for display on the product page, with the field of the product referred to preselected and grayed out. More information on reviews and ratings is available in the promotion section. 
+<li><b>Customer reviews - </b>the list includes a reviews control; verify its behavior and permissions on your installation.
 
 <li><b>Published - </b>sets whether the product is displayed on the front-end; clicking on the green tick or the red cross will switch between states immediately
+
+<li><b>ID and custom columns - </b>the list includes a product ID and can include configured additional-field columns.
 </ul>
 
 <hr>
 
 <h4 id="actions">Actions:</h4>
 
-<img src="./manual/en-US/chapters/product-management/img/img5.png" class="example"/>
 <ul>
 <li><b>New - </b>appears when adding a new product record, click on this to add the new product details to the product catalog 
 
@@ -99,8 +90,6 @@ Finally webpage will display overview page administrator of redSHOP and click on
 <li><b>Copy - </b>copy 1 or more items has selected. Some information of product items has copy will same with has selected before and name items will increase follow times copy 
 
 <li><b>Delete - </b>delete 1 or more items has selected. Items has deleted will remove list items product 
-
-<li><b>Check-in - </b>will unlock any items manufacturer when someone viewing it 
 
 <li><b>Publish - </b>it change status from unpublish to publish for items product is working
 
@@ -111,41 +100,32 @@ Finally webpage will display overview page administrator of redSHOP and click on
 <li><b>Remove Category - </b>similar in function and method to the assigned new category button, this feature lets you remove category assignments in batch. 
 </ul>
 
+The list also provides a template-assignment selector for selected products. Confirm the selected products and intended template before applying a bulk operation.
+
 <hr>
 
 <!-- Product Price View screen -->
 <h2 id="viewScreen">Product Price View screen</h2>
 
-<img src="./manual/en-US/chapters/product-management/img/img6.png" class="example"/><br><br>
-
-Webpage will show "Product Price Management" 
-
-<img src="./manual/en-US/chapters/product-management/img/img7.png" class="example"/>
+Product Price Management provides a list for editing product prices and discount prices. The two column headings have separate save controls; check the resulting values after saving.
 
 <ul>
 <li><b>Product Name - </b>the name of the product 
 
 <li><b>Product Number - </b>the model number, string or code that identifies this product 
 
-<li><b>Price - </b>displays the price currently assigned to the product, and lets you update and save the prices of multiple products at the same time. Each product price also has a plus icon link next to it that opens up a lightbox where you can set and update prices for different shopper groups and the quantity range within which a product must be placed an order for it to apply; click on the diskette save icon in the price column to update any changes made (note: prices will be displayed with the number of decimal places set in the global configuration section) 
+<li><b>Price - </b>edit the displayed base prices and use the save control in the Price heading.
 
-<li><b>Discount Price - </b>displays the discount price currently assigned to the product and lets you update and save discount prices stored from multiple products at the same time.
+<li><b>Discount Price - </b>edit displayed discount prices and use the separate save control in the Discount Price heading. Client-side validation requires a nonnegative amount that is either zero or less than the product price; verify saved prices and decimal handling independently.
 
-<li><b>Icon Plus - </b>open popup to create discount for Shopper Group have Quantity start, Quantity end, Price 
-
-<li><b>Save button - </b>Save all information when it change
 </ul>
 
 <hr>
 
 <h4>Filters</h4>
 
-<img src="./manual/en-US/chapters/product-management/img/img8.png" class="example"/>
-
 <ul>
-<li><b>Search box - </b>if you want to display specific records, type in at least two characters that appear in the product name, number or associated category of what you're looking for and click on the search button to update and refine the products listed 
-
-<li><b>Search filter controls - </b>sets the type of information that the search box should be basing the list of results to be displayed on; it can look through product names, numbers, a combination of the two and associated categories
+<li><b>Search box and field - </b>choose product name, category or product number, enter a search term and submit.
 </ul>
 
 <hr>
@@ -153,9 +133,9 @@ Webpage will show "Product Price Management"
 <!-- Overview of Product Details screen -->
 <h2 id="detailsScreen">Overview of Product Details screen</h2>
 
-<h4 id="informationTab">Product Information tab</h4>
+The editor includes Product Information, custom fields, images, attributes, accessories/related products, metadata, Discount Calculator and payment methods. The stockroom tab depends on the stockroom configuration; e-conomic settings depend on integration configuration. Plugins may add tabs. Reopen a saved product to confirm available controls.
 
-<img src="./manual/en-US/chapters/product-management/img/img9.png" class="example"/>
+<h4 id="informationTab">Product Information tab</h4>
 
 <ul>
 <li><b>Product Name - </b>the name of the product, as it will appear on the front-end 
@@ -164,12 +144,12 @@ Webpage will show "Product Price Management"
 
 <li><b>Product Category - </b>the category of product, in product can have more 1 items category
 
-<li><b>Product Layout - </b>layout product will show on front-end 
+<li><b>Product Template - </b>selects the product template. The editor marks product name, number, category and template as required; verify validation on the installed version.
 
-<li><b>Product Type - </b>redSHOP supports four different types of product you can sell, three that come standard and a fourth "Design" type when redSHOP detects that redDESIGN has been installed: 
+<li><b>Product Type - </b>The current selector includes Product, File and Subscription. Installed product-type plugins can add choices:
     <ul>
-    <li><b>Product - </b>configures the product as a physical or tangible good that will need to be shipped to the customer 
-    <li><b>Design - </b>configures the product as a design that can be customized and reproduced for a fee (more information is available in the redDESIGN section) 
+    <li><b>Product - </b>the ordinary product type; configure shipping and availability for the intended product.
+    <li><b>Plugin-defined types - </b>depend on the installed and enabled product-type plugin; verify its own configuration and compatibility.
     <li><b>File - </b>configures the product as a downloadable or digital good that can be set to be bought before the customer has access to it 
     <li><b>Subscription - </b>configures the product as a subscription service with a subscription period and price
     </ul>
@@ -180,20 +160,9 @@ Webpage will show "Product Price Management"
 <h4 id="productTypes">Product Types</h4>
 All products in redSHOP are assigned as the "product" product type by default, and as such do not require any additional information
 
-<b>Design (if installed): </b>
-
-<ul>
-<li><b>Design - </b>sets the design template to be used 
-
-<li><b>Shopper Group Name - </b>sets the customer user groups that can access and purchase this design 
-
-<li><b>Reddesign Enable - </b>sets whether design customization controls should appear
-</ul>
-
 <b>File</b>
 <ul>
-<li><b>Downloadable Product - </b>sets whether the digital product is for sale and will be accessible to the customer only after proceeding through the checkout process, in which case the
-security on this file will be increased (Available options: Yes, No)
+<li><b>Downloadable Product - </b>the file-type editor exposes this setting. Verify the configured download workflow and access controls independently; this setting alone does not establish file security.
 
 <li><b>Infinite limit for download - </b>sets whether the customer will be able to download this file an unlimited number of times, and if they're not, the setting below sets the maximum number of times that they will be able to download the file. (Available options: Yes, No) 
 
@@ -203,12 +172,19 @@ security on this file will be increased (Available options: Yes, No)
 
 <li><b>Download the last day before - </b>the time (hours: minutes) that the download link will expire on the last day specified by the download period. 
 
-<li><b>Upload CSV file - </b>if you're selling a digital product that will be dependent on serial or license keys, you can use this particular input box to upload an appropriately formatted CSV file that contains all the keys available to this product. A new key will be automatically assigned every time a copy of the digital product will be sold, and you can always add more license keys by simply uploading more data from another CSV file.<br><br>
-
-Support for more formats of each kind of media can definitely be added, and redSHOP works with other third-party multimedia extensions for Joomla! (such as AVReloaded) that can expand the shop's media capabilities.<br><br>
-
-To add a file (or multiple files if you want to offer / sell a batch), simply go to the product images tab and click on the "add additional images or media" button, which will open a lightbox window where you can add or remove the files related to this downloadable product. You can also upload files and add their media-specific details within redSHOP's "Media" section.
+<li><b>Upload CSV file - </b>uploads serial numbers for the legacy file workflow. The current model reads the first CSV column of each non-empty row; use disposable values to verify assignment and recovery before relying on it.
 </ul>
+
+For an existing product, authorized administrators can open <b>Product Files</b> from the product editor to manage supported software downloads. This is a separate workflow with private storage and purchase, subscription or license policies; it should not be assumed to replace every legacy download type. Do not treat the public product image/media gallery as protected download storage. Test file authorization, direct URL access, limits and expiry on an isolated installation before offering a download.
+
+<b>Product Files workflow:</b>
+<ol>
+<li>Save the product first. An administrator needs redSHOP management access and either download-management or administrator permission to open this area.</li>
+<li>Open <b>Product Files</b> and provide a title, version, file and access policy. Description, changelog, subscription plan and expected SHA-256 are available where applicable. A license policy requires licensing to be enabled; a purchase policy cannot specify a plan.</li>
+<li>The upload validates file type, content, size and optional checksum. Supported extensions include ZIP, EXE, MSI, DMG, TAR, GZ, DEB, RPM and PKG. The component options contain the private storage path and maximum upload size. Storage must resolve outside the public webroot.</li>
+<li><b>Uploads are published immediately.</b> Prepare and verify the file and policy before uploading. The file list provides publish/unpublish controls; upload a new version instead of replacing an existing binary.</li>
+<li>Test with disposable customer accounts and paid/mock orders: purchase, subscription and license policies have different entitlement checks, so a published file alone does not grant everyone access.</li>
+</ol>
 
 <b>Subscription</b>
 
@@ -222,6 +198,11 @@ To add a file (or multiple files if you want to offer / sell a batch), simply go
 <li><b>Delete - </b>removes the subscription level
 
 <li><b>Subscription Renewal Mail: - </b>sets the number of days before the subscription period ends that the customer should be sent subscription renewal reminder mail
+</ul>
+
+The subscription editor also exposes software-license settings: enable licensing, select a software type, set a maximum installation count, an entitlement key and grace period, and choose active-license download and manual-approval options. Test issuance, approval, activation, expiry and downloads independently before using them commercially.
+
+<ul>
 
 <li><b>Parent product - </b>a space where you can indicate the main product that this product is a variation of; type in the first few letters of the product name and choose the relevant product from the drop-down panel that will appear 
 
@@ -229,25 +210,33 @@ To add a file (or multiple files if you want to offer / sell a batch), simply go
 
 <li><b>Published - </b>sets whether the product will be displayed on the front-end (Available options: Yes, No) 
 
-<li><b>Product on sale - </b>sets whether the product is currently on a promotional sale; when this is enabled, you can use template tags within the assigned product template that can display a promotional message based on whether the product is on sale or not (Available options: Yes, No) 
+<li><b>Product on sale - </b>the current editor displays a sale-state hint when both discount dates exist; it does not expose a separate on-sale switch in Product Information. Discount operations can update the stored sale flag. Verify sale output and date boundaries.
 
 <li><b>Special Product - </b>sets whether this product should get special attention, or mark it as the more commonly known "featured product"; products that have been marked as special will appear where ever featured products are displayed, such as in several redSHOP display modules (Available options: Yes, No) 
 
 <li><b>Product Discontinued - </b>sets whether the product has been marked as discontinued or the purchase time has expired; discontinued products can still be displayed on the front-end, but customers will not be able to purchase them or add them to the cart (Available options: Yes, No) 
 
-<li><b>Product not for sale - </b>sets whether the product is no longer for sale; such products can still be displayed on the front-end, but the product price will be hidden and the customer will not be able to purchase them or add them to the cart (Available options: Yes, No) 
+<li><b>Product not for sale - </b>enables a separate show-price setting in the editor. Verify price display and add-to-cart behavior in the active template and configuration rather than assuming the price is always hidden.
 
 <li><b>Product Pre-Order - </b>sets whether the product can be pre-ordered even though it is currently out of stock; by default this is set to "globally", which checks whether the product pre-order feature has been enabled in the global configuration screen and if it is then enabled this feature for this product, but you can set the pre-order facility for this product individually by selecting "yes" or disable the pre-order facility for this product by selecting "no", the individual settings overriding the global ones. (Select: Globally, Yes, No) 
 
-<li><b>Front end link - </b>displays a link that redSHOP generates for you to access and quickly preview the product page on the front-end; this link will be generated only once the product has been saved at least once, and when clicked it will open a new window displaying the product template and its details as they would appear to your customers. (Note: the product must be published for this shortcut link to work, otherwise you will end up on an error page)
+<li><b>Product availability date - </b>the date control appears when pre-orders are enabled globally. Test its effect and date boundaries.
+
+<li><b>Minimum product price - </b>the additional-information section has a nonnegative minimum-price field, distinct from minimum quantity. Its tooltip describes a minimum before adding to cart; verify its calculation in the cart.
+
+<li><b>Joomla tags - </b>assign Joomla tags independently of redSHOP product template tags.
+
+<li><b>Software type - </b>the product editor provides a software-type selector; subscriptions expose their software/license controls in the type-specific section. Test its effect on licensing and downloads independently.
+
+<li><b>Preview - </b>the editor offers a preview for an existing product. Check published state, access and the active template when verifying storefront output.
 
 <li><b>Price - </b>the price currently assigned to this product, relative to the main currency that has been selected in the global configuration screen for the online store (note: this price can be displayed in a different currency using redSHOP's currency conversion module) 
 
 <li><b>Discount Price - </b>the promotional discount price currently assigned to this product, relative to the main currency that has been selected in the global configuration screen (note: this price can be displayed in a different currency using redSHOP's currency conversion module) 
 
-<li><b>Discount Start Date - </b>indicates the date when the promotional discount price should start being offered, left blank by default indicating that the discount price is on offer indefinitely; to set the date, click on the calendar icon and select the date using the pop-up calendar, and to remove it simply highlight and delete the stored date 
+<li><b>Discount Start Date - </b>sets the start of the product's discount period. Verify blank dates and boundary behavior with a test product rather than assuming a discount is indefinite.
 
-<li><b>Discount End Date - </b>indicates the date when the promotional discount price should stop being offered, left blank by default indicating that the discount price is on offer indefinitely; to set the date, click on the calendar icon and select the date using the pop-up calendar, and to remove it simply highlight and delete the stored date 
+<li><b>Discount End Date - </b>sets the end of the product's discount period. Verify date, time zone and boundary behavior in the storefront and cart.
 
 <li><b>VAT/Tax group - </b>sets the VAT/tax group profile which will be used when calculating the taxes for this product based on the tax rate set for the country tax will be collected in; set this to "select" to leave the product without a tax group assignment, otherwise select from the available profiles in the drop-down menu. More information is available in the localization section 
 
@@ -263,7 +252,7 @@ To add a file (or multiple files if you want to offer / sell a batch), simply go
 
 <li><b>Manufacturer - </b>sets the manufacturer that this product has been assigned to, useful for branding and for displaying products groups together by manufacturer; set it to "select" to leave the product unassigned, or select a manufacturer from the drop-down menu 
 
-<li><b>Supplier - </b>sets the supplier that this product has been assigned to, useful for displaying reports on products being supplied by specific suppliers; set it to "select" to leave the product unassigned, or select a manufacturer from the drop-down menu
+<li><b>Supplier - </b>selects the product's supplier independently of its manufacturer. See [suppliers](chapters/product-management/supplier-product.md) for template display and publication caveats.
 
 <li><b>Weight - </b>a space to enter the total weight of the product, relative to the units of weight and displayed according to the number of decimal places set in the global configuration screen; the product weight can be factored into the cost of shipping
 
@@ -273,9 +262,7 @@ To add a file (or multiple files if you want to offer / sell a batch), simply go
 
 <li><b>Maximum quantity per order - </b>sets the maximum quantity that a customer can order for this product 
 
-<li><b>e-conomic Account Group - </b>when you are using the e-conomic accounting integration and have set up a product group profile, you can use this option to assign this product to a specific group 
-
-<li><b>Default product quantities: - </b>while the customer can decide on a specific quantity of product to the cart, you can use this field to present quantity steps to make it easier for your customers to select specific quantities; simply enter the quantity values separated by commas, such as "1,5,10,20,50", make sure the {addtocart_quantity_selectbox} tag has been used in the template for your add to cart button, and your customers can pick these quantities from a drop-down menu
+<li><b>e-conomic settings and default product quantities - </b>these controls are in the conditional Economic Settings tab described below, not the general information section.
 
 <li><b>Short Description - </b>a space to store a brief description of the product; you can insert text, links, HTML and calls for plug-ins or modules 
 
@@ -285,7 +272,7 @@ To add a file (or multiple files if you want to offer / sell a batch), simply go
 <hr>
 
 <h4 id="fieldTab">Custom Fields tab</h4>
-This is the space where all custom category fields that are relevant to this product will appear. More information on what custom fields are and how they work and are used is available in the custom fields section, but in general to assign custom fields to a product you need to set the relevant custom fields to belong in the product section and that the tags for those fields appear somewhere in the product template that is currently assigned to that product.
+Use the Fields tab for applicable product custom fields. Configure the field's section and publication, and include the appropriate tag in the active product template for storefront output. See [custom fields](chapters/customization/custom.md); test visibility and output for the field type and template in use.
 
 <img src="./manual/en-US/chapters/product-management/img/img10.png" class="example"/><br><br>
 
@@ -295,132 +282,26 @@ Video for Custom Field tab in Product: <a href="https://redshop.fleeq.io/l/4fhnd
 
 <h4 id="imagesTab">Other Images tab</h4>
 
-<img src="./manual/en-US/chapters/product-management/img/img11.png" class="example"/>
-
-<ul>
-<li><b>Product Image - </b>sets the main image used to represent this product on the front-end, and displays a preview of the currently selected main product image if one exists; you can select an image to upload from your computer using the browse button, select an image that has already been uploaded to the media library using the image button, or click on the add additional images or media button to add, remove and manage the images and files attached to this product 
-
-<li><b>Delete Current Image - </b>if you wish to remove the currently assigned product image, click on this checkbox and save the changes using the apply or save button and the image will have been removed.
-
-<li><b>Product thumb - </b>sets the thumbnail image used to represent this product on the front-end, and displays a preview of the currently selected main product image if one exists; redSHOP can automatically generate product thumbnails according to the dimensions specified in the global configuration screen, but if you want to use a different image specifically has your product thumbnail, you can select it to upload from your computer using the browse button 
-
-<li><b>Delete Current Product Thumb - </b>if you wish to remove the currently assigned product thumbnail, click on this checkbox and save the changes using the apply or save button and the image will have been removed
-
-<li><b>Product Back Image - </b>offers the ability to display an additional image that shows the back of the product 
-
-<li><b>Product Back Thumb Image - </b>offers the ability to display the thumbnail for the back image
-
-<li><b>Product Preview Image - </b>sets the main image for the product that will appear in the product preview pane 
-
-<li><b>Product Preview Back Image - </b>sets the back image of the product that will appear in the product preview pane
-
-<li><b>Image management with auto resize for back-end - </b>set image product when user click on it. Go to product detail and click on "Add additional images or medias"
-<img src="./manual/en-US/chapters/product-management/img/img12.png" class="example"/><br><br>
-
-<li>Click on any image have on list image 
-<img src="./manual/en-US/chapters/product-management/img/img13.png" class="example"/><br><br>
-
-<li>Webpage will show popup have contain image product
-<img src="./manual/en-US/chapters/product-management/img/img14.png" class="example"/><br><br>
-
-<li><b>Image management with auto resize for front-end - </b>set zoom in image product when user click on it. It will show popup contain image have large size it will setup on config in Configuration and at Products tab
-<img src="./manual/en-US/chapters/product-management/img/img15.png" class="example"/><br><br>
-
-<img src="./manual/en-US/chapters/product-management/img/img16.png" class="example"/><br><br>
-
-<li>Select "Yes" on Show Product Detail Image in Lightbox. Then go to product detail and click on main image
-<img src="./manual/en-US/chapters/product-management/img/img17.png" class="example"/>
-</ul>
+Product Information provides main and back-image controls. Save the product to use its additional-media dialog and gallery. The separate Product Images tab provides back-thumbnail, preview and preview-back-image controls. Test storefront output and image sizes with the active template and configuration. See [media management](chapters/media/working-medias.md) for associations and deletion precautions.
 
 <hr>
 
 <h4 id="attributesTab">Product Attributes tab</h4>
-If you have built up an attribute set in the attribute profile section in redSHOP, you can import the attributes from those sets to apply to this product by choosing the set from the drop-down menu, selecting yes and clicking on either apply or save to update the changes. 
 
-<img src="./manual/en-US/chapters/product-management/img/img18.png" class="example"/><br><br>
+Select an attribute set and decide whether to copy it, or add product-specific attributes. Selecting a set and copying it are distinct operations. The set-selection request currently contains an extra `=` in its task parameter; preview or copying may fail. Inspect the saved product and test the behavior in isolation. See [Attribute sets](chapters/customization/attribute.md).
 
-On Frontend<br><br>
+An attribute has a name, description, order, dropdown/radio display, required, multi-selection, hide-price and published controls. Add properties (options) with names, order, price/operator, virtual product number, extra field, tooltip, alert, image and default-selection settings. A property can have nested subproperties with their own name, number, order, price/operator, publication and default selection; the nested group has title, required, multiselect and display controls.
 
-<img src="./manual/en-US/chapters/product-management/img/img19.png" class="example"/>
-
-<ul>
-<li><b>Copy Attribute Set from Attribute Bank - </b>sets whether the attribute set selected in the drop-down menu will be copied to this product; regardless of whether the set has been selected, attributes will not get copied as long as this has been set to no (Available options: Yes, No) 
-
-<li><b>Attribute set - </b>select an attribute set which can be copied to this product (Select: from available sets in bank)
-
-<li><b>"Add Attribute parameter" link - </b>click to add and define a new product attribute 
-
-<li><b>Sub Property - </b>the name or label given to the group of options you can select a product variation of 
-
-<li><b>Order - </b>sets the order in which attributes will be displayed on the front end 
-
-<li><b>Atttribute required - </b>sets whether a variation of this product attributes has to be selected before the product can be added to the cart 
-
-<li><b>Published - </b>sets whether the attribute will be displayed and available to select from on the front-end 
-
-<li><b>Attribute value - </b>click this link to add another variation of the attribute, a row for the new variation will appear below the last ones listed 
-
-<li><b>Delete attribute - </b>removes the attribute and all sub properties 
-
-<li><b>Allow multiple selection of attributes - </b>when this is checked, your customers will be able to pick multiple variations of the same attribute by overriding the selection made for the display type setting and showing the available variations with checkboxes next to them; if variations have price levels attached to them, each variation selected will affect the product price accordingly 
-
-<li><b>Hide Attribute Price - </b>sets whether the price assigned to the attribute variation will be hidden from display; normally variation prices are shown in brackets together with the currency set in the global configuration screen or selected in redSHOP's currency module 
-
-<li><b>Display Type - </b>sets the way the variations will be displayed on the product page for selection; normally you can only pick one variation of an attribute so you can choose between a drop-down list or radio buttons (Select: single select / Dropdown List, radio buttons)
-
-<li><b>Attribute value - </b>the name or label given to the option the customer can choose from 
-
-<li><b>Order - </b>sets the order in which attribute values will be displayed 
-
-<li><b>Preselected - </b>sets whether this option should be preselected when the customer arrives on the product page 
-
-<li><b>Price - </b>here you can set the price that this option is valued at, and use one of four math symbols to affect the product price accordingly; set a + character to add to the price, a - character to remove from the product price, a * character to multiply the product price by a certain value (can accept percentages such as 1.15) and a / character to divide the product price by a certain value 
-
-<li><b>Image - </b>sets the image that will be displayed on the front-end to visually represent this option, and when the customer picks this option the image on the product page will update and change display this one; you can select an image to upload from your computer using the browse button, assign an image that's been stored in the media library using the button with the picture graphic in it, or click on the X / Remove button to remove the assigned image (the image itself will still be stored in the media library) 
-
-<li><b>Virtual product # - </b>a space to put a unique identifier for this product variation, such as model number or an SKU 
-
-<li><b>More Images - </b>represented by the graphic of a camera, clicking this button will open a lightbox where you can add and manage additional images you may want to be shown for this product 
-
-<li><b>Stock amount - </b>represented by the graphic of an arrow into an inbox, clicking this button will open a lightbox where you can view and manage the current and pre-order stock levels for this product variation 
-
-<li><b>Discount - </b>represented by the graphic of the piggy bank, clicking this button will open a lightbox where you can add and manage price brackets and price levels for members of specific shopper groups, as well as discount prices and the length of promotion
-
-<li><b>New sub property - </b>click this link to create and define a second group of options which will be displayed if the main option will be selected, starting with the option group name and the first option; click this link again to add more options to the group 
-
-<li><b>Sub property - </b>the name or label given to this group of options 
-
-<li><b>Required Sub Attribute - </b>sets whether a selection has to be made from this group of options before the customer can add the product can't 
-
-<li><b>Multiselect Sub Attribute - </b>when this is checked, your customers will be able to pick multiple variations of the same attribute by overriding the selection made for the display type setting and showing the available variations with checkboxes next to them; if variations have price levels attached to them, each variation selected will affect the product price accordingly 
-
-<li><b>Display type - </b>sets the way the variations will be displayed on the product page for selection; normally you can only pick one variation of an attribute so you can choose between a drop-down list or radio buttons (Select: single select / Dropdown List, radio buttons) 
-
-<li><b>Order - </b>sets the order in which options will be displayed 
-
-<li><b>Preselected - </b>sets whether this option should be preselected when the customer arrives on the product page 
-
-<li><b>Price - </b>here you can set the price that this option is valued at, and use one of four math symbols to affect the product price accordingly; set a + character to add to the price, a - character to remove from the product price, a * character to multiply the product price by a certain value (can accept percentages such as 1.15) and a / character to divide the product price by a certain value 
-
-<li><b>Image - </b>sets the image that will be displayed on the front-end to visually represent this option, and when the customer picks this option the image on the product page will update and change display this one; you can select an image to upload from your computer using the browse button, assign an image that's been stored in the media library using the button with the picture graphic in it, or click on the X / Remove button to remove the assigned image (the image itself will still be stored in the media library)
-</ul>
-
-Video for Product Attribute: <a href="https://redshop.fleeq.io/l/fpqxp94vze-iu3msneamr">Click here</a>
+Price operators include `+`, `-`, `=`, `*` and `/`. Test each operator and resulting price with the actual template, tax and quantity settings; multiplication by 1.15 is a factor, not an instruction to enter a percentage. Existing options may offer image, stock and price-management controls. Verify changes after saving and reopen before relying on them for orders.
 
 <hr>
 
 <h4 id="productTab">Accessory/Related Product tab </h4>
 
-<img src="./manual/en-US/chapters/product-management/img/img20.png" class="example"/><br><br>
-
-On Frontend 
-
-<img src="./manual/en-US/chapters/product-management/img/img21.png" class="example"/><br><br>
-
-With this feature, you can assign accessory products to be offered together with this product as well as their price conditions. The accessories that you assign will appear on the product page with checkboxes next to them so the customer can include them in their selection before adding to cart.
+Assign accessory products and their price adjustments. Display and selection depend on the active product template; verify the saved associations and resulting cart prices.
 
 <ul>
-<li><b>Product Source - </b>an Ajax-powered input box from where you can look up products to add as accessories; type at least three characters that appear in the name of the product you're looking for and wait a moment for a drop-down panel with related search results to appear, then click on the name of the product to select it.
+<li><b>Product Source - </b>search for and select a product to add as an accessory.
 
 <li><b>Product Name - </b>the name of the product
 
@@ -439,24 +320,16 @@ With this feature, you can assign accessory products to be offered together with
 
 <h4>Related Product</h4>
 
-<img src="./manual/en-US/chapters/product-management/img/img22.png" class="example"/><br><br>
-
-On Frontend 
-
-<img src="./manual/en-US/chapters/product-management/img/img23.png" class="example"/>
-
 <ul>
-<li><b>Search for products - </b>an Ajax-powered input box from where you can look up products to add as related products; type at least three characters that appear in the name of the product you're looking for and wait a moment for a drop-down panel with related search results to appear, then click on the name of the product to select it.
+<li><b>Related Product - </b>use the searchable multiple-selection control to select related products. Save and reopen the product to verify the associations.
 
-<li><b>Related Product - </b>a list of all the products related to this one and four buttons to manage them: the -> button will add a product to the list, the <- button will remove it, and the "Up" and "Down" buttons will rearrange the order in which they are displayed on the front-end.
-
-<li><b>Add Child Product as Related Product - </b>normally child products will be indicated on the cart as a variation of the main product, but when this is checked they will be added to the cart as a separate related product
+<li><b>Add Child Product as Related Product - </b>the editor provides an action to fetch child products into the related-products selection. Verify saved relations and storefront rendering on an isolated copy.
 </ul>
 
 <hr>
 
 <h4>redPRODUCTFINDER Association</h4>
-This tab will appear if you have redPRODUCTFINDER installed, and makes it simple to associate this product with specific product finder tags that the customers can use to narrow down their selection. When you have set up a form and have defined some types and tags to go with it, a list of those types will appear in this tab with the "Type:" label next to each name. Move the mouse cursor over the type name and the mouse icon will change to a hand, indicating you can click on it to open a panel that will display the tags you can associate this product with, the "quality score" value that defines the weight and priority given to the association when calculating relevance to search results, and a list of tags that you can assign dependencies to, meaning the customer will have to search using another tag for the product association with this one to be relevant. More information is available in the redPRODUCTFINDER section of the manual.
+Product finder integration depends on the installed extension and compatibility; it is not included in the current Core product tab list. Consult the extension's own documentation and verify any integration on an isolated installation.
 
 <hr>
 
@@ -465,21 +338,23 @@ This tab will appear if you have redPRODUCTFINDER installed, and makes it simple
 <img src="./manual/en-US/chapters/product-management/img/img24.png" class="example"/>
 
 <ul>
+<li><b>Append to Global SEO - </b>select how the product metadata combines with global settings. Verify the resulting page metadata in the storefront.
+
 <li><b>SEO Page Title - </b>the title of the product page, as it will be displayed in search engine results and in the browser's title bar or tab
 
 <li><b>SEO Page Heading - </b>the main heading for this product page
 
 <li><b>SEF Url - </b>the search engine friendly URL that will be used instead of the standard Joomla! URL that is generated for this product page 
 
-<li><b>Category in SEF Url - </b>if the product is assigned to multiple categories, this drop-down menu lets you pick the name of the main category that should appear in the search engine friendly links
+<li><b>Canonical URL - </b>the editor includes a canonical URL field and indicates when the canonical product plugin is not enabled. The category-in-SEF selector is present in the source but hidden; do not assume it is available in the current UI.
 
 <li><b>SEO Keywords - </b>a space to insert the meta-keywords that are related to this product page 
 
-<li><b>SEO Page Description - </b>a space to insert the method description that is related to this product page
+<li><b>SEO Page Description - </b>the product page's meta description.
 
-<li><b>Meta Language Setting - </b>a space to include the languages for which these SCO settings will apply for this product page, indicated by the Joomla! type language and country codes separated by commas, for example "en-GB, fr-FR"
+<li><b>Meta Language Setting - </b>choose from the language dropdown. Verify the rendered metadata for the active language rather than entering a comma-separated list.
 
-<li><b>SEO Robot Info - </b>a space to include specific instructions for search engine web crawlers and bots , if the instructions for this page differ from the general instructions that can be put in redSHOP's global configuration SCO tab
+<li><b>SEO Robot Info - </b>choose index/follow directives. The inspected template passes an unassigned local variable instead of the product detail to the selector; reopening and saving may select the default rather than the stored value. Test and inspect stored and rendered metadata on a disposable shop before changing production products.
 </ul>
 
 <hr>
@@ -491,26 +366,20 @@ This tab will appear if you have redPRODUCTFINDER installed, and makes it simple
 <ul>
 <li><b>Use Discount Calculator - </b>(Available options: Yes, No)
 
-<li><b>Discount Calculator Method - </b>(Select: Volume, Area, Circumfrence)
+<li><b>Discount Calculator Method - </b>Volume, Area, Area Quantity or Circumference.
 
 <li><b>Calculation based on - </b>(Select: Range, Price per Piece)
 
-<li><b>Unit - </b>(Millimeter, Centimeter, Meter)
+<li><b>Unit - </b>Millimeter, centimeter, meter or square meter; the editor limits available units according to the method.
 
-<li><b>Range -</b>
+<li><b>Allow decimal piece - </b>controls whether decimal piece quantities are allowed.
 
-<li><b>Price -</b>
+<li><b>Ranges - </b>add or remove rows with a unit, minimum, maximum and price.
 
-<li><b>'Add/Delete' -</b>
-
-<li><b>Option Name -</b>
-
-<li><b>sign (+/-) - </b>(Plus, Minus, Percentage)
-
-<li><b>Price -</b>
-
-<li><b>'Add/Delete' -</b>
+<li><b>Extra options - </b>add or remove named options with a plus, minus or percentage operator and price.
 </ul>
+
+The current editor also exposes minimum dimension settings and a maximum print-width setting. Verify units, boundaries and resulting prices in product, cart and checkout before using the calculator for live sales.
 
 <hr>
 
@@ -527,11 +396,13 @@ This tab will appear if you have redPRODUCTFINDER installed, and makes it simple
 <h4>Actions:</h4>
 
 <ul>
-<li><b>Add Price - </b>clicking this button will redirect you to an overview where you can add and manage price brackets and price levels for members of specific shopper groups, as well as discount prices and the length of promotion
+<li><b>Add Price - </b>for an existing product, opens its shopper-group and quantity price rules.
 
 <li><b>Apply - </b>saves any changes made and refreshes the page
 
 <li><b>Save - </b>saves any changes made and redirects to the listing screen
+
+<li><b>Save &amp; New / Save as Copy - </b>the toolbar also offers creation of a new product or a copy; availability depends on whether the product already exists.
 
 <li><b>Cancel - </b>returns to the listing screen without saving any changes
 </ul>
@@ -540,202 +411,33 @@ This tab will appear if you have redPRODUCTFINDER installed, and makes it simple
 
 <h4 id="paymentMethods">Payment Methods tab</h4>
 
+When individual payment methods are enabled for a product, select the intended methods and test both single-product and mixed-product carts using offline or mocked payments.
+
 Video for Payment product in redSHOP: <a href="https://redshop.fleeq.io/l/9c7miev279-ue2zk0ria3">Click here</a>
 
 <img src="./manual/en-US/chapters/product-management/img/img27.png" class="example"/>
 
 <ul>
-<li><b>Payment method - </b>method payment of product. It can yes or no
-
-<li><b>Use Individual Payment Method - </b>Use or no Payment method for product
-
-<li><b>Select Payment method - </b>where contain some payment method of shop
+<li><b>Use Individual Payment Method - </b>enable or disable the product-specific selection.
+<li><b>Select Payment Method - </b>choose the methods when product-specific selection is enabled.
 </ul>
 
 <hr>
 
 <!-- Mass Discount Product -->
-<h2 id="massDiscount">Mass Discount Product</h2>
+<h2 id="massDiscount">Mass discounts</h2>
 
-<img src="./manual/en-US/chapters/product-management/img/img28.png" class="example"/><br><br>
+Mass discounts change selected products' discount fields. Saving or deleting a rule can update sale flags, prices and dates, so back up and test overlaps before changing live products.
 
-<img src="./manual/en-US/chapters/product-management/img/img29.png" class="example"/>
+<h4 id="addDiscount">Create a mass discount</h4>
 
-<h4>Fields:</h4>
+Set a name, type, positive amount, required start and end dates, and targets. Enter 12 for 12%. The form marks products required, although the model also accepts categories or manufacturers; verify the actual form before relying on category-only or manufacturer-only targeting. Save, reopen and inspect every affected product. See [Mass discounts](chapters/discounts/mass-discount.md) for the full workflow and testing precautions.
 
-<ul>
-<li><b>Discount Name - </b>the name given to the discount or promotion 
+<h2 id="priceDiscount">Product price discounts</h2>
+<h4 id="priceDiscountListing">Discount list</h4>
 
-<li><b>Discount amount - </b>the amount that the discount is worth
+Product price discounts are separate from mass discounts and shopper-group product prices. The list includes threshold, condition, amount, dates and publication, with search and filtering.
 
-<li><b>Discount Type - </b>the way the discount will be applied, either as a percentage or a total sum
+<h4 id="discountDetails">Create a product price discount</h4>
 
-<li><b>Discount Start Date - </b>indicates the date when the promotional discount price should start being offered, left blank by default indicating that the discount price is on offer indefinitely; to set the date, click on the calendar icon and select the date using the pop-up calendar, and to remove it simply highlight and delete the stored date
-
-<li><b>Discount End Date - </b>indicates the date when the promotional discount price should stop being offered, left blank by default indicating that the discount price is on offer indefinitely; to set the date, click on the calendar icon and select the date using the pop-up calendar, and to remove it simply highlight and delete the stored date
-
-<li><b>Products - </b>an Ajax-powered input box from where you can look up products that this discount should apply to; type at least three characters that appear in the name of the product you're looking for and wait a moment for a drop-down panel with related search results to appear, then click on the name of the product to select it.
-
-<li><b>Category - </b>when you want to set the discount to apply to groups of products in one or more categories, make your selection from this list (holding down the control key on the keyboard to select multiple categories)
-
-<li><b>Manufacturer - </b>when you want to set the discount to apply to products assigned to one or more manufacturers, make your selection from this list (holding down the control key on the keyboard to select multiple categories)
-
-<li><b>ID - </b>order mass discount items 
-</ul>
-
-<h4>Actions:</h4>
-
-<ul>
-<li><b>New - </b>takes you to the add discount screen where you can add a new discount to the catalog
-
-<li><b>Edit - </b>takes you to the edit product screen where you can modify an existing discount profile. The screen can be reached either by clicking on the discount name or clicking on the checkbox next to their name followed by the edit button
-
-<li><b>Delete - </b>removes the discount from the product catalog, this is a permanent delete
-
-<li><b>Check-in - </b>will unlock any items manufacturer when someone viewing it 
-</ul>
-
-<hr>
-
-<h4 id="addDiscount">Add Mass Discount details</h4>
-
-<img src="./manual/en-US/chapters/product-management/img/img30.png" class="example"/><br><br>
-
-<img src="./manual/en-US/chapters/product-management/img/img31.png" class="example"/>
-
-<h4>Fields:</h4>
-
-<ul>
-<li><b>Discount Name - </b>the name given to the discount or promotion
-
-<li><b>Discount Type - </b>the way the discount will be applied, either as a percentage or a total sum
-
-<li><b>Discount amount - </b>the amount that the discount is worth; enter the full price value of the discount if it is a total sum, and if it is a percentage then enter a decimal value for redSHOP to use in calculations, such as a value of 0.12 to represent 12%
-
-<li><b>Discount Start Date - </b>indicates the date when the promotional discount price should start being offered, left blank by default indicating that the discount price is on offer indefinitely; to set the date, click on the calendar icon and select the date using the pop-up calendar, and to remove it simply highlight and delete the stored date
-
-<li><b>Discount End Date - </b>indicates the date when the promotional discount price should stop being offered, left blank by default indicating that the discount price is on offer indefinitely; to set the date, click on the calendar icon and select the date using the pop-up calendar, and to remove it simply highlight and delete the stored date
-
-<li><b>Discount Products - </b>an Ajax-powered input box from where you can look up products that this discount should apply to; type at least three characters that appear in the name of the product you're looking for and wait a moment for a drop-down panel with related search results to appear, then click on the name of the product to select it.
-
-<li><b>Category - </b>when you want to set the discount to apply to groups of products in one or more categories, make your selection from this list (holding down the control key on the keyboard to select multiple categories)
-
-<li><b>Manufacturer - </b>when you want to set the discount to apply to products assigned to one or more manufacturers, make your selection from this list (holding down the control key on the keyboard to select multiple manufacturer)
-</ul>
-
-<h4>Actions</h4>
-
-<ul>
-<li><b>Save - </b>saves any changes made and refreshes the page
-
-<li><b>Save & Close - </b>saves any changes made and redirects to the listing screen
-
-<li><b>Save & New - </b>saves any changes made and redirects to the page create new 
-
-<li><b>Close - </b>returns to the listing screen without saving any changes when on in edit item view
-
-<li><b>Cancel - </b>returns to the listing screen without saving any changes when on in new create item view 
-</ul>
-
-Video for Mass discount on redSHOP: <a href="https://redshop.fleeq.io/l/00a0a21oy5-y06dsinn8x">Click here</a>
-
-<hr>
-
-<!-- Product Price Discount  -->
-<h2 id="priceDiscount">Product Price Discount </h2>
-
-<hr>
-
-<h4 id="listingScreen">Product Price Discount Listing screen</h4>
-
-<img src="./manual/en-US/chapters/product-management/img/img32.png" class="example"/><br><br>
-
-<img src="./manual/en-US/chapters/product-management/img/img33.png" class="example"/>
-
-<h4>Fields:</h4>
-
-<ul>
-<li><b>Total amount - </b>the amount that the discount is worth 
-
-<li><b>Condition - </b>condition can apply for product price lower, equal, higher 
-
-<li><b>Discount Type - </b>the way the discount will be applied, either as a percentage or a total sum
-
-<li><b>Discount amount - </b>the amount will discount
-
-<li><b>Discount Start Date - </b>indicates the date when the promotional discount price should start being offered, left blank by default indicating that the discount price is on offer indefinitely; to set the date, click on the calendar icon and select the date using the pop-up calendar, and to remove it simply highlight and delete the stored date
-
-<li><b>Discount End Date - </b>indicates the date when the promotional discount price should stop being offered, left blank by default indicating that the discount price is on offer indefinitely; to set the date, click on the calendar icon and select the date using the pop-up calendar, and to remove it simply highlight and delete the stored date
-
-<li><b>Icon Publish/Unpublish - </b>view status product price discount item have apply or not 
-
-<li><b>ID - </b>order product price discount items 
-</ul>
-
-<h4>Actions:</h4>
-
-<img src="./manual/en-US/chapters/product-management/img/img34.png" class="example"/>
-
-<ul>
-<li><b>New - </b>takes you to the add discount screen where you can add a new discount to the catalog
-
-<li><b>Edit - </b>takes you to the edit product screen where you can modify an existing discount profile. The screen can be reached either by clicking on the discount name or clicking on the checkbox next to their name followed by the edit button
-
-<li><b>Delete - </b>removes the discount from the product catalog, this is a permanent delete
-
-<li><b>Publish/ Unpublish button - </b>view status product price discount item have apply or not 
-
-<li><b>Check-in - </b>will unlock any items manufacturer when someone viewing it 
-</ul>
-
-<hr>
-
-<h4 id="discountDetails">Add Product Price Discount details</h4>
-
-<img src="./manual/en-US/chapters/product-management/img/img35.png" class="example"/><br><br>
-
-<img src="./manual/en-US/chapters/product-management/img/img36.png" class="example"/>
-
-<h4>Fields:</h4>
-
-<ul>
-<li><b>Total amount - </b>the amount that the discount is worth 
-
-<li><b>Condition - </b>condition can apply for product price lower, equal, higher 
-
-<li><b>Discount Type - </b>the way the discount will be applied, either as a percentage or a total sum
-
-<li><b>Discount amount - </b>the amount that the discount is worth; enter the full price value of the discount if it is a total sum, and if it is a percentage then enter a decimal value for redSHOP to use in calculations, such as a value of 0.12 to represent 12%
-
-<li><b>Discount Start Date - </b>indicates the date when the promotional discount price should start being offered, left blank by default indicating that the discount price is on offer indefinitely; to set the date, click on the calendar icon and select the date using the pop-up calendar, and to remove it simply highlight and delete the stored date
-
-<li><b>Discount End Date -</b> indicates the date when the promotional discount price should stop being offered, left blank by default indicating that the discount price is on offer indefinitely; to set the date, click on the calendar icon and select the date using the pop-up calendar, and to remove it simply highlight and delete the stored date
-
-<li><b>Category - </b>when you want to set the discount to apply to groups of products in one or more categories, make your selection from this list (holding down the control key on the keyboard to select multiple categories)
-
-<li><b>Shopper group - </b>when you want to set the discount to apply to products assigned to one or more shopper group, make your selection from this list (holding down the control key on the keyboard to select multiple shopper group)
-
-<li><b>Publish - </b>Status of items, if it choose "Yes" it will apply discount for products satisfy conditions, when choose "No" will remove discount for product has satisfy condition
-</ul>
-
-<h4>Actions</h4>
-
-<img src="./manual/en-US/chapters/product-management/img/img37.png" class="example"/>
-
-<ul>
-<li><b>Save - </b>saves any changes made and refreshes the page
-
-<li><b>Save & Close - </b>saves any changes made and redirects to the listing screen
-
-<li><b>Save & New - </b>saves any changes made and redirects to the page create new 
-
-<li><b>Close - </b>returns to the listing screen without saving any changes when on in edit item view
-
-<li><b>Cancel - </b>returns to the listing screen without saving any changes when on in new create item view 
-</ul>
-
-Video work for Product Price Discount in redSHOP: <a href="https://redshop.fleeq.io/l/hel72wexuy-5meywvcffk">Click here</a>
-
-<hr>
-
-<h6>Last updated on September 10, 2019</h6>
+Select the required shopper group, threshold, condition, discount type and amount; categories and dates are optional. The form filters the threshold as an integer, and a product-price helper compares it to product price even though its label describes an order total. Test all applicable calculation paths and date boundaries. See [Product price discounts](chapters/discounts/product-price-discount.md).

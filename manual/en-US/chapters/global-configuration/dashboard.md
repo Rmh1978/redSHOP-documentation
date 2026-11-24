@@ -1,155 +1,65 @@
-## redSHOP Configuration - Dashboard
-This section covers configuration settings for additional links and statistic reports that are available for display in redSHOP's Main Menu. Click checkbox and save setting, the content you have clicked on the checkbox will be hidden .
+## Dashboard menu visibility
 
-<hr>
+Open redSHOP Configuration and choose **Dashboard**. The menu-hide form is built from the current redSHOP sidebar, including entries supplied by enabled integrations. Check an entry to hide it and save; clear it and save to show it again. Checking a section also checks its listed children in the current editor.
 
-### In this article you will fine:
+This is a display preference, **not an authorization control**. Configure Joomla/redSHOP permissions separately and verify a restricted account cannot access protected actions directly. Keep a configuration route available to an authorized administrator and test changes with a non-production account.
 
-<ul>
-<li><a href="#products">Products</a>
-<li><a href="#order">Order</a>
-<li><a href="#discount">Discount</a>
-<li><a href="#communication">Communication</a>
-<li><a href="#shipping">Shipping</a>
-<li><a href="#user">User</a>
-<li><a href="#import-export">Import/Export</a>
-<li><a href="#customization">Customization</a>
-<li><a href="#customer-input">Customer Input</a>
-<li><a href="#statistics">Statistics</a>
-<li><a href="#configuration">Configuration</a>
-<li><a href="#tools">Tools</a>
-<li><a href="#categories">Categories</a>
-<li><a href="#medias">Medias</a>
-</ul>
+The available entries vary with configuration, extensions and permissions. The following headings describe groups rather than promising every historical menu item is installed:
 
-<hr>
-
-### Overview Dashboard Tab Screen
-
-<img src="./manual/en-US/chapters/global-configuration/img/img78.png" class="example"/>
-
-<hr>
-
-<!-- Products -->
 <h4 id="products">Products</h4>
 
-<img src="./manual/en-US/chapters/global-configuration/img/img79.png" class="example"/>
+Product, price, manufacturer, supplier, tax, attribute and product-file navigation can appear here. See [products](chapters/product-management/products-redshop.md).
 
-<li><b>Product - </b>Products management,Products Price, Manufacturers, Suppliers, VAT/Tax Groups, VAT/Tax rates.
+<h4 id="order">Orders</h4>
 
-<hr>
+Order, status, search, quotation and other enabled order workflows can appear here. See [orders](chapters/orders/order-list.md).
 
-<!-- Order -->
-<h4 id="order">Order</h4>
+<h4 id="discount">Discounts</h4>
 
-<img src="./manual/en-US/chapters/global-configuration/img/img80.png" class="example"/>
+Discount, coupon, voucher, gift-card and promotion entries depend on installed features.
 
-<li><b>Orders - </b>Orders, Download Label, Order Statuses, Product Order Search , Quotation.
-
-<hr>
-
-<!-- Discount -->
-<h4 id="discount">Discount</h4>
-
-<img src="./manual/en-US/chapters/global-configuration/img/img81.png" class="example"/>
-
-<li><b>Discount - </b>Mass Discounts, Order Total Discounts, Product Price Discounts, Gift Card, Voucher, Coupon .
-
-<hr>
-
-<!-- Communication -->
 <h4 id="communication">Communication</h4>
 
-<img src="./manual/en-US/chapters/global-configuration/img/img82.png" class="example"/>
+Mail, newsletters and subscriptions are separate workflows. Hiding an entry does not change subscription or mailing consent.
 
-<li><b>Communication - </b>Mail , Newsletter, Newsletter Subscribers, Newstetter Statistics.
-
-<hr>
-
-<!-- Shipping -->
 <h4 id="shipping">Shipping</h4>
 
-<img src="./manual/en-US/chapters/global-configuration/img/img83.png" class="example"/>
+Shipping methods, boxes and wrapping entries may appear. See [shipping methods](chapters/shipping/shipping-methods.md).
 
-<li><b>Shipping - </b>Shipping Methods, Shipping Boxes, Wrapping Management.
+<h4 id="user">Users</h4>
 
-<hr>
+Customer records, user synchronization and shopper groups are distinct from Joomla permissions.
 
-<!-- User -->
-<h4 id="user">User</h4>
-
-<img src="./manual/en-US/chapters/global-configuration/img/img84.png" class="example"/>
-
-<li><b>User - </b>User, Add User, Synchronise Users, Shopper Groups.
-
-<hr>
-
-<!-- Import/Export -->
 <h4 id="import-export">Import/Export</h4>
 
-<img src="./manual/en-US/chapters/global-configuration/img/img85.png" class="example"/>
+Import/export visibility does not disable installed plugins or prevent authorized data access.
 
-<li><b>Import/Export - </b>Data Import/Export , XMl  Import/Export. 
-
-<hr>
-
-<!-- Customization -->
 <h4 id="customization">Customization</h4>
 
-<img src="./manual/en-US/chapters/global-configuration/img/img86.png" class="example"/>
+Templates, custom fields, text, geographical data and other configured customization tools appear as available.
 
-<li><b>Customization - </b>Custom Fields,Custom Field Group,Templates, Text Library, Catalogues, Samples, Samples Request, Customer Tags, Attribute Sets, Currencies, Countries, States, Zipcodes /  Cities.
+<h4 id="customer-input">Customer input</h4>
 
-<hr>
+Question and review entries depend on the enabled functionality.
 
-<!-- Customer Input -->
-<h4 id="customer-input">Customer Input</h4>
-
-<img src="./manual/en-US/chapters/global-configuration/img/img87.png" class="example"/>
-
-<li><b>Customer Input - </b>Question, Rating/Review
-
-<hr>
-
-<!-- Statistics -->
 <h4 id="statistics">Statistics</h4>
 
-<img src="./manual/en-US/chapters/global-configuration/img/img88.png" class="example"/>
+Menu visibility and the separate statistics collection setting are different controls. Hiding a statistics entry is not equivalent to disabling data collection or deleting existing records.
 
-<li><b>Statistics - </b>Customer Statistic, Order Statistic, Product Statistic, Total Visitors, Total Page Views, Total Turnover, Avg. order amount per customer, Top customers measured in amount of orders, Top customer measured in amount of price per order,  Top customer measured in amount spent in total, Most sold products,  Most Popular (Viewed) Products,  Newest Products,  Newest Orders.
-
-<hr>
-
-<!-- Configuration -->
 <h4 id="configuration">Configuration</h4>
 
-<img src="./manual/en-US/chapters/global-configuration/img/img89.png" class="example"/>
+Configuration and related administrative entries should remain available to authorized maintainers. Hiding their navigation does not revoke access.
 
-<li><b>Configuration - </b>redSHOP Configuration, reset template, Backend Access Management,   Global permission configuration.
-
-<hr>
-
-<!-- Tools -->
 <h4 id="tools">Tools</h4>
 
-<img src="./manual/en-US/chapters/global-configuration/img/img90.png" class="example"/>
+Check the impact and backups before running maintenance tools; hiding a link does not prevent a permitted action.
 
-<li><b>Tool - </b>Image tool,  Update files & DB.
-
-<hr>
-
-<!-- Categories -->
 <h4 id="categories">Categories</h4>
 
-<img src="./manual/en-US/chapters/global-configuration/img/img91.png" class="example"/>
+Category navigation is part of the current shop sidebar; see [categories](chapters/categories/redshop-categories.md).
 
-<hr>
+<h4 id="medias">Media</h4>
 
-<!-- Medias -->
-<h4 id="medias">Medias</h4>
+Media navigation is part of the current shop sidebar; see [media management](chapters/media/working-medias.md).
 
-<img src="./manual/en-US/chapters/global-configuration/img/img92.png" class="example"/>
-
-<hr>
-
-<h6>Last updated on August 6, 2022</h6>
+Stockroom appears when its configuration is enabled, and extensions can add sidebar entries. After saving, check the resulting menu and direct permissions with both an administrator and a restricted test account.

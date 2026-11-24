@@ -1,86 +1,32 @@
-## E-Conomic Integration
-redSHOP provides a seamless integration with the accounting system <a href="https://www.reviso.com/blog/e-conomic-uk-is-now-reviso/">e-conomic</a>
+## e-conomic Integration
 
-With the integration you can:
+The current source includes an optional `economic/economic` Marketplace plugin and redSHOP configuration for e-conomic integration. The plugin also offers a Reviso account mode. Provider API compatibility, authentication, synchronization and booking have not yet been verified for the current plugin; its connection code uses SOAP. Do not connect a live account or enable automatic booking solely on the basis of these settings.
 
-<ul>
-<li>Sync your entire product catalogue to e-conomic
-<li>Create full products of all variants in e-conomic
-<li>Sync redSHOP users as debtors in e-conomic
-<li>Automatically or manually generate invoices to send to the customer (and store owner, if desired)
-<li>Include shipping costs in invoices
-<li>Integrate with your redSHOP payment processor for accepting payment of invoices.
-</ul>
+### Prepare an isolated integration
 
-Setting up the integration requires configuration in the redSHOP Configuration, in the Integration tab, as well as installation of the e-conomic plugin for redSHOP.
+1. Confirm with the plugin distributor and accounting provider that the exact plugin version, API, Joomla/PHP versions and account type are supported. Obtain an appropriate test account and a disposable copy of the shop and database.
+2. Back up the shop and accounting test data. Restrict administrator access; do not put credentials, tokens, customer data or provider responses in screenshots, documentation or shared logs.
+3. If the approved plugin is installed, inspect it in Joomla's plugin manager. Its **Select Account** setting offers e-conomic and Reviso modes. The manifest exposes an agreement-token control for e-conomic; Reviso mode has agreement number, username and password fields. Configure only test credentials in the isolated environment and use the provider's current instructions for authorization.
+4. Review the plugin's debtor group, payment terms, layout, unit, creditor, cashbook and debtor-reference settings with the accounting administrator. Do not invent IDs or reuse production values.
+5. In redSHOP configuration, review the e-conomic settings and account-group mappings before enabling the integration. Test with disposable products, customers and orders; keep real booking and live provider connections disabled.
 
-To get it all set up follow these steps:
+### redSHOP configuration
 
-<ul>
-<li>Download & Install
-    <ul>
-    <!-- We need update the link-->
-    <li><a href="http://docs-en.helpscoutdocs.com/article/62-i-purchased-a-product-how-do-i-download-it">Download and install</a> the e-Conomic Plugin for redSHOP.
-    </ul>
+The current configuration screen contains:
 
-<li>Configure The Plugin
-    <ul>
-    <li>Go to Joomla Admin -> Extensions -> Plugin Manager, search for e-conomic to open the plugin and add your e-conomic account details:
-    <img src="./manual/en-US/chapters/e-conomic-integration/img/img4.png" class="example"/><br><br>
-    </ul>
+| Setting | Available configuration |
+|---|---|
+| e-conomic Integration | Enable or disable the integration. |
+| Choice of Book Invoice | Direct booking, manual booking, or booking on a selected order status. |
+| e-conomic book invoice number | Use the order number or sequential numbering in e-conomic. |
+| Default e-conomic Account Group | Select the default mapping; see [Account Group](chapters/e-conomic-integration/account-group.md). |
+| Store Attributes as Products in e-conomic | Choose no attribute products, attributes as products, or attributes and products. |
+| Short error messages | Controls error-message detail. Treat all diagnostics as potentially sensitive and redact them. |
 
-<li>Configure redSHOP
-    <ul>
-    <li>Go to your redSHOP Admin and click on Configuration:
-    <img src="./manual/en-US/chapters/e-conomic-integration/img/img5.png" class="example"/><br><br>
-    <li>Go to the Integration tab:
-    <img src="./manual/en-US/chapters/e-conomic-integration/img/img6.png" class="example"/><br><br>
-    <li>Set your preferences:
-    <img src="./manual/en-US/chapters/e-conomic-integration/img/img7.png" class="example"/>
-    </ul>
-</ul>
+These are source-defined options, not a guarantee of successful synchronization or booking. The administrator screen warns that finalizing drafts outside redSHOP can cause invoice-number mismatches; verify the exact workflow and numbering with the provider before use.
 
-<hr>
+### Verify before any live use
 
-### E-Conomic Setting Options
+With an approved provider-compatible test environment, check authentication and permissions; product and group mappings; debtor and tax data; shipping and discounts; draft creation, booking and numbering; retries and duplicate prevention; and reconciliation or refund handling. Compare both systems after each action. Resolve errors and review accounting consequences before considering production activation.
 
-<ul>
-<li><b>e-conomic Integration</li></b>
-This setting will set the integration on, or off. Default: Off
-
-<li><b>Choice of Book Invoice</li></b>
-Select how you would like to book invoices.  Options are:
-    <ul>
-    <li>Directly Book Invoice</li>
-    Book the invoice as soon as the order is placed.<br><br>
-    <li>Manually Book Invoice</li>
-    Allow a redSHOP Admin to manually book all invoices.<br><br>
-    <li>Book Invoice on Selected Order Status</li>
-    Select a status to book the invoices when an order reaches the defined status.
-    </ul>
-
-<li><b>e-conomic Book Invoice Number</li></b>
-Set how you would like the invoice numbers to be done in e-conomic.  Options are: 
-    <ul>
-    <li>Same as Order Number
-    <li>Sequentially in e-conomic (No match up with order number)
-    </ul>
-
-<li><b>Default e-conomic Account Group</li></b>
-Select the default account group
-
-<li><b>Store Attributes as Product in e-conomic</li></b>
-Select whether you want product attributes to be added / synced in e-conomic as products.  Option are:
-    <ul>
-    <li>No
-    <li>Store Attributes as Products in e-conomic
-    <li>Store Attributes and Products in e-conomic
-    </ul>
-
-<li><b>Short error messages</li></b>
-If set to Yes a SOAP exception message will be shown directly, otherwise it will show simple short error messages.
-</ul>
-
-<hr>
-
-<h6>Last updated on July 19, 2019</h6>
+See [Product synchronization](chapters/e-conomic-integration/sync.md) and [Setup](chapters/e-conomic-integration/setup.md).

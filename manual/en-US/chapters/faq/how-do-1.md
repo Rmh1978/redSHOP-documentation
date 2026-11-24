@@ -1,36 +1,13 @@
 ## How do I customize the AJAX add-to-cart boxes?
-You can customize the appearance of the AJAX add-to-cart boxes by adding custom CSS to your template that changes the appearance of the IDs in the following two PHP files.  You may also completely rework the layout by overriding these two template files with template overrides.  NOTE: It is not recommended that you make direct changes to these template PHP files as they will be overwritten by redSHOP updates.
 
-In /components/com_redshop/templates/rsdefaulttemplates/ajax_cart_box.php
+redSHOP uses template records for the AJAX cart box and detail box. Current default files are under `media/com_redshop/templates/ajax_cart_box/` and `media/com_redshop/templates/ajax_cart_detail_box/`; do not edit the shipped defaults directly, because an update can replace them.
 
-<pre>
-&lt;div id="ajax_cart_wrapper"&gt;
-     &lt;div id="ajax_cart_text"&gt;{ajax_cart_box_title}&lt;br/&gt;&lt;br/&gt;&lt;/div&gt;
-     &lt;div id="ajax_cart_button_wrapper"&gt;
-         &lt;div id="ajax_cart_button_inside"&gt;
-             &lt;div id="ajax_cart_continue_button"&gt;{continue_shopping_button}&lt;/div&gt;
-             &lt;div id="ajax_cart_show_button"&gt;{show_cart_button}&lt;/div&gt;
-         &lt;/div&gt;
-     &lt;/div&gt;
- &lt;/div&gt;
-</pre>
+### Select and customize a template
 
-and in /components/com_redshop/templates/rsdefaulttemplates/ajax_cart_detail_box.php
+1. On an isolated copy, enable **Enable Add to Cart lightbox (Ajax)** in the cart settings and review **Ajax Cart Template**.
+2. In redSHOP **Customization → Templates**, inspect the published template records for the relevant AJAX cart section. Preserve the existing content and configuration before making changes.
+3. Adjust the relevant template and CSS for the desired layout while retaining required redSHOP tags and controls. The default box includes `{ajax_cart_box_title}`, `{continue_shopping_button}` and `{show_cart_button}`. The detail box includes attribute, accessory and add-to-cart form template tags.
+4. Select the intended published detail template in cart settings. A product template may explicitly select a named detail template using `{ajaxdetail_template:template_name}`; otherwise the configured default is used.
+5. Test products with and without attributes, accessories and custom fields, keyboard operation, continuation to the cart and different viewport sizes. Check both the changed template and an unaffected product.
 
-<pre>
-&lt;div id="ajax-cart"&gt;
-     &lt;div id="ajax-cart-label"&gt;
-         &lt;h3&gt;Add to Cart&lt;/h3&gt;
-     &lt;/div&gt;
-     &lt;div id="ajax-cart-attr"&gt;{attribute_template:attributes}&lt;/div&gt;
-     &lt;div id="ajax-cart-access"&gt;{accessory_template:accessory}&lt;/div&gt;
-     {if product_userfield}
-     &lt;div id="ajax-cart-user"&gt;{userfield-test}&lt;/div&gt;
-     {product_userfield end if}
-     &lt;div id="ajax-cart-label"&gt;{form_addtocart:add_to_cart2}&lt;/div&gt;
- &lt;/div&gt;
-</pre>
-
-<hr>
-
-<h6>Last updated on January 4, 2016</h6>
+The current loader queries published redSHOP template records and reads their associated files. Do not assume that old `/components/com_redshop/templates/rsdefaulttemplates/` paths or a Joomla template override will be used. The precise edit, override and update-preservation workflow must be verified for the installed version.

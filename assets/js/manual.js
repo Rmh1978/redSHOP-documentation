@@ -66,6 +66,7 @@ window.addEvent('domready', function() {
 	var urlParts = document.URL.split('?', 2);
 	state = {};
 	here = urlParts[0];
+	here = here.replace(/index\.html$/i, '');
 
 	if (urlParts.length > 1)
 	{

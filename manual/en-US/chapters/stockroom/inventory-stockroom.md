@@ -1,69 +1,18 @@
-## Invetory for all Stockroom
-List of the Stockroom links under the Stockroom menu will take you to the Stockroom Management view in redSHOP. Here you will find a searchable / filterable list of stockroom for your shop, able to export, print and update orders.
+## Inventory for all stockrooms
 
-<hr>
+The inventory view lists quantities per published stockroom. Back up stock data and use disposable products and mock orders when testing inventory changes.
 
-### In this article you will fine
+<h2 id="listingScreen">Inventory list</h2>
+<h4 id="field">Filters and quantities</h4>
 
-<ul>
-<li><a href="#listingScreen">Overview of Inventory Listing Screen</a>
-    <ul>
-    <li><a href="#field">Field</a>
-    <li><a href="#action">Action</a>
-    </ul>
-</ul>
+Search by product name or number, filter by category, and select product, property or subproperty inventory. Each published stockroom has separate quantity and preorder-stock columns. A preorder column also displays already ordered preorder quantity when present.
 
-<hr>
+The totals shown are calculated from the rows in the current result page, not necessarily every matching product across all pages. Confirm totals independently before using them for reconciliation.
 
-<ul>
-<li>Firstly, you have one web-site use Joomla and installed redSHOP component. Access administrator web-site page by (username/password) has been provided.
-<img src="./manual/en-US/chapters/stockroom/img/administrator.png" class="example"/><br><br>
+<h4 id="action">Saving, resetting and output</h4>
 
-<li>Secondly, you click on Components on main menu and then select on "redSHOP" tabs.
-<img src="./manual/en-US/chapters/stockroom/img/img2.png" class="example"/><br><br>
+Edit the quantity or preorder quantity and use a save control in a stockroom column heading. Reopen the view and verify each saved value. A product editor can also expose stockroom quantities when configured.
 
-<li>Next, Webpage will display overview page administrator of redSHOP, you click on "Stockroom" tab and select on "Inventory for all stockrooms" item.
-<img src="./manual/en-US/chapters/stockroom/img/img3.png" class="example"/>
-</ul>
+**Reset** is not a harmless display reset: the current model sets both preorder stock and already ordered preorder quantity to zero for the selected stockroom and item. Do not use it on live orders without understanding the impact and taking a backup.
 
-<hr>
-
-<!-- Overview Inventory for all Stockroom -->
-<h2 id="listingScreen">Overview Inventory for all Stockroom</h2>
-<img src="./manual/en-US/chapters/stockroom/img/img4.png" class="example"/>
-
-<h4 id="field">Field</h4>
-
-<ul>
-<li><b>Search field - </b>search for Name product, SKU.
-
-<li><b>Filter field - </b>filter all product list as: name, SKU, Category, Product, Attribute value, Sub attribute value.
-
-<li><b>Product Id -  </b>the unique ID given to each product.
-
-<li><b>Product Name - </b>the name of the product, as it will appear on the front-end.
-
-<li><b>Default - </b>Quantity of stockroom for each product.
-
-<li><b>Preorder Stock default - </b>Quantity of stockroom for each product when config.
-
-<li><b>Total - </b>count all quantity product in shop.
-</ul>
-
-<hr>
-
-<h4 id="action">Action</h4>
-
-<img src="./manual/en-US/chapters/stockroom/img/img5.png" class="example"/><br><br>
-
-<ul>
-<li><b>Export Data -  </b>User exports .csv file to manage each of stockrooms: product id, product name, quantity stockroom...
-<img src="./manual/en-US/chapters/stockroom/img/img6.png" class="example"/><br><br>
-
-<li><b>Print Data - </b>print review all the data of stockrooms.
-<img src="./manual/en-US/chapters/stockroom/img/img7.png" class="example"/><br><br>
-</ul>
-
-<hr>
-
-<h6>Last updated on October 9, 2019</h6>
+The toolbar provides **Print Data** and an **Export Data** link. Source includes a CSV view and column definitions, but actual CSV routing, output, filters and permissions have not been verified on Joomla 5/6. Test export with non-sensitive disposable inventory before relying on it; do not assume it exports all pages.

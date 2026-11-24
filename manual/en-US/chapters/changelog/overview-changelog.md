@@ -1,6 +1,8 @@
 ## Changelog
 Release notes about updates.
 
+> **Historical archive:** The articles below cover selected releases through 3.0.2 and are not a complete release history. For the current Core source changelog, see the [redSHOP Core changelog](https://github.com/Rmh1978/redSHOP-rmh/blob/develop/CHANGELOG.md). The development branch can contain unreleased changes; verify a release against its published package and release notes.
+
 - [redSHOP 1.5.0.6](chapters/changelog/redshop-1.5.0.6.md)
 - [redSHOP 2](chapters/changelog/redshop-2.md)
 - [redSHOP 2.0.2](chapters/changelog/redshop-2.0.2.md)

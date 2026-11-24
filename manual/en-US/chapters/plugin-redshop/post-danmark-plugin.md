@@ -1,50 +1,21 @@
-## Post Danmark Plugin
+## PostNord pickup points and shipment labels
 
-After download Plugin redSHOP PostDanmark
-<img src="./manual/en-US/chapters/plugin-redshop/img/img123.png" class="example"/><br><br>
+The current source contains two separate plugins: `redshop_shipping/postnord_pickuppoint` for shipping rates and pickup-point selection, and `redshop_integrations/postnord_shipment` for shipment and label requests. Installing one does not configure the other. The older PostDanmark screenshots and setup are not instructions for these plugins.
 
-[How to install module/plugin on Joomla administrator?](chapters/module-redshop/install-module-plugin.md)
+Provider compatibility and checkout have not been verified here. Confirm support for the exact plugin, Joomla/PHP and provider API versions before use; obtain approved test credentials and use a disposable shop and orders. Keep credentials and customer data out of shared logs.
 
-<hr>
+### Configure pickup-point shipping
 
-<ul>
-<li>User field 2 fill PostDanmark Consumer ID, Google Map API Key. Choose status is Enabled to display plugin on front end. Then click on Save button</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img124.png" class="example"/><br><br>
+1. Install the approved pickup-point extension if it is not already present, and enable it in Joomla's plugin manager.
+2. Its settings include the PostNord API key, whether to use a map, a Google Maps key, a default postal code and whether Pacsoft label creation is allowed. Check current provider and map-key requirements; the form alone does not establish that the services work.
+3. Configure an appropriate redSHOP shipping method and rates, including applicable destinations, prices, VAT and delivery type. See [Shipping Methods](chapters/shipping/shipping-methods.md).
+4. On an isolated storefront, test the applicable checkout template, address and rate combinations. Select a pickup point, complete a disposable order and inspect the saved pickup information. Test a missing postcode, no results and service errors, as well as mobile and keyboard operation.
 
-<li>User create shipping Shipping PostDanMark items have name "Demo Shipping Post Danmark". Then click on View site icon</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img125.png" class="example"/><br><br>
+### Configure shipment labels
 
-<li>User click on Product on Menu. After webpage displayed all category, user choose category </li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img126.png" class="example"/><br><br>
+1. Separately install and enable the approved PostNord shipment integration plugin. Its configuration includes API key, sandbox switch, customer number and sender address, postal code, city, contact, phone and email.
+2. Review [Integration configuration](chapters/global-configuration/integration.md), including manual versus automatic label generation and the selected order status. Check that the selected shipping method permits label creation. The current label path reads the sender and customer data from the shipment plugin rather than relying solely on older Pacsoft form fields.
+3. Use a provider-approved sandbox and disposable order to check the resulting recipient, sender, weight, service, pickup point and product detail before attempting a label. A label request can create an external shipment: do not run it against a live account without approval.
+4. Verify the returned label and tracking number, failed requests, duplicate attempts, status transitions and any tracking email or SMS options. Reconcile results with the provider before enabling automatic generation.
 
-<li>Then, user click on Add to cart any product in category selected</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img127.png" class="example"/><br><br>
-
-<li>Webpage will display "Product has been added to your cart". Then user clicks on Cart on Menu</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img128.png" class="example"/><br><br>
-
-<li>User need login on site</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img129.png" class="example"/><br><br>
-
-<li>After login, User clicks on Checkout button</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img130.png" class="example"/><br><br>
-
-<li>Webpage show Bill to Information page and user choose item Shipping just create and click on "Choose a point of delivery" button</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img131.png" class="example"/><br><br>
-
-<li>User click a red point. And Click OK </li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img132.png" class="example"/><br><br>
-
-<li>User choose Payment method and click on Checkout button</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img133.png" class="example"/><br><br>
-
-<li>User select Accept checkbox and click on "Checkout: final step" button to checkout cart</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img134.png" class="example"/><br><br>
-
-<li>Webpage will display order receipt detail with shipping method</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img135.png" class="example"/><br><br>
-</ul>
-
-<hr>
-
-<h6>Last updated on August 19, 2019</h6>
+The plugin has a sandbox setting, but its presence is not proof that a particular provider account supports the test endpoint. Resolve provider and environment prerequisites before enabling production use.

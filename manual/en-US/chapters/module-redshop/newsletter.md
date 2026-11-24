@@ -1,28 +1,7 @@
-## redSHOP - Newsletter
+## redSHOP Newsletter module
 
-[How to install module/plugin on Joomla administrator?](chapters/module-redshop/install-module-plugin.md)
+The optional `mod_redshop_newsletter` site module displays name/email fields and Subscribe and Unsubscribe controls. [Install and configure the module](chapters/module-redshop/install-module-plugin.md), select its position and menu assignment, and optionally choose a redirection menu item.
 
-<hr>
+The module is separate from checkout. Configure Joomla mail and [newsletter settings](chapters/global-configuration/newsletter.md), then exercise both actions with disposable addresses and a mail sink. Test guest and logged-in users, redirects, privacy and subsequent recipient selection.
 
-<ul>
-<li>In tab "Module" user fill Position, select Status and click on "Save" button </li>
-<img src="./manual/en-US/chapters/module-redshop/img/img59.png" class="example"/><br><br>
-
-<li>In tab "Menu Assignment" select Module Assignment is "On all pages" or customized by the site </li>
-<img src="./manual/en-US/chapters/module-redshop/img/img60.png" class="example"/><br><br>
-
-<li>Go to Config Joomla to setup Mail Settings: System → Global Configuration → Server:</li>
-<img src="./manual/en-US/chapters/module-redshop/img/img61.png" class="example"/><br><br>
-
-<li>And setup Mail in "Mail Setting"</li>
-<img src="./manual/en-US/chapters/module-redshop/img/img62.png" class="example"/><br><br>
-
-<li>Go to front end and preview product. Add product to cart. After final checkout,  Click "Subscribe" and check mail:</li>
-<img src="./manual/en-US/chapters/module-redshop/img/img63.png" class="example"/><br><br>
-
-<img src="./manual/en-US/chapters/module-redshop/img/img64.png" class="example"/><br><br>
-</ul>
-
-<hr>
-
-<h6>Last updated on August 19, 2019</h6>
+The inspected signup path can publish a subscriber before confirmation. Do not rely on the confirmation switch alone for consent or send to real subscribers until the defect and consent workflow are independently resolved. See [Newsletter subscribers](chapters/communication/newletters-subcribers.md).

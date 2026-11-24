@@ -1,30 +1,7 @@
-## redSHOP - Price Filtering
+## redSHOP Price Filtering module
 
-[How to install module/plugin on Joomla administrator?](chapters/module-redshop/install-module-plugin.md)
+The optional `mod_redshop_pricefilter` site module provides a price-range control and product display. [Install and configure the module](chapters/module-redshop/install-module-plugin.md), assign its position and menu pages, and choose the range and relevant categories.
 
-<hr>
+The manifest provides minimum and maximum slider values, multiple categories, product count, image and thumbnail dimensions, price, read-more, add-to-cart and discount-price display options. The selected range is read from the request and Joomla user state. Do not assume that an empty category selection or a displayed price proves eligibility or access.
 
-<ul>
-<li>Make sure install module redSHOP - Price Filtering is successful.
-
-<li>Config this module: Extensions → Module → search "redSHOP - Price Filtering" with don't choose category
-<img src="./manual/en-US/chapters/module-redshop/img/img8.png" class="example"/><br><br>
-
-<li>Go to frontend and preview product. Web page will show module "redSHOP - Price Filtering" with all product on all category:
-<img src="./manual/en-US/chapters/module-redshop/img/img9.png" class="example"/><br><br>
-
-<li>Config this module: Extensions → Module → search "redSHOP - Price Filtering" with choose 1 category:
-<img src="./manual/en-US/chapters/module-redshop/img/img10.png" class="example"/><br><br>
-
-<li>Go to frontend and preview product. Web page will show module "redSHOP - Price Filtering" with all products on this category:
-<img src="./manual/en-US/chapters/module-redshop/img/img11.png" class="example"/><br><br>
-
-<li>Config this module: Extensions → Module → search "redSHOP - Price Filtering" with choose all category has on local:
-<img src="./manual/en-US/chapters/module-redshop/img/img12.png" class="example"/><br><br>
-
-<li>Go to frontend and preview product. Web page will show module "redSHOP - Price Filtering" with all products on all category
-</ul>
-
-<hr>
-
-<h6>Last updated on August 20, 2019</h6>
+Use disposable products to test category selection, price-range boundaries, shopper groups, currencies, VAT, discounts, pagination and add-to-cart behavior. Confirm the results and prices match the configured shop before enabling the module for customers.

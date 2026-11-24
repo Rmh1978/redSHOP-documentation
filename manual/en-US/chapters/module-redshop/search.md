@@ -1,30 +1,7 @@
-## redSHOP - Search
+## redSHOP Search module
 
-[How to install module/plugin on Joomla administrator?](chapters/module-redshop/install-module-plugin.md)
+The optional site module `mod_redshop_search` provides product search controls. [Install and configure the module](chapters/module-redshop/install-module-plugin.md), assign a position and menu pages, and publish it on a test shop.
 
-<hr>
+Its current manifest includes a search template, products per page, optional AJAX search and result count, ItemID, default search type, category/manufacturer visibility, category-name and custom-field search options, and excluded categories. The source includes search types such as product name, number, description and virtual product number.
 
-<ul>
-<li>Make sure install module redSHOP Search is successful </li>
-
-<li>Enable this module, select position and select Module Assignment: Extension → Module → search "redSHOP Search" </li>
-<img src="./manual/en-US/chapters/module-redshop/img/img35.png" class="example"/><br><br>
-
-<li>User go on front-end and find redSHOP Search </li>
-
-<li>User go on product list and select option search on Product search, Select Categories, Select Manufacturer then fill in key work is product name in scope user select and click "Search" button </li>
-
-<li>Example: User select Product search: Product Name and Product Number,</li>
-    <ul>
-    <li>select Categories: CCKand e-commerce
-    <li>Key word: redshop then click "Search" button
-    </ul>
-<img src="./manual/en-US/chapters/module-redshop/img/img36.png" class="example"/><br><br>
-
-<li>Webpage show product have name redshop </li>
-<img src="./manual/en-US/chapters/module-redshop/img/img37.png" class="example"/><br><br>
-</ul>
-
-<hr>
-
-<h6>Last updated on August 20, 2019</h6>
+Test ordinary and AJAX search, category/manufacturer filters, custom fields, excluded and unpublished products, access restrictions, pagination and routes using representative disposable products. An exclusion or hidden control is not a substitute for access control. Actual output and available controls depend on the selected template and module options.

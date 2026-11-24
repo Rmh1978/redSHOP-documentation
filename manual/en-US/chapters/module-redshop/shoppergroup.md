@@ -1,22 +1,5 @@
-## redSHOP - Shopper group Logo
+## redSHOP Shopper Group Logo module
 
-[How to install module/plugin on Joomla administrator?](chapters/module-redshop/install-module-plugin.md)
+The optional `mod_redshop_shoppergrouplogo` site module displays a shopper-group logo. [Install and configure the module](chapters/module-redshop/install-module-plugin.md), assign its position and pages, and set thumbnail width and height.
 
-<hr>
-
-<ul>
-<li>Make sure install module redSHOP - Shoppergroup Logo is successed.</li>
-
-<li>Config this plugin: Extensions → Module → search "redSHOP - Shoppergroup Logo"</li>
-<img src="./manual/en-US/chapters/module-redshop/img/img68.png" class="example"/><br><br>
-
-<li>Create Shopper Groups New with name "Private demo test"  and choose file of Shopper Group Logo</li>
-<img src="./manual/en-US/chapters/module-redshop/img/img69.png" class="example"/><br><br>
-
-<li>Create User New and make sure choose Shopper Groups is "Private demo test". Go to front end and webpay will display logo of Shopper Group</li>
-<img src="./manual/en-US/chapters/module-redshop/img/img70.png" class="example"/><br><br>
-</ul>
-
-<hr>
-
-<h6>Last updated on August 20, 2019</h6>
+The template looks for the configured default portal logo for guests and the shopper-group portal logo for logged-in users. Configure the relevant logo files and shopper groups in redSHOP, then test guests and users in different groups on a disposable shop. Missing files result in no image in the inspected template.

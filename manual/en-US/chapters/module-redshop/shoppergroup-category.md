@@ -1,21 +1,7 @@
-## redSHOP - Shoppergroup Category ACL
+## redSHOP Shopper Group Category module
 
-[How to install module/plugin on Joomla administrator?](chapters/module-redshop/install-module-plugin.md)
+The optional `mod_redshop_shoppergroup_category` site module displays a Joomla menu with category-related filtering. [Install and configure the module](chapters/module-redshop/install-module-plugin.md), select the menu, start/end levels, child-item behavior, position and page assignment.
 
-<hr>
+The helper checks portal category permission for category links when Portal Shop is enabled. Hiding a menu item is not access control: independently verify category, product and direct URL access for each group. The helper also uses a cache key that is not assigned in the inspected function; its effect on per-user menu results must be verified before use. Disabling the module's Joomla caching option alone is not evidence that the helper's separate cache is safe.
 
-<ul>
-<li>Make sure install module redSHOP Shopper Group Category ACL is successful </li>
-
-<li>User enable module, select position and select Module Assignment redSHOP Shopper Group Category ACL: Extension → Module → search redSHOP Shopper Group Category ACL</li>
-<img src="./manual/en-US/chapters/module-redshop/img/img38.png" class="example"/><br><br>
-
-<li>User go on Front-end and user see Module redSHOP Shopper Group Category ACL (it same mainmenu) </li>
-<img src="./manual/en-US/chapters/module-redshop/img/img39.png" class="example"/><br><br>
-
-<img src="./manual/en-US/chapters/module-redshop/img/img40.png" class="example"/><br><br>
-</ul>
-
-<hr>
-
-<h6>Last updated on August 20, 2019</h6>
+Test menu routing, menu access levels, group changes and direct URLs with separate disposable accounts and with the site's actual cache configuration before enabling this module.

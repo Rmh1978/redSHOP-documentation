@@ -1,21 +1,5 @@
-## redSHOP - Shoppergroup Product
+## redSHOP Shopper Group Product module
 
-[How to install module/plugin on Joomla administrator?](chapters/module-redshop/install-module-plugin.md)
+The optional `mod_redshop_shoppergroup_product` site module obtains products from categories associated with the visitor's shopper group. [Install and configure the module](chapters/module-redshop/install-module-plugin.md), select a position and pages, and configure product count, image dimensions, price, VAT, description, read-more, add-to-cart and discount display options as needed.
 
-<hr>
-
-<ul>
-<li>Make sure install module redSHOP - ShopperGroup Product is successful </li>
-
-<li>User enable module, select position and select Module Assignment redSHOP - ShopperGroup Product: Extension → Module → search redSHOP - ShopperGroup Product </li>
-<img src="./manual/en-US/chapters/module-redshop/img/img71.png" class="example"/><br><br>
-
-<li>User go on Front-end and view module redSHOP - ShopperGroup Product</li>
-
-<li>Module redSHOP - ShopperGroup Product show products  </li>
-<img src="./manual/en-US/chapters/module-redshop/img/img72.png" class="example"/><br><br>
-</ul>
-
-<hr>
-
-<h6>Last updated on August 20, 2019</h6>
+Create representative categories, products and shopper groups on a test shop. Check guest and logged-in users, group changes, empty groups, unpublished products, displayed prices and cart behavior. A filtered module listing is not a replacement for independently testing access to direct product and category URLs.

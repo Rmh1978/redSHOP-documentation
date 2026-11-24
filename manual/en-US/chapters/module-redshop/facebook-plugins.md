@@ -1,23 +1,5 @@
-## redWEB - Facebook plugins
+## redWEB Facebook Plugins module
 
-[How to install module/plugin on Joomla administrator?](chapters/module-redshop/install-module-plugin.md)
+The optional `mod_redweb_facebook_plugins` site module contains settings for an application ID, API version, language and comments, video, like or share-button layouts. [Install and configure the module](chapters/module-redshop/install-module-plugin.md) only after confirming the current provider requirements and your site's consent and privacy obligations.
 
-<hr>
-
-<ul>
-<li>Make sure install module redSHOP - Facebook Plugin is successful.</li>
-
-<li>User enable module, select position and select Module Assignment redSHOP - Facebook Plugin: Extension → Module → search redSHOP - Facebook Plugin </li>
-<img src="./manual/en-US/chapters/module-redshop/img/img78.png" class="example"/><br><br>
-
-<li>User fill in data on field AppID: "966242223397117" </li>
-
-<li>User go on Front-end and find module redWEB - Facebook Plugins </li>
-<img src="./manual/en-US/chapters/module-redshop/img/img79.png" class="example"/><br><br>
-
-<img src="./manual/en-US/chapters/module-redshop/img/img80.png" class="example"/><br><br>
-</ul>
-
-<hr>
-
-<h6>Last updated on August 20, 2019</h6>
+The manifest's default API version is historical and is not evidence that the provider still supports it. Check the chosen provider feature, domains, accessibility and consent behavior on a test site with an authorized test application; do not copy old example application IDs into production. Provider compatibility and real external requests have not been verified here.

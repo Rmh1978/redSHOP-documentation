@@ -1,12 +1,12 @@
 ## Account Group
-After we have configured the initial settings in "redSHOP Configuration", the next step is create account groups in e-conomic, so we can assign an account group to a product in redshop and e-conomic. redSHOP by default has a default account group as below image (change it based on your real information)
 
-<img src="./manual/en-US/chapters/e-conomic-integration/img/img1.png" class="example"/><br><br>
+An e-conomic account group in redSHOP holds accounting mappings. The current account-group editor contains a name, VAT and non-VAT account numbers, discount and shipping account numbers for both cases, a discount product number and a published state. The product editor has an e-conomic account-group selector; redSHOP configuration also has a default group.
 
-To create a new one:  click on left menu item "Add e-conomic Product Group", or click on "New" button at the top toolbar, you will be redirected to the new/edit landing page, as below screenshot:
+### Configure a mapping
 
-<img src="./manual/en-US/chapters/e-conomic-integration/img/img2.png" class="example"/>
+1. Work on an isolated copy with an approved test accounting account. Ask the accounting administrator for the correct test account numbers and product identifiers.
+2. Open the account-group management screen in redSHOP and inspect existing groups before creating one. Enter a name and the required account and discount-product fields; choose the published state and save.
+3. Review the default e-conomic account group in configuration and the group selected on relevant products. Do not assume the default or sample values match your chart of accounts.
+4. With disposable data, verify product groups, taxable and non-taxable lines, discounts and shipping in the accounting test system. Compare the resulting draft or test booking against the expected mapping.
 
-<hr>
-
-<h6>Last updated on August 12, 2020</h6>
+The editor and fields exist in current source, but actual provider synchronization and accounting outcomes have not been verified. See [e-conomic Integration](chapters/global-configuration/e-conomic-integration.md) before enabling the integration.

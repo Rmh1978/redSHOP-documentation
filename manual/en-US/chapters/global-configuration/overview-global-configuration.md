@@ -1,5 +1,5 @@
 ## Global Configuration
-All of the configuration options.
+Open **Components → redSHOP → Configuration** in Joomla administration. The start guide lists current configuration groups, including Design Style and Performance. Back up before changing an existing shop, and test payment, tax, shipping and checkout settings on an isolated copy.
 
 - [redSHOP Configuration - Overview - START HERE!](chapters/global-configuration/start-here.md)
 - [redSHOP Configuration - General](chapters/global-configuration/general.md)

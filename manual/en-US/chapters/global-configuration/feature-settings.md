@@ -1,137 +1,29 @@
-## redSHOP Configuration - Feature Settings
-The "Features" tab of redSHOP configuration includes the settings for the display of"Ratings", "Comparison" and "Stockroom".
+## Feature settings
 
-<hr>
+Open redSHOP Configuration and choose **Feature Settings**. Configure only features the shop uses, and test changes with disposable data and appropriately restricted accounts.
 
-### In this article you will fine:
+<h2 id="rating">Rating and reviews</h2>
 
-<ul>
-<li><a href="#rating">Rating</a>
-<li><a href="#comparison">Comparison</a>
-<li><a href="#inline-edit">Inline Edit</a>
-<li><a href="#wishlist">Wishlist</a>
-<li><a href="#import">Import/Export</a>
-<li><a href="#stockroom">Stockroom</a>
-</ul>
+Set the completion message, number of favoured reviews, review thumbnail width and height, and whether login is required to submit a review. The inspected controller checks the login setting. Test guest and registered submission, moderation, images and the active review templates; do not assume a hidden form prevents direct access.
 
-<hr>
+<h2 id="comparison">Product comparison</h2>
 
-### Overview Feature Settings Tab Screen
+Enable comparison, then configure the maximum number of products, category or global comparison, default comparison template and thumbnail dimensions. In category mode the inspected product comparison view requests the category's comparison template. Test products from the same and different categories, the limit, template output and mobile layout. The login-required field above belongs to reviews, not this comparison group.
 
-<img src="./manual/en-US/chapters/global-configuration/img/img20.png" class="example"/>
+<h2 id="inline-edit">Inline editing</h2>
 
-<hr>
+Enable or disable inline editing for supported administrator list fields. The setting is consulted by, among others, category, coupon, voucher and discount list views; it does not imply that every field is editable inline. Check field permissions and locked records using a restricted account.
 
-<!-- Rating -->
-<h2 id="rating">Rating</h2>
-
-<img src="./manual/en-US/chapters/global-configuration/img/img38.png" class="example"/>
-
-<ul>
-<li><b>Rating/Review completed message - </b>The message that appears when a customer has completed writing a review for a product on the product's details page. More on Customer Reviews in the Marketing section.
-
-<li><b>Number favoured reviews- </b>The number of reviews that should be displayed in redSHOP's "Reviews" module.
-
-<li><b>Login Required - </b>Sets whether or not guests may write reviews.
-<li><b>Available options: </b>No, Yes
-</ul>
-
-<hr>
-
-<!-- Comparison -->
-<h2 id="comparison">Comparison</h2>
-
-<img src="./manual/en-US/chapters/global-configuration/img/img39.png" class="example"/>
-
-<ul>
-<li><b>Login Required - </b>Sets whether or not guests may write reviews.
-<li><b>Available options: </b>No, Yes
-
-<li><b>Max. No. of Products to Compare - </b>The number of products that a customer can compare at the same time. Customers can compare their products (the number of which can be compared limited by this value) by either using the "Compare" link available within the product catalog via template tag or using redSHOP's Product Compare module. This feature requires that "Enable Product Comparison" be set to "Yes" in order for customers to add products for comparison.
-
-<li><b>Comparison can be done - </b>Sets the categories within the product catalog from which products can be added and compared to each other. The shop administrator can select from two settings: 
-    <ul>
-    <li><b>Category - </b>products can only be compared against other products from within the same category
-    <li><b>Globally - </b>products can be compared against other products from any category
-    </ul>
-It is possible to assign specific product comparison templates to whichever categories the shop administrator would like to assign. This is to allow for comparison templates that are specific to the products within those categories, such as one template for comparing camera and another template for comparing garden tools. If "Category" is selected, the default template selected in the Global Config "Product Comparison Template" will be used for display comparisons, unless the category has been assigned a specific template, in which case that template will be used for displaying comparisons of products within that category.  
-<li><b>Available options: </b>Category, Globally
-
-<li><b>Product Comparison Template - </b>The default template that should be used to display product details side by side when a customer has added products for comparison and accesses the "Product Comparison" view. The shop administrator can select from the available list of templates in the Templates section belonging to the "Compare Product" section type. This feature requires that "Enable Product Comparison" be set to "Yes" in order for customers to access the template on the front end. 
-
-<li><b>Compare Product Thumb: </b>Settings for width/height of the compare products thumb image
-</ul>
-
-<hr>
-
-<!-- Inline Edit -->
-<h2 id="inline-edit">Inline Edit</h2>
-
-<img src="./manual/en-US/chapters/global-configuration/img/img40.png" class="example"/>
-
-<ul>
-<li><b>Enable : Available options: </b>No, Yes
-</ul>
-
-<hr>
-
-<!-- Wishlist -->
 <h2 id="wishlist">Wishlist</h2>
 
-<img src="./manual/en-US/chapters/global-configuration/img/img41.png" class="example"/>
+Enable the wishlist and choose whether login is required. The separate wishlist-list setting enables a list-based display; it is not a login requirement. Both controls are conditional on wishlist enablement in the form. Test guest and registered sessions, privacy and the active templates before using this feature.
 
-<ul>
-<li><b>Enable Wish List : Available options:</b> No, Yes
+<h2 id="import">Import/Export settings</h2>
 
-<li><b>Wishlist Login Required: Available options:</b> No, Yes
+Configure minimum and maximum import file size in **bytes**, allowed MIME types and extensions, and the maximum lines per split file. The inspected import view and import plugin use at least 10 lines per chunk even when a smaller value is entered. These controls do not replace server upload limits or permission checks. See [data import](chapters/import-export/data-import.md) and [data export](chapters/import-export/data-export.md); back up and test with non-sensitive data.
 
-<li><b>Enable Wishlist List: Available options:</b> No, Yes
-</ul>
+<h2 id="stockroom">Stockroom</h2>
 
-<hr>
+Enable stockroom, choose a default stockroom, and configure blank-as-infinite behavior, stock-image dimensions, out-of-stock imagery and low-stock notifications/threshold. The inspected quantity helper treats a missing quantity as a large sentinel when blank-as-infinite is enabled, otherwise as zero; do not use this option without testing actual availability and order behavior.
 
-<!-- Import/Export -->
-<h2 id="import">Import/Export</h2>
-
-<img src="./manual/en-US/chapters/global-configuration/img/img42.png" class="example"/>
-
-<ul>
-<li><b>Min file size: </b>The min file size can import/export
-
-<li><b>Max file size: </b>The max file size can import/export
-
-<li><b>Allowed file mime: </b>File types can be import/export
-
-<li><b>Allowed file extension: </b>File types extension is allowed
-
-<li><b>Max Line: </b>Enter max line in split files
-</ul>
-
-<hr>
-
-<!-- Stockroom  -->
-<h2 id="stockroom">Stockroom </h2>
-
-[<b> Stockroom in menu redSHOP administrator </b>](chapters/stockroom/overview-stockroom.md)
-
-<img src="./manual/en-US/chapters/global-configuration/img/img43.png" class="example"/>
-
-<ul>
-<li><b>Use Stockroom: </b>Available options: No, Yes
-
-<li><b>Set Stock as Infinite (Leave blank for infinite stock): Available options: </b>No, Yes
-
-<li><b>Alert below amount number:</b>
-
-<li><b>Default Stockroom -</b> dropdown of available templates.  Default is the stock option.
-
-<li><b>Use Out of Stock Image:</b> Available options: No, Yes
-
-<li><b>Enable Stockroom Notification:</b> Available options: No, Yes
-
-<li><b>Default Stock Amount Image Width/Height: </b>
-</ul>
-
-<hr>
-
-<h6>Last updated on September 3, 2019</h6>
+Test stock deductions, reservations, preorder, attribute stock and notifications with disposable products. See [stockroom](chapters/stockroom/overview-stockroom.md).

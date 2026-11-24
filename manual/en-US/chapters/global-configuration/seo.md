@@ -1,190 +1,43 @@
-## redSHOP Configuration - SEO
-This section covers configuration settings regarding the handling of search-engine friendly URLs (SEF) for all links related to redSHOP and its product catalog. These include specifying the details that appear in generated SEF URLs, the auto-generation of metadata for pages which have not specified metadata, and the "templates" that are used (assisted by tags) to generate default metadata for categories, products and manufacturers. The controls are grouped together into four sections: "General", "Categories", "Products", and "Manufacturers".
+## SEO configuration
 
-<hr>
+Open redSHOP Configuration and choose **SEO**. Before changing routes on a live shop, back up configuration and plan redirects. Test Joomla SEF settings, published menu items, multilingual routes and canonical URLs on an isolated copy.
 
-### In this article you will fine:
-
-<ul>
-<li><a href="#general">General</a>
-<li><a href="#category">Category</a>
-<li><a href="#products">Products</a>
-<li><a href="#manufacturer">Manufacturer</a>
-<li><a href="#tags">Available SEO Tags</a>
-    <ul>
-    <li><a href="#tags1">Available Tags for Page Titles</a>
-    <li><a href="#tags2">Available Tags for Headings</a>
-    <li><a href="#tags3">Available Tags for Page Descriptions</a>
-    <li><a href="#tags4">Available Tags for Keywords</a>
-    </ul>
-</ul>
-
-<hr>
-
-### Overview SEO Tab Screen
-
-<img src="./manual/en-US/chapters/global-configuration/img/img68.png" class="example"/>
-
-<hr>
-
-<!-- General -->
 <h2 id="general">General</h2>
 
-<img src="./manual/en-US/chapters/global-configuration/img/img69.png" class="example"/>
+The form provides product-number and ID/name SEF options, category and category-tree inclusion, automatic metadata and an SEO language field. Test generated URLs and language output with your actual Joomla menus; entering a language value alone is not proof that multilingual routing is configured.
 
-<ul>
-<li><b>Enable SEF Product Numbers - </b>Sets whether product numbers should be included when generating SEF URLs for product details pages.  More information is available in the "SEO" section. 
-<br><b>Available options: </b>Yes, No
+The form also exposes default menu-item and alias fields for account, billing/shipping addresses, cart, checkout, gift card, manufacturers, order detail, orders, quotation, registration and wishlist. Select appropriate published frontend menu items and verify each route and access rules. The inspected form updates alias fields from the selected menu on load and change, so do not assume a manually entered different alias will survive reopening and saving.
 
-<li><b>Generate Joomla SEF Url by - </b>Sets whether SEF URLs, when Joomla! has been selected to handle generation of SEF URLs, should be generated using the ID or the Name of the product / category / manufacturer when browsing the product catalog.
-<br><b>Available options: </b>ID, Name
-
-<li><b>Category in SEF Url - </b>Sets whether category names should be included when generating SEF URLs for pages within the product catalog that involve categories, such as category and product details pages. An example of a URL when this setting has been set to "Yes" looks like this: .................................. More information is available in the "SEO" section. 
-<br><b>Available options: </b>Yes, No
-
-<li><b>Auto generated Meta Data - </b>Sets whether redSHOP should automatically generate meta data for category, manufacturer and product detail pages if they do not already have meta data values assigned to them. The meta data generated includes page titles, page headings, page descriptions and meta keywords. More information is available in the "SEO" section. 
-<br><b>Available options: </b>Yes, No
-
-<li><b>SEO Language - </b>The language that SEO generated content (such as metadata and SEF URLs) will be presented in. The default language set here is English, indicated by "en-GB", but the shop administrator should enter the language code for the preferred language, as it is written for Joomla! language packs, however the language pack that the code refers to must be installed and enabled before redSHOP can use it. More information on language-related settings is available in the "Language Support" section.
-</ul>
-
-<hr>
-
-<!-- Category -->
 <h2 id="category">Category</h2>
 
-<img src="./manual/en-US/chapters/global-configuration/img/img70.png" class="example"/>
+Set global title, heading, description and keyword patterns. Category-specific metadata and its append/prepend/replace setting affect the result. For example, `{categoryname} | {shopname}` is a title pattern supported by the inspected category title path.
 
-<ul>
-<li><b>SEO Page Titles - </b>The template that will be used to generate the page titles on category pages. Certain template tags can be used in this field in addition to specific text, and redSHOP comes installed with the default template that reads "{categoryname} | {shopname}", which will generate a category page title that appears as "Name of category | Name of online store". redSHOP will use the template defined here to generate all category page titles, unless the shop administrator has set a different specific template within the "SEO" tab of the category's details in the back end.
-
-<li><b>SEO Page Headings - </b>The template that will be used to generate the page headings on category pages. Certain template tags can be used in this field in addition to specific text, and redSHOP comes installed with the default template that reads "{categoryname}", which will generate a category heading that appears as "Name of category". redSHOP will use the template defined here to generate all category page headings, unless the shop administrator has set a different specific template within the "SEO" tab of the category's details in the back end.
-
-<li><b>SEO Page Descriptions - </b>The template that will be used to generate the meta descriptions for category pages. Certain template tags can be used in this field in addition to specific text, and redSHOP comes installed with the default template that reads "{categoryname} - {shopname}", which will generate the meta description for the category page that appears as "Name of category - Name of online store". redSHOP will use the template defined here to generate the meta descriptions for all category pages, unless the shop administrator has set a different specific template within the "SEO" tab of the category's details in the back end.
-
-<li><b>SEO Keywords - </b>The template that will be used to generate the meta keywords for category pages. Certain template tags can be used in this field in addition to specific text, and redSHOP comes installed with the default template that reads "{categoryname}, {shopname}", which will generate meta keywords for the category page that appear as "Name of category, name of online store". redSHOP will use the template defined here to generate the meta keywords on all category pages, unless the shop administrator has set a different specific template within the "SEO" tab of the category's details in the back end.
-</ul>
-
-<hr>
-
-<!-- Products -->
 <h2 id="products">Products</h2>
 
-<img src="./manual/en-US/chapters/global-configuration/img/img71.png" class="example"/>
+Set global product title, heading, description and keyword patterns. Product-specific metadata can append to, prepend to or replace generated values in the inspected paths. Verify rendered HTML and Open Graph output for products with and without metadata.
 
-<ul>
-<li><b>SEO Page Titles - </b>The template that will be used to generate the page titles on product details pages. Certain template tags can be used in this field in addition to specific text, and redSHOP comes installed with the default template that reads "{productname} | {categoryname} | {productname} from {shopname}", which will generate a product details page title that appears as "Name of product | Name of Category | Name of online store". redSHOP will use the template defined here to generate all product page titles, unless the shop administrator has set a different specific template within the "SEO" tab of the product's details in the back end.
-
-<li><b>SEO Page Headings - </b>The template that will be used to generate the page headings on product details pages. Certain template tags can be used in this field in addition to specific text, and redSHOP comes installed with the default template that reads "{productname}", which will generate a product heading that appears as "Name of product". redSHOP will use the template defined here to generate all product page titles, unless the shop administrator has set a different specific template within the "SEO" tab of the product's details in the back end.
-
-<li><b>SEO Page Descriptions - </b>The template that will be used to generate the meta descriptions for product details pages. Certain template tags can be used in this field in addition to specific text, and redSHOP comes installed with the default template that reads "{productname} - {categoryname} - {productname} from {shopname}", which will generate the meta description for the product details page that appears as "Name of product - Name of category - Name of product from Name of online store". redSHOP will use the template defined here to generate the meta descriptions on all product details pages, unless the shop administrator has set a different specific template within the "SEO" tab of the product's details in the back end.
-
-<li><b>SEO Keywords - </b>The template that will be used to generate the meta keywords for product details pages. Certain template tags can be used in this field in addition to specific text, and redSHOP comes installed with the default template that reads "{productname}, {categoryname}, {productname} from {shopname}", which will generate meta keywords for the product details page that appear as"Name of product, Name of category, Name product from Name of online store". redSHOP will use the template defined here to generate the meta keywords on all product details pages, unless the shop administrator has set a different specific template within the "SEO" tab of the product's details in the back end.
-</ul>
-
-<hr>
-
-<!-- Manufacturer -->
 <h2 id="manufacturer">Manufacturer</h2>
 
-<img src="./manual/en-US/chapters/global-configuration/img/img72.png" class="example"/>
+Configure title, heading, description, keyword and canonical patterns. The inspected manufacturer view combines some record values with global patterns rather than universally replacing them. Its canonical pattern supports `{manufacturerproductslink}` on the manufacturer detail path. Test manufacturer detail and product layouts before indexing.
 
-<ul>
-<li><b>SEO Page Titles - </b>The template that will be used to generate the page titles on manufacturer pages. Certain template tags can be used in this field in addition to specific text, and redSHOP comes installed with the default template that reads "{manufacturer} | {shopname}", which will generate a manufacturer page title that appears as "Name of manufacturer | Name of online store". redSHOP will use the template defined here to generate all manufacturer page titles, unless the shop administrator has set a different specific template within the "SEO" tab of the manufacturer's details in the back end.
+<h2 id="tags">Available SEO tags</h2>
 
-<li><b>SEO Page Headings - </b>The template that will be used to generate the page headings on manufacturer pages. Certain template tags can be used in this field in addition to specific text, and redSHOP comes installed with the default template that reads "{manufacturer}", which will generate a manufacturer page heading that appears as "Name of manufacturer". redSHOP will use the template defined here to generate all manufacturer page headings, unless the shop administrator has set a different specific template within the "SEO" tab of the manufacturer's details in the back end.
+The editor lists suggested tags by field, but replacement differs by page type and metadata field. A listed tag is not necessarily implemented everywhere: for example, the inspected product title and keyword paths do not replace `{saving}`, although the description path does. Use context-appropriate tags and inspect the resulting page source for unreplaced placeholders.
 
-<li><b>SEO Page Descriptions - </b>The template that will be used to generate the meta descriptions for manufacturer pages. Certain template tags can be used in this field in addition to specific text, and redSHOP comes installed with the default template that reads "{manufacturer} - {shopname}", which will generate the meta description for a manufacturer page that appears as "Name of manufacturer - Name of online store". redSHOP will use the template defined here to generate the meta descriptions on all manufacturer pages, unless the shop administrator has set a different specific template within the "SEO" tab of the manufacturer's details in the back end.
+<h4 id="tags1">Page titles</h4>
 
-<li><b>SEO Keywords - </b>The template that will be used to generate the meta keywords for manufacturer pages. Certain template tags can be used in this field in addition to specific text, and redSHOP comes installed with the default template that reads "{manufacturer}, {shopname}", which will generate meta keywords for the manufacturer page that appear as "Name of manufacturer, Name of online store". redSHOP will use the template defined here to generate the meta keywords on all manufacturer pages, unless the shop administrator has set a different specific template within the "SEO" tab of the manufacturer's details in the back end.
-</ul>
+The editor lists `{productname}`, `{manufacturer}`, `{parentcategoryloop}`, `{categoryname}`, `{saleprice}`, `{saving}`, `{shopname}`, `{productsku}`, `{categoryshortdesc}` and `{productshortdesc}`.
 
-<hr>
+<h4 id="tags2">Headings</h4>
 
-<!-- Available SEO Tags -->
-<h2 id="tags">Available SEO Tags</h2>
+The editor lists `{productname}`, `{manufacturer}`, `{categoryname}`, `{productsku}`, `{categoryshortdesc}` and `{productshortdesc}`.
 
-<img src="./manual/en-US/chapters/global-configuration/img/img73.png" class="example"/>
+<h4 id="tags3">Descriptions</h4>
 
-This section displays all the tags that can be used in the respective SEO-related fields in both this Global Config tab as well as the "SEO" tabs that appear in product, category and manufacturer details pages in the back end. More information on template tags is available in the "SEO" section.
+The editor lists `{productname}`, `{manufacturer}`, `{categoryname}`, `{saleprice}`, `{saving}`, `{shopname}`, `{productsku}`, `{categoryshortdesc}`, `{productshortdesc}`, `{categorydesc}` and `{productdesc}`.
 
-<ul>
-    <li><a href="#tags1">Available Tags for Page Titles</a>
-    <li><a href="#tags2">Available Tags for Headings</a>
-    <li><a href="#tags3">Available Tags for Page Descriptions</a>
-    <li><a href="#tags4">Available Tags for Keywords</a>
-    </ul>
+<h4 id="tags4">Keywords</h4>
 
-<hr>
+The editor lists `{productname}`, `{manufacturer}`, `{categoryname}`, `{saleprice}`, `{saving}`, `{shopname}`, `{productsku}`, `{categoryshortdesc}` and `{productshortdesc}`.
 
-<h4 id="tags1">Available Tags for Page Titles </h4>
-
-<img src="./manual/en-US/chapters/global-configuration/img/img74.png" class="example"/>
-
-<ul>
-<li><b>{productname} -- </b>Product Name 
-<li><b>{manufacturer} -- </b>Manufacturer Name 
-<li><b>{parentcategoryloop} -- </b>Parent Category Hierarchy 
-<li><b>{categoryname} -- </b>Category Name 
-<li><b>{saleprice} -- </b>Sales Price 
-<li><b>{saving} -- </b>Total Saving 
-<li><b>{shopname} -- </b>Shop name 
-<li><b>{productsku} -- </b>Product SKU or Product Number 
-<li><b>{categoryshortdesc} -- </b>Category short description 
-<li><b>{productshortdesc} -- </b>Product short description
-</ul>
-
-<hr>
-
-<h4 id="tags2">Available Tags for Headings </h4>
-
-<img src="./manual/en-US/chapters/global-configuration/img/img75.png" class="example"/>
-
-<ul>
-<li><b>{productname} -- </b>Product Name
-<li><b>{manufacturer} -- </b>Manufacturer Name 
-<li><b>{categoryname} -- </b>Category Name 
-<li><b>{productsku} -- </b>Product SKU or Product Number 
-<li><b>{categoryshortdesc} -- </b>Category short description 
-<li><b>{productshortdesc} -- </b>Product short description
-</ul>
-
-<hr>
-
-<h4 id="tags3">Available Tags for Page Descriptions </h4>
-
-<img src="./manual/en-US/chapters/global-configuration/img/img76.png" class="example"/>
-
-<ul>
-<li><b>{productname} -- </b>Product Name 
-<li><b>{manufacturer} -- </b>Manufacturer Name 
-<li><b>{categoryname} -- </b>Category Name 
-<li><b>{saleprice} -- </b>Sales Price 
-<li><b>{saving} -- </b>Total Saving 
-<li><b>{shopname} -- </b>Shop name 
-<li><b>{productsku} -- </b>Product SKU or Product Number 
-<li><b>{categoryshortdesc} -- </b>Category short description
-<li><b>{productshortdesc} -- </b>Product short description
-</ul>
-
-<hr>
-
-<h4 id="tags4">Available Tags for Keywords </h4>
-
-<img src="./manual/en-US/chapters/global-configuration/img/img77.png" class="example"/>
-
-<ul>
-<li><b>{productname} -- </b>Product Name 
-<li><b>{manufacturer} -- </b>Manufacturer Name 
-<li><b>{categoryname} -- </b>Category Name 
-<li><b>{saleprice} -- </b>Sales Price 
-<li><b>{saving} -- </b>Total Saving 
-<li><b>{shopname} -- </b>Shop name 
-<li><b>{productsku} -- </b>Product SKU or Product Number 
-<li><b>{categoryshortdesc} -- </b>Category short description 
-<li><b>{productshortdesc} -- </b>Product short description
-</ul>
-
-<hr>
-
-<h6>Last updated on July 19, 2019</h6>
+Use the lists as hints, not a guarantee of replacement in every context. Test category, product and manufacturer pages separately with automatic metadata on and off, record-specific settings, special characters, missing values, multiple languages and pagination.

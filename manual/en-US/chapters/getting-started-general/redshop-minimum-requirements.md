@@ -1,57 +1,19 @@
 ## redSHOP Minimum Requirements
-As redSHOP is an extension designed to work within the Joomla! Content Management system, the minimum requirements to run both Joomla and redSHOP are as follows: 
 
-<hr>
+redSHOP runs as a Joomla extension. The supported environment depends on the exact redSHOP package, Joomla release and installed extensions. Check the package's release metadata and the requirements for that Joomla version before installation or upgrade; test the complete combination on an isolated site.
 
-### For Joomla 2.5, 3.x and future versions:
+### Current development source
 
-#### PHP:
+The current Core development `composer.json` declares PHP `^8.3` and Joomla `^5.4 || ^6.0`. Its Joomla package repository is pinned to 5.4.6. The example Core release configuration separately lists PHP 8.2 and Joomla 5.4; these declarations have different roles and are not, on their own, a tested compatibility matrix for every distributed package.
 
-<ul>
-<li>For redSHOP version <= 2.1.4: PHP Version: >= 5.6
+Joomla 6 requires PHP 8.3 or later. A compatible Joomla release also has its own database, web-server and PHP extension requirements. Check those requirements together with the actual redSHOP package and every required plugin or module. A Composer constraint or an example configuration is not evidence that a particular Joomla 5 or Joomla 6 installation or upgrade has passed acceptance testing.
 
-<li>For redSHOP version >= 2.1.5: PHP Version: >= 7.0
-</ul>
+### Before deployment
 
-Further information: PHP.Net<br>
-(Notes: Do not use PHP 4.3.9, 4.4.2 or 5.0.4. These releases have known bugs that will interfere with installation)
+- Verify the exact package version, its release notes and the supported upgrade path.
+- Check PHP, database and web-server versions and required PHP extensions for the selected Joomla and redSHOP packages.
+- Check compatibility of payment, shipping, theme, template overrides and other extensions independently.
+- Back up files and database, test restoration, and rehearse installation or upgrade on an isolated copy.
+- Check server permissions and security settings; configure URL rewriting according to the web server and Joomla documentation if friendly URLs are used.
 
-<hr>
-
-#### MySQL:
-
-<ul>
-<li><b>Minimum version required:</b> 5.0.4+ 
-
-<li><b>Recommended versions:</b> 5.0.4+ 
-</ul>
-
-Further information: MySQL<br>
-(Notes: Joomla is not yet compatible with MySQL 6.x)
-
-<hr>
-
-#### Apache:
-
-<ul>
-<li><b>Minimum version required:</b> 2.x+ 
-
-<li><b>Recommended versions:</b> 2.x+ 
-</ul>
-
-Further information: Apache<br>
-(Notes: In order to use SEO URLs, you will need to have the Apache mod_rewrite extension installed. )
-
-<hr>
-
-#### Microsoft IIS:
-
-<ul>
-<li><b>Minimum version required:</b> 7 
-
-<li><b>Recommended versions:</b> 7 
-</ul>
-
-<hr>
-
-<h6>Last updated on July 2, 2020</h6>
+See [Installing redSHOP](chapters/getting-started-general/installing-redshop.md) and [Updating redSHOP](chapters/getting-started-general/updating-redshop.md). Legacy PHP 5/7, Joomla 2.5/3 and old MySQL minimums are not current deployment guidance.

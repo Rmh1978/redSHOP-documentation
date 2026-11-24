@@ -1,8 +1,5 @@
-## Set up (in redSHOP configuration & e-conomic plugin)
-Read this article:
+## Set up the e-conomic integration
 
-- [E-Conomic Integration](chapters/global-configuration/e-conomic-integration.md)
+The optional integration requires both Joomla plugin settings and redSHOP configuration. Start with [e-conomic Integration](chapters/global-configuration/e-conomic-integration.md) for the account modes, configuration fields and isolated-test prerequisites.
 
-<hr>
-
-<h6>Last updated on August 12, 2020</h6>
+Then review [Account Group](chapters/e-conomic-integration/account-group.md) and [Product synchronization](chapters/e-conomic-integration/sync.md). Current provider compatibility and invoice-booking behavior must be verified before connecting a live accounting account.
