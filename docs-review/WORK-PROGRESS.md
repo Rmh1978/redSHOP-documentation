@@ -1,6 +1,32 @@
 # Documentation modernization — ongoing work
 
-## Controlled pause checkpoint
+## Transfer checkpoint — 2026-11-24, 17:37 CET
+
+**Paused. Do not resume issue import or documentation modernization until the maintainer instructs you to continue.** This checkpoint supersedes the older checkpoint below, which is retained as history.
+
+### GitHub Issue work
+
+- The present conversation and available local session history do not contain a preceding GitHub Issue import task or its execution ledger. No Issue was created or updated in this transfer task. Do not assume that any missing work was completed or that every finding is suitable for a public Issue.
+- A read-only GitHub listing returned all three issues in `Rmh1978/redSHOP-rmh`: #57 is open; #58 and #59 are closed. Their latest reported updates are in 2023/2024. `Rmh1978/redSHOP-documentation` and `Rmh1978/redSHOPEXTENSIONS-rmh` returned no issues. These observations are limited to repositories and permissions visible to this session; another repository or account might have a separate mapping.
+- #59 historically concerns question saving, overlapping the subject of CODE-034, but a match has not been established. Compare actual behavior and issue history before linking, reopening, or creating anything. Preserve closed issues in deduplication searches.
+- The 89 handoff records in `CORE-BUGS.csv` are **candidates for review**, not 89 confirmed bugs or an established number of issues left to create. No local ID-to-GitHub-Issue mapping or import ledger was found, and none of these records has a confirmed GitHub mapping in this checkpoint. Group related entries and exclude test-only investigations, fixed items, duplicates and inappropriate disclosures as warranted. `CORE-BUGS.md`, the master and triage retain their existing IDs and evidence.
+- The existing Core issue form is `.github/ISSUE_TEMPLATE/issue.yaml`; first-parent history shows it dates to the 2023 issue-tracker commit. No issue-template or synchronization-tool change attributable to an import was found on the checked-out branches. No issue synchronization tool or local mapping was located in the checked paths; `gh` is unavailable here. GitHub labels were read only; no label changes were made. Core currently has `4.0.1`, `4.0.3`, `bug`, `documentation`, `duplicate`, `enhancement`, `feature request`, `help wanted`, `invalid`, and `question`. Documentation has the usual default labels including `good first issue` and `wontfix`. Current labels do not establish an import taxonomy.
+- **Next concrete action after resumption:** identify the intended GitHub repository and any other session/import ledger; retrieve all open and closed issues and their bodies, compare stable IDs and semantic overlaps, and construct a durable ID-to-issue mapping before any create/update. Revalidate each candidate against current Core, particularly CODE-028/029 and CODE-045/046 and other payment-related entries. Use private security reporting for suspected vulnerabilities rather than publishing exploit details. Do not create duplicates or silently close existing IDs.
+
+### Repositories and transfer
+
+- Core `Rmh1978/redSHOP-rmh`: branch `develop`, HEAD `beacc4704dc24b9dc8f3b638324a9e8a6f96a06e`; clean worktree before and after this checkpoint. The live `origin/develop` matched HEAD during read-only `ls-remote`. The previous documentation evidence baseline was `2f193132a218de96f5ccbe6b6074cbf0acadbcfd`; 82 paths changed since then, including Cielo, payment loading, Flatpay/Bambora manifests, PostNord, Marketplace and Filecheck. Recheck only affected findings and pages rather than restarting the review.
+- Documentation `Rmh1978/redSHOP-documentation`: branch `modernize`, HEAD `e40c93a0868058584e7ab309d77837c4aecadc6d`; live `origin/modernize` matched HEAD before these checkpoint edits. The only current changes made in this task are `docs-review/WORK-PROGRESS.md` and `docs-review/RESUME.md`; they must be committed and pushed by the maintainer before the other computer can receive them. The prior 180-file worktree is already part of the current committed baseline, not a current uncommitted count.
+- Legacy `Rmh1978/redSHOPEXTENSIONS-rmh`: branch `master`, HEAD `68c3819e1fa444a1bd3c46322045d4820a52fea6`, live `origin/master` matched HEAD. Three existing uncommitted files: `plugins/redshop_payment/cielo/cielo.xml`, `tests/cielo/REPORT.md`, `tests/cielo/package.php`. Preserve them; the maintainer must decide whether to commit/push them or transfer them separately. Imported extension source in Core remains authoritative.
+
+### Documentation and verification
+
+- Documentation remains paused. `PAGE-INVENTORY.csv` records 160 pages: 117 provisional partial, one historical annotation, 42 unclassified and none approved complete against the updated manual quality standard. Triage has 358 OPEN and six DONE; no formally BLOCKED entries. A missing runtime test is not a formally blocked issue count.
+- Last completed task before this checkpoint was the documentation/code-handoff pause, recorded below. This transfer checkpoint records state only; no new manual stage, Core fix, issue import, deployment or publication was performed. After Issue work and explicit resumption, use Coupons as the first customer-manual quality reference.
+- Read-only checks in this task: Git branch/HEAD, all-file worktree status and live remote heads for the three repositories; GitHub issue lists for those repositories and labels for Core/documentation; CSV counts, resume-file existence and Core diff names. Documentation `git diff --check` passed. No Joomla, provider, browser, import, synchronization or security runtime tests were run. Earlier renderer tests and unresolved browser regressions remain described below; do not treat them as new test results.
+- Blockers: no Issue-import specification or trustworthy mapping in the available history; no `gh` CLI; private security workflow and provider/Joomla environments require the appropriate authorization. A new session must inspect current GitHub state again because the snapshot can become stale. No commit, push or remote mutation was performed in this task.
+
+## Previous controlled pause checkpoint (historical)
 
 **Paused at the maintainer's request; do not resume until explicitly instructed.** The current bounded task is the handoff and checkpoint, not a new documentation stage.
 
