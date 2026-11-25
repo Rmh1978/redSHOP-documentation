@@ -1,26 +1,36 @@
 ## Mass discounts
 
-Mass discounts update discount-related fields on selected products. **Back up and test before saving, editing or deleting:** the current implementation can also change product sale flags and discount dates, and deleting a mass discount can clear product discount data. Overlap and precedence need testing in your shop.
+Mass discounts update discount-related fields on selected products. In Joomla administration, open **Components → redSHOP → Discount → Mass Discount**. **Back up and test before saving, editing or deleting:** the current implementation can also change product sale flags and discount dates. Its delete path resets the sale flag, discount price and discount dates for products it resolves from the rule's product, category and manufacturer selections; it does not first establish that another rule still needs those values. Overlap and precedence need testing in your shop.
 
 <h2 id="overview-1">Mass discount list</h2>
 <h4 id="fields">List fields and filters</h4>
 
-The list includes the discount name, type, amount and dates; search and type filters are defined in the current form.
+The list includes the discount name, type, amount, dates and selected products, categories and manufacturers. Search by name or filter by type; sort using the available column headings. The default order is ID ascending.
+
+When inline editing is enabled and your account can edit an unlocked record, the name and amount can be edited in the list. An amount change can affect products: review the selection and back up first.
 
 <h4 id="actions">Actions</h4>
 
-Open an existing record or create a new one. Check permissions and confirm the affected products before editing or deleting.
+Create, edit, check in and delete records as permitted. Select records before bulk actions; check in a locked record only after confirming nobody is editing it. This list has no publish/unpublish control. Confirm the affected products before editing or deleting.
 
 <h2 id="overview-2">Discount details</h2>
 <h4 id="discounts-detail">Fields</h4>
 
-Name, type, amount, start date and end date are required. Type is a fixed total or percentage; enter **12** for 12%. The model requires a positive amount and at least one product, category or manufacturer and rejects reversed dates.
+| Field | Purpose and default |
+|---|---|
+| **Name** | Required name identifying the mass discount. |
+| **Type** | Required **Total** (fixed amount, the default) or **Percentage**. |
+| **Amount** | Required positive amount. For a percentage, enter `12` for 12%, not `0.12`. The product's existing price is used to calculate the discounted price. |
+| **Start date**, **End date** | Both are required. The save check rejects a start later than the end. Verify time-zone and boundary behavior before use. |
+| **Products** | Multiple product selection. The form marks this required, although the table validation accepts another targeting selection instead. Verify the actual editor before relying on a category-only or manufacturer-only rule. |
+| **Categories** | Optional multiple category selection. Check which products, including subcategories, are affected. |
+| **Manufacturers** | Optional multiple manufacturer selection. Check the resulting product selection and overlap with other rules. |
 
-The XML form marks the product selector required even though the model permits category-only or manufacturer-only selection. Check the actual editor's validation before relying on either workflow. Categories and manufacturers can also be selected.
+At least one product, category or manufacturer is required by the table validation. For example, on a disposable product priced at 100, a 12% rule calculates a discounted price of 88 before other pricing adjustments; verify the result in your own cart.
 
 <h4 id="mass-discounts-detail">Save</h4>
 
-Save and reopen the rule, then inspect the affected products' sale flag, discount price and dates. A successful form save alone does not establish storefront or checkout behavior.
+Use **Save**, **Save & Close** or **Save & New**, as available. **Cancel/Close** leaves the editor without saving current changes. Reopen the rule, then inspect the affected products' sale flag, discount price and dates. A successful form save alone does not establish storefront or checkout behavior.
 
 <h2 id="working">Working with mass discounts</h2>
 <h4 id="create-1">Combined selection</h4>

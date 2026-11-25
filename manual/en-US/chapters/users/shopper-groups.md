@@ -2,10 +2,12 @@
 
 Shopper groups configure shop-specific customer behavior. They are distinct from Joomla user groups and access levels; do not rely on catalog visibility alone to protect confidential data.
 
+The inspected source has a view-resolution mismatch that can prevent the shopper-group list or editor from opening. If this occurs, contact your redSHOP maintainer and verify the installed version before changing groups.
+
 <h2 id="overview-1">Shopper group management</h2>
 <h4 id="shopper-groups-1">List</h4>
 
-Open **Users → Shopper Groups** in redSHOP administration. The list includes group name, an Add Discount link and publication state; search is available.
+Open **Users → Shopper Groups** in redSHOP administration. The list includes group name, an Add Discount link and publication state. Search matches the group name; use the available ordering and pagination controls to navigate.
 
 <h4 id="actions-shopper-1">Actions</h4>
 
@@ -14,9 +16,18 @@ Create, edit, publish, unpublish or delete groups according to permissions. Befo
 <h2 id="overview-2">Group details</h2>
 <h4 id="shopper-groups-2">Fields</h4>
 
-The name is required. The form includes a parent group, customer type, portal, categories, manufacturers and a portal URL. It also provides default shipping and rate, display price without tax, show-price and catalog-mode overrides, quotation mode and publication. Show-price and catalog-mode choices are Global, Yes and No; test each against the global settings.
+- **Name:** required; choose a recognizable group name.
+- **Group type:** choose the parent group or the top level. **Customer type** offers Company or Private.
+- **Portal:** defaults to No. The editor displays a generated portal link using the group ID and configured portal-login ItemID rather than an editable URL.
+- **Categories and manufacturers:** select multiple entries where appropriate; verify the resulting catalog behavior for a test customer.
+- **Default shipping and rate:** the switch defaults to No; check the rate and shipping configuration before enabling it.
+- **Show price without VAT:** defaults to No. **Show price** and **Use as catalog** offer Global, Yes and No; check the interaction with global settings.
+- **Quotation mode:** defaults to No. **Published** defaults to Yes for a new group.
+- **Cart ItemID and Checkout ItemID:** enter the relevant Joomla menu item IDs when required by the shop's routing setup.
+- **Logo:** the inspected upload path recognizes JPG, JPEG, GIF and PNG extensions. A failed upload can still appear to save, so keep a backup and verify the saved image before use.
+- **Intro text and description:** enter the content needed for the group.
 
-Separate fields hold cart and checkout Joomla menu ItemIDs, a logo upload, intro text and description. The actual effect of portal, product visibility, shipping and checkout settings depends on configuration and implementation; test them with representative users before relying on them.
+The actual effect of portal, product visibility, shipping and checkout settings depends on configuration and implementation; test them with representative users before relying on them.
 
 <h4 id="actions-shopper-2">Save</h4>
 

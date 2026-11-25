@@ -2,6 +2,20 @@
 
 The optional `mod_redshop_pricefilter` site module provides a price-range control and product display. [Install and configure the module](chapters/module-redshop/install-module-plugin.md), assign its position and menu pages, and choose the range and relevant categories.
 
-The manifest provides minimum and maximum slider values, multiple categories, product count, image and thumbnail dimensions, price, read-more, add-to-cart and discount-price display options. The selected range is read from the request and Joomla user state. Do not assume that an empty category selection or a displayed price proves eligibility or access.
+### Module options
+
+These are manifest defaults for a new configuration; saved settings can differ.
+
+| Option | Use |
+|---|---|
+| **Minimum / maximum slider range** | Set the offered price range; defaults are 0 and 5000. The current range is read from the request and Joomla user state, so check the active selection when testing. |
+| **Category** | Select one or more relevant categories. Do not assume an empty selection enforces access restrictions. |
+| **Number of products** | Set the product count; the manifest default is 5. |
+| **Show image / thumbnail width and height** | Image defaults to Yes and dimensions to 100 by 100. Check images and layout at the intended module position. |
+| **Show price / discount price layout** | Both default to Yes. Verify the prices for the relevant customer and currency. |
+| **Show read more / add to cart** | Both default to No. If enabled, verify links and purchasing behavior in the active template. |
+| **Module class suffix** | Optional styling hook for the active template; empty by default. |
 
 Use disposable products to test category selection, price-range boundaries, shopper groups, currencies, VAT, discounts, pagination and add-to-cart behavior. Confirm the results and prices match the configured shop before enabling the module for customers.
+
+The current layout uses the selected range as the slider's limits. In an isolated layout test, a selected range of 100–200 produced a slider limited to 100–200, so a customer may be unable to widen a restored or request-supplied range. Actual browser and Joomla state behavior remain unverified.

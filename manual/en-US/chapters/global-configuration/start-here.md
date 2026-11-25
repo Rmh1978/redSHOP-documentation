@@ -11,9 +11,9 @@ The current configuration view includes:
 - [Orders](chapters/global-configuration/orders.md): order and invoice mail, numbering and reorder options. **Order ID Reset deletes order-related data.**
 - [Newsletter](chapters/global-configuration/newsletter.md): newsletter and test-mail settings; verify consent and delivery before using live subscribers.
 - [Integration](chapters/global-configuration/integration.md) and [SEO](chapters/global-configuration/seo.md): integration and search-engine settings.
-- **Design Style:** frontend and backend design controls. Back up your design and check both interfaces after changes.
+- **Design Style:** the inspected frontend group has background and font-size fields for add-to-cart and module checkout buttons, plus a request-quote background field. The inspected backend group currently contains no controls. Back up your design and test the active frontend templates after changes.
 - [Dashboard](chapters/global-configuration/dashboard.md): menu visibility; it does not replace permissions.
-- **Performance:** includes an enable-performance-mode option. Verify its effect on your templates, extensions and caches in an isolated environment.
+- **Performance:** includes an enable-performance-mode option, disabled in the distributed configuration. The inspected performance helper uses it for session-based cached values; the effect on a particular page or extension is not established by the switch alone. Verify behavior and performance on an isolated copy.
 - [About](chapters/global-configuration/about.md): diagnostic system and extension information.
 
 Review individual articles for field details and limitations. Save only intentional changes, then verify storefront and administrator workflows with appropriately restricted test accounts.

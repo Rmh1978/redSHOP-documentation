@@ -1,50 +1,20 @@
-## PayGate Payment Plugin
+## PayGate payment plugin
 
-After download Plugin redSHOP Payment Paygate
-<img src="./manual/en-US/chapters/plugin-redshop/img/img6.png" class="example"/><br><br>
+The optional `paygate` redSHOP payment plugin is a legacy integration. The existence of its source and manifest does not prove compatibility with the current provider service or Joomla version. Confirm the exact package and provider requirements before adopting it.
 
-[How to install module/plugin on Joomla administrator?](chapters/module-redshop/install-module-plugin.md)
+1. [Install and configure the plugin](chapters/module-redshop/install-module-plugin.md) on an isolated shop. The manifest includes provider identification and protected key settings, success/failure order statuses, payment adjustments and customer eligibility.
+2. Keep credentials in protected configuration; do not copy them into documentation, screenshots or logs. Confirm with the provider how to use an authorized test environment; the inspected manifest does not expose a test-mode switch.
+3. Test success, pending, failure and repeated notifications with disposable orders, checking amounts, currencies, authentication and order/payment statuses separately. A receipt or browser return is not proof of verified payment.
+4. Complete a compatibility and security review before a production decision. Do not use real card details for testing.
 
-<hr>
+Provider behavior, callbacks and Joomla checkout have not been tested here.
 
-<ul>
-<li>User fill in some filed as: Paygate ID, Key.. choose Status is Enabled. Then click on Save button</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img7.png" class="example"/><br><br>
+### Plugin settings
 
-<li>After save plugin success. User click on view site icon to go to site</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img8.png" class="example"/><br><br>
+- **PayGate ID and Encryption Key:** both start blank. The key field is defined as text; restrict configuration access and do not assume the field masks or encrypts the stored value.
+- **Success and failure order statuses:** select published shop statuses. The manifest defaults are codes `C` and `P`; check their meanings and actual transitions.
+- **Payment operand, price and discount type:** operand defaults to `-`, price to blank and type to Percentage; Total is the fixed-amount option. Independently verify the adjustment and rounding in checkout.
+- **Private Person, Business and Shopper Group:** both customer-type switches default to Yes and the shopper-group field to `0`. Test eligible and ineligible customers and saved selections.
+- **E-conomic payment conditions and layout IDs:** optional accounting mappings, initially blank. Verify them with the integration.
 
-<li>User click on Product on Menu. After webpage displayed all category, user choose category </li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img9.png" class="example"/><br><br>
-
-<li>Then, user click on Add to cart any product in category selected</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img10.png" class="example"/><br><br>
-
-<li>Webpage will display "Product has been added to your cart". Then user clicks on Cart on Menu</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img11.png" class="example"/><br><br>
-
-<li>User need login on site</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img12.png" class="example"/><br><br>
-
-<li>After login, User clicks on Checkout button</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img13.png" class="example"/><br><br>
-
-<li>User choose Payment Method with Paygate Payment. Then click on Checkout</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img14.png" class="example"/><br><br>
-
-<li>User choose accept checkbox and click on Checkout: final step</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img15.png" class="example"/><br><br>
-
-<li>Webpage will display PayGate Payment screen. User fill in some field as: Card Holder, Card Number, .... Then choose I agree and click on Pay Now button</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img16.png" class="example"/><br><br>
-
-<li>Then click "Pay Now" button Webpage will show pay Processing. User click on "Submit " button</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img17.png" class="example"/><br><br>
-
-<li>Webpage will return order receipt</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img18.png" class="example"/><br><br>
-</ul>
-
-<hr>
-
-<h6>Last updated on August 19, 2019</h6>
+These are manifest defaults for a new configuration, not necessarily settings already saved in an existing shop. Reopen the plugin after saving and use only provider-authorized tests.

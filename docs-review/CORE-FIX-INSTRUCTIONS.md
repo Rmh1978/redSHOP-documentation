@@ -2,6 +2,10 @@
 
 This is a handoff, not permission to change Core in the documentation project. The maintainer can authorize a separate coding session. Do not edit the documentation, a test site, production, or a provider account as a side effect of fixing a finding. Do not commit, push, create a release or publish without authorization.
 
+For Issue synchronization, deduplication, disclosure and the stable-ID ledger,
+follow `ISSUE-MANAGEMENT.md`. GitHub Issues are the primary source of issue
+status; do not close review findings without verified evidence.
+
 ## Preparation
 
 1. Read the current `AGENTS.md` and `.github/copilot-instructions.md` in the relevant repository, then this file, `CORE-BUGS.md`, `CORE-BUGS.csv`, `MASTER-ISSUES-AND-GAPS.md`, `TRIAGE-REGISTER.csv` and relevant test plans. Inspect all worktrees; preserve unrelated changes.

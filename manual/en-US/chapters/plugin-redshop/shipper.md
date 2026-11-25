@@ -1,32 +1,9 @@
-## redSHOP Shipper
+## redSHOP Shipper plugin
 
-[How to install module/plugin on Joomla administrator?](chapters/module-redshop/install-module-plugin.md)
+The optional `shipper` redSHOP shipping plugin lists configured shipping rates. [Install and enable the plugin](chapters/module-redshop/install-module-plugin.md) on an isolated shop, then open redSHOP **Shipping Methods**, select Shipper and configure the relevant [shipping rates](chapters/shipping/shipping-methods.md). Each returned choice uses its configured rate name and value. The rate helper adds shipping VAT only when the rate and customer qualify; verify the resulting checkout amount for your tax settings.
 
-<hr>
+The plugin manifest's **Allow create pacsoft label** option defaults to No for a new configuration; an existing saved value can differ. Enabling it does not by itself establish that a label service or shipping provider is configured or working.
 
-<ul>
-<li>Make sure install plugins redSHOP Shipper is successed.</li>
+The shared shipping renderer can emit a PHP warning because Shipper's rate output does not include a description. If this appears at checkout, contact your maintainer.
 
-<li>Enable plugins Self-Pickup: Extensions → Plugins → search "redshop_shipping":</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img58.png" class="example"/><br><br>
-
-<li>Create Shipping with name "Demo redSHOP Shipper": admin redSHOP → Shipping → Shipping Methods → redSHOP Shipper → Shipping Rate → New button:</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img59.png" class="example"/><br><br>
-
-<li>Go to product detail in frontend page then click on "Add to cart" button </li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img60.png" class="example"/><br><br>
-
-<li>Add to card for this product and go to checkout, click choose "redSHOP Shipper": </li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img61.png" class="example"/><br><br>
-
-<img src="./manual/en-US/chapters/plugin-redshop/img/img62.png" class="example"/><br><br>
-
-<img src="./manual/en-US/chapters/plugin-redshop/img/img63.png" class="example"/><br><br>
-
-<li>Click Final checkout. Make sure Shipping Method Name in Order Information is "redSHOP Shipper":</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img64.png" class="example"/><br><br>
-</ul>
-
-<hr>
-
-<h6>Last updated on August 22, 2019</h6>
+Test customer eligibility, addresses, rate boundaries, VAT, checkout and stored order details using disposable data. Verify any external label or fulfillment integration separately using authorized test facilities; no provider, shipment or Joomla checkout was tested here.

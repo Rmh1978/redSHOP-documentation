@@ -8,7 +8,7 @@ The plugin declares PHP 8.3 or later and Joomla 5/6 in its manifest. This is not
 
 1. In a disposable test shop, install an approved package if needed and locate **redSHOP - Relatel Live Caller ID** in Joomla's System plugins.
 2. Provide an authorized test API token using the plugin's token field or a private server environment variable named `REDSHOP_RELATEL_TOKEN`. A non-empty environment value takes precedence.
-3. Configure monitoring, recent-number count, polling interval and automatic popup. The form allows 1–20 recent numbers and 5–300 seconds between polls. Enable the plugin and open the ordinary redSHOP Orders list.
+3. Configure monitoring, recent-number count, polling interval and automatic popup. For a new configuration the manifest defaults monitoring and popup to Yes, recent numbers to 3 and polling to 5 seconds; existing saved values may differ. The form allows 1–20 recent numbers and 5–300 seconds between polls. Enable the plugin and open the ordinary redSHOP Orders list.
 4. Test with approved test calls, accounts and access permissions before any production use.
 
 The password field masks the token in the interface but does **not** encrypt Joomla plugin parameters in the database or backups. Restrict administrator, database, backup and server access. Do not put tokens, telephone numbers or customer information in shared screenshots, source control or logs. Confirm environment-variable availability with the hosting administrator.

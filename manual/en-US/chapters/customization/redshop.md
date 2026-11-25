@@ -5,15 +5,27 @@ Custom fields add section-specific information to products, addresses and other 
 <a id="overview-1"></a><a id="field-1"></a><a id="action-1"></a>
 ### Find fields
 
-Open **Custom Fields** in redSHOP customization. The list identifies each field by title, name, type, section, group, publication and ID. Search and filter before creating a duplicate. Back up the database before deleting or changing existing fields: deleting a field also removes its associated stored field data.
+Open **Custom Fields** in redSHOP customization. The list identifies each field by title, name, type, section, group, publication and ID. Search by title, enter `id:` followed by the record ID, or filter by type, section and group. The ordering control is shown after selecting a section. Open a title to edit it; inline title editing is available when enabled and permitted.
+
+Use **New**, or select records for **Delete**, **Publish** or **Unpublish**, subject to your permissions. Selecting a section also exposes the group-assignment action for selected fields; choosing no group removes their existing group association. Back up the database before deleting or changing existing fields: deleting a field also removes its associated stored field data.
+
+In the group-assignment dialog, **Clear group** is the default choice when groups are listed. Select the intended group explicitly before applying the action, and reopen the affected fields to verify their assignments.
 
 <a id="overview-2"></a><a id="field-2"></a><a id="action-2"></a><a id="working"></a>
 ### Create a field
 
-1. Select **New**, choose a type and section, then enter a title and unique name. The table replaces spaces in the name with underscores and adds `rs_` if the prefix is missing; use the actual saved name when referring to it.
-2. Choose a [field group](chapters/customization/custom.md) for the same section if needed. Configure publication, required state, frontend and administrator visibility and any section-specific product-list, checkout, search or product selection settings that apply.
+1. Select **New**, choose a type and section, then enter a title and unique name. The table replaces spaces in the name with underscores and adds `rs_` if the prefix is missing; it checks the resulting name across fields, not just the selected section. Use the actual saved name when referring to it.
+2. Choose a [field group](chapters/customization/custom.md) for the same section if needed. The current selector can omit groups or show groups from another section; verify the group and saved assignment, and contact your maintainer if the intended group is unavailable. Configure publication, required state, frontend and administrator visibility and any section-specific product-list, checkout, search or product selection settings that apply. The form defaults to Published, Required and visible in both frontend and administrator. Product-list display and search default to No, and checkout display defaults to Yes where offered.
 3. Configure the type-specific options, save and reopen the field. For example, option-based types have option rows, while a text area has rows and columns. The editor checks option values for spaces for certain selection types.
 4. Enter a test value in the appropriate product, address or other editor. Save and reopen it; then test its output in the relevant template and, where applicable, cart and checkout.
+
+When using the product selection, test both a selected and an unselected disposable product. The inspected field query applies the saved product IDs only when it receives an item ID and the database has the products column; other rendering paths can differ.
+
+### Input presentation and options
+
+- **Class** supplies a CSS class to supported field renderers. **Description** is a separate field description.
+- For a text field, **Max Length** limits characters in the input and **Size** controls the input's displayed width. For a text area, **Columns** and **Rows** control its displayed dimensions. Their effect depends on the renderer and browser; do not treat display dimensions as a storage or authorization limit.
+- For supported option-based types, enter each option's name and value in the values table. The editor warns that changing an existing option value can affect historical selections. Back up the shop and review existing product, order or other saved values before changing or deleting options.
 
 <a id="type"></a><a id="field-addition"></a>
 ### Field types

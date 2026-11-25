@@ -20,9 +20,15 @@ Categories organize products into a hierarchy and provide category-specific temp
 
 The list displays categories as a nested tree, with their name, description, publication state and product count. Ordering is available for the hierarchy. Open a category name to edit it; a checked-out item may be locked by another administrator.
 
+Search by category name, or enter `id:` followed by the category ID for an exact ID lookup. The category selector narrows the tree to the selected category and its descendants. When inline editing is enabled and you have permission, an unlocked category name can be edited in the list. The list retains tree order so children remain with their parents.
+
 <h4 id="action1">Actions</h4>
 
-Depending on permission, the toolbar offers New, Copy, Delete, Publish, Unpublish, Check-in and **Rebuild Category Tree**. Rebuilding changes the tree structure: back up first and use it only when needed. Copying or deleting categories can affect associations and storefront navigation; test the outcome on an isolated copy before making bulk changes. Check-in is intended to release abandoned editing locks, not interrupt another administrator's work.
+Depending on permission, the toolbar offers New, Copy, Delete, Publish, Unpublish, Check-in and **Rebuild Category Tree**. Rebuilding changes the tree structure: back up first and use it only when needed. Copying or deleting categories can affect associations and storefront navigation; test the outcome on an isolated copy before making bulk changes. A copy can be reported successful even if saving failed, and its product-filter settings may be cleared: reopen the copied category and verify its settings before publishing. Check-in is intended to release abandoned editing locks, not interrupt another administrator's work.
+
+The category table rejects deletion when the category has child categories or associated products. Review and move those associations deliberately before deleting; do not assume deleting a parent removes its tree.
+
+The template selector above the list is a **bulk assignment**, not a search filter. Select the intended categories first, choose a template and confirm the change. The current implementation may report an error even after applying the template: reopen the selected categories and check their saved templates before retrying.
 
 <h2 id="detailsScreen">Category editor</h2>
 
@@ -30,8 +36,8 @@ The current editor has Category Information, Metadata, Fields, Accessory Product
 
 <h4 id="informationTab">Category information</h4>
 
-- **Name** and **category template** are required. Select the parent or the root for a top-level category.
-- **Published** controls the category's publication state. Check both parent and child visibility in the actual storefront before relying on it.
+- **Name** and **category template** are required. The name field accepts up to 255 characters, and the table rejects a blank or whitespace-only name. Select the parent or the root for a top-level category.
+- **Published** defaults to **Yes** and controls the category's publication state. Check both parent and child visibility in the actual storefront before relying on it.
 - **Products per page** is required and accepts zero or more. Check menu and configuration overrides for your layout.
 - Select additional templates if you want to offer alternative category layouts, and a comparison template when using product comparison.
 - Enter short and full descriptions as appropriate. The editor also displays created/modified information.
@@ -60,7 +66,14 @@ Use Apply to save and remain in the editor, Save to save and close, Save &amp; N
 
 ### Product Filters
 
-Enable the category filter and select product attributes or enable category, manufacturer, price and supported custom-field filters as needed. The editor states that the `mod_redshop_category_product_filters` module must be installed, enabled and assigned to the menu item for the category. Save and test the module on the intended storefront menu and layout.
+The master filter switch defaults to **No**. When enabled, choose product attributes and turn on subcategory, manufacturer, price-slider or product-custom-field filters as needed; these switches also default to **No**. The attribute choices are based on products associated with the category. When custom-field filtering is enabled, select supported product fields: checkbox, checkboxes list, single select or multi-select.
+
+The editor states that the `mod_redshop_category_product_filters` module must be installed, enabled and assigned to the menu item for the category. Save and test the module on the intended storefront menu and layout, including the effect of subcategories.
+
+The module can fail to render manufacturer, category, custom-field or attribute
+choices when no filter selection has yet been supplied. Verify the initial
+category page as well as filtered results and contact your maintainer before
+relying on these controls.
 
 <h2 id="withRedshop">Create and use categories</h2>
 

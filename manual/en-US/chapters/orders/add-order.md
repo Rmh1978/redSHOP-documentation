@@ -18,6 +18,10 @@ Select an existing customer or enter customer and billing information, including
 
 After applying customer information, add products, quantities and notes. Review prices, tax, discounts, shipping, total, payment method and the separate order and payment statuses. When stockroom use is enabled, the controller checks stock and can adjust quantities or omit unavailable lines; verify the saved order.
 
+Each product row provides a product selector, note, price excluding tax, tax, price including tax, quantity and line total. Use **Add Product** for another row or the remove control to discard one. The order details also include a customer comment and requisition number. The form initially selects Unpaid for payment status; confirm both status choices before saving.
+
+The discount controls accept a fixed amount and a separate percentage; both start at zero. Use their update controls and independently check the displayed subtotal, tax, shipping and total before saving. Changing a displayed value does not verify the amount collected by a payment provider.
+
 <h4 id="action-2">Save actions</h4>
 
 The order toolbar appears after billing information has been applied. Save creates the order and invokes order mail; **Save without sending order mail** uses the admin-only mail path, not necessarily a complete suppression of all notifications. **Save + Pay** saves and invokes the selected payment method's payment-information path; its behavior depends on the plugin and is not proof of payment. Confirm recipient and side effects with a safe mail transport and test provider.

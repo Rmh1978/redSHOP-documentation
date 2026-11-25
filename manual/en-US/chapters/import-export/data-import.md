@@ -9,6 +9,12 @@ Imports can create or update records and associated data. Back up the database a
 
 Prepare a CSV with a header row and a consistent column count, separator and character encoding. The format and required fields depend on the selected plugin; an export of the same data type can help identify columns, but is not a guarantee of a lossless round trip. Test IDs, relationships, empty fields, dates, decimal values and special characters for the exact plugin and version before using real data.
 
+**Known issue:** In an isolated test, the shared importer's CSV splitting step added a backslash to a value containing an apostrophe. Before importing a file with such values, test and compare the resulting records on an isolated copy. Do not rely on a lossless import until the issue is fixed and verified.
+
+The progress count can also be misleading for fields containing embedded
+newlines. Verify the imported records and row messages rather than relying on
+the estimated number of batches.
+
 <a id="working"></a>
 ### Import a file
 
@@ -19,6 +25,21 @@ Prepare a CSV with a header row and a consistent column count, separator and cha
 5. Check the created or changed records and relationships in redSHOP. If the result is incomplete or unexpected, stop and investigate before retrying. Do not run simultaneous imports of the same type: their temporary files can interfere.
 
 The type and size checks displayed by the browser do not establish server-side validation. Only import files from trusted sources. Some product image fields can cause the server to retrieve URLs; review those fields before importing and do not supply untrusted URLs.
+
+### Import settings and product records
+
+The global import settings include minimum and maximum file sizes in bytes,
+allowed MIME types and extensions, and the number of lines per batch. The
+import screen and shared splitter use at least 10 rows per batch even if the
+configured line count is lower. These settings are not a guarantee of
+server-side file validation.
+
+The product importer uses `product_id` as its record key and `product_name`
+in its result messages. When a row contains the key, the shared importer
+attempts to load that record before binding the row. Check IDs against the
+destination carefully: the import can change existing records, not just add
+new ones. The product plugin has no extra options on its configuration step;
+the shared separator and encoding selections still apply.
 
 ### Import types in the Core manifest
 

@@ -2,7 +2,11 @@
 
 Open redSHOP Configuration and choose **Dashboard**. The menu-hide form is built from the current redSHOP sidebar, including entries supplied by enabled integrations. Check an entry to hide it and save; clear it and save to show it again. Checking a section also checks its listed children in the current editor.
 
+For example, to hide one item while retaining the rest of its section, check that item's box rather than the section box, then save and review the sidebar. Clearing a section box also clears its listed children in the current editor. These bulk checkbox changes depend on the editor's script; confirm the saved result if the page behaves differently.
+
 This is a display preference, **not an authorization control**. Configure Joomla/redSHOP permissions separately and verify a restricted account cannot access protected actions directly. Keep a configuration route available to an authorized administrator and test changes with a non-production account.
+
+The distributed configuration has an empty menu-hide list. Existing saved choices and available entries can differ.
 
 The available entries vary with configuration, extensions and permissions. The following headings describe groups rather than promising every historical menu item is installed:
 

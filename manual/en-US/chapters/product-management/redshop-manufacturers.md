@@ -1,18 +1,27 @@
 ## Working with redSHOP manufacturers
 
-Manufacturers represent the companies or people associated with products. Open **Manufacturers** in redSHOP administration to manage records and assign them to products.
+Manufacturers represent the companies or people associated with products. Open **Products → Manufacturers** in redSHOP administration to manage records and assign them to products.
 
 <h2 id="listing-screen">Manufacturer list</h2>
 
-The list includes name, image, description, email and publication state, with ordering and duplicate support. The manufacturer description is not its website URL.
+The list includes name, image, description, email and publication state, with ordering and duplicate support. Search matches the manufacturer name; the list defaults to ID descending unless a saved list selection applies. The email, publication and description headings currently fall back to ID sorting rather than sorting those values. When inline editing is enabled and you have permission, the name can be edited in the list. The manufacturer description is not its website URL.
 
 <h4 id="actions">Actions</h4>
 
-Use the available actions to create, edit, copy, publish, unpublish or delete records. Check-in releases abandoned editing locks. Copying can copy associated media; back up and verify associations before bulk operations.
+Use the available actions to create, edit, copy, publish, unpublish or delete records. Check-in releases abandoned editing locks. The shared copy path can fail during table lookup; check warnings and confirm the copied record exists. Copying can also copy associated media, so back up and verify associations before bulk operations.
 
 <h4 id="details-tab">Details</h4>
 
-Name and manufacturer template are required. The form also includes image and alternative text, email, website URL, products per page, publication state and description. Email and URL have form validation. A category-exclusion control depends on the corresponding enabled integration. Manufacturer-section custom fields are available in the Fields tab.
+- **Name:** required and initially blank.
+- **Manufacturer template:** required; choose a suitable manufacturer detail or products template.
+- **Image and alternative text:** select the image and provide descriptive alternative text for visitors.
+- **Email and website URL:** optional and initially blank; each has form validation.
+- **Products per page:** defaults to `12`; zero is rejected when saving. Choose a positive value appropriate for the layout.
+- **Published:** defaults to **Yes**.
+- **Description:** optional editor content filtered as safe HTML.
+- **Excluding category list:** shown only when the corresponding integration is enabled.
+
+Manufacturer-section custom fields are available in the Fields tab.
 
 <h4 id="seo-tab">Metadata</h4>
 

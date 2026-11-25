@@ -25,6 +25,8 @@ The current configuration screen contains:
 
 These are source-defined options, not a guarantee of successful synchronization or booking. The administrator screen warns that finalizing drafts outside redSHOP can cause invoice-number mismatches; verify the exact workflow and numbering with the provider before use.
 
+The distributed configuration disables e-conomic integration. The form shows its dependent controls when enabled, and shows the order-status selector for status-based booking. An existing shop may have different saved settings.
+
 ### Verify before any live use
 
 With an approved provider-compatible test environment, check authentication and permissions; product and group mappings; debtor and tax data; shipping and discounts; draft creation, booking and numbering; retries and duplicate prevention; and reconciliation or refund handling. Compare both systems after each action. Resolve errors and review accounting consequences before considering production activation.

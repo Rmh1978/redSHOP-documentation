@@ -5,21 +5,25 @@ Tax rates are associated with a [VAT/Tax Group](chapters/vat/vat-group.md), loca
 <a id="overview-1"></a><a id="field-1"></a><a id="action-1"></a><a id="overview-2"></a><a id="field-2"></a><a id="action-2"></a>
 ### Rate fields
 
+Open **VAT/Tax Rate** to view the name, group, shopper groups, country, state, rate and ID. Search by rate name or enter `id:` followed by its ID; filters include country, tax group and EU setting. Open a name to edit it, or use **New** or select records for **Delete**, subject to permission. The displayed rate is formatted as a percentage.
+
+The group link in a rate row currently uses the rate ID rather than the group ID. Open the intended group from the group list instead and verify its name before making changes. The list can also show an ambiguous state name when different countries use the same state code; inspect the rate itself and verify the intended country and state.
+
 | Field | Purpose |
 |---|---|
-| Name | Identifies the rate in administration. |
-| Group | Associates the rate with a tax group. |
+| Name | Required; identifies the rate in administration. |
+| Group | Required; associates the rate with a tax group. |
 | Shopper Group | Select one or more shopper groups to which the rate applies. This is a required multi-select in the current form. |
-| Country and State | Scope the rate to a location where applicable. |
-| Amount | Enter a decimal rate: for example, `0.16` represents 16%. Do not enter `16` for 16% or assume the field represents a fixed currency amount. |
-| EU Country | Marks the rate for the EU-based calculation mode. Verify the correct setting for your tax rules. |
+| Country and State | Scope the rate to a location where applicable; either can be left empty. Review overlap with location-specific rates. |
+| Amount | Enter a decimal rate: for example, `0.16` represents 16%. Do not enter `16` for 16% or assume the field represents a fixed currency amount. The table rejects negative rates. |
+| EU Country | Marks the rate for the EU-based calculation mode; the new-record form defaults to No. Verify the correct setting for your tax rules. |
 
 <a id="working"></a><a id="create-1"></a><a id="create-2"></a>
 ### Configure a rate
 
 1. Review the existing groups and rates. Create or select an appropriate published tax group.
 2. Open **VAT/Tax Rate**, select **New** and enter a name, group, shopper groups, country/state, decimal amount and EU setting appropriate to your tax rules.
-3. Save the rate. Check its group and shopper-group associations, including existing rates that may also match.
+3. Save the rate. Reopen it and check its group and shopper-group associations, including existing rates that may also match. If an association write fails, the current save path can report success when a later association succeeds; investigate missing associations rather than assuming the save was complete.
 4. Assign the appropriate tax group to products or configure the default group. Do not delete all existing rates as a shortcut to disabling tax.
 
 <a id="config"></a>

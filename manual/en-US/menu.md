@@ -29,6 +29,7 @@
     - [How to install module/plugin on Joomla administrator?](chapters/module-redshop/install-module-plugin.md)
     - [redSHOP - Price Filtering](chapters/module-redshop/price-filtering.md)
     - [redSHOP - Cart module](chapters/module-redshop/cart-module.md)
+    - [redSHOP - Category module](chapters/module-redshop/category-menu.md)
     - [redSHOP - Mega menu](chapters/module-redshop/mega-menu.md)
     - [redSHOP - redMASSCART](chapters/module-redshop/redmasscart.md)
     - [redSHOP - Product Compare](chapters/module-redshop/product-compare.md)

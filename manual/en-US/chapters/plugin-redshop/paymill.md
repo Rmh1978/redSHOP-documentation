@@ -1,34 +1,13 @@
-## Paymill Payment Plugin
+## Paymill payment plugin
 
-After download Plugin redSHOP Payment Paymill
-<img src="./manual/en-US/chapters/plugin-redshop/img/img136.png" class="example"/><br><br>
+The optional `rs_payment_paymill` plugin is a legacy integration. Confirm the exact package, current provider availability and protocol, and Joomla compatibility before considering it for use.
 
-[How to install module/plugin on Joomla administrator?](chapters/module-redshop/install-module-plugin.md)
+[Install and configure the plugin](chapters/module-redshop/install-module-plugin.md) on an isolated shop. The manifest includes environment, provider keys, success/failure/capture statuses, payment adjustments and customer eligibility. Its environment defaults to Sandbox; explicitly verify the saved setting and provider test facilities. Keep credentials in protected configuration, not documentation or logs.
 
-<hr>
+### Plugin options
 
-<ul>
-<li>Webpage will display Paymill detail. User fill in some field as: . Then click on Save button. After save plugin success. User click on view site icon to go to site</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img137.png" class="example"/><br><br>
+Basic options include an adjustment operand and amount, a total/percentage selector, environment, public and private keys, and success, failure and capture order statuses. The manifest defaults the operand to `-`, the amount to empty and the adjustment type to Percentage. Its status defaults are codes `C`, `P` and `S` respectively; confirm that suitable statuses exist and test actual transitions. The key fields are defined as text; restrict access to the plugin configuration and do not assume the fields mask or encrypt their values.
 
-<li>User click on Product on Menu. After webpage displayed all category, user choose category </li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img138.png" class="example"/><br><br>
+Advanced options include private and business customer switches, shopper groups and e-conomic payment terms and layout. The manifest defaults both customer switches to Yes, shopper group to `0`, terms to `2` and layout to blank; both provider key fields start blank. Confirm saved values, customer eligibility and accounting mappings for the installed shop.
 
-<li>Then, user click on Add to cart any product in category selected</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img139.png" class="example"/><br><br>
-
-<li>Webpage will display "Product has been added to your cart". Then user clicks on Cart on Menu</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img140.png" class="example"/><br><br>
-
-<li>User need login on site</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img141.png" class="example"/><br><br>
-
-<li>After login, User clicks on Checkout button</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img142.png" class="example"/><br><br>
-
-<li>User choose Payment Method with Paymill. Then click on Checkout</li>
-</ul>
-
-<hr>
-
-<h6>Last updated on August 21, 2019</h6>
+Test successful, pending, failed and repeated notifications, amounts, currency, capture and order/payment status using disposable orders and provider-authorized tests. A return page or receipt is not proof of payment. Provider, callbacks and Joomla checkout have not been tested here; do not use real card details for testing.

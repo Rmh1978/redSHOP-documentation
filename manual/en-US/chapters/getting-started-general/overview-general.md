@@ -1,5 +1,12 @@
 ## Getting Started & General
-Installation, setup, general information, etc.
+
+Start by checking the requirements for your exact package and preparing a
+restorable backup. Install and configure redSHOP on an isolated Joomla site,
+then verify the storefront and administrator workflows before using live
+customers or integrations. For an existing shop, follow the update guide and
+rehearse the upgrade and recovery separately.
+
+### Choose a guide
 
 - [Introduction to redSHOP](chapters/getting-started-general/introduction-to-redshop.md)
 - [Subscription and support terms](chapters/getting-started-general/redshop-subscription-policies.md)
@@ -12,3 +19,8 @@ Installation, setup, general information, etc.
 - [Using editors with redSHOP](chapters/getting-started-general/using-wysiwyg-editor.md)
 - [redSHOP Configuration Wizard](chapters/getting-started-general/redshop-configuration-wizard.md)
 - [redSHOP Navigation Panel](chapters/getting-started-general/redshop-navigation-panel.md)
+
+The configuration wizard is intended for initial setup. On an existing shop,
+use the ordinary configuration screens and review the wizard's warning before
+considering a rehearsal; do not assume that reopening it preserves every
+existing setting.

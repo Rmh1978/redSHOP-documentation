@@ -1,5 +1,9 @@
 # GitHub Copilot instructions — redSHOP documentation
 
+The maintainer paused the project. Wait for explicit resumption before further
+review, issue writes or documentation work. Then read the checkpoint and
+recheck both worktrees and the Core revision.
+
 You are editing the **redSHOP documentation repository**, not implementing changes in the product.
 
 - Answer the maintainer in Danish; write documentation articles in clear English.
@@ -25,10 +29,12 @@ You are editing the **redSHOP documentation repository**, not implementing chang
 
 ## Autonomous modernization workflow
 
-- The project is paused by explicit maintainer instruction. Do not resume until the maintainer instructs you to do so. Once resumed, treat the handover as one continuous project: work systematically through open issues and immediately continue to the next task or stage. Ordinary documentation edits and local non-destructive tests do not require approval.
+- The project is PAUSED. Do not resume review, issue writes or manual edits until the maintainer explicitly resumes it. On resumption, treat it as one continuous project, use safe batches, and record blockers and the next concrete task in the checkpoint.
+- On explicit resumption, check remaining issue reviews, synchronization, tests and manual pages; ordinary issue/label writes and documentation edits are authorized only within the resumed scope and existing security policy.
 - Begin with `docs-review/RESUME.md` and `WORK-PROGRESS.md`, check the current Core revision against the checkpoint and review only documentation affected by intervening Core changes.
 - Analyze code and document everything verifiable even when a runtime test, credentials or test-site approval is unavailable. Record the exact remaining blocker and a reproducible test plan in the master register, then continue elsewhere.
 - Maintain `docs-review/WORK-PROGRESS.md`, the master register and triage register throughout the work. Record current stage, completed and next tasks, changes, open issues, blockers, tests and decisions so future sessions can resume.
 - Immediately register newly discovered product or extension code defects in both `docs-review/CORE-BUGS.md` and `docs-review/CORE-BUGS.csv` as well as the shared master and triage registers. Reuse existing IDs and distinguish verified defects, risks and open investigations. After a Core revision change, reverify relevant findings, update their evidence and reopen affected manual pages when fixes change behavior.
+- Follow `docs-review/ISSUE-MANAGEMENT.md` for deduplication, safe GitHub Issue synchronization and the persistent ledger. Pending GitHub access or an isolated security-reporting blocker does not prevent independent work.
 - After all stages have been reviewed, perform a comprehensive quality pass and reopen insufficiently supported conclusions. An individual blocker or intermediate status is not a reason to stop the project.
 - Do not change redSHOP Core or payment plugins, production systems or the test site; do not commit, push or publish without explicit approval. Register approval-dependent work and proceed with other tasks.

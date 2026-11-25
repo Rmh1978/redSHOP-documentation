@@ -1,50 +1,19 @@
-## E-Pay new payment
+## ePay v2 payment plugin
 
-After download Plugin redSHOP Payment E-pay new
-<img src="./manual/en-US/chapters/plugin-redshop/img/img143.png" class="example"/><br><br>
+The source contains the legacy `rs_payment_epayv2` plugin. Confirm the exact installed package, current provider availability and protocol, and Joomla compatibility before considering it for use.
 
-[How to install module/plugin on Joomla administrator?](chapters/module-redshop/install-module-plugin.md)
+[Install and configure the plugin](chapters/module-redshop/install-module-plugin.md) on an isolated shop. Its manifest includes merchant and payment-window settings, callback options, status mappings and capture settings. Debug mode is not proof of a provider test environment; confirm the provider's authorized test facilities separately. Keep credentials in protected configuration, not documentation or logs.
 
-<hr>
+Use disposable orders to test success, pending, failure, repeated notifications, callback authentication, amounts, currencies and capture. Check order and payment status separately; a receipt or browser return is not proof of payment. Provider, callbacks and Joomla checkout have not been tested here.
 
-<ul>
-<li>User fill in some filed as: PBS Merchant ID, MDS Key. Choose status is Enabled to display plugin on front end. Then click on Save button. </li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img144.png" class="example"/><br><br>
+### Plugin settings
 
-<li>After that, click on view site icon </li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img145.png" class="example"/><br><br>
+- **Merchant and payment window:** the merchant ID is required and initially blank; window ID defaults to `1`, language to Danish, window state to Overlay and receipt choice to the shop's own receipt. Payment group, receipt email and tracker fields start blank. Verify these against the provider account.
+- **Capture and notifications:** instant capture and callback are disabled in the manifest; debug mode is enabled. Refund is enabled in the advanced defaults. These defaults are not a recommendation: check the provider's current requirements and the shop's status, capture and refund workflow before enabling the method.
+- **MD5 options:** the key starts blank and the mode defaults to Disabled, with alternatives for the accept path or both paths. The key field is defined as text. Restrict configuration access; do not assume the field masks or encrypts the value, or that a legacy setting provides sufficient current callback security.
+- **Payment types:** choose the methods supported by the provider. The manifest's new-record default includes a code that the inspected selector does not offer; verify the selected methods after saving rather than relying on that default.
+- **Order statuses:** success, failure and capture selectors list published statuses and default to codes `C`, `P` and `S` respectively. Verify their meaning and the actual transitions in your shop.
+- **Payment adjustment and eligibility:** operand defaults to `-`, price to blank and type to Percentage; Total is the fixed-amount option. Private-person and business visibility default to Yes; shopper group defaults to `0`. Test eligible and ineligible customers and compare totals independently.
+- **Accounting:** e-conomic payment conditions and layout identifiers start blank. Verify any mappings with the integration.
 
-<li>User click on Product on Menu. After webpage displayed all category, user choose category </li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img146.png" class="example"/><br><br>
-
-<li>Then, user click on Add to cart any product in category selected</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img147.png" class="example"/><br><br>
-
-<li>Webpage will display "Product has been added to your cart". Then user clicks on Cart on Menu</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img148.png" class="example"/><br><br>
-
-<li>User need login on site</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img149.png" class="example"/><br><br>
-
-<li>After login, User clicks on Checkout button</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img150.png" class="example"/><br><br>
-
-<li>User choose Payment Method with E-pay Payments. Then click on Checkout</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img151.png" class="example"/><br><br>
-
-<li>User choose accept checkbox and click on Checkout: final step</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img152.png" class="example"/><br><br>
-
-<li>Webpage show popup Information cart</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img153.png" class="example"/><br><br>
-
-<li>User fill in as image and click on "Gennemfor betaling"</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img154.png" class="example"/><br><br>
-
-<li>Webpage will display Order receipt page with E-pay Payment</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img155.png" class="example"/><br><br>
-</ul>
-
-<hr>
-
-<h6>Last updated on September 11, 2019</h6>
+These are manifest defaults for a new configuration, not necessarily settings already saved in an existing shop. Reopen and verify the actual configuration on an isolated installation.

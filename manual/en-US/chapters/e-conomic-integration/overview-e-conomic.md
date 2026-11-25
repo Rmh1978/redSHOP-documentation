@@ -1,5 +1,7 @@
-## Economic Integration
+## e-conomic integration
 
-- [Set up (in redSHOP configuration & e-conomic plugin)](chapters/e-conomic-integration/setup.md)
-- [Account Group](chapters/e-conomic-integration/account-group.md)
-- [Sync product from redSHOP to economic](chapters/e-conomic-integration/sync.md)
+The optional integration connects shop configuration, accounting mappings and product synchronization. Verify provider compatibility and accounting outcomes in an approved test environment.
+
+- [Set up the integration](chapters/e-conomic-integration/setup.md)
+- [Account groups](chapters/e-conomic-integration/account-group.md)
+- [Product synchronization](chapters/e-conomic-integration/sync.md)

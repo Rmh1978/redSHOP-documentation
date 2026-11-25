@@ -6,4 +6,6 @@ The redSHOP user list provides a synchronization action. The inspected synchroni
 
 Synchronization changes customer data. Before running it, back up the database, review privacy and access requirements, and rehearse on an isolated copy with representative names, existing records and restricted accounts. Verify results and any errors before using the records.
 
+The displayed added count is based on the number of selected Joomla users, not confirmed successful saves: the inspected synchronization ignores the storage helper's return value (CODE-079). Review errors and inspect the resulting records instead of treating the count as proof of success. A failure may occur after some data has already been stored, so investigate before retrying.
+
 Social-login, membership and account extensions are independently maintained. Their presence does not prove that customer details, shopper groups, orders or consent are synchronized. Verify the exact extension's Joomla and redSHOP compatibility, data mapping, authentication and deletion behavior separately before deployment.

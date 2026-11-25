@@ -4,7 +4,7 @@ Open **Product Order Search** under Orders in redSHOP administration to inspect 
 
 <h2 id="overview">Results</h2>
 
-The current list shows product name and SKU, order ID, the order item's modification date, order-item status, quantity and billing name. Product and order IDs link to their respective records. The displayed date comes from the order item, so do not assume it is the original order creation time.
+The current list shows product name and SKU, order ID, the order item's modification date, order-item status, quantity and billing name. Product names and order IDs link to their respective records. Select a sortable heading to change the order and use the pagination controls to move between results. The displayed date comes from the order item, so do not assume it is the original order creation time.
 
 <h2 id="filter">Filters</h2>
 

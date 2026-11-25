@@ -7,14 +7,28 @@ Open **Customer Input → Rating/Review** to manage reviews. Restrict moderation
 
 The form-backed list includes title, product, user, date, rating, favoured and published state. Publication and favoured are distinct controls.
 
+Search matches username, comment or product name, not the review title. Use the available sortable headings and pagination to navigate.
+
+The product-name link currently uses a review-edit task with the product ID. Open the product from Product Management instead of relying on that link.
+
 <h4 id="action-1">Actions</h4>
 
-Use the available toolbar to create, edit, publish, unpublish or delete records. Check the effects of bulk actions on a disposable shop first.
+Depending on permissions, the list toolbar offers New, Delete, Publish, Unpublish and Check-in. Open a review title to edit it. Check the effects of bulk actions on a disposable shop first.
 
 <h2 id="overview-2">Review details</h2>
 <h4 id="field-2">Fields</h4>
 
-Title, comment, product, user, rating, favoured and publication are required by the admin form. Date is also provided. Email, company name and images are hidden fields rather than normal visible admin inputs.
+The form definition marks title, comment, product, user, rating, favoured and publication as required:
+
+- **Title and comment:** enter the review heading and text.
+- **Product and user:** select the product and associated user.
+- **Rating:** choose a value from zero to five using the displayed radio controls.
+- **Favoured:** controls the separate favoured state.
+- **Published:** controls publication.
+
+New administrator-created reviews default to Favoured and Published, unlike the inspected storefront submission path; review both settings before saving. The rating date is shown in the list, but the inspected editor suppresses its date field. Email, company name and images are hidden fields rather than normal visible admin inputs. Verify actual form validation and saved values on the installed version.
+
+If a review has no stored timestamp, its displayed date can show the current date rather than its original creation date. Check review dates before relying on them for moderation or reporting.
 
 <h4 id="action-2">Actions</h4>
 

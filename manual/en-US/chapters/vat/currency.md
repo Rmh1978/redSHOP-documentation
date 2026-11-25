@@ -5,13 +5,15 @@ Currency records define the names and codes available to redSHOP. Configuring a 
 <a id="overview-1"></a><a id="field-1"></a><a id="action-1"></a>
 ### Review currencies
 
-Open **Currencies** in redSHOP administration. The list can be searched by name or code. Before adding a currency, check whether its code already exists and verify the code required by your payment and accounting integrations.
+Open **Currencies** in redSHOP administration. The list shows name, code and ID; search by name or code or select a sortable column heading. Open a name to edit it; name and code can also be edited in the list when inline editing is enabled and permitted. Use **New** to add a currency or select records and choose **Delete**, subject to your permissions. Before adding or deleting a currency, check the configured shop currency and the codes required by payment and accounting integrations.
+
+The currency table refuses deletion when the record's code equals the configured shop currency code. This check is not a general check of payment, accounting or historical-order dependencies; review those separately before deleting another currency.
 
 <a id="overview-2"></a><a id="field-2"></a><a id="action-2"></a><a id="working"></a><a id="create"></a>
 ### Add a currency
 
 1. Select **New** in the currency list.
-2. Enter the currency name and code and save. Both fields are required; the current table validation checks for a duplicate code.
+2. Enter the currency name and code and save. Both fields are required and start empty. The duplicate-code validation currently constructs an incorrect table identifier, so saving may fail; verify the result and any errors before proceeding.
 3. Find the saved entry in the list and verify it against the relevant provider's supported currencies.
 
 <a id="use-currency"></a>

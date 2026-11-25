@@ -4,11 +4,11 @@ The [media management guide](chapters/media/working-medias.md) is the current re
 
 <h2 id="overview-1">Media list</h2>
 
-The list can filter by media type and section and displays the media's associated item and alternative text.
+The list can filter by media type and section and displays the associated item, alternative text, publication state and ID. Select column headings to sort. To clear filters, choose **Select** in each filter; the current Reset button may not clear them.
 
 <h2 id="overview-2">Media details</h2>
 
-Review the type, section, associated item, alternative text and publication state before saving. Use non-sensitive sample files for testing; media storage is not a substitute for protected paid downloads.
+Choose an image, video, document or YouTube type, then review the section, associated item, alternative text and publication state before saving. Published defaults to Yes. The product dialog also offers download; manufacturer and catalog contexts use image and document respectively. Use non-sensitive sample files for testing; media storage is not a substitute for protected paid downloads.
 
 <h2 id="overview-3">Working with media</h2>
 <h4 id="create-item">Create a media record</h4>

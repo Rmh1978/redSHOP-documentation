@@ -5,15 +5,19 @@ Use **Users → Add User**, or open an existing customer in the redSHOP user lis
 <h2 id="overview">Customer details</h2>
 <h4 id="general">Account information</h4>
 
-The editor includes username, new password and confirmation, email and CC email, shopper group, Joomla group, block-user and receive-system-email controls. Password fields accept a new password; they do not display the existing password. Shopper groups affect shop behavior; Joomla groups govern Joomla permissions. Assign only the access needed.
+The editor includes username, new password and confirmation, email, shopper group, Joomla group, block-user and receive-system-email controls. CC email is shown when the Billy integration is enabled. Some account controls are hidden for the configured silent-user mode. Password fields accept a new password; they do not display the existing password. Shopper groups affect shop behavior; Joomla groups govern Joomla permissions. Assign only the access needed.
 
 <h4 id="billing">Billing and shipping information</h4>
 
 Choose private or company customer and supply the relevant name, address, postal code, city, country, state and phone. Company and shop configuration can expose company name, VAT and EAN numbers, invoice block, minimum-order bypass, tax exemption, request and approval fields. Extra fields depend on the shop's configuration. Review tax decisions with the appropriate tax adviser; a field value alone does not establish legal entitlement.
 
+The form marks first name, last name, address, postal code, city and phone as required. Company name is shown for company customers. Country and state visibility depends on configuration, and the state control can be hidden when no states are available. The tax-exemption controls depend on the shop's tax-exemption setting.
+
 <h4 id="actions">Actions</h4>
 
 Apply saves and keeps the editor open; Save returns to the list. Existing records also offer Place Order. Saving may invoke enabled integrations; verify effects in an isolated shop.
+
+Existing customers can have a Shipping Information tab for adding or editing addresses; an Order Information tab is shown when orders exist. The shipping-address Delete link currently may report that no item was selected instead of removing the address. Verify the result before attempting further changes.
 
 <h2 id="working">Create a customer in administration</h2>
 <h4 id="private-1">Private customer</h4>

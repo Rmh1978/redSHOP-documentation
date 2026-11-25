@@ -1,44 +1,18 @@
-## GiroPay
+## GiroPay payment plugin
 
-After download Plugin redSHOP Payment GiroPay
-<img src="./manual/en-US/chapters/plugin-redshop/img/img156.png" class="example"/><br><br>
+The optional `rs_payment_giropay` plugin is a legacy integration. Confirm the exact package, current provider availability and protocol, and Joomla compatibility before considering it for use.
 
-[How to install module/plugin on Joomla administrator?](chapters/module-redshop/install-module-plugin.md)
+[Install and configure the plugin](chapters/module-redshop/install-module-plugin.md) on an isolated shop. The manifest includes provider account settings, success/failure/capture statuses, payment adjustments and customer eligibility; it does not expose a test-mode switch. Keep credentials in protected configuration and confirm an authorized provider test environment.
 
-<hr>
+With disposable orders, test successful, pending, failed and repeated notifications, amounts, currency and capture behavior. Review callback authentication and order/payment statuses separately; an order receipt is not proof of payment. Provider, callbacks and Joomla checkout have not been tested here.
 
-<ul>
-<li>User fill in some field same as the image below. Choose status is Enabled to display plugin on front end. Then click on Save button</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img157.png" class="example"/><br><br>
+### Plugin settings
 
-<li>User click on View site icon</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img158.png" class="example"/><br><br>
+- **Merchant, Project and Source IDs:** provider account identifiers, initially blank. Confirm the values with the provider.
+- **Secret Password:** initially blank and defined as a text field. Restrict configuration access; do not assume the field masks or encrypts it.
+- **Success, failure and capture statuses:** select published shop statuses. The manifest defaults to codes `C`, `P` and `S`; verify their meanings and actual transitions.
+- **Payment operand, price and discount type:** the operand defaults to `-`, price to blank and type to Percentage; Total is the fixed-amount option. Independently check the resulting adjustment and rounding.
+- **Private Person, Business and Shopper Group:** both customer-type switches default to Yes and the shopper-group field to `0`. Test eligible and ineligible customers and saved selections.
+- **E-conomic payment conditions and layout IDs:** optional accounting mappings, initially blank. Verify them with the integration.
 
-<li>User click on Product on Menu. After webpage displayed all category, user choose category</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img159.png" class="example"/><br><br>
-
-<li>Then, user click on Add to cart any product in category selected</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img160.png" class="example"/><br><br>
-
-<li>Webpage will display "Product has been added to your cart". Then user clicks on Cart on Menu</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img161.png" class="example"/><br><br>
-
-<li>User need login on site</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img162.png" class="example"/><br><br>
-
-<li>After login, User clicks on Checkout button</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img163.png" class="example"/><br><br>
-
-<li>user choose Payment Method is GiroPay. Then click Checkout</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img164.png" class="example"/><br><br>
-
-<li>User choose accept checkbox and click on Checkout: final step</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img165.png" class="example"/><br><br>
-
-<li>Webpage will display order receipt page</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img166.png" class="example"/><br><br>
-</ul>
-
-<hr>
-
-<h6>Last updated on August 19, 2019</h6>
+These are manifest defaults for a new configuration, not necessarily settings already saved in an existing shop. Reopen the plugin after saving and use only provider-authorized tests.

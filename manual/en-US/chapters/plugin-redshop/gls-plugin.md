@@ -1,56 +1,15 @@
-## Default GLS Plugin
+## Default GLS shipping plugin
 
-After download Plugin redSHOP Default GLS
-<img src="./manual/en-US/chapters/plugin-redshop/img/img108.png" class="example"/><br><br>
+The optional `default_shipping_gls` plugin provides shipping rates and a GLS pickup-location integration. Its source references a historical provider service; verify the exact package and current GLS service requirements before relying on it.
 
-[How to install module/plugin on Joomla administrator?](chapters/module-redshop/install-module-plugin.md)
+1. [Install and configure the plugin](chapters/module-redshop/install-module-plugin.md) on an isolated shop. The manifest offers shipping extra fields, a location-count setting defaulting to 10 and an **Allow create pacsoft label** option defaulting to No.
+2. Configure appropriate [shipping rates](chapters/shipping/shipping-methods.md) and enable the shipping method. The plugin's language description instructs adding `{gls_shipping_location}` to the shipping-method template for its location control. Preserve the existing template before editing.
+3. With provider-authorized test facilities and disposable addresses, check available locations, selection, shipping address, rates, VAT and the completed order. Verify service compatibility and actual label behavior separately; enabling an option alone does not establish that labels work.
 
-<hr>
+The extra-field setting allows multiple shipping fields. **Amount** controls how many pickup shops the plugin requests; its supplied default is 10. The location control includes a postal code, pickup-shop selection and mobile number. Check their behavior and any provider limits in the installed checkout.
 
-<ul>
-<li>Webpage will display Default GLS detail. User choose Allow create pacsoft label is Yes, select status is Enabled</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img109.png" class="example"/><br><br>
+If the pickup service cannot be reached, location lookup may stop with an error instead of recovering cleanly. Verify an alternative shipping method and contact your maintainer if this affects checkout.
 
-<li>User go to Shipping method in Administrator on redSHOP and create item shipping have name "Demo Rate GLS"</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img110.png" class="example"/><br><br>
+The GLS shipping-address handler can also fail when a pickup selection is saved. Verify the complete order flow on an isolated shop before offering this method, and involve your maintainer if the order cannot be completed.
 
-<li>User click on View site icon to go to front end page</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img111.png" class="example"/><br><br>
-
-<li>User click on Product on Menu. After webpage displayed all category, user choose category </li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img112.png" class="example"/><br><br>
-
-<li>Then, user click on Add to cart any product in category selected</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img113.png" class="example"/><br><br>
-
-<li>Webpage will display "Product has been added to your cart". Then user clicks on Cart on Menu</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img114.png" class="example"/><br><br>
-
-<li>User need login on site</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img115.png" class="example"/><br><br>
-
-<li>After login, User clicks on Checkout button</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img116.png" class="example"/><br><br>
-
-<li>User choose Shipping Method with Default GLS and select Payment Method. Then click on Checkout</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img117.png" class="example"/><br><br>
-
-<li>User choose Accept checkbox and click on Checkout: final step</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img118.png" class="example"/><br><br>
-
-<li>Webpage will display order receipt </li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img119.png" class="example"/><br><br>
-
-<li>To check order, user go to redSHOP administrator, click on Order and choose Orders tab</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img120.png" class="example"/><br><br>
-
-<li>User click on Order ID lasted</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img121.png" class="example"/><br><br>
-
-<li>Webpage will display order detail with shipping Method</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img122.png" class="example"/><br><br>
-</ul>
-
-<hr>
-
-<h6>Last updated on August 19, 2019</h6>
+No GLS service, labels, checkout or Joomla UI was tested here. Avoid real customer addresses and live shipments in a rehearsal.

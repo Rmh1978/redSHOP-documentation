@@ -6,19 +6,38 @@ Open redSHOP Configuration and choose **SEO**. Before changing routes on a live 
 
 The form provides product-number and ID/name SEF options, category and category-tree inclusion, automatic metadata and an SEO language field. Test generated URLs and language output with your actual Joomla menus; entering a language value alone is not proof that multilingual routing is configured.
 
-The form also exposes default menu-item and alias fields for account, billing/shipping addresses, cart, checkout, gift card, manufacturers, order detail, orders, quotation, registration and wishlist. Select appropriate published frontend menu items and verify each route and access rules. The inspected form updates alias fields from the selected menu on load and change, so do not assume a manually entered different alias will survive reopening and saving.
+The distributed configuration enables automatic metadata, disables the product-number and ID/name options and category inclusion, and sets the SEO language to `en-GB`. Existing saved values can differ.
+
+The form also exposes default menu-item and alias fields for account, billing/shipping addresses, cart, checkout, gift card, manufacturers, order detail, orders, quotation, registration and wishlist. Its selector queries published frontend menu items; select the appropriate item for each route and verify access rules. The inspected form updates alias fields from the selected menu on load and change, so do not assume a manually entered different alias will survive reopening and saving.
 
 <h2 id="category">Category</h2>
 
 Set global title, heading, description and keyword patterns. Category-specific metadata and its append/prepend/replace setting affect the result. For example, `{categoryname} | {shopname}` is a title pattern supported by the inspected category title path.
 
+The distributed category patterns use `{categoryname} | {shopname}` for the
+title, `{categoryname}` for the heading, `{categoryname} - {shopname}` for
+the description and `{categoryname}, {shopname}` for keywords.
+
 <h2 id="products">Products</h2>
 
 Set global product title, heading, description and keyword patterns. Product-specific metadata can append to, prepend to or replace generated values in the inspected paths. Verify rendered HTML and Open Graph output for products with and without metadata.
 
+The distributed product title is
+`{productname} | {categoryname} | {productname} from {shopname}`; its
+description is `{productname} - {categoryname} - {productname} from {shopname}`,
+its keywords use the same terms separated by commas, and the heading is blank.
+Review the repetition and edit the patterns to suit the shop. Saved values can
+differ from distributed defaults.
+
 <h2 id="manufacturer">Manufacturer</h2>
 
 Configure title, heading, description, keyword and canonical patterns. The inspected manufacturer view combines some record values with global patterns rather than universally replacing them. Its canonical pattern supports `{manufacturerproductslink}` on the manufacturer detail path. Test manufacturer detail and product layouts before indexing.
+
+The distributed manufacturer title is `{manufacturer} | {shopname}`, the
+heading is `{manufacturer}`, the description is `{manufacturer} - {shopname}`,
+the keywords are `{manufacturer}, {shopname}`, and the canonical pattern is
+`{manufacturerproductslink}`. Check these against actual canonical output and
+your indexing policy before using them.
 
 <h2 id="tags">Available SEO tags</h2>
 

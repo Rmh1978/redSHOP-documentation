@@ -1,53 +1,18 @@
-## Bao kim
+## Bao Kim payment plugin
 
-After download Plugin redSHOP Payment Bao Kim
-<img src="./manual/en-US/chapters/plugin-redshop/img/img94.png" class="example"/><br><br>
+The optional `baokim` redSHOP payment plugin is a legacy provider integration. Confirm the exact package, current provider requirements and Joomla compatibility before considering it for use.
 
-[How to install module/plugin on Joomla administrator?](chapters/module-redshop/install-module-plugin.md)
+1. [Install and configure the plugin](chapters/module-redshop/install-module-plugin.md) on an isolated shop. The manifest includes provider account settings, test mode and success/failure order statuses. Test mode defaults to Yes in the manifest; explicitly confirm the saved setting and provider test environment.
+2. Keep credentials in protected configuration, not documentation, screenshots or logs. Review status mappings and the payment method selected at checkout.
+3. Use authorized provider test facilities and disposable orders to check success, pending, failure and repeated notifications, amounts, currency and payment status. A redirect or receipt does not establish that payment was verified.
+4. Review callback authentication, failure handling and the full checkout before a production decision.
 
-<hr>
+### Plugin settings
 
-<ul>
-<li>User choose status is Enabled and click on extra</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img95.png" class="example"/><br><br>
+The **Extra** section supplies the provider account email, API key and secret key, all initially blank, plus the test-mode switch, initially Yes in the manifest. The key fields are defined as text; restrict administrator access and do not assume the values are masked or encrypted.
 
-<li>User fill in some field as: Api key, Secret key ... Then click on Save button</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img96.png" class="example"/><br><br>
+The **Advanced** section selects success and failure order statuses. Their manifest defaults are codes `C` and `P`; check the shop's actual status definitions. The success selector lists published statuses, while the failure selector's query does not apply that filter. Verify saved values and actual transitions with the provider's authorized test facilities.
 
-<li>User goes on frontend by clicking on view site icon </li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img97.png" class="example"/><br><br>
+These are manifest defaults for a new configuration, not necessarily settings already saved in an existing shop.
 
-<li>User click on Product on Menu. After webpage displayed all category, user choose category </li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img98.png" class="example"/><br><br>
-
-<li>Then, user click on Add to cart any product in category selected</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img99.png" class="example"/><br><br>
-
-<li>Webpage will display "Product has been added to your cart". Then user clicks on Cart on Menu</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img100.png" class="example"/><br><br>
-
-<li>User need login on site</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img101.png" class="example"/><br><br>
-
-<li>After login, User clicks on Checkout button</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img102.png" class="example"/><br><br>
-
-<li>User choose Payment Method with 2Checkout Payments. Then click on Checkout</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img103.png" class="example"/><br><br>
-
-<li>User choose accept checkbox and click on Checkout: final step</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img104.png" class="example"/><br><br>
-
-<li>Webpage will display BaoKim Payment detail, user choose Payment method, then fill in email and phone number. Click on "Thanh toán" button</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img105.png" class="example"/><br><br>
-
-<li>Wait 10 second, webpage will redirect to Order receipt page</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img106.png" class="example"/><br><br>
-
-<li>Webpage will display message: "BaoKim order placed successfully"</li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img107.png" class="example"/><br><br>
-</ul>
-
-<hr>
-
-<h6>Last updated on August 21, 2019</h6>
+Provider compatibility, callbacks and Joomla checkout have not been tested here.

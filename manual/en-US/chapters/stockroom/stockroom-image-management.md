@@ -5,11 +5,11 @@ Stock amount images associate a stockroom, quantity condition and image with a t
 <h2 id="listingScreen">Stock image list</h2>
 <h4 id="field">Fields</h4>
 
-The editor requires a tooltip, stockroom, stock option and quantity. Options include higher than, equal and lower than; the quantity input has a minimum of 1 in the current form. An image can be selected through the media control. Verify which controls and filters appear in the installed administrator.
+The list displays the tooltip, stockroom, comparison, quantity and image. The editor requires a tooltip, stockroom, stock option and quantity. Options include higher than, equal and lower than; the quantity input has a minimum of 1 in the current form. An image can be selected through the media control.
 
 <h4 id="action">Actions</h4>
 
-Use the permitted New, Edit and Delete actions to manage records. Back up files and data before deleting media and verify the effects with disposable records.
+Use the permitted New, Edit and Delete actions to manage records. Deleting a record also attempts to remove its associated media and image folder. Back up files and data before deletion and verify the effects with disposable records.
 
 <h2 id="workingStockImage">Working with stock images</h2>
 <h4 id="createItems">Create a rule</h4>

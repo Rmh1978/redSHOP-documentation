@@ -10,6 +10,22 @@ The current source includes the optional `redshop_integrations/billy` plugin. It
 4. With the accountant, select the appropriate sales accounts and tax groups for taxable and non-taxable sales, the default bank account and fee account. Review the no-VAT identifier, cashbook option, attribute handling and country selection. Do not copy example account IDs into a different business.
 5. Review the payment-specific terms and cashbook account settings, invoice-email subjects and bodies, reminder settings and any beta options. Do not enable reminders or scheduled actions without an approved recipient and process.
 
+For a new configuration, the manifest defaults invoice booking to **Directly book** and **Use cashbook** to Yes. It defaults reminders and the overdue scheduled option to No. Existing saved settings may differ: check them before enabling the plugin or triggering an order. The status selector lists published redSHOP order statuses, with `S` as its manifest default; verify the selected status and booking mode together.
+
+The payment settings provide separate terms and cashbook accounts for the supported payment categories. The email settings include separate invoice subjects and bodies; reminder settings include three subject/body pairs, overdue limit and fee fields. Review the actual text and accounting rules with the accountant rather than relying on the placeholder defaults.
+
+For a new configuration, the inspected manifest also declares these defaults:
+
+| Setting | Default and considerations |
+| --- | --- |
+| Access token and account/tax selectors | Empty; configure only with authorized credentials and accountant-approved mappings. The token field is a text field. |
+| Attribute handling | Defaults to No; alternatives are to store attributes as products or store attributes and products in Billy. Verify resulting invoice lines. |
+| Short Error Message / country | The error-message option defaults to Yes; country defaults to the customer's country rather than the shop's. Restrict access to error information. |
+| Bank-transfer and EAN payment terms | Default to None; days and cashbook-account fields are empty. Other payment categories have separate cashbook-account selectors. |
+| Invoice email subjects and bodies | Default to `Invoice` and `Invoice for your order` for the supplied categories. Review before sending. |
+| Reminder limit and fees | Overdue limit defaults to `0`, fee fields are empty, and reminder text contains placeholders. Reminders and scheduled overdue processing default to No. |
+| Beta EAN settings | The separate authentication token and EAN payment-method selector default to empty; EAN invoice booking and reminder email default to No. Confirm the provider workflow before enabling either option. |
+
 Keep tokens, invoice details and customer data out of source control, screenshots and shared logs. Protect Joomla administrator and backup access.
 
 ### Test before live use

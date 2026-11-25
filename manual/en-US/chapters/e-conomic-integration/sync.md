@@ -11,3 +11,5 @@ The optional e-conomic plugin contains product and product-group lookup and stor
 5. Investigate errors without sharing credentials or personal data. Do not retry blindly or enable production synchronization until the behavior and accounting consequences have been verified.
 
 Do not use the historical SOAP operation URLs as a current API contract. Provider compatibility, direction of synchronization, conflicts, retries and invoice handling remain subject to testing for the exact plugin and provider account.
+
+If connection initialization fails, stop and investigate rather than assuming a retry is safe: CODE-047 tracks an error after failed SOAP client creation. No real provider or accounting operation was performed during this source review.

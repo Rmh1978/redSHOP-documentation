@@ -1,30 +1,9 @@
-## GLS - Update Shipping User Information
+## GLS shipping information update
 
-[How to install module/plugin on Joomla administrator?](chapters/module-redshop/install-module-plugin.md)
+The previous guide referred to a separate “GLS - Update Shipping User Information” plugin. Its exact package and current availability have not been established. Do not assume it is included, required or compatible with your installation.
 
-<hr>
+The current [Default GLS plugin](chapters/plugin-redshop/gls-plugin.md) source contains a shipping-information update handler, but source inspection alone does not establish the resulting address or order behavior. Check the installed extension identity and version with its distributor before enabling any additional integration.
 
-<ul>
-<li>Make sure install plugin GLS - Update Shipping User Information is successful </li>
+The Default GLS handler can fail when processing a pickup selection. Verify the entire order and address flow on an isolated shop before offering the integration.
 
-<li>Enable plugin GLS - Update Shipping User Information: Extension → Plugin → search GLS - Update Shipping User Information </li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img73.png" class="example"/><br><br>
-
-<li>Install plugin "redSHOP GLS redshop_shipping" </li>
-
-<li>User go on Administrator redSHOP and create items for shipping default GLS </li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img74.png" class="example"/><br><br>
-
-<li>User go on frontend and add to cart product </li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img75.png" class="example"/><br><br>
-
-<li>User go on Cart and click "Checkout" button and select Shipping method "Shipping GLS demo" </li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img76.png" class="example"/><br><br>
-
-<li>User execute checkout final </li>
-<img src="./manual/en-US/chapters/plugin-redshop/img/img77.png" class="example"/><br><br>
-</ul>
-
-<hr>
-
-<h6>Last updated on August 22, 2019</h6>
+On an isolated shop with disposable addresses and provider-authorized test facilities, verify pickup selection, saved shipping details, order display, access and checkout. Do not use live customer data or create real shipments for the test.

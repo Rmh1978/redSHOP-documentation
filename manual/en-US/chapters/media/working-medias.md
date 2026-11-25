@@ -5,15 +5,19 @@ Media records associate files or other media with products, categories, manufact
 <a id="listingScreen"></a><a id="field1"></a><a id="action1"></a>
 ### Find media
 
-Open **Media** in redSHOP administration. The current list provides media-type and media-section filters and shows the media name, type, associated item, section and alternative text. Use the item-specific media dialog when working from a product; it limits the context to that product.
+Open **Media** in redSHOP administration. Filter by **Media Type** and **Media Section**; changing a filter submits the list. The filters include images, video, documents, downloads and YouTube, and sections such as products, categories, properties and manufacturers. Select the neutral **Select** option in each filter to clear it: the current **Reset** button may not clear the filters.
+
+The list shows a media name or image preview, type, associated item, section, alternative text, published state and ID. Select a sortable column heading to change the order. Use the row edit button or select records for toolbar actions. Use the item-specific media dialog when working from a product; it limits the context to that product.
 
 <a id="mediasScreen"></a><a id="field2"></a><a id="action2"></a><a id="withRedshop"></a><a id="mediaItems"></a>
 ### Add or edit a media record
 
 1. In the media list, select **New**, or open an existing record for editing.
-2. Select or upload the appropriate file, or enter the media-specific information offered by the form. Review the media type, section, associated item, alternative text and published state.
-3. Save and inspect the resulting record and its associated item. Give images meaningful alternative text; do not rely solely on an automatically generated value.
-4. Preview the storefront where applicable and check the image, thumbnail, alternative text and layout.
+2. Choose **Media Type**: image, video, document or YouTube. The product-specific dialog also offers download. A manufacturer context uses image; a catalog context uses document.
+3. For file media, choose a file from the computer or use the media bank. New records offer a ZIP bulk-upload choice, initially **No**, and can offer multiple file rows. A product context also offers a download-folder picker. The available controls depend on the context.
+4. Choose the **Media Section** and its **Section Name** (the associated product, category or other item). In an existing item-specific dialog, the section and item are supplied by that context rather than freely changed.
+5. Enter descriptive **Alternative Text** and review **Published**, which defaults to Yes for a new record. For images, a blank alternative text may be filled from the file or associated item's name; check it rather than relying on an automatic value.
+6. Save and inspect the resulting record and its associated item. Preview the storefront where applicable and check the image, thumbnail, alternative text and layout.
 
 The current image upload control has client-side type and size settings, but these do not prove server-side validation. Limits, accepted content and public accessibility can differ between upload paths and installations. Upload only trusted files, verify file permissions and access rules, and do not place confidential documents in a publicly accessible media area.
 
@@ -22,7 +26,7 @@ The current image upload control has client-side type and size settings, but the
 
 1. Open a product in **Product Management**. The product editor provides a main image control.
 2. Save the product first. For an existing product, select **Add additional images** to open its media dialog.
-3. Add or edit a media record in that product context. The dialog also provides a **Default Media** action for product, property and subproperty media.
+3. Add or edit a media record in that product context. Select a record and use **Default Media** to designate a primary item for product, property or subproperty media. The dialog also shows primary media, ordering and published state.
 4. Save, return to the product and preview it. Confirm the intended main image and additional gallery images appear correctly for the active product template.
 
 For a new property image, the current model attempts to set the first image as primary only when that property has no other images and no main image. Verify the result rather than assuming this behavior applies to every media section.

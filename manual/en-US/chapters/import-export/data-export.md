@@ -14,9 +14,23 @@ Use an isolated site and disposable data to verify column names, filtering, enco
 
 1. In redSHOP administration, open **Import/Export** and the **Data Export** screen.
 2. Select an export type. The screen loads any options supplied by that plugin; if no type is available, check the installed and enabled export plugins.
-3. Set the separator (comma by default) and any type-specific filters. For example, the order plugin provides from/to date fields. Verify date boundaries and output on test data rather than assuming either date is inclusive.
+3. Set the separator (comma by default) and any type-specific filters. The order plugin's date filter excludes records at exactly midnight on the start date and 23:59:59 on the end date. Verify the output and date boundaries on disposable data before relying on it.
 4. Select **Start Export**, wait for the process and download to finish, and inspect any messages.
 5. Verify the file's headers, record count, filtering and contents before use. Store the file securely. Avoid simultaneous exports of the same type because they use a shared temporary filename.
+
+### Product export options
+
+The product exporter offers separate **Extra Fields** and **Attributes Data**
+choices; both initially select No. Enable the relevant choice when those
+additional columns are needed and verify the resulting headers and values.
+Stockroom columns are added for available stockrooms independently of those
+choices.
+
+The category and manufacturer controls allow multiple selections. Leaving a
+control empty adds no filter for that control; when both have selections, the
+query applies both filters. Check the exported products and their associated
+categories before using the file, especially when products belong to more than
+one category.
 
 ### Export types in the Core manifest
 

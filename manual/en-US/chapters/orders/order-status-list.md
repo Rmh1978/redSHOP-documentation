@@ -5,7 +5,7 @@ Order statuses describe order processing; payment status is a separate field. Ch
 <h2 id="overviewManagement">Order status list</h2>
 <h4 id="fields1">Fields</h4>
 
-The list has status name, code, published state and ID. Search and ordering are available. Installed status records and codes can differ between shops; do not assume a fixed number.
+The list has status name, code, published state and ID. Search by status name or use the ordering controls. Open a name to edit it; name and code can also be edited in the list when inline editing is enabled and permitted. Installed status records and codes can differ between shops; do not assume a fixed number.
 
 <h4 id="actions1">Actions</h4>
 
@@ -14,7 +14,7 @@ Create, edit, publish, unpublish and delete as permitted. Before changing existi
 <h2 id="overviewDetails">Status details</h2>
 <h4 id="fields2">Fields</h4>
 
-Name, code and published state are required. The table attempts to check code uniqueness. **Known issue:** its lookup constructs a doubly prefixed table name; creating or editing a status may fail. Do not bypass validation; request a separately reviewed Core fix and verify in an isolated shop.
+Name, code and published state are required; a new status defaults to Published. The table attempts to check code uniqueness. **Known issue:** its lookup constructs a doubly prefixed table name; creating or editing a status may fail. Do not bypass validation; request a separately reviewed Core fix and verify in an isolated shop.
 
 <h4 id="actions2">Save</h4>
 
