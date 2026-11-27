@@ -6,6 +6,7 @@ The postal-code list associates a city and country with a postal code and an opt
 ### Before changing records
 
 Open **Zipcodes/Cities** in redSHOP customization. The list shows city, country, state, postal code and ID. Search by city or country name, or enter the full postal code. You can also filter by country and sort using the column headings. The current country filter can omit records with no matching state; clear it and search again before concluding that a record is missing. Use **New** to add records or select records and choose **Delete**, subject to your permissions.
+The list model defaults to ID ascending; saved list state can change the order.
 
 Back up the shop and verify the relevant [country](chapters/customization/countries.md) and [state](chapters/customization/states.md). Check how the installed shipping method uses addresses and postal codes; do not assume that creating a city record automatically creates or restricts a shipping rate.
 

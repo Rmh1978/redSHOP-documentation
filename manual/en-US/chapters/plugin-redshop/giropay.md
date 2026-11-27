@@ -13,6 +13,6 @@ With disposable orders, test successful, pending, failed and repeated notificati
 - **Success, failure and capture statuses:** select published shop statuses. The manifest defaults to codes `C`, `P` and `S`; verify their meanings and actual transitions.
 - **Payment operand, price and discount type:** the operand defaults to `-`, price to blank and type to Percentage; Total is the fixed-amount option. Independently check the resulting adjustment and rounding.
 - **Private Person, Business and Shopper Group:** both customer-type switches default to Yes and the shopper-group field to `0`. Test eligible and ineligible customers and saved selections.
-- **E-conomic payment conditions and layout IDs:** optional accounting mappings, initially blank. Verify them with the integration.
+- **Accounting:** the current manifest has no local e-conomic fields. Review the central [e-conomic settings](chapters/e-conomic-integration/setup.md) and any preserved legacy values.
 
 These are manifest defaults for a new configuration, not necessarily settings already saved in an existing shop. Reopen the plugin after saving and use only provider-authorized tests.

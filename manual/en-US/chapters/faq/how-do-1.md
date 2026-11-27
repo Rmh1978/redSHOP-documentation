@@ -10,4 +10,6 @@ redSHOP uses template records for the AJAX cart box and detail box. Current defa
 4. Select the intended published detail template in cart settings. A product template can request a named detail template using `{ajaxdetail_template:template_name}`; otherwise the configured default is considered. When different products are processed in the same request, the current helper can reuse the first product's selection for later products. Check mixed-product lists and their custom fields before relying on different detail templates.
 5. Test products with and without attributes, accessories and custom fields, keyboard operation, continuation to the cart and different viewport sizes. Check both the changed template and an unaffected product.
 
+The continue-shopping button uses the configured redirect link when present; otherwise the inspected tag handler routes to the redSHOP component. Verify the destination after changing the template or cart settings.
+
 The current loader queries published redSHOP template records and reads their associated files. Do not assume that old `/components/com_redshop/templates/rsdefaulttemplates/` paths or a Joomla template override will be used. The precise edit, override and update-preservation workflow must be verified for the installed version.

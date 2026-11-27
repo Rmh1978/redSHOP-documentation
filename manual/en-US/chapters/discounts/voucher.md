@@ -7,7 +7,7 @@ Vouchers are code-based discounts with product associations. In Joomla administr
 
 The list includes code, amount, type, dates, free shipping, publication and amount left. Search by code or enter `id:` followed by the numeric ID. Filter by type or free-shipping setting and sort using the available column headings; the default is ID ascending.
 
-The list formats amounts as currency even for Percentage vouchers. Open the record and check **Type** and **Amount** together rather than interpreting the list amount as a fixed discount.
+The Amount heading appears sortable, but the inspected list model falls back to ID ordering for that field. The list also formats amounts as currency even for Percentage vouchers. Open the record and check **Type** and **Amount** together rather than interpreting the list amount as a fixed discount.
 
 The installed schema permits empty (`NULL`) dates, but an isolated test of the list renderer failed on a null date. Actual saved records and Joomla list behavior have not been verified. Investigate a list failure on an isolated copy rather than editing live database records.
 
@@ -30,6 +30,8 @@ Create, edit, publish, unpublish, check in and delete records as permitted. Sele
 | **Published** | **Published** by default. Unpublish an unfinished voucher. |
 | **Amount left** | Remaining usage quantity, initially `0`. The inspected lookup requires a value greater than zero. Set a suitable positive count and verify how product quantities and completed orders affect it. |
 | **Products** | Required multiple product selector. Select the eligible products; do not assume an empty selection applies to every product. |
+
+For a free-shipping voucher, also check how fulfillment is recorded. In the inspected checkout path the free-shipping flag hides shipping selection and the order-save path does not read the submitted shipping method. Actual checkout behavior and the intended policy remain under investigation.
 
 <h4 id="action-2">Save</h4>
 

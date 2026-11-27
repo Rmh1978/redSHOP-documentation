@@ -7,4 +7,8 @@ First establish the shop's actual tax obligations with a qualified adviser. A co
 3. Test guest and registered customers, applicable locations and shopper groups, exemptions, shipping and discounts. Verify product, cart, checkout, order and invoice totals with independently calculated expected results.
 4. Only after verifying the calculation, review the cart template's displayed labels. Removing a VAT label or template tag changes presentation, not the underlying tax calculation. Preserve a copy of the template before editing and verify the resulting storefront.
 
+In the company billing template, the inspected tax-exemption control is rendered only when both exemption and its frontend display setting are enabled. Its visibility also depends on the company-customer state. Verify the actual registration and checkout flows rather than treating this control as proof that tax was calculated correctly.
+
 Do not delete existing rates merely to hide VAT wording, and do not infer legal compliance from a zero displayed amount. The exact exemption and checkout behavior must be verified for the installed version and configuration.
+
+A matching zero-rate VAT record can also make a nonzero shopper-group default shipping charge calculate as zero. Check the shipping charge as well as tax; see [Shipping Methods](chapters/shipping/shipping-methods.md).

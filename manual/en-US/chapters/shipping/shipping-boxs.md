@@ -9,7 +9,7 @@ The list includes the name, length, width, height, priority, publication state a
 
 Search by name, sort using the available headings and use pagination to navigate results. The `id:` search currently does not find the requested box reliably; use its name instead.
 
-When inline editing is enabled, users with edit permission can edit the name, dimensions and priority inline unless the record is checked out by another user. Check the saved values after editing; the list's default ordering is by ID.
+When inline editing is enabled, users with edit permission can edit the name, dimensions and priority inline unless the record is checked out by another user. Press Enter to submit an inline change or Escape to cancel it. Check the saved values after editing; the list's default ordering is by ID.
 
 <h4 id="action-1">Actions</h4>
 
@@ -33,6 +33,10 @@ Save and reopen a record to verify the stored values; cancel or close to discard
 
 The current helper selects published boxes ordered by ascending priority. It calculates three candidate cart dimensions from product lengths, widths, heights and quantities, then accepts a box that meets all three dimensions of at least one candidate. Gift cards are skipped in this calculation. This is an estimate, not a guarantee of physical packing or individual-item rotation; exact storefront and carrier behavior still depends on the active template and shipping method.
 
-The inspected box renderers select the first matching box when none is selected and do not necessarily display every matching box when priorities differ. They also hide the box control unless more than one box and more than one shipping method are available, and at least one method is Bring, UPS or USPSv4. Check the available choices in the shop's checkout and contact your maintainer if expected boxes are missing.
+The inspected checkout shipping view requires a shipping address before rendering box choices. The box renderers select the first matching box when none is selected and do not necessarily display every matching box when priorities differ. They also hide the box control unless more than one box and more than one shipping method are available, and at least one method is Bring, UPS or USPSv4. Check the available choices in the shop's checkout and contact your maintainer if expected boxes are missing.
+
+Selected-box lookup has a known error that can interrupt carrier rate calculation. UPS, FedEx and USPSv4 use selected-box dimensions when an ID is supplied; Bring does so when its **Use Shipping Box** option is enabled. Test each configured carrier in an isolated shop.
+
+The cart shipping estimator is separate from checkout box selection and has known problems with dimensions and volume. Test dimension-restricted rates in the cart and checkout separately before relying on an estimate.
 
 See [shipping methods](chapters/shipping/shipping-methods.md) for rate and destination testing.

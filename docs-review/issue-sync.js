@@ -232,11 +232,12 @@ function persistLedger(filename, id, updates) {
 }
 
 function parseArgs(args) {
-    const options = { apply: false, ensureLabels: false, ids: [], priority: '', component: '', all: false, distinctFrom: [] };
+    const options = { apply: false, ensureLabels: false, continueOnBlocked: false, ids: [], priority: '', component: '', all: false, distinctFrom: [] };
     for (let i = 0; i < args.length; i++) {
         const arg = args[i];
         if (arg === '--apply') options.apply = true;
         else if (arg === '--ensure-labels') options.ensureLabels = true;
+        else if (arg === '--continue-on-blocked') options.continueOnBlocked = true;
         else if (arg === '--all') options.all = true;
         else if (['--ids', '--priority', '--component', '--distinct-from'].includes(arg)) {
             const value = args[++i];
@@ -310,7 +311,14 @@ async function sync(api, options, ledgerPath, findingsPath, output = console.log
             continue;
         }
         const body = render(finding, row);
-        verifySource(row, finding);
+        try {
+            verifySource(row, finding);
+        } catch (error) {
+            if (!options.continueOnBlocked) throw error;
+            summary.blocked++;
+            output(`BLOCK ${row.review_id}: ${error.message}`);
+            continue;
+        }
         const hash = sha(body);
         const tag = marker(row.review_id, hash);
         const labels = labelsFor(row, finding);

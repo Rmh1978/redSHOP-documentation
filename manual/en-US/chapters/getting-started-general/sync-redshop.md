@@ -4,7 +4,7 @@ Joomla accounts and redSHOP customer/address records have different roles. Shopp
 
 The redSHOP user list provides a synchronization action. The inspected synchronization selects Joomla users without any matching redSHOP user-info record and attempts to create shop records for them. It derives first and last names from the first two space-separated parts of the Joomla name and uses the configured default customer type. It does not establish a continuous two-way synchronization with another extension or update every existing redSHOP record.
 
-Synchronization changes customer data. Before running it, back up the database, review privacy and access requirements, and rehearse on an isolated copy with representative names, existing records and restricted accounts. Verify results and any errors before using the records.
+Synchronization changes customer data. Before running it, back up the database, review privacy and access requirements, and rehearse on an isolated copy with representative names, existing records and restricted accounts. In the redSHOP navigation panel, open **Users**, choose **Synchronise Users** and confirm the prompt. The action considers all Joomla users without a matching redSHOP user-info record, not just selected list rows. Verify results and any errors before using the records.
 
 The displayed added count is based on the number of selected Joomla users, not confirmed successful saves: the inspected synchronization ignores the storage helper's return value (CODE-079). Review errors and inspect the resulting records instead of treating the count as proof of success. A failure may occur after some data has already been stored, so investigate before retrying.
 

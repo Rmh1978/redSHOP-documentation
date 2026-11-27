@@ -15,6 +15,8 @@ Provider behavior, callbacks and Joomla checkout have not been tested here.
 - **Success and failure order statuses:** select published shop statuses. The manifest defaults are codes `C` and `P`; check their meanings and actual transitions.
 - **Payment operand, price and discount type:** operand defaults to `-`, price to blank and type to Percentage; Total is the fixed-amount option. Independently verify the adjustment and rounding in checkout.
 - **Private Person, Business and Shopper Group:** both customer-type switches default to Yes and the shopper-group field to `0`. Test eligible and ineligible customers and saved selections.
-- **E-conomic payment conditions and layout IDs:** optional accounting mappings, initially blank. Verify them with the integration.
+- **Accounting:** the current manifest has no local e-conomic fields. Review the central [e-conomic settings](chapters/e-conomic-integration/setup.md) and any preserved legacy values.
+
+The inspected checkout handler converts the order total to ZAR before sending the payment request. Verify the configured exchange rates, converted amount and provider currency support independently on a disposable shop.
 
 These are manifest defaults for a new configuration, not necessarily settings already saved in an existing shop. Reopen the plugin after saving and use only provider-authorized tests.

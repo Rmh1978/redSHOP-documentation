@@ -5,11 +5,11 @@ redSHOP templates control content for specific sections such as product pages, t
 <a id="overview-1"></a><a id="field-1"></a><a id="action-1"></a>
 ### Find and manage templates
 
-Open **Templates** under redSHOP customization. The list shows name, section, publication state and ID. Search by name or filter by section or publication state. Open a name to edit it; inline name editing is available when enabled and permitted. Use **New**, or select records for **Copy**, **Delete**, **Publish** or **Unpublish**, subject to your permissions.
+Open **Templates** under redSHOP customization. The list shows name, section, publication state and ID, initially ordered by ID ascending. Search by name or filter by section or publication state. Open a name to edit it; inline name editing is available when enabled and permitted. Use **New**, or select records for **Copy**, **Delete**, **Publish** or **Unpublish**, subject to your permissions.
 
 Published templates can be selected by the redSHOP code that uses their section; changing publication or deleting a record may affect pages or messages that depend on it.
 
-The shared copy path can fail during its table lookup. Check warnings and confirm that the copied template and its content exist before relying on them.
+The shared copy path can fail during its table lookup. Check warnings and confirm that the copied template and its content exist before relying on them. The copy routine sets a detected publication state to unpublished; check the copied record's state before assigning it.
 
 <a id="overview-2"></a><a id="field-2"></a><a id="action-2"></a>
 ### Create or edit a template

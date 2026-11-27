@@ -2,6 +2,8 @@
 
 The optional e-conomic plugin contains product and product-group lookup and storage operations, and redSHOP's integration helper dispatches product and group operations. The product editor provides an e-conomic account-group selection. The implementation uses SOAP; the existence of these calls does not establish that the current provider accepts them or that every product change synchronizes successfully.
 
+When e-conomic integration is enabled, the inspected product-save controller calls the product synchronization helper after a successful local save. A separate import action processes products in batches of ten. Both can affect accounting data; use an isolated shop and approved test account before exercising them. The helper also has an attribute-related condition that can skip product creation.
+
 ### Test a product mapping
 
 1. Confirm the plugin and provider compatibility and prepare the isolated setup described in [e-conomic Integration](chapters/global-configuration/e-conomic-integration.md).

@@ -1,5 +1,9 @@
 # Issue management
 
+**PAUSED:** The maintainer explicitly paused the project. Do not perform issue
+writes or other review actions without explicit resumption; then follow this
+workflow and the current checkpoint.
+
 The maintainer authorized this workflow on 2026-11-24. It replaces the missing
 historical Issue-import specification. The target is
 `Rmh1978/redSHOP-rmh`, default branch `develop`; verify repository visibility,
@@ -106,6 +110,7 @@ node docs-review\issue-sync.js --all
 node docs-review\issue-sync.js --ids CODE-012,CODE-041 --priority P1
 node docs-review\issue-sync.js --ensure-labels
 node docs-review\issue-sync.js --ids CODE-012,CODE-041 --apply
+node docs-review\issue-sync.js --all --continue-on-blocked
 ```
 
 The default is a read-only dry-run. `--all` or `--ids` selects records;
@@ -117,6 +122,12 @@ target is private and writable, loads open and closed issues, and only considers
 `pending-sync` or `synced` rows at the verified current Core revision with
 unchanged source files. Review and security classification are human tasks;
 do not promote unreviewed entries merely to make them eligible.
+
+Use `--continue-on-blocked` to keep processing later rows when an individual
+source verification fails because the Core revision or the finding file changed.
+The flag only skips source-verification blocks; API, authentication, ledger,
+duplicate, closed-Issue and human-managed-body conflicts remain hard failures.
+Security-hold and test-only rows are never promoted by this option.
 
 Each created issue has a stable marker and each successful result is persisted
 to the ledger. A retry finds the marker even after an interrupted response.

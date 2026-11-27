@@ -1,6 +1,40 @@
 ## Using PayPal with redSHOP
 
-The current source contains an optional PayPal payment plugin (`rs_payment_paypal`); it is not necessarily installed or enabled on a particular site. Its configuration includes merchant account, currency, sandbox/live mode, transaction action and order-status options.
+redSHOP has separate optional PayPal integrations. Check the installed plugin's
+exact name and version before following its settings; an extension in source
+is not necessarily installed or enabled.
+
+## PayPal Credit Card
+
+The PayPal Credit Card plugin (`rs_payment_paypalcreditcard`) uses PayPal-hosted
+card fields for its newer checkout. It is separate from the legacy PayPal
+plugin described below. The package requires Joomla 5.4 or 6.x, PHP 8.3 or
+newer, cURL and current redSHOP payment services and database updates.
+
+In the plugin settings, use the client ID, client secret and merchant ID for
+the selected environment. The two webhook ID fields correspond to the sandbox
+and live PayPal applications; configure the matching endpoint and ID for
+authenticated asynchronous updates. Protect credentials and do not include
+them in screenshots or support messages.
+
+New settings default to **Test Mode: Yes**, **Payment Intent: Sale** and
+**Debug Mode: No**. Authorize is available when a payment should be reserved
+before capture. The retained Vault setting is disabled; do not rely on saved
+cards. Existing settings may differ.
+
+**Live Card Fields are disabled in the inspected source.** The feature is not
+production-ready merely because the plugin is installed or test mode can be
+selected. Verify merchant eligibility, sandbox checkout, authentication,
+webhook delivery, failure and recovery behavior on an isolated shop before
+considering any future live rollout. An unknown payment result requires
+provider reconciliation, not another payment attempt. See
+[Order payments](chapters/orders/order-payments.md) for available
+administrator actions and their gateway-specific limits.
+
+## Legacy PayPal plugin
+
+The separate legacy plugin (`rs_payment_paypal`) includes merchant account,
+currency, sandbox/live mode, transaction action and order-status options.
 
 **Do not assume the legacy plugin is ready for production.** Its notification handler has a known source-level error, and current provider verification, callback authentication, payment status handling and Joomla compatibility require separate review and sandbox testing.
 

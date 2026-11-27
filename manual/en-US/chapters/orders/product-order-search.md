@@ -8,4 +8,4 @@ The current list shows product name and SKU, order ID, the order item's modifica
 
 <h2 id="filter">Filters</h2>
 
-Search for and select a product, or filter by status and customer. Reset clears these selections. The product control selects a product ID rather than performing a persistent free-text search over all order-item names. Verify filtering and pagination with disposable orders.
+Search for and select a product, or filter by status and customer. The status selector lists published order statuses; the filter compares the selected status with the order-item status. Reset clears these selections. The product control selects a product ID rather than performing a persistent free-text search over all order-item names. Verify filtering and pagination with disposable orders.

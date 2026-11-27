@@ -15,7 +15,7 @@ When inline editing is enabled and you have permission to edit, the list offers 
 
 <h4 id="action-1">Actions</h4>
 
-Create a rule with **New**, or open an existing row to edit it. Select rows to publish, unpublish or delete them as permitted. Back up and verify effects before changing active rules.
+Create a rule with **New**, or use the edit button on an existing row. Select rows to publish, unpublish or delete them as permitted. Back up and verify effects before changing active rules.
 
 <h2 id="overview-2">Discount details</h2>
 <h4 id="field-2">Fields</h4>
@@ -28,7 +28,11 @@ Create a rule with **New**, or open an existing row to edit it. Select rows to p
 - **Shopper group:** select at least one group; multiple groups may be selected.
 - **Published:** defaults to **Yes**. Set it to **No** while preparing a rule that must not yet apply.
 
-The inspected cart helper selects a published shopper-group rule using the product subtotal and condition. Other totals, tax, shipping, stacking and multiple-rule precedence must be verified in the actual checkout; do not assume the displayed order total is the comparison basis in every path.
+In the inspected cart calculation, **Enable Discounts** in the global discount configuration must be enabled for an order total discount to be applied. The rule selector compares the product subtotal with the threshold, not the displayed final order total.
+
+The separate **Apply discount/voucher code for products already on discount** setting also affects this calculation. When enabled, the inspected helper applies the selected discount percentage to the product subtotal plus shipping. When disabled, it compares that percentage with each product's existing saving and calculates the discount per product and quantity. Tax, other charges and overlapping rules still require verification in the actual checkout.
+
+Avoid overlapping rules for the same shopper group where possible. In an isolated source-level test, the selected rule changed when the same matching rules were supplied in a different order; actual database and checkout behavior has not been verified.
 
 <h4 id="action-2">Save</h4>
 

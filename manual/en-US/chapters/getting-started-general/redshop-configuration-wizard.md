@@ -4,6 +4,8 @@ The setup wizard offers initial shop, user, price and tax settings. On a new ins
 
 **Existing shops:** do not rerun the wizard on a live installation without a verified backup and an isolated rehearsal. The inspected welcome-page path attempts to copy the distributed configuration over the active configuration file, and does not check the copy result. Whether it succeeds depends on file permissions. Use [Configuration](chapters/global-configuration/start-here.md) for ordinary changes and verify recovery on a disposable copy.
 
+The current wizard model also requires a legacy configuration-model path not supplied by the Core manifest. Loading the model failed in an isolated PHP check; installed Joomla and upgrade behavior have not been tested. If the wizard fails, do not repeatedly retry it on a configured shop.
+
 The source defines these screens:
 
 1. **Welcome:** introduction and links.

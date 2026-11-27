@@ -17,7 +17,9 @@ The optional `mod_redshop_products` site module displays a configurable selectio
 | Show Child Products | Include child products; defaults to Yes. |
 | Select Stockroom | When stockrooms are enabled, restrict to products with positive quantity in the selected stockrooms. |
 
-The inspected query selects published products and follows the shop's discontinued-product setting. On a product view it excludes the current product. Watched products depend on the visitor's watched list. The most-sold query sums order-item quantities without an order-status filter, so do not treat it as a financial report.
+The inspected query selects published products and follows the shop's discontinued-product setting. On a product view it attempts to exclude the product identified by the request's `pid`; the product view itself reads `id`, so verify whether the current product is excluded on your routes. Watched products depend on the visitor's watched list. The most-sold query sums order-item quantities without an order-status filter, so do not treat it as a financial report.
+
+The **Newest** query orders by product ID descending. **Latest** requests ordering by attribute-property ID and then product ID, not by a publication or modification timestamp; check its results against your catalogue.
 
 ### Presentation and navigation
 
@@ -35,5 +37,7 @@ The inspected query selects published products and follows the shop's discontinu
 | Caching / Cache Time | The manifest defaults to no caching and 900 seconds; global caching is also offered. Check session-dependent content and prices before enabling it. |
 
 Saved settings may differ from manifest defaults. Available results and presentation depend on products, configuration, session and layout.
+
+The inspected default layout passes the image helper's product and dimension arguments in a different order from its declared signature. If images are enabled, check the image, size and link for several test products; actual installed rendering is unverified.
 
 Test each selected mode with disposable products, including unpublished and discontinued products, different shopper groups, prices, taxes, load-more behavior and direct product links. Verify the storefront output and cart behavior before relying on the module.

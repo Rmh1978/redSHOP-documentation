@@ -9,6 +9,7 @@ Manage products, prices, manufacturers, suppliers and catalog media in the redSH
 - [Price management](chapters/product-management/price-management.md)
 - [Suppliers](chapters/product-management/supplier-product.md)
 - [Product and catalog media](chapters/product-management/medias-redshop.md)
+- [Product attribute list](chapters/product-management/attribute-list.md)
 
 ## Set up a product
 

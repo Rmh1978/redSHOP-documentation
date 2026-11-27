@@ -28,7 +28,7 @@ Depending on your permissions, use **New**, **Delete**, **Publish**, **Unpublish
 | **Value** | Required discount amount or percentage, according to Type. The form displays `0.0` by default, but the table validation rejects an empty or zero value. Enter a positive value: the inspected cart path rejects a negative calculated discount. For example, enter `10` for 10%, not `0.10`. Verify currency and rounding in your shop. |
 | **Start date**, **End date** | Validity boundaries using the configured date format and time zone. The inspected save path rejects a start later than the end, but can also reject a start date with an empty end date. Test your intended range and actual redemption in an isolated shop. |
 | **Effect** | **Global** (default) or **User specific**. The latter requires a logged-in customer in the inspected checkout path. |
-| **User** | Shown for User specific coupons. Select the intended customer. The custom selector is configured for a single selection; saving and redemption still require verification in your installation. Do not assume the restriction is enforced correctly. |
+| **User** | Shown for User specific coupons. Select the intended customer and verify the saved selection and redemption in your installation. Do not assume the displayed restriction is enforced correctly in every checkout path. |
 | **Subtotal** | Defaults to `0.0`. The cart discount calculation removes a coupon when the product subtotal is below this value. Verify the threshold and tax treatment with your own cart. |
 | **Free shipping** | **No** by default. **Yes** sets the cart's free-shipping flag when the coupon is applied; verify the available shipping methods and final total. |
 | **Amount left** | The remaining-use count, initially `0`. The current checkout path rejects counts of `1` as well as `0`; see the warning below. |
@@ -36,6 +36,8 @@ Depending on your permissions, use **New**, **Delete**, **Publish**, **Unpublish
 | **Unused Amount** | A read-only value shown for User specific coupons. It reads a transaction value; do not assume it is a complete balance or per-user total without verification. |
 
 The current source rejects a coupon when its raw value is greater than or equal to the product subtotal excluding VAT, before calculating a percentage discount. This can reject some percentage coupons unexpectedly. Test representative subtotals before offering a code.
+
+For a free-shipping coupon, also check how fulfillment is recorded. In the inspected checkout path the free-shipping flag hides shipping selection and the order-save path does not read the submitted shipping method. Actual checkout behavior and the intended policy remain under investigation.
 
 <h4 id="actions-2">Save</h4>
 

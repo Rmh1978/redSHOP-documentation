@@ -12,4 +12,4 @@ Customer accounts combine Joomla access with redSHOP customer, address and shopp
 2. Enter account and billing details, then save and reopen the record to check them. Existing customers can also have shipping addresses.
 3. Use disposable accounts to verify registration, address access, group pricing and checkout before changing the live workflow.
 
-Deleting a customer can also delete the associated Joomla user. Review permissions, order retention and privacy obligations, and take a backup before deletion. Test synchronization separately before using it on live records.
+Deleting a customer can also delete the associated Joomla user. Review permissions, order retention and privacy obligations, and take a backup before deletion. Synchronization attempts to create redSHOP information for Joomla users without an existing redSHOP information record; its reported count is the number selected, not confirmation that each save succeeded. Test and verify individual records in isolation before using it on live data.

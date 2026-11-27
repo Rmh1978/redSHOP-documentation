@@ -13,7 +13,7 @@ Use **New** to add a country or select records and choose **Delete**. Before edi
 ### Add or edit a country
 
 1. Select **New** or open an existing record.
-2. Enter the required name, three-letter code and two-letter code; these start blank for a new record. The table validation checks each country code for duplicates. Use codes consistent with your payment, shipping and accounting integrations.
+2. Enter the required name, three-letter code and two-letter code; these start blank for a new record. The table validation checks each country code for duplicates, but does not check its length or whether it is an official code. Enter codes consistent with your payment, shipping and accounting integrations.
 3. Optionally enter the description, **Sms prefix** and **Joomla flag code**; these start empty for a new record. The phone-prefix selector adds `+` before the saved prefix, so check the displayed value if a prefix already contains that character. It can also use the flag code. Actual display and supported flags depend on the installation.
 4. Save, search for the record and verify its values. Test changes with disposable addresses before using them for real transactions.
 

@@ -6,6 +6,14 @@ The module's basic **Module Class Suffix** is empty by default and can be used f
 
 The inspected helper selects published [order total discounts](chapters/discounts/order-total-discount.md) whose start and end dates include the current time and whose shopper-group association matches the visitor. It uses inclusive start and end comparisons and orders results by threshold, lowest first. A rule without a matching group association is not included. The default layout shows the condition and discount, formatting percentage and fixed-value discounts differently.
 
+For a visitor without stored shopper information, the shopper-group helper uses the configured default unregistered shopper group. Verify that group's discount associations when testing as a guest.
+
+If no rule matches, the module entry does not render its layout. For older or
+imported rules, check date values as well: the module's query requires an end
+date at or after the current time, while the inspected cart discount helper
+also has a path for rules without an end date. Verify actual stored values and
+checkout behavior before drawing conclusions.
+
 For example, a published rule for the visitor's group with condition **Higher**, threshold `100` and discount `10%` can appear as `X > 100` and `10%` during its configured period. This display describes the rule; it does not check the visitor's current cart before listing it.
 
 Test with disposable accounts from different shopper groups, before and during the date window, and check cart totals separately: a displayed promotion does not itself establish that a discount will be applied. Check boundary times and presentation against the shop's settings.

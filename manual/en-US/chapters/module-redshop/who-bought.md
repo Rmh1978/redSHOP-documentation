@@ -4,7 +4,7 @@ The optional `mod_redshop_who_bought` module is labelled “Customers Who Bought
 
 **Important:** the inspected module query selects published products and optionally categories; it does not query purchase history or relate products to the current item. Do not present the resulting list as verified co-purchase recommendations. Test category selection, prices, access and the slider on a disposable shop before enabling it.
 
-The query also uses the global **Show discontinued products** setting to decide whether to include expired products. It specifies no result ordering, so do not depend on a particular product sequence. The default layout only prints a price when the product's stored price is nonzero, even if **Show product price** is enabled.
+The query also uses the global **Show discontinued products** setting to decide whether to include expired products. It specifies no result ordering, so do not depend on a particular product sequence. The default layout formats the product's stored price rather than obtaining the net-price result used by some other product layouts. It only prints that price when the stored value is nonzero and the shop's price and quotation settings allow it, even if **Show product price** is enabled. Compare it with the product page and cart for the relevant customer and currency.
 
 For a new module, the manifest provides these defaults; saved values can differ:
 

@@ -13,4 +13,6 @@ Search matches username or combined first and last name, ignoring spaces. Shoppe
 
 Use New or the customer link to create or edit a record. The list's Delete action requests deletion of the associated Joomla user as well as redSHOP data; review access, retained orders, privacy and legal requirements, and back up before deleting. User synchronization is a separate action and may modify records; test it in isolation first.
 
+The current deletion model skips Joomla accounts with `core.admin` authorization but then proceeds to delete the selected redSHOP information records. Do not assume that preserving an administrator's Joomla account also preserves its redSHOP customer information.
+
 See [Add User](chapters/users/add-user.md) for the account and address fields.

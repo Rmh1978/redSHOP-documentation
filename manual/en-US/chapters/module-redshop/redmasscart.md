@@ -16,6 +16,8 @@ For a new module, the manifest provides these defaults; saved settings can diffe
 
 Enter one product number per line. The inspected cart helper trims each line and submits the same entered quantity for every recognized eligible product; when the quantity is absent or empty it submits one. It skips blank and unknown numbers, and reports unpublished, not-for-sale and expired products. **Unknown numbers are skipped without a message**, so always compare the resulting cart with the original list.
 
+On the normal submission path the workflow redirects to the cart. An empty input is handled separately with a message and a return to the originating page.
+
 For example, enter two existing test product numbers on separate lines. If the quantity field is enabled and contains `2`, the inspected helper submits quantity two for each eligible number, not two items in total. Check the cart because stock rules, required product options and the cart handler can affect the final result.
 
 Test valid, unknown and duplicate numbers, quantities, stock and products requiring options on a disposable shop. Verify cart contents and any error messages before checkout; the actual cart-add behavior and Joomla storefront have not been verified by this source review.

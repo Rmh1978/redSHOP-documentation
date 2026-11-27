@@ -28,6 +28,8 @@ Create, edit, check in and delete records as permitted. Select records before bu
 
 At least one product, category or manufacturer is required by the table validation. For example, on a disposable product priced at 100, a 12% rule calculates a discounted price of 88 before other pricing adjustments; verify the result in your own cart.
 
+The table's positive-amount check does not cap a percentage at 100 or a fixed discount at the product price. Avoid values that would produce a negative discounted price, and verify every affected product.
+
 <h4 id="mass-discounts-detail">Save</h4>
 
 Use **Save**, **Save & Close** or **Save & New**, as available. **Cancel/Close** leaves the editor without saving current changes. Reopen the rule, then inspect the affected products' sale flag, discount price and dates. A successful form save alone does not establish storefront or checkout behavior.

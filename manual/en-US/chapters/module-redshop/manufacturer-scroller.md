@@ -21,3 +21,5 @@ Configure the module options for a new installation as follows; saved settings m
 | Alternative Layout | Select an installed alternative layout; its presentation may differ. |
 
 The inspected query selects published manufacturers with published manufacturer media, so check both publication states and images when an expected manufacturer is absent. Test links, scrolling, keyboard operation and small screens with your site template before enabling it.
+
+The query limits media rows rather than distinct manufacturers. If a manufacturer has multiple published media records, check whether it appears more than once and displaces other manufacturers; an equivalent isolated query exhibited this behavior, but the Joomla storefront has not been tested.

@@ -8,6 +8,8 @@ Configure tax and currency settings for the shop and independently verify the re
 
 Tax obligations depend on your circumstances and jurisdiction. Consult a qualified adviser and test representative transactions on an isolated copy before applying changes.
 
+Shipping can use a separate VAT lookup. That lookup can compare a state code to the wrong field, and a zero-rate VAT record can cause a shopper-group default shipping charge to be calculated as zero. Check shipping charges and tax independently for each applicable destination; see [Shipping Methods](chapters/shipping/shipping-methods.md).
+
 ## Plan and verify a change
 
 1. Review the existing tax groups, rates and default group before creating or changing records. Associate rates with the appropriate groups, locations and shopper groups.

@@ -5,7 +5,7 @@ Tax rates are associated with a [VAT/Tax Group](chapters/vat/vat-group.md), loca
 <a id="overview-1"></a><a id="field-1"></a><a id="action-1"></a><a id="overview-2"></a><a id="field-2"></a><a id="action-2"></a>
 ### Rate fields
 
-Open **VAT/Tax Rate** to view the name, group, shopper groups, country, state, rate and ID. Search by rate name or enter `id:` followed by its ID; filters include country, tax group and EU setting. Open a name to edit it, or use **New** or select records for **Delete**, subject to permission. The displayed rate is formatted as a percentage.
+Open **VAT/Tax Rate** to view the name, group, shopper groups, country, state, rate and ID. Search by rate name or enter `id:` followed by its ID; filters include country, tax group and EU setting. The model defaults to ID ascending unless a saved list selection applies. Open a name to edit it, or use **New** or select records for **Delete**, subject to permission. The displayed rate is formatted as a percentage.
 
 The group link in a rate row currently uses the rate ID rather than the group ID. Open the intended group from the group list instead and verify its name before making changes. The list can also show an ambiguous state name when different countries use the same state code; inspect the rate itself and verify the intended country and state.
 
@@ -32,6 +32,10 @@ The group link in a rate row currently uses the rate ID rather than the group ID
 The product-rate lookup uses a product-specific tax group when present, otherwise the configured default group. It filters by the group's published state, shopper group and country/state, including rates with an empty country or state. In EU mode it also filters on the rate's **EU Country** flag. The implementation orders matching rates by amount and selects one; overlapping rates therefore need particular care.
 
 The customer location comes from the configured calculation mode and customer/session information, with configured country/state defaults used in relevant paths. Shipping-versus-billing selection, guest behavior, exemption approval and the complete checkout result must be tested for the site's configuration; changing a label does not change calculation.
+
+The current lookup joins state records by their three-character code without restricting the state record to the rate's country. Where different countries reuse that code, another country's two-character state code can make a rate match unexpectedly. Check overlapping state codes and independently test affected destinations; a source-level investigation is open and actual checkout impact has not been verified.
+
+Shipping uses a separate lookup in affected methods; it can compare the state code to the numeric rate field instead of the state field. Verify shipping VAT independently from product VAT for each applicable destination. See [Shipping Methods](chapters/shipping/shipping-methods.md).
 
 <a id="checkout-1"></a><a id="checkout-2"></a>
 ### Verify the outcome

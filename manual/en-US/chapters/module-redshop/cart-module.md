@@ -12,4 +12,6 @@ In the default template, an isolated Twig test found that the empty-cart button 
 
 The discount line and total also need checking together: in isolated source tests a discount line appeared with the discount option disabled while the module calculator excluded a synthetic discount from its total. Verify the actual cart and checkout totals on your installation.
 
-Test empty and populated carts, quantity changes, discounts, VAT, shipping and the checkout link across separate customer sessions and relevant menu routes. Styling is template-dependent. The inspected module references an `$app` variable without assigning it in the module file on one cart-menu path; verify that path on an isolated Joomla installation before relying on it.
+If you publish more than one cart module, test each one with its own settings. The inspected total calculator and cart refresh read parameters from a published cart-module record without selecting the displayed instance; their behavior with differently configured instances has not been verified in Joomla.
+
+Test empty and populated carts, quantity changes, discounts, VAT, shipping and the checkout link across separate customer sessions and relevant menu routes. Styling is template-dependent.

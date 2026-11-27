@@ -1,11 +1,1203 @@
 # Documentation modernization — ongoing work
 
-## PAUSED — recovery checkpoint (2026-11-25)
+## PAUSED — controlled checkpoint, 2026-11-27
 
-Do not resume review, issue writes, manual modernization, Core fixes, commits,
-pushes, publication or test-site work until explicit maintainer resumption.
-The authoritative status report, repository revisions, register counts,
-validation results and exact next action are in `RESUME.md`.
+The maintainer explicitly paused the project after the current stage. Do not
+start another stage or resume automatically. All older ACTIVE headings and
+next-action statements below are historical. Resume only on a new explicit
+instruction, after comparing branches, revisions and worktrees, rechecking
+relevant Core changes and GitHub Issues, and revisiting affected documents.
+Preserve unrelated changes; avoid repeating work that remains valid.
+
+### Completed stage and open work
+
+- Wishlist guest button: the inspected product layout omits `data-target`;
+  the actual JavaScript handler prevents default and expects that target. A
+  Node execution with synthetic matching attributes and DOM stubs found
+  `form#undefined` and no submission; a supplied target control submitted.
+  CODE-281 / #321 created via dry-run and controlled sync, reconciled unchanged
+  and labels verified. The module guide and five review registers were updated.
+  Source-only paths for product addition and removal were also inspected. This
+  is a completed bounded stage, **not** a completed wishlist review.
+- Related Products: actual entry with stubs skipped related lookup for `id=42`
+  and called it for `pid=42`. Updated CODE-210 / #255 via dry-run and an
+  evidence comment; reconciliation returned unchanged. Guide and records
+  updated; no duplicate issue created.
+- Next stage, only after explicit resumption: inspect the guest wishlist link
+  and registered add/remove flows, their generated markup and handlers;
+  compare #321 and other existing Issues before writing. Remaining work also
+  includes individual page and code review, unmapped functions/configuration/
+  extensions, Marketplace, architecture, historical pages, navigation and
+  accessibility, private security holds, internal handbook, test plans,
+  isolated runtime validation and publication gates.
+- No new security hold and no completed security review in the latest stage.
+  Existing 57 holds require private assessment; they are not confirmed
+  vulnerabilities. No authorized private reporting channel has been identified.
+  No production extension, functional Core, live site, commit, push or
+  publication was changed or performed.
+
+### Progress and basis
+
+| Area | Measured state | Interpretation |
+| --- | --- | --- |
+| Documentation modernization | 0/161 original pages finally approved (0%); 183 inventory paths, including 143 historical `complete`, 22 `partial`, 17 historical-preserved and one historical-annotation | Older `complete` is an editorial classification, not final approval; new guides remain partial. |
+| Individual source review | 183/183 inventory pages have partial source records (100% record coverage); 0/161 original pages finally approved | Record presence and selected source tracing are not full source review or runtime validation. |
+| Documentation quality | 143/143 legacy quality records marked reviewed (100% of that queue); 0/161 original pages finally approved | The older queue is a register/quality pass, not current full-quality approval. |
+| Function coverage | 128/385 partial mappings (33.2%); 257/385 need mapping (66.8%); 0 fully mapped | These are inventoried XML/form/extension entries, not all redSHOP functionality. |
+| Configuration | 80/84 admin forms partially mapped (95.2%); 4/84 need mapping (4.8%); 0 fully mapped | Admin forms are only a proxy, not the complete configuration universe. |
+| Plugin/module documentation | Plugins 20/266 partial (7.5%), 246 unmapped; modules 28/35 partial (80.0%), 7 unmapped; 0 fully mapped | Mapping is not full reference quality or runtime verification. |
+| Marketplace documentation | Classification and selected guides inspected; no complete-coverage denominator | Percentage not measurable; packaging and full publication pipeline remain open. |
+| Internal technical documentation | Private handbook absent | 0 documents reviewed in this interval; total and percentage unknown; blocked by missing repository. |
+| Issue management | 252/324 ledger rows synced (77.8%); 57 holds and 15 test-only | 252 distinct mapped issues; local ledger state, not a full live audit. No pending ordinary rows at checkpoint. |
+| Individual code findings | 250 individual review rows for 323 current Core findings (77.4% as a row-count proxy); original 173/199 partial records (86.9%) | Additional individual records and findings may not have a one-to-one denominator; partial is not final verification. |
+| Security review | 0/57 holds recorded as privately completed (0%) | Holds require individual private review; no exploitability or severity is implied. |
+| Automated tests | Issue-sync tests and selected isolated fixtures passed | Total relevant tests and completion percentage unknown; no complete test-suite claim. |
+| Runtime verification | No real Joomla/browser/database/provider runtime in this stage | Total and percentage unknown; stubs cannot establish Joomla 5.4/6 compatibility. |
+| Publication gates | 0/7 complete (0%); 3 partial and 4 blocked | No approval or permission to publish. |
+
+**Indicative overall estimate: about 22%, very low confidence (roughly 12–32%).**
+This is a planning model, not an acceptance measure: weights are 25% page
+source/content work, 20% function/extension mapping, 15% Issue management,
+10% private security, 15% tests/runtime, 10% publication gates and 5% internal
+handbook. As deliberately conservative proxies, partial page records receive
+35% credit, partial mappings 25%, and synced ledger rows their recorded share;
+security, tests/runtime, gates and absent handbook contribute zero when no
+defensible completion denominator exists. Thus `25*.35 + 20*(128/385)*.25 +
+15*(252/324) = 22.1` percentage points. Zero proxy credit does **not** mean
+no tests or work occurred. The previous checkpoint did not have a weighted
+estimate; applying the same model retrospectively to its 163 partial pages,
+1/385 partial mapping and 216/283 synced ledger gives approximately 20.2%,
+an illustrative increase of **1.9 percentage points**. Scope and denominators
+changed, so this is not a precise or historically recorded delta.
+
+Since the preceding controlled pause: inventory grew 163 to 183 (+20 paths);
+22 chapter files are untracked now versus two new guides listed then, suggesting
+about **20 new guides**, not necessarily 20 completed reviews. The exact number
+of pre-existing pages improved since that pause cannot be reconstructed from
+the current cumulative dirty diff; 127 tracked chapter files are modified in
+total, including earlier work. Core findings grew by 41 new review IDs
+CODE-241–281; five are additional private holds and 36 map to newly created
+Issues #286–#321. Individual review rows increased 214 to 250 (+36 net);
+all are partial records, not 36 fully verified findings. Many existing Issues
+were updated, including #255 and #308; the exact distinct update count is
+unavailable because the ledger is not an immutable event log. There is no
+defined finite stage inventory: one bounded current stage completed and the
+number of remaining stages cannot be calculated. A coarse planning estimate
+is **400–900 person-hours remaining**, very uncertain, assuming substantial
+overlap between page, feature and finding reviews and excluding waiting for
+access, approvals or external providers. The rough range assumes 1–2 hours
+for each of 183 partial page records, 0.3–1 hour for each of 257 unmapped
+entries, 0.5–1.5 hours for each of 57 private holds, plus 100–200 hours for
+remaining finding follow-up, tests and gates after overlap. The estimates are
+unvalidated and not a schedule commitment.
+
+### Revisions, tests, blockers and commit preparation
+
+- Core `develop` `ff72aba6939637ed8fd55d4acc4c109f641adccc`: 2 modified
+  instruction files, 0 untracked/deleted/staged. These are project pause
+  instructions, not functional Core changes. Review separately from any
+  unrelated future Core changes. Suggested group/message:
+  `docs: record documentation review pause`.
+- Documentation `modernize` `5fda0904d762a466afcb3c7d400ad8d0ab1492cb`:
+  141 tracked modified, 32 untracked, 0 deleted/staged. Of these, 127 tracked
+  modified and 22 untracked files are chapter pages; other files include menu,
+  instructions, review registers, Issue tooling and tests. The cumulative diff
+  includes older and potentially maintainer-owned work; review ownership and
+  dependencies before staging. Suggested groups/messages: customer guides
+  and navigation `docs: improve redSHOP manual guidance`; evidence and
+  checkpoints `docs: record review evidence and pause checkpoint`; sync tooling
+  and tests `test: strengthen issue synchronization handling`. These groups
+  cross-reference each other and may require coordinated review.
+- Legacy extensions `master` `68c3819e1fa444a1bd3c46322045d4820a52fea6`:
+  clean; no commit group. Other available template and Mouseflow repositories
+  were clean and untouched. Private handbook path absent.
+- Issue-sync tests, eight nonempty/unique CSV-key checks, wishlist Node stub
+  probe, wishlist Markdown rendering and whitespace checks passed. Related
+  Products stub probe and its sync reconciliation passed. Whitespace emitted
+  LF/CRLF conversion warnings. GitKraken detail access was denied; GitHub read
+  and controlled synchronization worked. Real Joomla, database, browser,
+  session, provider and production behavior remain unverified.
+- A bounded common credential-pattern scan of 173 modified/untracked
+  documentation files and two Core instruction files found zero matching files. This is not exhaustive and
+  cannot exclude customer data, unrecognized credentials or sensitive security
+  details. Private holds and historical review material require authorized
+  private review before inclusion in any public commit or publication.
+  Nothing was staged or committed; **commit readiness is conditional on that
+  review and maintainer selection**, not a security clearance.
+
+### Current follow-up — payment guide and finding batch
+
+- CODE-210 / #255: related-products entry also reads `pid`; an isolated test
+  of the actual entry with stubs skipped lookup for `id=42` and called it for
+  `pid=42`. Updated guide and existing product-context investigation; the
+  controlled dry-run and evidence comment succeeded and reconciliation was
+  unchanged. Existing priority retained. Real Joomla routing, menu context,
+  database and storefront remain unverified. This adds no finding or inventory
+  row; totals remain 128/385 partial mappings, 322 Core findings, 249 individual
+  reviews and 323 ledger entries. Next: trace wishlist add/remove individually.
+- Related Products: added a partial guide and navigation after inspecting the
+  manifest, entry, layout and selected related and image helper paths. Actual
+  entry with enabled/selected stockroom and stubs raised a null query error in
+  isolated include scope; no-selection control rendered. Created #320 /
+  CODE-280 after duplicate checks and dry-run, reconciled unchanged and
+  verified labels. No Joomla include scope, database or storefront tested.
+  Guide/navigation rendering, links, Issue-sync tests, registry key uniqueness
+  and whitespace passed. Inventory 128/385 partial mappings (33.2%), 257 need
+  mapping; 322 Core findings, 249 individual records, 323 ledger rows
+  (251 synced, 57 private holds, 15 test-only), 598 triage and 183 page/source
+  records. Continue individual unfinished paths.
+- Product Slideshow: added partial guide and navigation after inspecting the
+  manifest, entry, selected helper paths and layout. Actual layout with
+  different synthetic product lists and stubbed asset calls rendered the same
+  placeholder images. Created #319 / CODE-279 after duplicate checks and
+  dry-run, reconciled unchanged and verified labels. No real XML write, query,
+  network asset, Joomla or browser was tested. Rendering, links, Issue-sync
+  tests, registry key uniqueness and whitespace passed. Inventory 127/385
+  partial mappings (33.0%), 258 need mapping; 321 Core findings, 248 individual
+  records, 322 ledger rows (250 synced, 57 private holds, 15 test-only), 597
+  triage and 182 page/source records. Continue individual unfinished paths.
+- CODE-278: actual Main Category Scroller thumbnail helper with no full media
+  and a synthetic existing default-image file raised a null method error;
+  no-default control returned noimage. Updated the partial guide, created #318
+  after duplicate checks, distinguished #316, reconciled unchanged and verified
+  labels. Guide rendering, Issue-sync tests, registry key uniqueness and
+  whitespace passed. No real image processing, Joomla or storefront was
+  tested. Totals: 320 Core findings, 247 individual records, 321 ledger rows
+  (249 synced, 57 private holds, 15 test-only), 596 triage; inventory remains
+  126/385 partial mappings (32.7%), 259 need mapping. Continue individual
+  unfinished source paths.
+- Featured Product module: added a partial guide and navigation based on its
+  manifest, entry, helper, layout, language and selected image and pricing
+  signatures. Inventory 126/385 partial mappings (32.7%), 259 need mapping;
+  181 page/source records. Guide/navigation rendering, links, mapping,
+  page-key uniqueness and whitespace passed. No new issue or Joomla, database,
+  carousel, pricing or checkout runtime verification. Continue unfinished
+  wishlist and other individual module source paths.
+- Minicart: added a partial guide and navigation after inspecting manifest,
+  entry, layout, CSS, language and selected cart calculation paths. Actual
+  default layout with fixed synthetic populated cart and stubs rendered
+  identically with the four display options all on or all off. Shared total
+  calculation reads a published Cart module record. Created #317 / CODE-277
+  after duplicate checks and dry-run, reconciled unchanged and verified
+  labels. No real recalculation, Joomla, browser or checkout was tested.
+  Guide/navigation rendering, links, Issue-sync tests and whitespace passed.
+  Inventory 125/385 partial mappings (32.5%), 260 need mapping; 319 Core
+  findings, 246 individual records, 320 ledger rows (248 synced, 57 private
+  holds, 15 test-only), 595 triage and 180 page/source records. Continue
+  individual wishlist and other unfinished module paths.
+- Wishlist: added a partial module guide and navigation after reading module
+  source and selected shared wishlist and feature-default paths. The layout
+  checks the returned list collection rather than product count. Compared
+  shopper-group category, product and logo and Tags Similar manifests with
+  existing guides and prior source records. Mapped five partial: 124/385
+  (32.2%), 261 need mapping; 179 page/source records. Guide/navigation
+  rendering, links, mapping targets, unique page keys and whitespace passed.
+  No new issue; Joomla wishlist persistence, sessions, accessibility and
+  private security assessments remain unverified. Continue wishlist and other
+  unfinished source paths.
+- Module mapping: compared newsletter, price filtering, product comparison,
+  search and Who Bought manifests and selected entry/layout paths with their
+  existing guides and prior source records; relevant older module source was
+  unchanged. Mapped five partial: 119/385 (30.9%), 266 need mapping. Guides
+  rendered and links and mapping targets resolved; whitespace check passed.
+  No new issue or article change in this limited pass. Joomla sessions, search,
+  pricing, checkout, mail and private holds remain unverified. Continue
+  shopper-group modules and other unfinished individual paths.
+- Category scrollers: compared both module manifests, entries, layouts, helper,
+  English language and Marketplace classification; added a partial guide and
+  navigation. Actual Main Category Scroller layout raised TypeError for integer
+  and null router returns in a PHP 8.4 stub probe; #316 / CODE-276 was created
+  after duplicate checks and dry-run, source anchor corrected via a follow-up,
+  and reconciliation returned unchanged. Mapped both scrollers and Mega Menu
+  partial: 114/385 (29.6%), 271 need mapping. Totals: 318 Core findings, 245
+  individual records, 319 ledger rows (247 synced, 57 private holds, 15
+  test-only), 594 triage, 178 page/source records. Guide/navigation rendering,
+  links, registry keys, issue-sync tests and whitespace checks passed. An
+  initial renderer test incorrectly demanded a heading in the list-only menu;
+  the corrected list check passed. Real Joomla, router, browser, database,
+  package and checkout remain unverified. Continue other unfinished work.
+- Module mapping: compared cart, category, manufacturer scroller, redMASSCART
+  and product-tab manifests and selected entry/layout code with existing guides
+  and prior source reviews. Relevant older module paths were unchanged since
+  their recorded Core revision. Mapped five partial: 111/385 (28.8%) partial
+  mappings, 274 need mapping. Target existence, inventory statuses and
+  whitespace checks passed. No new issue or article change in this limited
+  pass. Actual Joomla rendering, checkout, browser, package behavior and
+  private security holds remain unverified. Continue Mega Menu and other
+  unfinished individual paths.
+- Currency and free-shipping modules: compared current manifests, entries and
+  layouts plus the currency helper with their existing guides and prior rate
+  review. Mapped both manifests partial; guides rendered and links, registry
+  and whitespace checks passed. Inventory is 106/385 partial mappings (27.5%),
+  with 279 needing mapping; no Joomla session, provider or checkout was tested.
+- Discount and login greeting: compared current manifests, entries and
+  layouts with existing guides and rechecked the current billing-name helper.
+  Related discount helpers were unchanged since the prior source review.
+  Mapped both manifests partial; guides rendered and links resolved; no
+  unnecessary article changes. Inventory is 104/385 partial mappings (27.0%),
+  with 281 needing mapping. No Joomla runtime or private security assessment
+  was performed; the existing greeting hold remains private.
+- Backend access: added a partial guide and navigation based on the rules
+  form, menu, view, model, controller and action declarations. Mapped the form
+  partial. Guide/navigation rendering, links, registry checks and whitespace
+  passed. Inventory is 102/385 partial mappings (26.5%), including 80 admin
+  forms; 283 need mapping. Page/source records are 177. No actual Joomla ACL
+  persistence, inheritance or enforcement was tested; private holds remain
+  private. Continue individual source paths.
+- CODE-275: actual category exporter `processData` with synthetic rows and
+  media stubs repeated missing main-image lookups, emitted warnings and
+  skipped thumbnail fallback. A populated-main-image control requested the
+  thumbnail. Added a concise warning and #315 after duplicate checks and
+  dry-run; reconciled unchanged. No real Joomla export, database or image
+  file tested. Fixture, Issue-sync tests, guide rendering, registry shape and
+  whitespace checks passed. Counts: 317 Core findings, 244 individual records,
+  318 ledger rows (246 synced, 57 private holds, 15 test-only), 593 triage and
+  176 page/source records. Continue other unfinished paths.
+- Product search integrations: added partial guide and navigation distinguishing
+  Smart Search, legacy content search and the redSHOP module after comparing
+  manifests and selected index/query/event paths. Mapped both plugin manifests
+  partial. Guide and related navigation rendered and links resolved; registry
+  shape/uniqueness and whitespace passed. Inventory is 101/385 partial
+  mappings (26.2%), 284 need mapping; 176 page/source records. Actual Joomla
+  index, browser, permissions and search remain unverified. Continue remaining
+  individual paths and pages.
+- Export continuation: checked attribute and custom-field manifests, headers
+  and relevant query/selector paths; clarified multi-product filtering and
+  field-data join scope and mapped both partial. Guide rendering, registry and
+  whitespace checks passed. Inventory is 99/385 partial mappings (25.7%),
+  with 286 needing mapping. No actual Joomla/database export was tested.
+- Export continuation: reviewed user, shipping-address and subscriber
+  manifests, headers and query scopes. Clarified billing/shipping records,
+  empty password column and subscriber consent/publication limitations;
+  mapped all three partial. Guide rendering, registry and whitespace checks
+  passed. Inventory is 97/385 partial mappings (25.2%), with 288 needing
+  mapping. No actual Joomla/database export was tested.
+- Export continuation: compared shopper-group product and attribute-price
+  manifests, headers and queries. Clarified product-number exclusion and the
+  option-price section and quantity/discount columns; mapped both manifests
+  partial. Guide rendering, registry and whitespace checks passed. Inventory
+  is 94/385 partial mappings (24.4%), with 291 needing mapping. No real Joomla
+  export, database or price calculation was tested.
+- Export continuation: compared product-stockroom manifest/headers/query and
+  the order manifest with the previously reviewed order export. Documented
+  stockroom CSV columns and association scope; mapped both manifests partial.
+  Rendering, registry checks and whitespace passed. Inventory is 92/385 partial
+  mappings (23.9%), with 293 needing mapping; Joomla SQL and export untested.
+- Export continuation: reviewed manufacturer and related-product manifests,
+  queries and processing. Clarified manufacturer grouped product IDs and image
+  references, plus the two related-product SKU columns; mapped both manifests
+  partial. Guide rendering and links, register checks and whitespace passed.
+  Inventory is 90/385 partial mappings (23.4%), with 295 needing mapping.
+  No actual Joomla SQL, export or media runtime was tested.
+- Export adapters: compared category and product export manifests and selected
+  code with the existing guide. Added a category image-file backup warning and
+  mapped both manifests partial. The guide rendered and links resolved;
+  inventory/source registry checks and whitespace passed. No actual Joomla
+  export or media runtime was tested. Function inventory is 88/385 partial
+  mappings (22.9%); 297 still need mapping. Continue individual adapters and
+  other unfinished page paths.
+- AcyMailing and Quick Icon: documented the separate product-email plugin's
+  tag formats and template setting; the actual `getProduct` with synthetic
+  data and stubbed image helper passed the configured width as image product
+  ID. Updated #254 after a dry-run and reconciled unchanged. Real image helper,
+  Joomla and email preview/delivery remain unverified. Documented optional
+  Quick Icon group matching and default from its source; no Joomla module or
+  ACL runtime was tested. Mapped both manifests partial. Function inventory
+  now has 86/385 partial mappings (22.3%), 299 need mapping; this is not
+  completion. Three affected guides rendered with the bundled parser and their
+  chapter targets existed; Issue-sync tests, registry shape/uniqueness and
+  whitespace checks passed. Continue individual pages and plugin paths.
+- Product content: added a partial customer guide and navigation. Actual editor
+  button with stubs generated a singular product view while the selector
+  template is in the plural view. #314 created after duplicate checks and
+  dry-run, then reconciled unchanged; Joomla dispatch, modal, selection and
+  content rendering remain unverified. Template lookup source filters published
+  templates. Guide, overview, editor guide and menu rendered with bundled
+  Markdown; their chapter links resolved. Issue-sync tests and whitespace
+  check passed. A first registry-shape check found three older statistics rows
+  missing the quality column; corrected them as partial, without inventing
+  runtime verification, then validated unique keys and row shapes.
+  Function inventory: 84/385 partial mappings (21.8%), including 79 admin
+  forms; 301 need mapping. 316 Core findings, 243 individual review records,
+  317 ledger rows (245 synced, 57 private holds, 15 test-only), 592 triage
+  entries and 175 page/source records. Original baseline fully approved pages
+  remain 0/161; mappings and partial records are not complete reviews.
+  Continue AcyMailing product integration and other unfinished source paths.
+- Attribute follow-up: actual attribute and redSHOP base model state population
+  with application and Joomla base stubs rejected the status heading's dotted
+  field in both directions and fell back to ID; name and unqualified status
+  controls passed. #305 created after comparing #303, dry-run and reconciliation.
+  Corrected #304's source anchor with an evidence comment. Added qualified
+  option-price guidance to the product price page after reviewing the option
+  layouts, list, editor, controller, model, lookup and overlap helper; list fixture and
+  issue-sync tests passed. Real Joomla, browser, MySQL and storefront prices
+  remain unverified. CODE-264 is a source-only private hold; no ordinary Issue
+  was created, the authorized private reporting channel is unavailable and
+  runtime impact and exploitability are unverified. Continue option-price
+  calculations and partial pages without treating the hold as a completed review.
+- CODE-058: actual attribute-price table and endpoint helpers with SQLite and
+  Joomla/database doubles accepted an enclosing range; contained and disjoint
+  controls passed. A zero-start enclosing range passed, a positive start with
+  zero end failed quantity-order validation, and matching IDs across sections
+  interfered in the fixture. #120 updated after dry-runs and reconciled unchanged. Earlier
+  product-price fixture not rerun; relevant sources unchanged since its
+  revision. Linked the product and attribute-set editors to option-price
+  guidance after checking the shared nested layouts. Real Joomla, MySQL and
+  storefront remain unverified.
+- Attribute stockroom: actual ProductModel with SQLite and lookup/application/
+  event stubs persisted an earlier row before rejecting a later one; reversed
+  failure and valid controls passed. Added dialog guidance and #306 after
+  comparison with #157 and #228; dry-run and reconciliation passed. Joomla
+  dispatch, MySQL, browser and real event effects remain unverified. An
+  empty association lookup emitted two warnings before stubbed insertion;
+  #307 created and reconciled separately. Actual insertion and Joomla error
+  handling remain unverified.
+- Product attribute list: added partial source-backed guide and navigation;
+  mapped editor and filter forms and the separately checked state filter.
+  Actual AttributesModel with list-state/query stubs ignored nested product
+  input; actual bundled Joomla table binding with event stubs ignored the
+  editor publication field on a schema-shaped object. #303 and #304 created
+  after dry-run and reconciled. Full Joomla form submission, table constructor,
+  database and storefront remain unverified. Continue property paths.
+- Postal-code and stock-image filters: compared both forms with current list
+  models and the stock-image view. Documented the postal-code model's ID
+  ascending default and mapped both filters; stock-image filters are hidden.
+  Rendered both guides and checked XML counts and targets. No Joomla list,
+  media or database runtime verification.
+- Newsletter follow-up: re-read current newsletter and subscriber forms and
+  list models. Clarified that subscriber user and newsletter headings sort by
+  IDs rather than displayed names. Mapped both filters and the subscription
+  form, rendered both articles and checked links and XML counts. Source-only;
+  actual Joomla list, consent and mail runtime remain unverified. Actual
+  unsubscribe helper returned success without a query for a guest and empty
+  email; checkout has a sign-off branch that passes no email. #302 created
+  after comparing #284 and #189; reachability and real checkout unverified. Continue
+  other incomplete page or recipient paths; private holds remain private.
+- Customer tags: added partial source-backed guide and navigation. The list
+  counts association rows rather than distinct users or products; records
+  can be shared. Actual admin model with SQLite and stubs returned false for
+  publication against schema-shaped tables, and success for an uncommitted
+  single deletion and ineffective multiple-ID deletion. #298 and #299 created
+  after dry-run and reconciled unchanged. Actual redSHOP base task execution
+  with task-map stubs fell back to display for missing toolbar tasks; #300
+  created and reconciled. Actual account Twig with synthetic context emitted
+  literal PHP detail links and an identifier rejected by actual editTag with
+  a stub table; #301 created and reconciled. Actual Joomla factory and action dispatch,
+  MySQL and storefront are not runtime verified. CODE-255
+  is a private security hold, with no ordinary Issue; exposure and
+  exploitability remain unverified. Continue tag action and persistence
+  review separately from private security investigation.
+- Text Library: added a partial source-backed guide and navigation. The
+  published-text replacement helper reads all sections without restriction;
+  the guide recommends distinct names and testing each template path. Mapped
+  both forms after XML field-count checks; rendered guide and navigation and
+  checked chapter targets and CSV keys. No Joomla editor, database, browser or
+  newsletter delivery runtime was verified. Continue unfinished source paths.
+- Sample follow-up: added partial source-backed guide and navigation. Actual
+  sample save with SQLite and stubs regenerated a colour ID and removed rows
+  on absent input. #294 created after dry-run and reconciled unchanged.
+  Actual Twig with schema-shaped rows and a stub helper omitted names and
+  passed null; equivalent SQLite detail join failed on an old column. #295
+  created after dry-run and reconciled unchanged. Real Joomla, MySQL, inline
+  edits and existing requests remain unverified. Actual bulk-request model
+  with SQLite and stubs returned success without changing multiple IDs; #296
+  created and reconciled. Catalogue/sample request task and selection
+  mismatches reproduced with actual redSHOP base dispatch and bundled Joomla
+  grid helper using stubs; #297 created and reconciled. Full dispatch and UI
+  remain unverified. Continue other request and page paths.
+- Catalogue follow-up: added a partial source-backed guide and navigation.
+  Actual mail method with a database stub failed to resolve its helper after
+  the controller's request-store path; separate actual-controller probe
+  reported success after a failed mail stub. #293 created and updated after
+  dry-runs and reconciled unchanged. CODE-250 is a private hold with no
+  ordinary Issue. Real Joomla, browser, persistence and mail unverified.
+  Continue remaining catalogue request/media and individual page work.
+- Currency follow-up: actual Currency Layer initialization with controlled
+  clock and mocked provider retained an old cached rate on an eligible
+  refresh; no-cache control used the fetched rate. Added customer guidance and
+  created #292 after comparing #72 and #264, dry-run and unchanged
+  reconciliation. Real Joomla, provider, checkout and accounting unverified.
+- Function inventory: mapped 46 existing administrator forms to their
+  individually reviewed guides after checking current XML counts and source
+  and manual targets. That earlier pass reached 48 of 385 partial mappings
+  (12.5%). Corrected the template count from eight to five
+  active XML fields; three were comments. This is mapping progress, not functional completion
+  or Joomla runtime verification.
+- Stockroom filter follow-up: compared the one-field form and current list
+  model against the existing guide and mapped it as partial. Compared the
+  field-group search and section form with its model and guide and mapped
+  it as partial; the field-group ordering fixture passed. The custom field
+  list filter was also mapped after source comparison. CODE-267 is a source-only
+  private hold; no ordinary Issue was created, the authorized reporting channel
+  is unavailable, and runtime impact and exploitability are unverified. Function inventory
+  previously reached 53/385 partial mappings (13.8%) after comparing gift-card and mail
+  filter forms and list queries with their guides, including 51 admin forms; 332 entries
+  still need mapping. This is not
+  content approval or runtime verification.
+- Category filter follow-up: compared all three fields with the list model and
+  guide, including template assignment rather than filtering. Mapping is
+  partial; Joomla remains unverified. Inventory previously reached 54/385 partial
+  mappings (14.0%), including 52 admin forms; 331 still need mapping.
+- Manufacturer filter follow-up: compared the search form and current list
+  query with the guide. Mapped it as partial; inventory then had 55/385 partial
+  mappings (14.3%), including 53 admin forms; 330 entries still need mapping.
+  Joomla runtime remains unverified.
+- Order list filter follow-up: compared seven fields and the search and date
+  query with the guide; documented how entered spaces are treated. The form
+  is mapped partial. Inventory then had 56/385 partial mappings (14.5%),
+  including 54 admin forms; 329 entries needed mapping. This is source-only,
+  not full functional coverage or Joomla UI/database verification.
+- Order-status filter follow-up: compared the search form and list query with
+  the guide and documented its default ordering. Inventory then had 57/385
+  partial mappings (14.8%), including 55 admin forms; 328 entries need mapping.
+  Joomla UI and database runtime remain unverified.
+- Mass-discount filter follow-up: compared both fields and current list query
+  with the guide and mapped it partial. Inventory now has 58/385 partial
+  mappings (15.1%), including 56 admin forms; 327 entries need mapping.
+  Joomla UI and database runtime remain unverified.
+- Media filter follow-up: the default media template renders separate type and
+  section controls, and the query reads those states rather than the three XML
+  filter fields. Left the form unmapped pending alternate-layout and runtime
+  tracing; did not imply the XML controls are visible.
+- Promotion filter follow-up: compared its search form and current list query
+  with the guide and mapped it partial. Inventory then had 59/385 partial
+  mappings (15.3%), including 57 admin forms; 326 entries need mapping.
+  Joomla UI and database runtime remain unverified.
+- Questions filter follow-up: compared both fields and the current list query
+  with the guide and documented top-level questions and default order. Inventory
+  then had 60/385 partial mappings (15.6%), including 58 admin forms; 325 needed
+  mapping. Joomla UI and database runtime remain unverified.
+- Ratings filter follow-up: compared the search form and list query with the
+  guide and documented default order. Inventory then had 61/385 partial mappings
+  (15.8%), including 59 admin forms; 324 entries needed mapping. Joomla UI and
+  database runtime remain unverified.
+- Shipping-box filter follow-up: compared the search form and current query
+  with the guide; existing ID-search guidance matches the source. Mapped partial;
+  inventory then had 62/385 partial mappings (16.1%), including 60 admin forms;
+  323 needed mapping. Joomla UI and database runtime remain unverified.
+- Shipping-method filter follow-up: compared XML, list model, view and shared
+  layout; documented hidden filter controls in the default view. Inventory then
+  had 63/385 partial mappings (16.4%), including 61 admin forms; 322 needed
+  mapping. Joomla UI and database runtime remain unverified.
+- Plugin-list follow-up: compared six filter fields, list model, menu and
+  view; added navigation and metadata-selection caveat to the overview.
+  Inventory then had 64/385 partial mappings (16.6%), including 62 admin forms;
+  321 needed mapping. Joomla UI and database runtime remain unverified.
+- Shopper-group filter follow-up: compared search form and list query with
+  the guide and documented default ordering. Inventory then had 65/385 partial
+  mappings (16.9%), including 63 admin forms; 320 needed mapping. View resolution
+  and Joomla UI/database remain unverified.
+- Customer statistics: added a partial source-backed guide and navigation for
+  the paid-order report, date control and export/print cautions. Mapped its
+  filter partial. Inventory now has 66/385 partial mappings (17.1%), including
+  64 admin forms; 319 need mapping. No actual Joomla database, browser, export
+  or print runtime verification. CODE-268: actual controller with synthetic
+  rows and stubs emitted an extra CSV field for a comma-containing name; #308
+  created after comparison with #78 and #107 and dry-run, then reconciled
+  unchanged. Issue-sync tests passed.
+- Order statistics: added a partial source-backed guide and navigation; mapped
+  the filter with its XML search field noted as not rendered by the default
+  template. CODE-269: actual export controller with synthetic aggregates and
+  stubs failed on empty input and warned on missing order ID. #309 created after
+  duplicate comparison and dry-run, then reconciled unchanged. Inventory then
+  had 67/385 partial mappings (17.4%), including 65 admin forms; 318 needed
+  mapping. No Joomla UI or database runtime verification.
+- Product statistics: added a partial source-backed guide and navigation;
+  mapped the date filter, documenting grouping, CSV and SQL-mode limitations.
+  Inventory now has 68/385 partial mappings (17.7%), including 66 admin forms;
+  317 need mapping. Actual product export controller with synthetic data and
+  stubs produced an extra CSV field for a comma-containing name; CODE-268 scope
+  update synchronized to #308 after dry-run and reconciled unchanged. No Joomla
+  UI database export or print runtime verification. CODE-270: actual product and
+  base model state with stubs rejected order-count sorting in both directions;
+  unit-sold controls passed. #310 created after dry-run and reconciled unchanged.
+- CODE-271 investigation: actual product-statistics model issued a session
+  SQL-mode statement captured by a database stub; the MySQL 8 worklog describes
+  removal of one mode. No MySQL server or container tooling available; real
+  database acceptance and Joomla runtime effects remain unverified. #311
+  created; investigation and compatibility labels corrected and verified;
+  reconciled unchanged.
+- Supplier filter follow-up: compared the search form and current query with
+  the guide and mapped it partial. Inventory then had 69/385 partial mappings
+  (17.9%), including 67 admin forms; 316 needed mapping. No Joomla UI or
+  database runtime verification.
+- Tax-group filter follow-up: compared search and ordering against its guide
+  and documented default ordering. Inventory then had 70/385 partial mappings
+  (18.2%), including 68 admin forms; 315 needed mapping. No Joomla UI or
+  database runtime verification.
+- Tax-rate filter follow-up: compared all four fields and current list query
+  with its guide and documented default ordering. Inventory then had 71/385
+  partial mappings (18.4%), including 69 admin forms; 314 needed mapping. No
+  Joomla UI or database runtime verification.
+- Template filter follow-up: compared search, section and publication fields
+  with the current list query and guide. Inventory then had 72/385 partial
+  mappings (18.7%), including 70 admin forms; 313 needed mapping. No Joomla UI
+  or database runtime verification.
+- Voucher and wrapping filter follow-up: compared both XML forms and list
+  queries with existing guides and documented the wrapping default ordering.
+  Inventory then had 74/385 partial mappings (19.2%), including 72 admin forms;
+  311 needed mapping. No Joomla UI or database runtime verification.
+- Category editor and plugin list-form follow-up: compared current forms and
+  relevant views/layouts with existing guides; identified the Joomla plugin
+  editor link in the overview. Inventory then had 76/385 partial mappings
+  (19.7%), including 74 admin forms; 309 needed mapping. Category permissions and
+  individual plugin settings are not fully traced; no Joomla UI runtime.
+- Question editor and tax-group form follow-up: compared current fields,
+  editor layout or table checks with existing guides. Inventory then had 78/385
+  partial mappings (20.3%), including 76 admin forms; 307 needed mapping. No
+  Joomla UI, mail, database or tax runtime verification.
+- Product Files follow-up: compared upload form, administrator view/controller
+  and service with the guide; documented product search, version syntax and
+  plan options. Inventory then had 79/385 partial mappings (20.5%), including
+  77 admin forms; 306 needed mapping. Isolated product-download service and UI
+  tests passed; actual Joomla, database and customer download runtime remain
+  unverified.
+- Release Publisher: added a partial source-backed guide and navigation for
+  the gated list, settings and storage migration. Mapped its form. Inventory
+  then had 80/385 partial mappings (20.8%), including 78 admin forms; 305 needed
+  mapping; 173 page inventory and 173 source review records exist. Publisher
+  access, migration view and coordinator isolated fixtures passed. No actual
+  Joomla migration, deployment or publication performed.
+- PostNord standalone label: compared form, defaults, view, controller and
+  client; documented fields and payload cautions. Actual controller and client
+  with synthetic inputs and mocked cURL emitted blank recipient name for empty
+  company (#312 / CODE-273) and blank weight fields despite a supplied weight
+  (#313 / CODE-272); controls passed. Order weight producer source shows the
+  same mismatch but was not executed. Issues created after dry-run; labels
+  checked and subsequent reconciliation unchanged. No Joomla or provider
+  runtime performed. Inventory then had 81/385 partial mappings (21.0%), including
+  79 admin forms; 304 needed mapping. Registers: 315 Core findings, 242
+  individual records, 316 ledger rows (244 synced, 57 private holds, 15
+  test-only), 591 triage, 173 page and 173 source records.
+- Category product filters: added a partial source-backed module guide and
+  navigation, with a warning for existing #211. Inventory is 82/385 partial
+  mappings (21.3%), including 79 admin forms; 303 need mapping. Page and source
+  registers each have 174 entries. Guide and linked pages rendered and chapter
+  targets resolved; no Joomla storefront test.
+- Payment-link follow-up: clarified eligibility, permission and generated-link
+  requirements after inspecting the current source and order template. The
+  guide rendered and links resolved; real Joomla, mail and gateway unverified.
+- Billy follow-up: reviewed current cashbook projection, order-list control,
+  claim and provider-response paths. Added qualified registration and
+  reconciliation guidance. Isolated cashbook registration and plugin tests
+  passed with SQLite and provider mocks; real Joomla, MySQL and Billy remain
+  unverified. Continue the payment/accounting page batch.
+- Five-page follow-up: read shopper groups, order-total discounts, GLS Business,
+  order list and Ahamove with selected current source paths. Added qualified
+  overlapping-discount and export handling guidance and corrected legacy
+  payment-coverage descriptions. The existing discount and Ahamove guides
+  already cover the inspected paths. CODE-247 is held for private review; no
+  ordinary Issue created and sync dry-run skipped it. Five guides rendered
+  and chapter targets resolved. Historical fixtures and actual Joomla, SQL,
+  export, browser and provider runtime remain unverified. All remain partial.
+- Validation: issue-sync tests passed; expected CSV counts are 309 Core
+  findings, 236 individual records, 310 ledger rows (238 synced, 57 private
+  holds, 15 test-only), 585 triage, 169 source and 169 page records.
+  `git diff --check` passed with existing line-ending warnings. Comparable
+  baseline remains 0/161 fully approved original pages (0%) and 173/199 original
+  findings with partial records (86.9%); neither count is runtime approval.
+- CODE-231–240: compared product, shipping, checkout and stock-image paths
+  against current Core. Ahamove serialization is unchanged; the order status
+  handler now gates its shipping event on accepted or verified current
+  same-status transitions. Checkout payment changes and the SQL addition are
+  separate; corrected the tax schema line reference. #276–285 updated after
+  dry-run and reconciled unchanged. Historical fixtures and actual Joomla,
+  events, database, checkout and providers remain unverified. CODE-241–246
+  already reference current Core; continue individual page and partial review.
+- CODE-221–230: compared recorded menu, scroller, shipping, zoom, reminder,
+  search, registration, comparison and discount paths with current Core;
+  unchanged since prior review. #266–275 updated after dry-run and reconciled
+  unchanged. Historical fixtures and actual Joomla, database, browser, mail
+  and checkout were not rerun. Next: CODE-231 onward and individual page work.
+- CODE-211–220: compared recorded search, wizard, attribute-set, account-group,
+  tax, currency and export paths with current Core; unchanged since prior
+  review. #256–265 updated after dry-run and reconciled unchanged. Historical
+  fixtures and actual Joomla, database, browser, provider, export and financial
+  behavior were not rerun. Next: CODE-221 onward and individual page work.
+- CODE-205–210: voucher sorting, cart module parameters, comparison request
+  names, Mega Menu suffix, product image arguments and current-product
+  exclusion rechecked at current Core; relevant files unchanged since prior
+  source review. #250–255 updated after dry-run and reconciled unchanged.
+  Actual Joomla, database, browser, media and multi-instance behavior remain
+  unverified. Next: CODE-211 onward and individual page work.
+- CODE-201–204: rating and promotion list ordering, review mail handling and
+  mass-discount validation rechecked at current Core; relevant files unchanged
+  and SQL addition unrelated. #246–249 updated after dry-run and reconciled
+  unchanged. Historical fixtures and real Joomla, mail, SQL and checkout remain
+  unverified.
+- CODE-198: rechecked legacy PayPal currency manifest, form and conversion
+  paths; relevant source unchanged since preceding review. #244 updated after
+  dry-run and reconciled unchanged. Historical fixture, provider and Joomla
+  binding not rerun. CODE-199 remains a private security hold.
+- CODE-193–195 and 197: rechecked Facebook Like default and category-menu
+  sort, alias and mapping source. Relevant files unchanged; #240–243 updated
+  after dry-run and reconciled unchanged. Historical fixtures and actual
+  provider, database and Joomla were not rerun; CODE-196 remains private.
+- CODE-191–192: rechecked free-shipping rate query and cart output default;
+  relevant source unchanged since preceding review. #238–239 updated after
+  dry-run and reconciled unchanged. Historical fixtures and actual Joomla,
+  checkout, database and form binding not rerun.
+- CODE-185–188: rechecked tax-rate save, order-reset response, ePay options and
+  gift-card uploads. ePay installer changed to add compatibility preflight;
+  the inspected options and payment form did not change. #234–237 updated
+  after dry-run and reconciled unchanged. Historical fixtures, provider,
+  Joomla and filesystem not rerun. Security holds remain private.
+- CODE-180–182: wizard VAT controls, company text mapping and removal flag
+  rechecked; relevant source unchanged since preceding review. #231–233
+  updated after dry-run and reconciled unchanged. Historical fixtures and
+  actual Joomla dispatch, persistence and navigation were not rerun.
+- CODE-177–179: accessory price and search suggestion source rechecked;
+  relevant files unchanged since the previous review. #228–230 updated after
+  dry-run and reconciled unchanged; corrected accessory editor line reference.
+  Historical fixtures, MySQL, Joomla, browser and checkout not rerun.
+- CODE-175–176: rechecked search model exclusion predicates and module Twig
+  custom-field path; relevant source unchanged since preceding review.
+  #226–227 updated after dry-run and reconciled unchanged. Historical
+  fixtures and real Joomla, search and database remain unverified.
+  CODE-174 remains a private security hold.
+- CODE-173: rechecked price-filter state and slider bounds; relevant module
+  files unchanged since the previous review. #225 updated after dry-run and
+  reconciled unchanged. Historical fixture and real browser state not rerun.
+- CODE-169–172: rechecked mass-discount deletion and promotion shipping and
+  item-removal paths. The relevant files are unchanged since the previous
+  source review. #221–224 updated after dry-run and reconciled unchanged.
+  Historical fixtures and actual database, cart and checkout were not rerun.
+  CODE-168 remains a private security hold.
+- CODE-166–167: discount list renderer and newsletter batch preparation and
+  send paths rechecked; relevant source unchanged since preceding review.
+  #219–220 updated after dry-run and reconciled unchanged. Corrected the SQL
+  schema line reference. Historical fixtures, actual Joomla, persistence and
+  mail were not rerun. CODE-168 remains a private security hold.
+- CODE-164–165: rechecked coupon/voucher renderers, models and date trait;
+  relevant files are unchanged since the previous review. The SQL difference
+  adds an unrelated payment table; corrected the shifted voucher schema line.
+  #217–218 updated after dry-runs and reconciled unchanged; current guides
+  already warn about range behavior. Historical fixtures were not rerun;
+  actual Joomla forms, persistence and checkout remain unverified.
+- CODE-161–163: stockroom form, model and helper are unchanged since the
+  preceding review; checkout changed only in a separate payment branch.
+  Rechecked the current delivery logic and #214–216, updated after dry-run,
+  and reconciled unchanged. The stockroom guide already cautions about these
+  paths. Historical fixtures and actual Joomla, database and mail remain
+  unverified.
+- CODE-160: reviewed the current VAT input, tooltip, default and revision diff
+  for submission code. #213 updated after dry-run and reconciled unchanged;
+  the existing price guide already warns. Historical browser fixture not rerun;
+  actual Joomla saving and persistence remain unverified.
+- Current validation after #291: issue-sync tests and unique-ID parsing passed:
+  288 Core findings, 220 individual rows, 289 ledger rows (222 synced,
+  52 security holds, 15 test-only), 564 triage, 164 source and 164 page rows.
+  Scroller rendered with existing chapter link targets; `git diff --check`
+  passed with existing line-ending warnings. No runtime approval inferred.
+- CODE-246 / #291: product count limit passes `LIMIT 5` to `setLimit`.
+  Public Joomla Database 3.4.0 casts the argument to int and its MySQL builder
+  adds a limit only when positive; a separate PHP 8.4 cast produced zero.
+  Created after comparing #288–290 and dry-run; reconciliation unchanged.
+  The local CMS requires Joomla Database `^3.4` but the database package is
+  not installed. Actual framework method, SQL, Joomla 5.4/6 and storefront
+  were not executed. Guide and review registers updated.
+- Scroller follow-up: actual category helper with stubbed dependencies
+  returned child and grandchild IDs 6 and 7 as `id`, without `category_id`.
+  The separate scroller source reads `category_id`; integrated execution was
+  not run. #289 updated after dry-run and reconciled unchanged. Public Joomla
+  Database 3.4.0 casts `setLimit` input to int; separate PHP 8.4 casts
+  `LIMIT 5` to 0. Installed Joomla Database, actual SQL and Joomla 5.4/6
+  runtimes remain unverified.
+- Quality check: issue-sync tests passed; the menu, module overview, Scroller
+  and three related guides rendered and their `chapters/` targets existed.
+  The page inventory had 86 evidence fields with unquoted commas; quoted
+  those fields without changing their text and verified 164 unique page rows.
+  Other parsed counts: 287 Core findings, 219 individual rows, 288 ledger rows
+  (221 synced, 52 security holds, 15 test-only), 563 triage rows, 164 source
+  review rows and 385 function rows. `git diff --check` passed with existing
+  line-ending warnings. This is register and rendering validation, not
+  source-quality approval or runtime verification.
+- Product Scroller: added a partial source-backed guide, navigation and
+  function mapping. Actual module entry with stubs generated an incorrect
+  multi-category `IN` predicate and queued a diagnostic error; equivalent
+  SQLite selected ID 1 instead of selected IDs 5/7. Actual `ShowProducts`
+  with synthetic prices chose old-price layout for both `no` and `yes`, but
+  single price for `0`. #288–290 created after dry-runs and reconciled; #290
+  was compared to #137, #288 and #289. Real Joomla, query builder, MySQL,
+  package and browser remain unverified. Next check setLimit and descendants.
+- Price-filter follow-up: re-read guide, manifest, entry, slider layout,
+  model, raw view and result layout; traced scroller and wishlist price calls.
+  Result filters on `getPrice` before `getNetPrice`, with both helpers sharing
+  the previously tested synthetic discount issue. Updated guide and partial
+  source row; #287 updated after dry-run and reconciled unchanged. Real rule
+  selection, AJAX result, Joomla, checkout and private holds remain unverified.
+- Shopper Group Product follow-up: re-read complete guide, manifest, entry,
+  helper, layout and English strings. Price calls run before the Show Price
+  test and AJAX detail-template counting precedes Add To Cart test. Added
+  qualified guidance; #287 and #143 updated after dry-runs and reconciled.
+  Historical module fixtures were not rerun; real Joomla, storefront and
+  checkout remain unverified and the private hold remains unresolved.
+- CODE-242 follow-up: actual `getNetPrice` returned 90 alone but 81 after
+  `getPrice` for the same synthetic product and preseeded 10% rule; Product
+  Tab and shopper-group product layouts call these helpers in that order.
+  Dependencies were stubbed; actual cache, discount query, module and checkout
+  remain unverified. #287 updated after dry-run and reconciled unchanged.
+- Product Tab pricing follow-up: actual `Price::getPrice` with a synthetic
+  shared product and discount stubs returned 90 then 81 from 100 at 10%; a
+  price-record control returned 90 twice and a no-discount control 100 twice.
+  CODE-242 / #287 created after dry-run and reconciled unchanged; source
+  confirms a cached product object and nullable price lookup but actual cache,
+  rules, Joomla and checkout were not exercised. Guide and partial source row
+  updated. Continue net-price interaction and other product-module callers.
+- Current register counts: 284 Core findings, 216 individual rows, 285 ledger
+  rows (218 synced, 52 security holds, 15 test-only), 560 triage, 163 page
+  records. Original approved-page and partial-finding baselines are unchanged.
+- Product Tab cart follow-up: re-read guide, module entry/helper/layout and
+  shared cart, tag, template, attribute, accessory and eligibility source.
+  CODE-241 / #286 records omitted module ID and a possible form-ID collision.
+  Actual renderer with synthetic dependencies omitted the ID in two calls;
+  actual tag/Twig, browser, Joomla and checkout are untested. Compared #268
+  and #251 before dry-run and creation; subsequent reconciliation unchanged.
+  Guide and partial source record updated; no Core changes.
+- Issue-sync tests passed; five registers parsed with unique IDs: 283 Core
+  findings, 215 individual records, 284 ledger rows (217 synced, 52 security
+  holds, 15 test-only), 559 triage and 163 page records. Original baseline
+  remains 0/161 fully approved pages and 173/199 partial finding records; these
+  counts do not represent runtime completion. Continue remaining page work.
+- CODE-159: rechecked reminder setting, helper and scheduler; #212 updated
+  after dry-run and reconciled unchanged. Existing guide covers the discrepancy.
+  Historical fixture not rerun; real scheduler and mail remain unverified.
+- CODE-158: rechecked filter input and four control branches; #211 updated
+  after dry-run and reconciled unchanged. Existing category guide warns about
+  initial rendering. Historical fixture not rerun; full GET/POST roundtrip
+  and real Joomla remain unverified.
+- CODE-157: rechecked filter category loop, portal helper and search controller;
+  #210 updated after dry-run and reconciled unchanged. Historical fixture not
+  rerun; actual Joomla routing, filtering and database remain unverified.
+- CODE-156: rechecked import line counting, CSV splitting and progress formula;
+  #209 updated after dry-run and reconciled unchanged. Existing guide warns
+  about multiline progress. Historical fixture not rerun; browser, actual
+  import and database remain unverified.
+- CODE-155: rechecked video closing markup; #208 updated after dry-run and
+  reconciled unchanged. Existing guide covers it. Historical libxml fixture
+  not rerun; browser, provider SDK and Joomla remain unverified.
+- CODE-152: rechecked menu lookup and listed caller paths, including changed
+  reorder controller lines; #205 updated after dry-run and reconciled unchanged.
+  Earlier fixtures not rerun; reorder/breadcrumb execution and real Joomla
+  and database behavior remain unverified.
+- CODE-150: rechecked cart total, discount sources and line display; #203
+  updated after dry-run and reconciled unchanged. The existing guide describes
+  the investigation. Prior separate fixtures not rerun; actual cart sequencing
+  and module-instance settings remain unverified.
+- CODE-154: rechecked guest and group logo output; #207 updated after dry-run
+  and reconciled unchanged. Existing guide covers the limitation. Historical
+  fixture not rerun; actual Joomla and assistive technology remain unverified.
+- CODE-153: rechecked Xmap category query, recursion and schema; #206 updated
+  after dry-run and reconciled unchanged. SQLite fixture not rerun; MySQL,
+  installed extension and Joomla remain unverified.
+- CODE-151: rechecked menu category-key handling; #204 updated after dry-run
+  and reconciled unchanged. Historical fixture not rerun and actual Joomla
+  menu query shapes unverified; existing guide already warns of the mismatch.
+- CODE-148/149: rechecked menu sorting and cart empty-button template source;
+  #201/202 updated after dry-run and reconciled unchanged. Existing guides
+  cover the inspected paths. Historical fixtures not rerun; real query,
+  installed layouts, strict-mode configuration and Joomla unverified.
+- CODE-147: rechecked the mass-cart helper and workflow and located the model
+  caller; #200 updated after dry-run and reconciled unchanged. Historical
+  fixture not rerun; real cart UI and database unverified.
+- CODE-146: rechecked manufacturer, Who Bought and Product Tab divisor paths
+  and settings; #199 updated after dry-run and reconciled unchanged.
+  Historical fixtures not rerun; Joomla form binding and storefront unverified.
+- CODE-144/145: rechecked Similar Tags helper/entry and manufacturer module
+  manifest, entry and default layout; #197/198 updated after dry-run and
+  reconciled unchanged. Existing guides cover the inspected paths. Historical
+  fixtures were not rerun; Joomla cache, overrides and storefront unverified.
+- CODE-143: rechecked dynamic-fee and shipment weight calculations plus the
+  order-item quantity field; #196 updated after dry-run and reconciled
+  unchanged. Existing carrier guide warns of both paths. Historical fixture
+  not rerun; shipment execution and provider units remain unverified.
+- CODE-141: rechecked carrier-agnostic creation/cancellation and current
+  event sites; #194 updated after dry-run and reconciled unchanged. Earlier
+  fixtures were not rerun; actual token and event registration remain unverified.
+- CODE-142: rechecked the delivered-status configuration key and both mapping
+  handlers; #195 updated after dry-run and reconciled unchanged. Existing
+  carrier guide warns conditionally. Historical fixture not rerun; provider
+  spelling and event delivery remain unverified.
+- CODE-136: rechecked self-pickup fallback and shared rate rendering; #190
+  was updated after dry-run and reconciled unchanged. Existing pickup and
+  shipping-method guides cover the inspected warning. Other carrier source
+  observations and the earlier fixture were not repeated; real checkout
+  remains unverified. Continue CODE-141 onward and partially reviewed pages.
+- CODE-138/139: rechecked FedEx/USPS rate guards and address/billing helpers.
+  #191/192 were updated after dry-run and reconciled unchanged; the existing
+  shipping-methods warnings cover the inspected cases. Historical fixtures
+  were not rerun; Joomla checkout, providers and database remain unverified.
+- CODE-134/135: rechecked GLS lookup and current checkout selection, token and
+  dispatch source. #188/189 were updated after dry-run and reconciled
+  unchanged. Historical fixtures were not rerun; real SOAP, Joomla event
+  delivery and checkout persistence remain unverified.
+- CODE-140: rechecked the shipment guard and current order-update and checkout
+  dispatch sites following Order helper changes. Updated #193 after dry-run
+  and reconciled unchanged. Historical fixture not rerun; event delivery,
+  provider requests and database persistence remain unverified.
+- CODE-131–133: rechecked pickup save, both shipping-box renderers and wrapper
+  ordering; #185–187 were updated after dry-run and reconciled unchanged.
+  Prior fixtures were not rerun. Joomla, checkout and database remain
+  unverified. Counts remain 0/161 fully approved original pages and 173/199
+  original findings with partial records; these are not runtime verification.
+- CODE-127/128/130: rechecked shared copy table inference, manufacturer sort
+  headings, and shared rate/location deletion paths; #182–184 were updated
+  after dry-runs and reconciled unchanged. Historical fixtures were not
+  rerun; Joomla/database runtime is unverified. CODE-129 remains on private
+  security hold. Issue-sync tests passed. Next: CODE-131–140.
+- CODE-121–124: rechecked MVC view namespaces, logo upload/copy paths and
+  postal-code editor state against current source. #176–179 were updated
+  after dry-runs and reconciled unchanged. Historical fixtures were not
+  rerun; installed Joomla, browser, filesystem and database remain unverified.
+- CODE-125/126: current selector isolation and publication ordering source
+  were rechecked; `php tests\unit\fieldgroups-ordering.php` passed with doubles.
+  #180 and #181 are closed; #180's owner comment says keep open pending targeted
+  UAT. Preserved that discrepancy without reopening or changing either issue.
+  Neither the isolated test nor the closed status proves Joomla 5/6 runtime.
+  Counts remain 0/161 approved original pages (0%) and
+  173/199 original findings with partial records (86.9%).
+- CODE-117–118 and CODE-120: rechecked answer-mail results, subscriber-name
+  lookup and country-list ordering against current source; #173–175 were
+  updated after dry-runs and reconciled unchanged. The subscriber and country
+  guides already contain matching warnings; they were re-read without an
+  artificial edit. Historical fixtures were not rerun; real Joomla, delivery
+  and database behavior remain unverified. Next: CODE-121–130.
+- Quality for CODE-112–116: issue-sync tests passed; the four changed CSV
+  registers parsed with the repository parser and had unique identifiers.
+  Python was unavailable; the equivalent Node parser check succeeded after
+  correcting the check's header-property name. No completion counts changed:
+  0/161 original pages fully approved (0%), 173/199 original findings with
+  partial records (86.9%); these do not indicate runtime verification.
+- CODE-112–116: rechecked newsletter progress, preview dispatch and recipient
+  fields, question dates, and review date rendering at local Core HEAD.
+  Updated #168–172 after individual dry-runs and reconciled unchanged.
+  Prior isolated stubs were not rerun; Joomla, mail, database and storefront
+  behavior remain unverified. An additional review-comments layout has two
+  date formatter calls; its runtime route is unverified. The newsletter guide
+  already warns about the checked failures and remains partially reviewed.
+  These follow-ups do not turn partial findings or pages into completed reviews.
+- Started CODE-111–120: rechecked CODE-111's non-inline image branch and its
+  four product-editor callers; prior isolated layout fixture was not rerun.
+  Updated #167 after dry-run and reconciled unchanged. Real Joomla, saved
+  media and browser behavior remain unverified. CODE-119 remains a private hold.
+- Rechecked the complete free-shipping module guide against the module
+  manifest and the message/refresh paths inspected for CODE-105; existing
+  warnings already cover the source discrepancies, so no artificial article
+  edit was made. Updated its partial source-review record.
+- Compared the newer tracking commit's PayPal documentation with the checked
+  out implementation. Qualified the order-payments guide so an unknown
+  outcome is not presented as automatically resolvable by every gateway or
+  operation; all seven explicit anchors and bundled Markdown rendering passed.
+  The tracking commit's code and provider/runtime behavior still need review.
+- PayPal FAQ: inspected the legacy PayPal manifest and notification handler,
+  plus the distinct PayPal Credit Card manifest, installer, language, hosted
+  field gate, completion path, README and Marketplace classification at local
+  Core HEAD. Added the credit-card identity, environment-specific settings,
+  defaults and live Card Fields restriction; retained the legacy cautions.
+  Corrected the FAQ menu title and linked the FAQ from the plugin overview.
+  The source-review row remains partial: identity migration, webhook and all
+  checkout paths, provider behavior and the newer tracking-only completion
+  changes are not fully verified. Existing #105 and #244 were not changed.
+- The bundled Markdown renderer rendered the FAQ, plugin overview and menu;
+  all `chapters/` targets in those three files exist. The source-review CSV
+  parsed with the repository parser and has 163 unique entries; issue-sync
+  tests and `php tests\unit\paypalcreditcard-assets.php` passed. Three further
+  PayPal tests could not start because plugin or test Composer autoloaders are
+  absent; no dependencies were installed. A first renderer check wrongly
+  required a heading in the menu; the corrected link-based check passed.
+  No Joomla, browser, MySQL or provider runtime was exercised.
+- CODE-101: independently searched the current controller, dynamically
+  obtained model, client functions and same-named helper/entity methods. The
+  controller/model/client delimiter behavior still exists; historical stub
+  results were not rerun. Updated the handoff revision, dry-ran and appended
+  qualified evidence to #159, then verified an unchanged dry-run. GitHub
+  `develop` now matches tracking `24fcdfb91dcf66bb49fe6a038b4760b9dd475adf`,
+  whose changes do not touch the inspected CODE-101 paths. The other seven
+  ordinary handoff revision revalidations were initially outstanding.
+- CODE-102: reread the selectbox tag precedence, replacement, layout loader and
+  supplied Twig, and searched for other uses. The property add-to-cart branch
+  separately generates a selector, while `Cart::getDefaultQuantity` also reads
+  the tag; both merit regression coverage without assuming identical behavior.
+  Recorded this partial follow-up in the individual register. Prior stubs were
+  not rerun; handoff evidence was updated and #160 synchronized after dry-run,
+  then reconciled unchanged. Its priority was preserved for maintainer triage.
+- CODE-103: rechecked the numeric editor inputs, browser `parseInt` range
+  check, model comparison and checkout postal filtering. The isolated
+  `php tests\unit\checkout-postal-code.php` fixture passed, including
+  normalized and foreign address controls; it does not exercise shipping-rate
+  editor save/reload or a real database. Updated the handoff and schema line
+  references, then synchronized #161 after dry-run and reconciled unchanged.
+- CODE-104: traced the calculator template/configuration gates and browser
+  request through the site controller and AJAX helper to the query; the
+  historical duplicate-AND and additional unmatched-condition evidence remains
+  relevant to the unchanged source. Did not rerun that SQL fixture or infer
+  MySQL/checkout behavior. Distinct estimator dimensions remain in CODE-233.
+  Updated #162 after dry-run and reconciled unchanged.
+- CODE-105: verified the digit/space postal predicate and traced both the
+  module's initial message and the separate cart AJAX refresh caller. The
+  latter omits the module's rate ID; that distinct concern already has
+  CODE-223 and was not duplicated. Neither prior fixture nor Joomla checkout
+  was rerun; updated #163 after dry-run and reconciled unchanged.
+- CODE-107: traced separate gross/net image arguments, subsequent selector
+  synchronization and the asynchronous price response reading the same net
+  field. This adds regression paths, not a claim that every image-selection
+  state reproduces the defect. Prior fixtures and tax/checkout runtime were
+  not rerun; updated #164 after dry-run.
+- CODE-109/110: rechecked shared grid action construction, wrapper toggle
+  controller/model and wrapper table upload/deletion/copy branches. The prior
+  isolated outcomes were not rerun and do not establish Joomla database or
+  filesystem effects. Updated #165/166 after dry-run; records remain partial.
+- Local Core remains `ff72aba6939637ed8fd55d4acc4c109f641adccc`; GitHub
+  `develop` and its `origin/develop` tracking ref are one commit ahead at
+  `24fcdfb91dcf66bb49fe6a038b4760b9dd475adf`, with PayPal operation and
+  related test/documentation changes. No fetch, merge or checkout was made.
+  Graphify still indexes `647c0dc795265544ea000acb0c9217da609db544`.
+- Rechecked selected CODE-101–105 and CODE-107/109/110 source paths at local
+  HEAD and read their mapped open Issues #159–166. The principal source files
+  are unchanged since the previous checkpoint; the install SQL changed in an
+  unrelated table. Earlier fixtures were not rerun and these reviews remain
+  partial. The earlier controlled eight-ID dry-run blocked all eight because
+  their handoff evidence was recorded at the previous Core revision;
+  CODE-101–105/107/109/110 have since been source reverified and synchronized;
+  a combined dry-run returned unchanged for all eight. Historical fixtures
+  were not rerun and none of these partial reviews is runtime verification.
+  CODE-106/108 remain security holds; a private source triage was performed,
+  but impact and any reclassification require the established private process.
+- Re-read the order-payments article and selected current capability, order
+  action, view, PayPal capture, payment link and coverage paths. Corrected its
+  obsolete Flatpay-only claims, added pending/review amounts and distinguished
+  PayPal full capture, attempt-level action gates and gateway-specific links.
+  Its source record is updated, but it remains partial; the tracking-ref PayPal
+  changes and real Joomla/provider behavior are not verified.
+- Offline checks passed: `php tests\unit\payment-capabilities.php`,
+  `php tests\unit\payment-action-mail.php`,
+  `php tests\unit\payment-order-template-tag.php` and
+  `node docs-review\issue-sync.test.js`; the order-payments guide rendered and
+  retained its seven explicit anchors. These tests use isolated stubs/SQLite,
+  not Joomla, live mail, MySQL or payment providers. Instruction-file and
+  tracked-guide whitespace checks passed with an existing line-ending warning.
+- Progress remains **0/161 fully approved original pages (0%)**, **173/199
+  original findings with partial individual records (86.9%)**, **216/283
+  ledger mappings recorded synced (76.3%)** and **0/7 publication gates
+  complete (0%)**; prior baseline metrics for function/configuration/extension
+  mappings remain below. These are not claims of complete source, runtime or
+  fresh GitHub verification. Next: begin the partial CODE-111–120 follow-up
+  and continue remaining page batches; keep CODE-119 on private hold.
+
+The maintainer explicitly resumed the project. Preserve the standing
+no-Core-fix, no-production-extension-change, no-commit/push/publication and
+private-security restrictions. The current Core `develop` HEAD is
+`ff72aba6939637ed8fd55d4acc4c109f641adccc`, one commit behind GitHub; the previous pause
+recorded `2e2889680244db64b9e9f64da29608e02f543a70`. The intervening history is
+57 commits and 209 changed paths: 22 component, 14 library, 67 plugin, 7
+Marketplace, 15 source/language and 84 other paths; no module paths changed.
+Core and legacy-extension worktrees are clean. The documentation `modernize`
+HEAD still matches its checkpoint and its extensive pre-existing dirty changes
+are preserved. The private handbook is absent.
+
+Graphify remains stale at `647c0dc795265544ea000acb0c9217da609db544`. GitHub
+confirms the Core repository is private; `develop` is now one commit ahead.
+The CODE-101–110 ordinary source follow-up has been reconciled; mapped
+ordinary Issues #159–166 remain open, while CODE-106/108 remain blocked on an
+authorized private security-review channel. Previous completion and progress
+counts below remain the baseline until individually reverified; this resume
+entry itself adds no review-completion credit.
+
+## PAUSED — previous controlled checkpoint and status, 2026-11-26 (historical)
+
+The maintainer paused the project. No new review, Issue batch or autonomous
+continuation is authorized before an explicit resume. All older ACTIVE
+headings and next-action statements below are historical and superseded by
+this checkpoint and `RESUME.md`. Results below describe evidence available
+at the pause, not an assertion that the project is complete.
+
+### Branches, revisions and scope
+
+- Core `develop`: `2e2889680244db64b9e9f64da29608e02f543a70`; clean.
+- Documentation `modernize`: `5fda0904d762a466afcb3c7d400ad8d0ab1492cb`;
+  134 tracked modified, 12 untracked, 0 deleted, 0 staged at this checkpoint.
+  This includes preserved prior work, not just the current pause edits.
+- Legacy extensions `master`: `68c3819e1fa444a1bd3c46322045d4820a52fea6`;
+  clean. Its three changed files at the historical transfer checkpoint are
+  not currently present as uncommitted changes; no action was taken on them.
+- `C:\Github\redSHOP-internal` is absent. Graphify was previously reported
+  indexed at `647c0dc795265544ea000acb0c9217da609db544`, older than Core
+  HEAD; no fresh index verification was performed during this pause. All
+  revisions and statuses are local snapshots, not fresh remote checks.
+
+### Progress — explicit denominators and evidence
+
+| Area | Measured state | Interpretation |
+| --- | --- | --- |
+| Modernization and content quality | 0/161 original pages fully approved (0%) under the current individual criteria. Inventory has 163 paths: 143 legacy `complete`, two `partial`, 17 historical-preserved and one historical-annotation. | The 143 labels describe earlier editorial work, not full individual approval. The older `QUALITY-REVIEW.csv` has 143 `reviewed` rows from a register/quality pass; it is not 143 complete source reviews. |
+| Individual page source work | 161/161 original pages have source-register entries; two additional guides also have entries. All 163 entries say `source-verified; partial`. | 100% is **record presence**, not completion: all still have source or quality limitations. Exact inspected methods, improvements, issues and runtime limits are in `SOURCE-REVIEW-REGISTER.csv`. |
+| Function mapping | 385 inventoried entries: 384 `needs-mapping`, one `partial`. | 0/385 fully mapped (0%) by the recorded statuses, not a measure of all redSHOP features or complete documentation. |
+| Configuration | 84 inventoried admin forms, all `needs-mapping`. | Not a complete configuration-field universe; a coverage percentage for configuration documentation is unavailable. |
+| Plugins and modules | 266 plugin entries: 265 need mapping and one is partial; 35 module entries all need mapping. | 0/266 plugins and 0/35 modules are recorded fully mapped (0% each). These are inventory mappings, not proof of overall extension completeness. |
+| Internal technical documentation | Private handbook absent. | No reliable denominator or completion percentage; internal review is blocked, not complete. |
+| GitHub Issue management | 216/283 ledger rows `synced` (76.3%); 52 security holds and 15 test-only. The 216 synced rows map to 216 distinct issue numbers. | Of the rows currently classified as ordinary/synced, 216/216 are recorded synced; this is local ledger state, not a fresh GitHub audit or proof that Issues were fully reviewed. No reliable create/update totals are recoverable from the current status alone. |
+| Individual original code findings | 173/199 have partial individual records (86.9%); 26/199 have no such record (13.1%). | Partial records do not constitute full verification. The register contains 214 total rows including additional findings; all original findings require completion or explicit disposition. |
+| Security holds | 52/52 classified `needs-private-verification`; 0 recorded as privately completed (0%). | Potential security evidence and exploitability are not established by this classification. No authorized private reporting channel was identified. |
+| Automated checks | Issue-sync tests passed at pause; earlier selected isolated fixtures and Markdown/link checks passed as recorded below. | No accepted total test universe exists, so no meaningful percentage. Stubs and register checks do not replace individual source or runtime review. |
+| Runtime | Recent probes used synthetic dependencies. No real Joomla, database, browser, provider or production runtime was run in the latest follow-ups. | No trustworthy total runtime-test denominator or completion percentage; do not claim Joomla 5/6 compatibility. Earlier evidence must be read with its own scope. |
+| Publication gates | 0/7 complete (0%): three partial and four blocked. | See `PUBLICATION-GATES.csv`; blocked runtime, Joomla 6, release and approval gates are not permission to publish. |
+| Overall | Incomplete and PAUSED. | No defensible single project percentage or weighted acceptance denominator exists. |
+
+### Comparison with the last historical pause
+
+That pause recorded 160 inventory pages: 117 provisional partial, one
+historical annotation, 42 unclassified and 0 approved under the updated
+standard. The current inventory has 163 (+3 paths), including the two new
+untracked guides below; the older and current status taxonomies differ, so
+their class counts cannot be subtracted as completed review progress. The
+approved count remains 0 (no increase). Current 161 original partial source
+records, 173 original partial finding records and 216 synced Issue mappings
+were not captured in a directly comparable form at that pause; no numeric
+increase for completed reviews or exact newly created versus updated Issues
+is inferred. The earlier pause had no trustworthy Issue mapping; the present
+ledger now contains mappings, but that is not a count of Issues created since
+then.
+
+### Last work, unfinished work and Issue actions
+
+- The latest five-page stockroom/attribute follow-up read Inventory, Stockroom
+  Management, Stockroom Image Management, Stockroom overview and Attribute
+  Sets against selected source paths. Qualified preorder-image and save
+  checks were added; other inspected claims did not justify artificial changes.
+  All five are partial, with remaining paths and runtime tests in the register.
+- Additional guides `manual/en-US/chapters/orders/order-payments.md` and
+  `manual/en-US/chapters/plugin-redshop/ahamove.md` are new and partial. Many
+  existing order/payment, shipping, tax, product, module and plugin pages were
+  improved; the current worktree has 122 changed/new chapter paths including
+  those guides and historical archive annotations. It is not a count of
+  pages fully modernized or of changes exclusively since the last pause.
+- CODE-240 / #285 was created after a duplicate dry-run and reconciled:
+  synthetic stock-image save exercised a filename-update exception with
+  parent, media and database stubs. Actual Joomla save, upload and database
+  remain unverified. Recent additional Issues #276–#285 and their evidence
+  are recorded individually below and in the sync ledger. The most recent
+  CODE-091–100 follow-up updated #151 and #154–#157; ordinary mappings were
+  reconciled. CODE-101–110 ordinary mappings #159–#166 were reconciled;
+  CODE-106 and CODE-108 remain private holds. The individual records for
+  #160 and #162–#164 now reflect that reconciliation without claiming the
+  historical fixtures were rerun. Priority for #160 remains unchanged pending
+  maintainer triage. No Issue write or synchronization was started during
+  the pause.
+- `ISSUE-SYNC-REGISTER.csv` holds current recorded issue numbers and revisions;
+  individual create, update and reconciliation evidence is retained in the
+  historical entries below. It is not an immutable event log, and exact totals
+  of all creates and updates since the previous pause are unavailable.
+
+### Validation and limitations
+
+- At this pause `node docs-review\issue-sync.test.js` passed from the
+  documentation repository. An initial invocation from the Core working
+  directory failed because the file was not there; the corrected run passed.
+- Registry checks used the actual schema keys; page, source, finding, Core
+  handoff, triage, issue, security and function keys were nonempty and unique.
+  An initial check mistakenly used nonexistent keys for triage and function;
+  the corrected `id` and `source_path` checks passed. The order-payments entry
+  was added to the inventory to match the existing source record.
+- Recent synthetic calculator, selector, wrapper-upload/grid and stock-image
+  probes passed with their documented stubs and controls; prior fixtures not
+  rerun remain historical. Five stockroom/attribute pages previously rendered
+  and their checked chapter targets existed. These checks do not establish
+  actual Joomla, real SQL, browser, file upload, provider or production
+  behavior.
+- `git diff --check` passed with existing LF/CRLF conversion warnings. A
+  bounded pattern scan of all 146 changed/new documentation files found
+  no obvious private-key, GitHub-token, cloud-key or quoted credential
+  assignments. It does not cover every secret format, customer datum or
+  security-sensitive description; historical review materials require an
+  authorized private review before any public commit or publication.
+
+### Commit preparation — no staging performed
+
+Documentation worktree grouping (review dependencies and sensitive data before
+selecting files; these are suggestions, not instructions to publish):
+
+1. Customer manual and navigation: 122 chapter paths plus menu changes;
+   suggested message `docs: improve redSHOP manual guidance`.
+2. Source/review inventories, handoffs, checkpoint and quality instructions:
+   the review-register and guidance paths; suggested message
+   `docs: record source review evidence and pause checkpoint`.
+3. Issue synchronization tool, tests and procedure:
+   `docs-review/issue-sync.js`, `issue-sync.test.js` and
+   `ISSUE-MANAGEMENT.md`; suggested message
+   `test: strengthen issue synchronization handling`.
+
+The groups share evidence and should be checked together for consistency.
+Keep potentially sensitive historical review materials private and do not
+commit them to a public destination until authorized review; the narrow
+pattern scan is not clearance. Core and legacy extensions have no current
+worktree changes and need no commit for this documentation project. No
+staging, commit, push, merge, reset or publication was performed.
+
+### Authorized later resumption only
+
+First compare Core and documentation revisions and worktrees with this
+checkpoint, identify affected Core paths, recheck affected findings and
+existing open/closed Issues, and revisit affected pages. Then continue the
+unfinished CODE-101–110 and stockroom/attribute paths and remaining partial
+reviews in five-page or ten-finding batches. Preserve valid evidence and do
+not repeat it unnecessarily. Keep security holds within the authorized
+private procedure, maintain the quality registers and checkpoints, and
+respect all no-Core-fix/no-commit/no-push/no-publication restrictions.
+
+## Shipping pages and CODE-235 follow-up (ACTIVE; partial)
+
+- CODE-091–100 follow-up: re-read eight ordinary paths individually, including attribute-set deletion, both accessory editors, calculator methods and callers, inventory save and reset, and the legacy CSV view. CODE-093 and CODE-100 remain private holds, not completed security reviews. A new isolated PHP 8.4 probe of the actual calculator covered fractional-piece settings, separate plus/minus/percentage adjustments, all three affected metadata branches and four range methods with synthetic dependencies. Updated #154–#156 after dry-run; updated #151 and #157 with current source evidence and corrected the tracked case of the attribute-set model path. All eight ordinary Issues reconciled unchanged. Historical deletion, accessory and inventory fixtures were not rerun; real Joomla, database, cart, tax, filesystem and browser behavior remain unverified. All eight ordinary reviews remain partial.
+- Finding-batch quality: the calculator probe and Issue-sync tests passed; all five review registers had nonempty unique keys and `git diff --check` passed with existing LF/CRLF warnings. A partial patch temporarily removed the CODE-096 ledger identifier; it was restored before synchronization and the nonempty/unique key checks passed. Original progress remains **0/161 fully approved pages (0%)** and **173/199 original findings with partial records (86.9%)**. Continue CODE-101–110 individually and unfinished page paths.
+- Five-page stockroom and attribute follow-up: re-read Inventory, Stockroom Management, Stockroom Image Management, the Stockroom overview and Attribute Sets. Rechecked selected inventory save/reset and CSV paths, stockroom validation and deletion, image form/list/store and quantity selection, product delivery output, and attribute-set toolbar, save, copy and deletion paths. Added qualified image-save and preorder guidance; no additional edits were justified by the other inspected paths. Each page remains partial: the complete required source and Joomla runtime reviews are not finished.
+- CODE-240 / #285: actual `StockimageTable::doStore` returned true after a synthetic `updateObject` exception while retaining the error. Successful-update and no-image controls passed; parent table, media helper and database were stubs. The full save, actual database, upload, filesystem and administrator notification remain unverified. Checked the local stock-image finding and open/closed Issue duplicate dry-run, created #285 and reconciled it unchanged. The related page and finding records remain partial.
+- Quality: rendered the five pages using the bundled Markdown parser and checked their chapter targets. Issue-sync tests passed, five review registers had unique keys, five partial page records had status/runtime/Issue fields, and `git diff --check` passed with existing LF/CRLF warnings. Original progress remains **0/161 fully approved pages (0%)** and **173/199 original findings with partial records (86.9%)**; CODE-240 is additional. Continue CODE-091–100 individually and unfinished page paths, then proceed to the next batch; CODE-093 and CODE-100 remain private holds.
+- CODE-081–090 batch follow-up: re-read selected current source for all ten, including cache selection, tax-setting investigation, four AJAX layouts, both discount validation paths, gift-card fallback, category copy, state display, postal duplicate validation and template file writing. Expanded isolated evidence for CODE-081 and CODE-084; corrected CODE-087's controller attribution and tested the actual controller separately with a stub model. Updated #141, #144 and #147 after dry-runs and reconciled them unchanged; #149 also reconciled unchanged. Other historical fixtures and mapped Issues were not rerun/rechecked in this follow-up. CODE-082 remains an investigation and its separate security lead remains private. Issue-sync tests, five ledger uniqueness checks and `git diff --check` passed with existing LF/CRLF warnings. No Joomla, provider, actual database, real filesystem failure or frontend checkout was tested. All ten remain partial. Original progress remains **0/161 fully approved pages (0%)** and **173/199 original findings with partial records (86.9%)**. Begin CODE-091–100 and continue unfinished page paths; CODE-093 and CODE-100 remain private holds.
+- CODE-081 additional edge test: the actual `Template::getAjaxDetailBox` with seeded static records and no configured default cached null for a product without a matching named template and then returned null for a later named match. Reversing the order returned the named result twice; AJAX disabled returned null. Fixture: session `files/ajax-detail-cache-review.php`, with config and language stubs; no database, actual files or Joomla storefront was tested. Updated the handoff and #141 after dry-run, then reconciled unchanged. Configured-default and actual rendered-output regression tests remain open. Continue the partial finding batch.
+- CODE-087 controller probe: the actual `CategoryController::copy` received a synthetic selected ID and selected the expected success/error language key for a stub model returning true/false. Fixture: session `files/category-copy-controller-review.php`. This does not run the actual model in the same call, Joomla dispatch, the database or filesystem; the earlier model fixture was not located. Updated the handoff and appended qualified evidence to #147 after dry-run; subsequent reconciliation was unchanged. Continue the partial finding batch.
+- CODE-084 current isolated check: re-read both discount forms, inline layout and JavaScript, the inherited inline controller and both table bind/check/store paths. The actual table bind/check methods rejected each valid threshold and discount field with the missing-group error when no group was bound; each passed with a group, and zero-discount controls failed with the amount error. Fixture: session `files/discount-inline-review.php`; the parent table was a stub, not Joomla or a database. Updated local handoff and #144 after dry-run and reconciled unchanged. Real controller dispatch, persisted associations and UI remain unverified; this finding remains partial. Continue the ten-finding batch.
+- Five-page follow-up: individually read Categories, States, Postal Codes, Gift Cards and Templates and inspected selected associated forms, models, tables, views, controllers, language and helper paths. Corrected state code labels and explained gift-card customer-amount and quantity detail tags; documented the shared template copy's conditional unpublished state. Existing category and postal-code warnings match the inspected paths; no article changes were justified for those two. Added missing #73/#149, #148 and #182 associations to their respective page records and recorded CODE-087's controller correction separately. Five pages rendered with the bundled Markdown parser, all their chapter targets existed, five partial records and all 163 page keys validated, and whitespace passed with existing LF/CRLF warnings. Historical fixtures were not rerun and no actual Joomla, browser, SQL, mail, payment or filesystem behavior was tested. All five remain partial; this is not five completed reviews. Original progress remains **0/161 fully approved pages (0%)** and **173/199 original findings with partial records (86.9%)**. Continue CODE-081–090 and the next individual batch.
+- CODE-087 additional source trace: read the complete category article, category form, category copy/save implementation, categories toolbar and category-specific controller. The toolbar uses `category.copy`, not the inherited list controller cited in the previous handoff; the category controller chooses a success message from the model's true result and does not report a selected count. Corrected the individual, handoff, master, triage and source-review records; appended an explicit correction to #147 after dry-run and reconciled it unchanged. The existing article warning remains appropriate. A search did not locate the earlier isolated fixture, so it was not rerun; actual Joomla dispatch, database and filesystem remain unverified. Issue-sync tests and four register uniqueness checks passed; `git diff --check` passed with existing line-ending warnings. Initial test commands were run from the Core directory by mistake and failed; rerunning from the documentation directory passed. This is partial work, not a completed batch. Original progress remains **0/161 fully approved pages (0%)** and **173/199 original findings with partial records (86.9%)**; continue CODE-081–090 and unfinished pages.
+- CODE-071–080 follow-up: re-read order date boundaries, box ID search, shipping capability indicator and rate copy, address deletion input, review product routing, Product Tab switches, Who Bought category predicate, user synchronization and mail search filtering. Eight existing Issues received current-revision source anchors after dry-run; all ten then reconciled unchanged. Earlier isolated browser, model, date and SQLite fixtures were not rerun. Issue-sync tests and `git diff --check` passed with existing LF/CRLF warnings; no Joomla, database, deletion, shipping checkout or storefront was tested. All records remain partial; continue CODE-081–090 and unfinished page traces. Original progress remains **0/161 fully approved pages (0%)** and **173/199 original findings with partial records (86.9%)**.
+- CODE-061–070 follow-up: re-read media reset, subproperty deletion, attribute-set copy and save, property inputs and product save, postal-code filtering, currency validation and tax-rate group/state joins. CODE-062 remains a private hold without a completed private review. Seven existing Issues received current-revision source anchors after dry-run and nine ordinary Issues reconciled unchanged. Historical browser, model and SQLite fixtures were not rerun. Issue-sync tests and `git diff --check` passed with existing LF/CRLF warnings; no Joomla, browser, SQL, file or checkout runtime was tested. All ordinary records remain partial; continue CODE-071–080 and unfinished page traces. Original progress remains **0/161 fully approved pages (0%)** and **173/199 original findings with partial records (86.9%)**.
+- CODE-051–060 follow-up: re-read gift-card value timing, voucher lookup and list formatting, discount forms and queries, category assignment model/controller, price model and range validator, bulk price updates, and media editor selectors. CODE-060 remains test-only: duplicate IDs alone do not establish the earlier retracted YouTube claim. Seven existing Issues received current-revision source anchors after dry-run; all nine ordinary mappings then reconciled unchanged. Their historical isolated evidence was not rerun except that offline `tests/unit/prices-list.php` passed valid product isolation and price CRUD with SQLite/doubles. Its stubbed table check does not exercise CODE-058's overlap validation. Issue-sync tests and `git diff --check` passed with existing LF/CRLF warnings. No actual Joomla, MySQL, mail, media browser or storefront was tested. All records remain partial; continue CODE-061–070 and unfinished page traces. Original progress remains **0/161 fully approved pages (0%)** and **173/199 original findings with partial records (86.9%)**.
+- CODE-041–050 follow-up: re-read the coupon percentage guard and calculation, Flatpay invoice classifier, e-conomic client failure path, guest review namespace, CSV splitter and gift-card issuance/mail loop. Six ordinary records remain partial; CODE-042–044 and CODE-046 remain private holds without a completed private review. The isolated `tests/unit/flatpay-payment-replay.php` passed, including pending and generic API-failure controls; the unknown full callback and actual provider remain untested. Other earlier probes were not rerun. Six mapped Issues reconciled unchanged; Issue-sync tests and `git diff --check` passed with existing LF/CRLF warnings. No Joomla, database, actual provider or mail delivery was exercised. Continue CODE-051–060 and unfinished page traces. Original progress remains **0/161 fully approved pages (0%)** and **173/199 original findings with partial records (86.9%)**.
+- CODE-031–040 follow-up: re-read purchase and sample coupon timing, wizard welcome copy, dashboard query and template, question save/send, cart-module entry, Who Bought selection, Product Tab entry/manifest and product robots selector/helper. Existing individual records remain partial; earlier stubs and Joomla installer source were not rerun. The Who Bought multi-category query is already separately tracked as CODE-078, not a new finding. CODE-036 and CODE-037 remain private holds without a completed private review. Eight ordinary Issues reconciled unchanged; Issue-sync tests and `git diff --check` passed with existing LF/CRLF warnings. No real Joomla, filesystem copy, mail, database, installation or browser was tested. Continue CODE-041–050 and unfinished page traces. Original progress remains **0/161 fully approved pages (0%)** and **173/199 original findings with partial records (86.9%)**.
+- CODE-021–030 follow-up: re-read category description configuration and three rendering paths, next/previous navigation, SEO metadata hints and product replacements, menu-alias initialization and order routing, Flatpay/Bambora nonsecurity manifest and currency paths, and terms reset/acceptance. CODE-025–027 remain private holds without a completed private review. Updated CODE-023's handoff evidence to current Core and, after dry-run, appended it to #99; all seven ordinary mapped Issues then reconciled unchanged. The earlier stale-revision dry-run correctly blocked until the ledger was updated after source inspection. Issue-sync tests passed; the 281 handoff, 213 individual and 282 sync rows had unique IDs; `git diff --check` passed with existing LF/CRLF warnings. A first uniqueness check incorrectly assumed the handoff key was `review_id`; it passed after using `id`. Prior fixtures were not rerun and Joomla, browser, SQL, metadata, routing and provider behavior remain unverified. All ordinary records remain partial; continue CODE-031–040 and unfinished page traces. Original progress remains **0/161 fully approved pages (0%)** and **173/199 original findings with partial records (86.9%)**.
+- CODE-011–020 follow-up: re-read the stock-image lookup and its product, comparison, bundle and conditional ProductTag callers; coupon application, gift-card creation and recalculation; promotion date and award logic; order-status validation; quotation export; user filtering; newsletter subscription, recipient selection and test-mail paths. Nine ordinary individual records retain their earlier synthetic evidence and remain partial. The reapplication caller assigns the coupon method's result to the cart; reachability and effects of a failure were not tested and are not asserted as a separate defect. CODE-018 remains a private hold without an authorized completed review. Nine mapped Issues reconciled unchanged; 213 individual records had unique IDs and the nine ordinary rows existed. Issue-sync tests and whitespace checks passed with existing LF/CRLF warnings. No prior fixture was rerun in this follow-up and no real Joomla, SQL, mail, payment or browser behavior was tested. Continue CODE-021–030 and remaining page traces. Original progress remains **0/161 fully approved pages (0%)** and **173/199 original findings with partial records (86.9%)**.
+- CODE-001–010 follow-up: individual register rows record current source comparisons and limitations, including synthetic PHP evidence for several findings and source-only evidence for others. CODE-003 concerns the documentation renderer, outside the Core handoff; no browser test or renderer change was made. CODE-010's additional controller/view inspection confirms the insert-product layout assignment and shared-model data access, but not the entry points or runtime dispatch. Its extra picker templates remain investigation-only. Dry-run reconciliation returned unchanged for all nine mapped Core Issues; `issue-sync.test.js` and `git diff --check` passed, with existing LF/CRLF warnings. No Joomla, real SQL, browser or provider behavior was verified in this quality check. All ten records remain partial; continue CODE-011–020 and the remaining unfinished page paths. Original progress remains **0/161 fully approved pages (0%)** and **173/199 original findings with partial records (86.9%)**.
+- Five-page discount follow-up: read Gift Cards, Mass Discount, Product Price Discount, Order Total Discount and the discount overview individually. Rechecked four forms, gift-card coupon issuance and its free-shipping field, mass-discount category/manufacturer update and deletion, product/order discount table validation and shopper-group updates, and the discount menu targets. Added a qualified Gift Cards fulfillment check for CODE-239 / #284. No further edits to the other four guides were justified by these inspected paths. Each source row remains partial; the full required source review and Joomla/mail/database/checkout runtime remain open.
+- Quality: the five guides rendered, their chapter targets existed, all 163 source records parsed with unique paths and the five current rows contained explicit quality/runtime/Issue fields. Issue-sync tests and `git diff --check` passed, with existing LF/CRLF warnings. Original progress remains **0/161 fully approved pages (0%)** and **173/199 original findings with partial records (86.9%)**, not completed reviews. Continue the next individual batch.
+- Five-page free-shipping follow-up: read Self Pickup, free-shipping message module, Promotions, Coupons and Vouchers individually. Inspected pickup manifest/provider/method, location editor and checkout selection; module manifest/entry/layout; coupon, voucher and promotion forms; cart flag assignments; checkout address layout and order-save excerpts. Added qualified fulfillment checks to four guides. No module article edit was justified: it already distinguishes an informational rate message from actual checkout eligibility. All five records remain partial.
+- CODE-239 / #284: source-only investigation, not a confirmed runtime defect. The inspected address layout omits the shipping template when `free_shipping == 1`; the order-save branch does not read the submitted shipping method and assigns the empty value. Coupon, voucher and promotion paths can set the flag; physical and non-shippable orders need distinct policy review. Compared #189's different GLS token-error root cause, ran the controlled duplicate dry-run, created the Issue and reconciled unchanged. Real checkout, order persistence, provider effects and intended policy remain unverified.
+- Quality: `tests/unit/checkout-shipping-selection.php` passed with renderer stubs, but does not exercise free-shipping order save; historical Self Pickup acceptance coverage was inspected, not run. Five guides rendered and their chapter targets existed; source-register rows and four Issue ledgers parsed with unique keys; `issue-sync.test.js` and `git diff --check` passed (existing LF/CRLF warnings). Original progress remains **0/161 fully approved pages (0%)** and **173/199 original findings with partial records (86.9%)**; CODE-239 is additional. Continue the next individual batch.
+- Five-page shipping-plugin follow-up: read the complete Shipper, Default GLS, Giao, PostNord and GLS Business guides. Rechecked Shipper and GLS Business rate methods and manifests, Default GLS location/connection methods and manifest, Giao's configured-rate and provider-fee method, and PostNord pickup `onListRates` and both PostNord manifests. The existing Shipper, Default GLS, Giao and GLS Business descriptions remain consistent with these inspected paths, so no artificial article changes were made. Added a PostNord shopper-group default caution for CODE-236 / #281 and updated its source record; configured rates and group default use distinct paths. All five pages remain partial; complete provider and event paths were not re-reviewed in this batch.
+- Quality: all five guides rendered and their chapter links existed; the complete 163-row source register parsed with unique paths and the five rows retained explicit quality/runtime/Issue fields. Issue-sync tests and `git diff --check` passed, with existing LF/CRLF warnings. No provider, database or Joomla runtime was tested. Original progress remains 0/161 fully approved pages (0%) and 173/199 original findings with partial records (86.9%); continue immediately with the next batch.
+- Five-page partial follow-up: read Ahamove, shipping methods, wrappings, shipping boxes and the shipping overview individually. Re-read Ahamove requester state matching, checkout JavaScript and map layout; the shared rate model/controller and `Shipping::listShippingRates`; wrapping add-to-cart and selected recalculation paths; the box form, table, list model and tag; and the shipping-method list and rate-copy source. Added qualified guidance about requester matching/map use, shared mixed-cart product/category/exclusion conditions and different wrapping variants. No further box or overview article change was justified by the inspected paths. Each source row remains partial; the full required page review and real Joomla/browser/database/provider verification remain open.
+- Batch quality: the five guides rendered and their chapter links resolved. A strict source-register parser exposed 14 earlier rows missing the quality-status column; individually verified they were partial and restored that field without changing their evidence or Issue fields. All 163 rows now parse with unique paths; the five current rows have explicit quality, runtime and Issue fields. `issue-sync.test.js` passed, CODE-238 reconciled unchanged, and `git diff --check` passed with existing LF/CRLF warnings. A first strict check failed on the malformed rows; a diagnostic attempt also used the parser's return shape incorrectly before correction. Original progress remains **0/161 fully approved pages (0%)** and **173/199 original findings with partial records (86.9%)**, not completed reviews. Next: continue unfinished source traces and immediately start the next five-page or ten-finding batch.
+- CODE-238 / #283: the actual `Ahamove::getOrderItems` method on PHP 8.4 threw an `Error` for one synthetic order-item object; the empty control returned `[]`. The shipping handler calls it before provider creation when its status/payment/provider-order conditions are met; address, requester or product-remark preparation may fail first. `Order::getOrderItemDetail` uses `loadObjectList`; two shipping-event trigger sites were read, but actual event dispatch and database/provider behavior were not exercised. Compared #282's separate cart-key root cause, completed the controlled dry-run and creation, and reconciled unchanged. Added a concise booking warning to the partial guide and updated handoffs and review rows. Probe and Issue-sync tests passed; the guide rendered; five primary-key checks and `git diff --check` passed (existing LF/CRLF warnings). Original progress remains 0/161 fully approved pages (0%) and 173/199 original findings with partial records (86.9%); new CODE-238 is additional. Next: continue remaining Ahamove event, address and rate paths, then the next individual five-page batch.
+- Began documenting previously unmapped Ahamove: inspected its manifest, English labels, install/uninstall SQL, API wrapper and selected rate, address and order paths. Created a partial guide and menu/overview links, mapped the function inventory and recorded remaining event, provider, packaging and private-security work. The guide and navigation rendered, and their chapter targets resolved; no installation, provider request or real checkout occurred.
+- CODE-237 / #282: the actual Ahamove remark method with a synthetic cart item emitted an undefined-key warning and passed null to a product stub, while an order-item object control passed its ID without warning. The session fixture is `files/ahamove-cart-remark-probe.php`. The clean duplicate dry-run, creation and unchanged reconciliation passed. Real product lookup, Joomla dispatch, provider and customer impact remain unverified.
+- Quality: issue-sync tests passed; unique key checks passed for 279 Core handoff, 211 individual findings, 555 triage, 280 Issue ledger, 163 source records, 162 page inventory and 385 function inventory rows. The Ahamove guide and overview links resolved; all 161 menu chapter targets existed. `git diff --check` passed with pre-existing LF/CRLF warnings. Original progress remains 0/161 fully approved pages and 173/199 original findings with partial records; the new guide and CODE-237 are additional. Continue the next individual batch.
+- Five-page tax follow-up: read the VAT overview, tax-group, tax-rate, no-VAT FAQ and price-configuration articles and inspected tax forms, product and shipping VAT queries, the shopper default and selected exemption/configuration paths. Added qualified explanations of separate shipping VAT and zero-rate default shipping to relevant pages; all five records remain partial. The bundled parser rendered all five; the shipping target exists, five register keys were unique and `git diff --check` passed with existing LF/CRLF warnings. No real Joomla, database, tax or checkout was exercised. Continue the next batch.
+- Five-page follow-up batch: Giao, shopper groups, GLS update, module/plugin installation and plugin overview. Each was read and its source register updated; all remain partial. Joomla 5.4.6 source checks plugin identity by type/element/group and module identity by type/element/client; the installation guide now identifies these. The plugin overview distinguishes Core from separately distributed extensions after inspecting selected manifests and classifications. All five guides rendered with the bundled parser; all 21 overview chapter targets existed; five register primary keys were unique; whitespace passed with existing LF/CRLF warnings. Joomla 6, actual installation and provider runtime were not tested. Continue the next batch without counting partials as complete.
+- GLS update redirect follow-up: read the complete article, current GLS manifest and address handler, rate token methods and checkout's shipping-plugin import and pre-address-store trigger. No article change was justified: it already distinguishes the historical extension and warns about the handler. Recorded the exact source and remaining uncertainty; installed event delivery and address persistence remain unverified.
+- Re-read the standard shipping plugin manifest, service provider, English labels and rate handler, plus the shared shipping-extra-field and automatic-label source paths. Expanded the shipping-method guide with the multiple-field control, template tag, new-config Pacsoft default and legacy automatic-label allowance. The guide rendered and whitespace passed; actual Joomla label dispatch and checkout remain unverified. Continue the current batch and unresolved partial traces.
+- CODE-236 / #281: traced shopper-group default shipping through `Shipping::getShopperGroupDefaultShipping`, standard and PostNord pickup plugins and `CartShipping::getDefault`. With a synthetic group rate of 100 and stubbed tax results, the actual helper returned 100 without a row, 0 with a zero-rate row and 125 with a 0.25-rate row. The session fixture is `files/shopper-default-shipping-probe.php`. The result does not verify actual query matching, Joomla identity, checkout or financial impact. Added qualified warnings to the shopper-group and shipping-method guides; both remain partial.
+- Compared #280, #279, #278, #192, #186, #163 and #161; controlled duplicate-acknowledged dry-run and #281 creation succeeded, followed by unchanged reconciliation. Issue-sync tests passed; the two changed guides and Giao guide rendered; five register primary keys were unique (278 Core handoff, 210 individual findings, 554 triage, 279 Issue ledger, 162 page records). `git diff --check` passed with existing LF/CRLF warnings.
+- Next batch started with Giao Hang Nhanh: re-read its complete guide, manifest, English labels, install/uninstall SQL and current configured-rate and provider-fee methods. Configured rates call the shared VAT helper; the provider-fee result carries zero shipping VAT. Added a qualified explanation to the guide and updated its partial evidence row. Bundled Markdown rendering, page-key uniqueness and whitespace checks passed; no actual provider, database, installation or checkout was exercised. Continue the remaining pages in this batch.
+- Additional follow-up: read the complete Shipper, Default GLS and PostNord guides and the relevant current `onListRates` paths. Each calls `Rate::applyVat` for configured rates; the PostNord shopper-group default follows a separate branch. Added qualified VAT warnings to those guides and the general rate guide; all remain partial. Five affected guides rendered with the bundled Markdown parser, five register keys remained unique, and whitespace passed with existing line-ending warnings. No database or checkout result was tested.
+- Continued the five-page shipping batch: shipping boxes, shipping methods, wrappings, Self Pickup and GLS Business. Source traces, exact reviewed paths and remaining limitations are in `SOURCE-REVIEW-REGISTER.csv`; none is approved. Clarified shared shipping-method pagination and wrapping price/order data, and expanded the GLS Business extra-field, export and automatic-label guidance.
+- CODE-235 / #280: actual `Shipping::getShippingVatRates` query construction with synthetic DK/CA input and stubs compared state to numeric `tax_rate` rather than `tax_state`; SQL execution and financial impact remain unverified. Shared `Rate::applyVat` and GLS Business calls were inspected. Priority P1 is provisional. Six dry-run overlaps (#279, #278, #192, #186, #163, #161) were individually compared and found distinct; controlled creation, Issue fetch and unchanged reconciliation succeeded. The separate product-tax and exemption issues #263 and #142 are also distinct.
+- Quality checks: `node docs-review\issue-sync.test.js` passed; five CSV ledgers parsed with unique primary keys (277 Core handoff, 209 individual findings, 553 triage, 278 Issue ledger, 162 page records). The GLS guide rendered with the repository's `marked.js` and both referenced chapter targets exist. `git diff --check` passed with existing LF/CRLF warnings. A first uniqueness check used an incorrect header name and failed; the corrected check passed. No Joomla, MySQL, export, label, carrier or checkout runtime was exercised.
+- Current Core `2e2889680244db64b9e9f64da29608e02f543a70` is clean; documentation `5fda0904d762a466afcb3c7d400ad8d0ab1492cb` has extensive preserved working changes. Graphify index `647c0dc795265544ea000acb0c9217da609db544` is stale; current source controls. The private handbook is absent and private security holds remain unreviewed.
+- Original progress remains **0/161 fully approved pages (0%)** and **173/199 original findings with partial records (86.9%)**; partial records are not completed reviews. Continue the unfinished shared shipping rate filters, persistence, export and label paths, then the next individual page and finding batches; preserve all restrictions.
+
+## ACTIVE — resumed checkpoint (2026-11-25)
+
+Issue reconciliation and source-backed documentation modernization continue
+under the explicit maintainer resumption recorded in `RESUME.md`. Core and
+Marketplace production code, commits, pushes, publication and test-site work
+remain outside this workflow.
 
 - Core `develop`: `beacc4704dc24b9dc8f3b638324a9e8a6f96a06e`; local
   `origin/develop`: `920ea0819e6bac6da694107270e1143d3c18e22f` (seven commits
@@ -27,6 +1219,65 @@ validation results and exact next action are in `RESUME.md`.
   161 inventory paths exist.
 - No runtime test or documentation modernization was performed in this
   recovery. Preserve all dirty worktrees.
+
+## ACTIVE resume checkpoint — 2026-11-25
+
+- Core HEAD was rechecked as
+  `c0cda5fdfad6ef93ce56496315191c58a918749c` on `develop`; its worktree is
+  clean.
+- Documentation HEAD is
+  `5fda0904d762a466afcb3c7d400ad8d0ab1492cb` on `modernize`.
+- Graphify index commit `647c0dc795265544ea000acb0c9217da609db544` is stale
+  and did not cover dynamic callers; current source and direct diffs take
+  precedence.
+- CODE-130 source was rechecked: the later revision still has the Delete
+  contract mismatch in its review evidence, but its ledger revision is stale
+  and the sync tool stopped write mode. CODE-198 likewise stopped at revision
+  drift.
+- Inventory status is 143 complete, 0 partial, 17 historical-preserved and one
+  historical annotation.
+- Independent quality queue: `QUALITY-REVIEW.csv` contains 143/143 pages
+  reviewed by register status. The first 24 pages and later batches contain
+  direct source evidence; remaining register rows were closed only from
+  source/inventory evidence, not runtime proof.
+- Historical review: `HISTORICAL-PAGE-REVIEW.csv` contains 18 entries:
+  17 preserved pages and one historical annotation. Disposition remains
+  preserve or source-backed modernize/archival follow-up.
+- Independent quality batch: 8 Discount pages reviewed against Core
+  `c0cda5fdfad6ef93ce56496315191c58a918749c`; results are in
+  `QUALITY-REVIEW.csv`. A coupon-guide correction now states that Coupon User
+  supports multiple selections.
+- Function inventory: `FUNCTION-INVENTORY.csv` contains 385 entries
+  (84 admin forms, 266 plugins and 35 modules). Documentation mapping remains.
+- Security holds: `SECURITY-HOLD-REVIEW.csv` contains 52 nonsensitive entries;
+  exploitability remains unverified.
+- Issue sync: `--continue-on-blocked` is implemented and regression-tested.
+  A read-only all-record run continued past individual revision blocks and
+  recorded no Issue creation or update.
+- Code-finding review: `CODE-FINDING-REVIEW.csv` contains 199 open CODE IDs
+  marked `revision-recheck-required` against Core `c0cda5f`.
+- Function inventory: `FUNCTION-INVENTORY.csv` now contains 385 XML sources
+  (84 admin forms, 266 plugin manifests, 35 module manifests).
+- Independent quality evidence: `QUALITY-REVIEW.csv` currently records 16 pages
+  reviewed against Core `c0cda5f`, including coupon multiple-user correction.
+- Security hold review: `SECURITY-HOLD-REVIEW.csv` contains 52 nonsensitive
+  register entries; exploitability is not established.
+- Publication gates: `PUBLICATION-GATES.csv` records gates 1–7; gates 3–7 remain
+  blocked or partial and none is approved.
+- Local quality validation: 143/143 quality queue entries reviewed in
+  `QUALITY-REVIEW.csv`; 18 historical/annotation entries recorded; 0 broken
+  relative Markdown links found; `issue-sync.test.js` and `git diff --check`
+  pass.
+- Blockers: actual Joomla/MySQL/provider/browser runtime is unperformed; private
+  redSHOP-internal handbook is absent; 199 open CODE IDs require current
+  revision re-review; 52 security holds remain private-review items.
+- A 18-page source/quality result was completed across two batches: eight
+  Discount pages, four e-conomic pages and six Getting Started pages. Runtime
+  verification remains explicitly unverified.
+- Tests: `issue-sync.test.js` passed; `git diff --check` passed. Read-only
+  reconciliation remains blocked by revision-drift review at CODE-198/CODE-130.
+- Next: Getting Started overview, requirements, installation, navigation,
+  main menu and subscription-policy pages.
 
 ## Historical checkpoint — authorized issue management and Coupons
 
@@ -403,7 +1654,7 @@ The maintainer supplied a replacement Issue scope, recorded in `ISSUE-MANAGEMENT
 
 ## Transfer checkpoint — 2026-11-24, 17:37 CET
 
-**Paused. Do not resume issue import or documentation modernization until the maintainer instructs you to continue.** This checkpoint supersedes the older checkpoint below, which is retained as history.
+**Historical pause entry.** This pause was lifted by the 2026-11-25 explicit resumption recorded above. The section below is retained as history.
 
 ### GitHub Issue work
 
@@ -617,3 +1868,798 @@ Continue field-by-field review of product information and remaining product tabs
 - The maintainer requested continuous autonomous modernization on 2026-11-24: replace outdated guidance with source-backed current documentation, retaining historical details only when useful.
 - Continue to the next task when one needs runtime tests or approval; record the remaining blocker and specific test steps. Do not claim unrun tests.
 - No Core or payment plugin changes, production/test-site changes, commits, pushes or publication without explicit approval.
+
+## Checkpoint 2026-11-25 (individual source review, group 1 of orders/payments)
+- Core HEAD 2e28896802 is 27 commits ahead of the earlier evidence baseline beacc470; worktree clean. Changes touch orders, prices, shipping rates, attribute prices, field groups, payment architecture, Marketplace.
+- Reviewed individually against source: order-list.md (payment-coverage filter/column added), order-payments.md (new, in menu), add-order.md (Save+Pay), flatpay.md (ledger settings, webhook). Details in SOURCE-REVIEW-REGISTER.csv.
+- Candidate finding: orders list coverage line uses a literal '?' separator (component/admin/tmpl/orders/default.php), cosmetic; not yet registered as CODE-200.
+- Next: price-management, shipping-methods (shipping rates), attribute prices, field groups, marketplace pages; then CODE findings whose files changed since baseline.
+- Progress: 4 of 161 pages individually source-reviewed in this phase (~2.5%); 0 of 199 CODE findings individually re-reviewed. Runtime tests not run.
+
+## Checkpoint 2026-11-25 (group 2)
+- Individually source-reviewed and updated: shipping-methods.md (rate list), price-management.md (known issues, list state). Total this phase: 6 pages (about 3.7% of 161), all partial.
+- CODE re-review (CODE-INDIVIDUAL-REVIEW.csv): CODE-057 and M-0122 no longer present in source (fixed by Core d06a4fac86); CODE-058 and CODE-130 still present. Issue comments for #119 and #95 are BLOCKED: GitKraken MCP not authenticated (run gk auth login); retry, do not close automatically.
+- Next action: attribute-price and field-group pages (Core commits fc21a95ee7, c1f671e352), marketplace pages, then remaining CODE findings whose files changed since beacc470. Runtime tests not run.
+
+## Checkpoint 2026-11-26 (individual source review continues; ACTIVE)
+- Documentation branch `modernize` remains dirty; preserved existing changes. Local Core `develop` HEAD is `2e2889680244db64b9e9f64da29608e02f543a70`, clean and six commits behind the locally known `origin/develop` (`6e278baf72`). No fetch, pull or Core changes. The newer origin commits touch payment documentation and runtime; local-HEAD payment conclusions are not verified against them.
+- Five page entries examined in this batch: `customization/custom.md`, `redshop.md`, `zip-code.md`, `countries.md`, `states.md`. All remain **partial**, not final approvals; exact inspected methods and outstanding paths are recorded in SOURCE-REVIEW-REGISTER.csv. Corrected stale field-group sorting and selector guidance and clarified country-code checks. The other inspected claims already matched source.
+- Repaired an earlier malformed page-register row that had merged `add-order.md` into the price page; restored both records. Removed potentially sensitive operational detail from the ordinary finding register; private investigation remains pending.
+- CODE-120, 121, 123, 124, 125, 126 and 127 source-rechecked; issue bodies examined. The field-group isolated regression `php tests\unit\fieldgroups-ordering.php` passed with doubles. No Joomla browser, database integration or provider runtime was tested.
+- #180 is closed although its owner comment requests targeted UAT and says to keep it open; preserve the actual GitHub state and do not reopen automatically. #181 is closed with linked merged #245. Dry-run issue sync for 125/126 stopped on revision mismatch; no remote writes were attempted. #95 and #119 remain open and their source-fix updates remain pending controlled synchronization.
+- Progress: 11 page records with partial source work (11/161 = 6.8% touched; **0/161 fully approved**). Finding register contains 10 CODE IDs (10/199 = 5.0% with recorded source rechecks, not a claim that all runtime/issue actions are complete) plus M-0122. The prior 4/199 figure included M-0122 and overstated the CODE count. Security holds have not been individually reviewed in this batch. The separate private handbook was not found at `C:\Github\redSHOP-internal`.
+- Next: continue individual source review on remaining pages and findings, revisit every partial page and prior finding under the full checklist, reconcile issue-ledger revision evidence via the authorized workflow, and assess Core drift against `origin/develop` read-only before relying on payment guidance.
+
+## Checkpoint 2026-11-26 (next source-review batch; ACTIVE)
+- Five more pages received partial source review: `users/shopper-groups.md`, `plugin-redshop/self-pickup.md`, `product-management/redshop-manufacturers.md`, `customer-input/questions.md`, `communication/newletters-subcribers.md`. Source methods, specific limitations and reasons for unchanged pages are recorded in SOURCE-REVIEW-REGISTER.csv. Improved shopper-group customer-type/logo guidance and documented the pickup fallback warning.
+- CODE-117, 118, 122, 128, 131 and 136 checked against source and existing Issues; records identify prior isolated evidence rather than claiming new runtime tests. The broader carrier list for CODE-136 was not independently re-read in this batch.
+- Total: 16/161 page records touched (9.9%), all partial; 0/161 fully approved. CODE register contains 16 distinct CODE IDs (8.0% of 199) plus M-0122; runtime and some broader-impact verification remain outstanding. Prior individual entries must also be completed against every checklist item.
+- Core revision is unchanged locally. Read-only comparison with known `origin/develop` shows later payment UI and webhook changes, so local-HEAD payment pages need a fresh individual review against the newer revision before being relied on as current. `node docs-review\issue-sync.test.js` passed; `node docs-review\issue-sync.js --ids CODE-057,M-0122` stopped because ledger evidence is at an older revision. No Issue write, Core change, commit, push or publication.
+- Next: review remaining sources and Issues in batches, return to every partial page, revalidate prior finding evidence and handle private holds only via an authorized private channel. Record exact pending Issue synchronization without altering human-managed status.
+
+## Checkpoint 2026-11-26 (further source-review batch; ACTIVE)
+- Five additional partial page passes: `customer-input/rating-review.md`, `communication/newletters.md`, `global-configuration/newsletter.md`, `module-redshop/newsletter.md`, and `shipping/wrappings.md`. Updated wrapping image replacement guidance; the other inspected claims already matched the reviewed paths. These are not full approvals.
+- Source and existing Issues reviewed for CODE-020, 109, 110, 112–116 and 167. #80 needs more relevant test-mail regression guidance; the controlled synchronization remains pending. Private security holds were not disclosed or marked reviewed.
+- Total: 21/161 pages touched (13.0%), all partial; 0/161 fully approved. Finding register contains 25 distinct CODE IDs (12.6% of 199) plus M-0122, with runtime and broader-impact checks still outstanding. Do not equate touched entries with completed individual quality reviews.
+- `node docs-review\issue-sync.test.js` passed in the preceding quality check; `git diff --check` passed with line-ending warnings. No Joomla/database/mail runtime was tested and no Core or remote changes were made.
+- Next: verify list-sort behavior identified in the ratings page and check existing issue/root-cause mappings before registering any new finding; continue remaining individual pages, CODE findings and authorized private holds, and revisit every partial record.
+
+## Checkpoint — individual finding batch (ACTIVE)
+- Re-reviewed CODE-015, 034, 048, 076, 103, 111, 132 and 133 against current local Core and their existing Issues; also registered new CODE-201 and CODE-202. #77 and #103 need more targeted regression-test guidance; update only through the controlled process after reviewing complete evidence and issue comments.
+- CODE-201: sortable review headings omit three ordering keys; #246 was created after a clean dry-run. CODE-202: an actual model-method probe with table/mailer stubs showed a saved review plus failure return on failed notification; #247 was created after a clean dry-run. Both subsequently reconciled as unchanged; no real mail or database was used.
+- Updated the ratings guide to distinguish the attempted guest check and saved-review/failed-notification outcome. All 21 touched pages remain partial (21/161 = 13.0%; 0 fully approved). The register now has 35 CODE IDs: 33 of the original 199 (16.6%) plus two new findings; M-0122 is separate. A recorded finding review can still have outstanding runtime or broader-impact checks.
+- `node docs-review\issue-sync.test.js` and `git diff --check` passed; the latter emitted line-ending warnings. Joomla, databases, browser checkout and mail delivery remain unverified. Core is unchanged; no commits, pushes or publication.
+- Next: safely update #77 and #103 with focused evidence/test guidance where the synchronization policy permits; then continue individual review of remaining pages and findings, revisit partial pages and keep security holds on an authorized private path.
+- Follow-up: re-read current source and existing comments, dry-ran and appended focused evidence and regression guidance to #77 and #103 via `issue-sync.js`; subsequent dry-run reported both unchanged. Existing bodies, comments and issue states were preserved. Continue the next individual batch.
+
+## Checkpoint — five further partial page reviews (ACTIVE)
+- Individually inspected `shipping/shipping-boxs.md`, `shipping/overview-shipping.md`, `orders/order-status-list.md`, `orders/quotations.md` and `orders/overview-orders.md` against the specific source and method paths recorded in `SOURCE-REVIEW-REGISTER.csv`. All five remain partial: additional relevant runtime and/or implementation paths are explicitly recorded, not assumed complete.
+- Clarified the checkout-address prerequisite for shipping-box rendering and the difference between the read-only existing-status detail code and the list's inline editor. The three overview/quotation pages needed no change for the particular claims checked.
+- Reviewed CODE-072 against #132 and CODE-016 against #78; the latter needs export-specific issue-test guidance through the controlled process. #77 and #103 received reviewed evidence comments without changing their status.
+- Progress: 26/161 pages touched (16.1%), all partial; 0 fully approved. Of the original 199 findings, 35 have individual register entries (17.6%) with varying outstanding checks; two additional findings CODE-201/202 are tracked separately as #246/#247.
+- `node docs-review\issue-sync.test.js` passed; `git diff --check` passed with line-ending warnings; chapter links in these five guides resolve locally. Joomla, database, provider, browser and mail runtime remain unverified. No Core edits, commits, pushes or publication.
+- Next: update #78 after full evidence and human-comment review via selected dry-run; continue the next individual page or finding batch, revisit partial pages and use only an authorized private channel for security holds.
+- Follow-up: rechecked #78 and the quotation sources, then appended source-specific export tests through a selected dry-run and controlled sync; a subsequent dry-run reported it unchanged. Issue state and body were preserved.
+- Follow-up: rechecked CODE-020 test-mail model/controller and #80, appended specific template/send-result and tracker tests through the same controlled process, and verified a subsequent dry-run unchanged. No real mail or Joomla test was performed.
+
+## Checkpoint - next individual finding batch (ACTIVE)
+- Added source-based records for CODE-107, 104, 105, 138, 139, 191, 102, 101, 098 and 099. Existing CODE-132 had already been recorded; do not count it twice. Findings remain subject to the limitations and further tests in `CODE-INDIVIDUAL-REVIEW.csv`, rather than being treated as fully resolved.
+- Rechecked CODE-191's free-shipping helper and identified the additional AJAX-cart consumer. Updated the finding registers and, after a dry-run, appended evidence and tests to existing #238; a subsequent dry-run returned unchanged. CODE-102's optional-template P1 deserves maintainer triage, but no priority or issue state was changed. Security holds remain separate and unreviewed without an authorized private channel.
+- Partially reviewed `orders/product-order-search.md` and `module-redshop/free-shipping.md` since the previous five-page checkpoint. The latter already described the module behavior and known limitations inspected; no article change was justified. Repaired seven page-register rows that omitted the quality-status column; preserved their actual limitations, test status and issue references.
+- Progress: 28/161 pages touched (17.4%), all partial; 0 fully approved. The individual finding register now contains 45/199 original CODE IDs (22.6%), plus CODE-201, CODE-202 and M-0122. A recorded source recheck is not proof of full runtime or broad-impact verification.
+- Core remains clean at local HEAD `2e2889680244db64b9e9f64da29608e02f543a70`; locally known `origin/develop` now points to `6c5bbe108b` and is nine commits ahead. No fetch or pull. Later changes include payment UI, integrations, API and documentation; affected pages require re-evaluation before being presented as current.
+- `node docs-review\issue-sync.test.js` passed; selected CODE-191 dry-run, controlled update and follow-up dry-run passed. CSV parser checks passed for the page, individual-finding, Core-bug, issue-sync and triage registers; page IDs and finding IDs were unique and recorded page paths existed. `git diff --check` passed with line-ending warnings. Python was unavailable, so the existing Node CSV parser was used instead. No Joomla, MySQL, browser, carrier or real mail runtime was tested; no Core edits, commits, pushes or publication.
+- Next: start the next five-page or ten-finding group, continuing the partially started page group; revisit all partial pages and verify payment documentation against the newer locally known revision. Keep private security holds blocked until an authorized channel is identified.
+
+## Checkpoint - five further partial page reviews (ACTIVE)
+- Individually inspected `orders/product-order-search.md`, `module-redshop/free-shipping.md`, `stockroom/inventory-stockroom.md`, `stockroom/stockroom-management.md` and `stockroom/overview-stockroom.md` against the specific paths and methods recorded in `SOURCE-REVIEW-REGISTER.csv`. All remain partial; the register records the untraced paths and runtime limitations.
+- Clarified the inventory selector's English labels/defaults, stockroom list columns and search, and the feature-settings link. The free-shipping guide already covered the specific behavior checked, so it was not artificially changed.
+- Found that the legacy inventory CSV view uses the same mismatched stockroom property as CODE-099. An actual view-method probe with model/output stubs emitted a header only and a missing-property warning for an `id`-only stockroom; an otherwise identical alias control emitted the row. Joomla routing to that legacy view, installed schema and database remain unverified. Added a cautious manual note, updated the existing #158 via dry-run and controlled synchronization, and confirmed a subsequent dry-run unchanged; no duplicate issue was created.
+- Progress: 31/161 pages touched (19.3%), all partial; 0 fully approved. Finding records remain 45/199 original CODE IDs (22.6%) plus CODE-201, CODE-202 and M-0122; source rechecks do not imply completed runtime or broad-impact review.
+- `node docs-review\issue-sync.test.js` passed. CSV structure, unique page/finding IDs, recorded page paths and links from these five guides passed local checks; `git diff --check` passed with line-ending warnings. No real Joomla, database, inventory reset, export dispatch, provider or mail runtime was used. Core remains at the previously recorded local revision; no commits, pushes or publication.
+- Next: start the next group with stockroom image rules and the remaining unreviewed finding records; continue partial-page follow-up and payment drift review. Private security holds remain blocked pending an authorized private channel.
+
+### In-progress next groups
+- Partially reviewed `stockroom/stockroom-image-management.md` and `global-configuration/feature-settings.md`; the former now explains the stockroom selector, hidden search and rule precedence. The latter already described the inspected configuration controls. Both remain partial.
+- CODE-011: the actual stock-image helper with in-memory SQLite and query stubs returned product 2's stockroom rule for product 1; the disabled-stockroom control returned no result. Updated #75 through the controlled sync and verified a subsequent dry-run unchanged. Storefront output and intended shared-rule semantics remain unverified.
+- Individually rechecked CODE-161, 162 and 163. #215 and #216 received source-verified checkout and template caller evidence through controlled sync; follow-up dry-runs were unchanged. The effect on downstream `order_delivery` consumers remains untraced.
+- Current progress: 33/161 pages touched (20.5%), all partial; 0 fully approved. Finding records: 49/199 original CODE IDs (24.6%) plus CODE-201, CODE-202 and M-0122. The current five-page and ten-finding groups are not yet finished.
+- `issue-sync.test.js` and selected syncs passed; all review CSVs parsed successfully and `git diff --check` passed with line-ending warnings. No real Joomla, supported database, checkout, provider or mail runtime was exercised.
+- Next: continue this page group and individually examine CODE-164/165/166 and other remaining findings, recording actual tests and limitations. Revisit payment guidance against the nine newer locally known Core commits and retain private security holds.
+
+## Checkpoint - ten individual findings and next page group (ACTIVE)
+- The ten new finding records in this batch are CODE-011, 157-159 and 161-166. Each records actual source checks, proposed test scope and limitations; none is declared fully runtime-verified. Existing #75, #215 and #216 received the previously recorded controlled evidence updates. Rechecked #210-#212 and their comments; for #212 appended site-dispatch and daily-gated cron evidence after a dry-run, then confirmed a subsequent dry-run was unchanged. No issue was closed.
+- The in-progress page group now includes `stockroom/stockroom-image-management.md`, `global-configuration/feature-settings.md` and `discounts/order-total-discount.md`. The latter clarifies the row edit button after checking the shared list layout; the previously suspected missing edit link was not a defect. All three are partial and their specific gaps are in the page register; continue with two more pages before the five-page checkpoint.
+- Progress: 34/161 pages touched (21.1%), all partial; 0/161 fully approved. Finding records include 55/199 original CODE IDs (27.6%), plus CODE-201, CODE-202 and M-0122. A register entry is not a completed individual review or runtime test.
+- Core remains clean at `2e2889680244db64b9e9f64da29608e02f543a70`; the locally known `origin/develop` has advanced independently to `40e6a33ef60999235cc942dc87e3ed1788da34e8`, ten commits ahead. No fetch, pull or Core modification. Changes include Marketplace editor, payment UI, API and integrations; the affected payment and Marketplace guides need comparison against that tracking revision.
+- `node docs-review\issue-sync.test.js`, review-register CSV shape/uniqueness and recorded page-path checks, and `git diff --check` passed; the latter reported line-ending warnings. No Joomla, MySQL, browser, checkout, cron, provider or mail runtime was tested. The private handbook was not found and security holds still require an authorized private channel.
+- Next: complete two further individually sourced partial pages in the current group, validate and checkpoint; then continue the next batch of findings and compare affected payment documentation with the locally known tracking revision. Revisit all partial entries under the full checklist; do not infer completion from touched counts.
+
+## Checkpoint - five partial pages and mass-discount finding (ACTIVE)
+- The five-page batch covers stockroom image rules, feature settings, order-total discounts, mass discounts and product-price discounts. Each remains partial; the page register lists precisely which sources were read and what remains. Clarified discount-list edit buttons and ordering, and warned against mass-discount inputs that calculate a negative price.
+- New CODE-203 / #248: the actual mass-discount validation and explicit-product update methods with parent/database stubs accepted 150% and fixed 120 for a synthetic product priced at 100 and produced update values -50 and -20; a 12% control produced 88. This is distinct from #221's deletion reset. GitHub searches, controlled dry-run, creation and follow-up reconciliation passed. Actual Joomla binding, database, storefront and checkout were not tested; one inspected display path requires a positive discount.
+- Progress: 36/161 pages touched (22.4%), all partial; 0 fully approved. Finding records include 55/199 original CODE IDs (27.6%), plus CODE-201, CODE-202, CODE-203 and M-0122; none of these counts claims full review or runtime verification.
+- `issue-sync.test.js` and the isolated PHP fixture passed. The review CSVs parsed with unique IDs and existing page paths; baseline HTML anchors and manual-root links on all five pages passed; `git diff --check` passed with line-ending warnings. An initial generic relative-link check incorrectly treated manual-root links as page-relative; corrected and reran it. No Joomla, MySQL, checkout or production system was used.
+- Local Core HEAD and known tracking revision remain as in the preceding checkpoint. Next: begin another individual finding batch and compare affected payment guidance with the known tracking revision; revisit all partial pages and preserve private security holds.
+
+## Checkpoint - ten additional finding records (ACTIVE)
+- Rechecked CODE-169-173 and CODE-175-179 individually against the specific current sources and existing issue bodies/comments recorded in `CODE-INDIVIDUAL-REVIEW.csv`. CODE-175 remains an investigation pending an agreed category-exclusion policy. CODE-168 and CODE-174 remain private security holds and are not represented as reviewed.
+- For CODE-177, traced the lookup value into cart accessory reconstruction and accessory tag pricing. Updated #228 through a selected dry-run and controlled evidence comment; follow-up dry-run reported unchanged. The cart, tag rendering and checkout were not executed.
+- Progress: 36/161 pages touched (22.4%), all partial; 0 fully approved. Finding records include 65/199 original CODE IDs (32.7%), plus CODE-201, CODE-202, CODE-203 and M-0122. These are source-check records with outstanding tests and broader coverage, not completed individual reviews.
+- `issue-sync.test.js`, review CSV shape/uniqueness and page existence checks, and `git diff --check` passed; the latter reported line-ending warnings. No real Joomla, MySQL, browser, checkout or production system was used. Source paths for this batch have no diff against the locally known `origin/develop` tracking ref.
+- Next: start the next page or finding batch and compare affected payment guidance with the locally known tracking revision; revisit all partial pages, preserve security holds and continue independently.
+
+## Checkpoint - five discount pages and voucher ordering (ACTIVE)
+- The next five partial page records cover promotions, discount overview, gift cards, vouchers and coupons. Each register row identifies the sources actually read and remaining work; none is approved as a complete review. Promotions now warns about description/publication sorting and mentions Copy; voucher guidance warns about Amount sorting. The coupon guide no longer claims the custom user selector supports multiple selections merely because the XML declares it. The overview and gift-card pages needed no change for the specific source comparisons recorded.
+- CODE-204 / #249 and CODE-205 / #250 track separate list models whose advertised headings fall back to ID in the inspected source. Both were checked for duplicates, dry-run, synchronized and subsequently reconciled as unchanged. Joomla request, browser and database ordering remain unverified. The coupon security holds remain private and have not received an individual security review.
+- Progress: 41/161 pages touched (25.5%), all partial; 0 fully approved. Finding records include 65/199 original CODE IDs (32.7%), plus CODE-201–205 and M-0122. These counts do not represent full reviews or runtime tests.
+- `node docs-review\issue-sync.test.js` passed; selected issue reconciliation returned unchanged. All five review CSVs parsed with unique IDs, recorded page paths existed, and the five pages passed duplicate-anchor and manual-root-link checks. `git diff --check` passed with line-ending warnings. Python was unavailable; the equivalent checks used the existing Node CSV parser. No Joomla, MySQL, browser, checkout or production system was tested.
+- Core remains clean at `2e2889680244db64b9e9f64da29608e02f543a70`. The locally known `origin/develop` has independently moved to `9fc0b07a47f0534afd325026f1de484f04e8e6fa`, 12 commits ahead; the two new commits since `40e6a33` affect Flatpay transaction/session retry code and its tests. No fetch, pull or Core changes. Payment documentation requires comparison against the newer revision before treating it as applicable there.
+- Next: start the next ten-finding or five-page group; revisit the detailed outstanding work on all partial pages and compare payment guidance with the current local tracking revision. Continue security holds only through an authorized private channel and record runtime blockers without halting independent work.
+
+## Checkpoint - ten additional finding records (ACTIVE)
+- Rechecked CODE-180–182, 185–188 and 192–194 against the current source and existing Issue bodies. CODE-180 remains a dispatch investigation, not a confirmed Joomla routing failure. Each individual record specifies evidence, priority, fix direction, test gaps, affected paths and Issue disposition. Security holds in this range were not reviewed.
+- Expanded #239 after tracing the shared cart layout into cart refresh, and #241 after inspecting sort handling in JSCook, TransMenu, TigraTree and the link-list fallback. Both controlled dry-runs and evidence updates succeeded; subsequent reconciliation returned unchanged. These added paths were source-inspected, not executed.
+- Progress: 41/161 pages touched (25.5%), all partial; 0 fully approved. Finding records now cover 75/199 original CODE IDs (37.7%), plus CODE-201–205 and M-0122. A record is not a completed full review or runtime test.
+- `issue-sync.test.js`, selected issue reconciliation and review CSV shape/uniqueness checks passed. `git diff --check` passed with line-ending warnings. No real Joomla, browser, provider, database, upload, checkout or production runtime was exercised.
+- Core remains clean at `2e2889680244db64b9e9f64da29608e02f543a70`; the locally known `origin/develop` remains `9fc0b07a47f0534afd325026f1de484f04e8e6fa`. ePay's installer and language file differ on that tracking revision; its reviewed manifest and option field do not.
+- Next: start another page or finding group and compare payment guidance against the known tracking revision; continue the detailed remaining source work on partial pages and keep security holds on the authorized private-review path.
+
+## Checkpoint - five partial module pages (ACTIVE)
+- Individually compared the cart module, category menu, Facebook plugins, price filtering and similar tags pages with the sources and methods listed in SOURCE-REVIEW-REGISTER.csv. These are partial source reviews, not approvals or runtime verification. Added cart multi-instance testing advice and price-filter discount-boundary advice; the other three already covered the specific checked behavior and limitations.
+- CODE-206 / #251 is an investigation into shared cart parameters, distinct from #203 after root-cause comparison. The actual database selection, multi-instance effect and intended policy remain unverified. It was dry-run, synchronized and reconciled; other related existing issues are linked in the page records. Security-related work remains on hold pending an authorized private channel.
+- Progress: 46/161 pages have individual partial records (28.6%); 0 fully approved. Finding records cover 75/199 original CODE IDs (37.7%), plus CODE-201–206 and M-0122; none of these numbers implies a fully completed review.
+- `node docs-review\issue-sync.test.js` passed. Both individual registers parsed with unique populated entries; links in the five module pages and `git diff --check` for the changed batch passed. `node --test` is unsupported by the installed Node, so the existing directly executable test was used instead. No Joomla, MySQL, browser, provider or production runtime was exercised.
+- Core remains clean at `2e2889680244db64b9e9f64da29608e02f543a70`; locally known `origin/develop` independently advanced to `da4077b8d0539696edd5bd4ea5af58918e741c29` without a fetch or checkout. No changes were found in the checked module paths between the two revisions. The new tracking commit also changes payment/order concurrency behavior; payment documentation must be compared before claiming applicability to that revision.
+- Next: immediately begin another group of ten original findings or five pages; revisit incomplete page source traces, compare payment guides with the tracking revision, and continue unaffected work while runtime and private-channel blockers remain.
+
+## Checkpoint - ten further individual finding records (ACTIVE)
+- Rechecked CODE-198, 197, 195, 160, 156, 155, 154, 153, 152 and 151 against their current source and existing Issue reports; the individual register records priority/fix/test assessments and limits. CODE-160 remains an investigation. CODE-153's P1 is retained provisionally pending actual optional-extension impact. None is a completed runtime review; private security holds were not reviewed.
+- Expanded #205 with two further source-only areas: failed reorder and product/manufacturer breadcrumb menu-result counting. Their actual Joomla behavior was not executed. The existing Issue and earlier comments were checked; the update was dry-run, synchronized and subsequently reconciled as unchanged.
+- Progress: 46/161 pages have partial individual records (28.6%); 0 fully approved. Finding records cover 85/199 original CODE IDs (42.7%), plus CODE-201–206 and M-0122. Individual records do not represent fully completed reviews or Joomla tests.
+- Issue synchronization tests passed. Individual finding, finding, triage and sync CSVs parsed with unique IDs; individual rows have all required fields. `git diff --check` passed for this batch. No Joomla, MySQL, browser, provider or production runtime was executed in this batch.
+- Core remains at `2e2889680244db64b9e9f64da29608e02f543a70`; inspected finding paths were unchanged relative to the then-known `origin/develop` `da4077b8d0539696edd5bd4ea5af58918e741c29`. This comparison is source-only and does not establish runtime compatibility.
+- Next: start another page or finding group, continue incomplete source traces and tracking-revision payment comparison, and maintain the private-channel and runtime blockers without halting independent work.
+
+## Checkpoint - five more partial module pages (ACTIVE)
+- Individually compared Product Compare, Mega Menu, redMASSCART, Products and Product Tab with the sources recorded in SOURCE-REVIEW-REGISTER.csv. Improved four guides with qualified request, styling, exclusion, image and row-count cautions. redMASSCART already covered the specific checked behavior. All five remain partial; none is approved as a complete review.
+- Created CODE-207 / #252 (comparison request names), CODE-208 / #253 (Mega Menu inner-list suffix), CODE-209 / #254 (four image-helper call signatures) and CODE-210 / #255 (Products module current-product exclusion). These are source-based findings or investigations; Joomla, browser, media and database effects are not established. Duplicates were compared, and each controlled dry-run, creation and reconciliation succeeded.
+- Extended CODE-146 / #199: actual Product Tab layout raised `DivisionByZeroError` for synthetic zero with one row on PHP 8.4; its manifest declares zero outside the listed choices. Joomla form binding and saved values remain unverified. Issue evidence was dry-run, synchronized and reconciled; the existing manufacturer and Who Bought fixture evidence was not rerun.
+- Progress: 51/161 pages have individual partial records (31.7%); 0 fully approved. Finding records cover 86/199 original CODE IDs (43.2%), plus CODE-201–210 and M-0122. These counts do not constitute full reviews or actual Joomla runtime verification.
+- Issue sync tests, CSV shape/uniqueness checks, five page-link checks and batch `git diff --check` passed. The isolated Product Tab zero-divisor probe ran; no Joomla, MySQL, browser, provider, media or production runtime was exercised.
+- Core remains clean at `2e2889680244db64b9e9f64da29608e02f543a70`. The shared local `origin/develop` independently advanced to `6469127f447b95c538a30b621fd404959132abbf`; the three new commits concern payment architecture. No differences were found in the reviewed module, image, comparison, cart and related paths checked for this batch. Payment documentation still requires a comparison against the latest tracking revision. No fetch, pull or Core changes.
+- Next: immediately begin the next finding or page group, finish incomplete reviews and compare payment guidance with the tracking revision; do not treat private security holds or runtime blockers as completed.
+
+## Checkpoint - ten additional finding records (ACTIVE)
+- Rechecked CODE-150, 149, 148, 147, 145, 144, 143, 142, 141 and 140 against source and their existing Issues; recorded individual assessments and remaining test gaps in CODE-INDIVIDUAL-REVIEW.csv. The reviews remain partial; earlier isolated probes were not rerun and do not establish Joomla runtime behavior.
+- Updated #196 with source-only evidence that shipment creation also adds product weight once per order-item row without using its quantity. The previous synthetic fee-handler result remains distinct from this unexecuted shipment path. Dry-run, controlled synchronization and subsequent unchanged reconciliation succeeded.
+- Progress: 51/161 pages have partial individual records (31.7%); none fully approved. Finding records cover 96/199 original CODE IDs (48.2%), plus CODE-201–210 and M-0122. No security hold was individually reviewed.
+- Issue synchronization tests, CSV parsing and unique IDs passed; all ten new records have full revision IDs and nonempty fields. `git diff --check` passed. No Joomla, MySQL, provider, browser or production runtime was exercised.
+- Core remains clean at `2e2889680244db64b9e9f64da29608e02f543a70`; known tracking revision remains `6469127f447b95c538a30b621fd404959132abbf`. `Order.php` differs on tracking, including status-update logic, so dispatcher behavior needs revalidation after a Core revision change. Private handbook remains absent. No fetch, pull or Core changes.
+- Next: start another group, continue incomplete page traces and compare payment guidance with the tracking revision; runtime and authorized private-channel blockers do not close independent work.
+
+## Checkpoint - shipping, calculator and administration findings (ACTIVE)
+- Rechecked CODE-135, 134, 097, 096, 095, 094, 092, 091, 090 and 089 against the source and open Issue bodies and comments. The individual records distinguish source inspection from prior isolated probes; Joomla, provider, filesystem and database outcomes remain unverified.
+- Updated #152 with a source-only category accessory-editor caller of the already reported deletion function. Product and category editor outcomes were not exercised in Joomla. Dry-run, controlled synchronization and unchanged reconciliation succeeded.
+- Progress: 51/161 pages have partial individual records (31.7%); none fully approved. Finding records cover 106/199 original CODE IDs (53.3%), plus CODE-201–210 and M-0122. No security hold was individually reviewed.
+- Issue synchronization tests, register parsing and unique IDs passed; all ten new entries contain full revision IDs and nonempty fields. `git diff --check` passed. No prior fixture was rerun and no Joomla, database, provider, browser or production runtime was exercised.
+- Core remains at `2e2889680244db64b9e9f64da29608e02f543a70`; reviewed principal paths and checkout/rate files showed no differences against locally known `origin/develop` `6469127f447b95c538a30b621fd404959132abbf`. No fetch, pull or Core changes.
+- Next: start another group, continue incomplete page source traces and compare payment guidance against the tracking revision. Keep private security holds and runtime blockers open.
+
+## Checkpoint - five additional partial module reviews (ACTIVE)
+- Read Discount, Multi Currencies, Manufacturer Scroller, Who Bought and Search guides and recorded the inspected manifests, entry points, helpers, layouts, English strings and selected shared paths. Clarified discount no-result and legacy date behavior, currency list ordering, Who Bought price gates and the Search manufacturer-only limitation. Manufacturer Scroller's checked claims already matched source. All five remain partial and none is approved as a complete review.
+- Created CODE-211 / #256 for the standalone manufacturer selector: the actual Twig layout omitted a synthetic select when categories were hidden; with categories enabled it rendered the dynamic placeholder. The independent request-name mismatch is source-only. The dry-run and manual duplicate comparison against #226, #227 and #229 preceded creation; reconciliation reported unchanged.
+- Progress: 56/161 pages have partial individual records (34.8%); none fully approved. Finding records cover 106/199 original CODE IDs (53.3%), plus CODE-201–211 and M-0122. No security hold was individually reviewed.
+- The isolated Twig fixture, issue synchronization tests, CSV parsing/unique-ID checks, six chapter-link checks and `git diff --check` passed. No Joomla, browser, MySQL, provider or production runtime was exercised.
+- Core remains clean at `2e2889680244db64b9e9f64da29608e02f543a70`; shared `origin/develop` advanced independently to `f3bdb3c96a282c9dd1baad7a5a6c5c08aed04f5c`. Inspected module paths and checked shared helpers were unchanged against that ref; latest tracking commit changes Flatpay payment architecture. Graphify is stale at `647c0dc795265544ea000acb0c9217da609db544` and did not identify these module traces, so current source was searched directly. No fetch, pull or Core changes.
+- Next: investigate SearchModel's category-dependent manufacturer lookup, which joins multiple manufacturer IDs inside one quoted SQL value; compare #138 and other Issues before any write. Then continue the next batch and payment tracking comparison. Preserve runtime and private-channel blockers.
+
+## Checkpoint - search follow-up and ten finding records (ACTIVE)
+- CODE-212 / #257 was created and reconciled as recorded in CODE-INDIVIDUAL-REVIEW.csv. The search-model method was exercised with synthetic database stubs; SQL execution and Joomla/browser behavior remain unverified.
+- Source-checked CODE-088, 087, 086, 085, 001, 002, 004, 005, 006 and 007 against current Core and read their existing Issues and comments. The individual records explicitly retain prior mock results as historical and identify remaining tests; none is a complete runtime review. CODE-004 remains an investigation and CODE-006's P0 remains provisional pending runtime scope assessment.
+- Updated #72 with the source-only Flatpay ledger caller of the explicit currency conversion path. The effect requires CurrencyLayer selection and no conversion-event override; the caller and provider were not executed. The changed evidence was dry-run, synchronized and reconciled as unchanged; the comment was read back.
+- Progress: 56/161 pages have partial individual records (34.8%); none is fully approved. Finding records cover 116/199 original CODE IDs (58.3%), plus CODE-201–212 and M-0122. These are partial records, not 116 completed reviews. No security hold was individually reviewed.
+- Issue synchronization tests passed. Individual finding, Core handoff, triage, issue ledger and page CSVs parsed and had unique IDs; individual rows had nonempty fields. `git diff --check` passed with line-ending warnings. No previous fixture was rerun and no Joomla, database, browser, provider or production runtime was exercised.
+- Core remains clean at `2e2889680244db64b9e9f64da29608e02f543a70`; locally known `origin/develop` remains `f3bdb3c96a282c9dd1baad7a5a6c5c08aed04f5c`. The checked CODE-007 converter path is unchanged there; the Flatpay ledger file differs elsewhere but retains the explicit conversion call. No fetch, pull or Core changes.
+- Next: start the next unrecorded finding group or five-page group; continue the payment tracking comparison and revisit partial reviews. Runtime and authorized private-channel blockers remain open.
+
+## Checkpoint - ten further individual finding records (ACTIVE)
+- Source-checked CODE-008, 009, 010, 012, 013, 014, 017, 019, 021 and 022 and read their existing Issues and comments. The individual records distinguish historical isolated tests from current source inspection and list unverified runtime and regression cases.
+- Expanded #93 with the source-only comparison that quotation-to-order conversion assigns the product supplier to the same order-item field. The two administrator paths and their persistence were not executed. The update was dry-run, synchronized, reconciled as unchanged and read back.
+- Progress: 56/161 pages have partial individual records (34.8%); none is fully approved. Finding records cover 126/199 original CODE IDs (63.3%), plus CODE-201–212 and M-0122. These are partial records and do not claim completed runtime reviews. No security hold was individually reviewed.
+- Issue synchronization tests passed. Individual finding, Core handoff, triage, issue ledger and page CSVs parsed and had unique IDs; individual rows had nonempty fields. `git diff --check` passed with line-ending warnings. No previous fixture was rerun and no Joomla, database, mail, browser, provider or production runtime was exercised.
+- Core remains at `2e2889680244db64b9e9f64da29608e02f543a70`; checked source paths including quotation conversion were unchanged relative to locally known `origin/develop` `f3bdb3c96a282c9dd1baad7a5a6c5c08aed04f5c`. No fetch, pull or Core changes.
+- Next: start another unrecorded finding or five-page group. Continue payment tracking comparison and incomplete page traces; runtime and authorized private-channel blockers remain open.
+
+## Checkpoint - SEO, payment and scheduled-mail findings (ACTIVE)
+- Source-checked CODE-023, 024, 028, 029, 030, 031, 032, 033, 035 and 038 and read their existing Issues and comments. The records remain partial; CODE-035 is an investigation and the severity of potential configuration loss in CODE-032 remains provisional without destructive runtime testing.
+- Extended #85 with the source-only observation that the second purchase-mail date uses the same shortened day multiplier as the coupon expiry calculation, although its administrator label specifies days after purchase. First and third mail calculations use 24 hours. Actual date boundaries, cron and mail delivery remain untested. The update was dry-run, synchronized, reconciled as unchanged and read back.
+- Progress: 56/161 pages have partial individual records (34.8%); none is fully approved. Finding records cover 136/199 original CODE IDs (68.3%), plus CODE-201–212 and M-0122. These are partial records and do not claim completed runtime reviews. No security hold was individually reviewed.
+- Issue synchronization tests passed. Individual finding, Core handoff, triage, issue ledger and page CSVs parsed and had unique IDs; individual rows had nonempty fields. `git diff --check` passed with line-ending warnings. No Joomla, database, mail, filesystem, browser, provider or production runtime was exercised.
+- Core remains at `2e2889680244db64b9e9f64da29608e02f543a70`; locally known `origin/develop` remains `f3bdb3c96a282c9dd1baad7a5a6c5c08aed04f5c`. The tracked Flatpay manifest differs elsewhere but retains the `test_mod` and `GPB` values; the other checked batch paths were unchanged. No fetch, pull or Core changes.
+- Next: start another unrecorded finding or five-page group; revisit partial reviews and complete payment tracking comparison. Runtime and authorized private-channel blockers remain open.
+
+## Checkpoint - product, payment, import and gift-card findings (ACTIVE)
+- Source-checked CODE-039, 040, 041, 045, 047, 049, 050, 051, 052 and 053 and read their existing Issues and comments. The records remain partial; CODE-040 remains an investigation and prior isolated fixtures were not rerun except as explicitly stated below.
+- Corrected #100: the current legacy callback preserves pending and generic lookup failures, demonstrated by the passing offline `php tests\unit\flatpay-payment-replay.php` fixture. A direct synthetic classifier probe returned `no_payment` for unrecognized states; source inspection indicates the legacy path can then apply the configured failure branch. The unknown-state full callback and provider semantics remain untested. The issue update was dry-run, synchronized, reconciled unchanged and read back.
+- Progress: 56/161 pages have partial individual records (34.8%); none is fully approved. Finding records cover 146/199 original CODE IDs (73.4%), plus CODE-201–212 and M-0122. These are partial records and do not claim completed runtime reviews. No security hold was individually reviewed.
+- Flatpay offline replay, synthetic classifier probe and issue synchronization tests passed. Individual finding, Core handoff, triage, issue ledger and page CSVs parsed and had unique IDs; individual rows had nonempty fields. `git diff --check` passed with line-ending warnings. No real Joomla, MySQL, browser, provider, accounting service or production runtime was exercised.
+- Core remains at `2e2889680244db64b9e9f64da29608e02f543a70`; locally known `origin/develop` remains `f3bdb3c96a282c9dd1baad7a5a6c5c08aed04f5c`. The tracked Flatpay source has unrelated status/capture changes; the inspected legacy callback branch was unchanged in the comparison. No fetch, pull or Core changes.
+- Next: start another unrecorded finding or five-page group; complete the unknown-state callback investigation and broader payment tracking comparison, and revisit partial reviews. Runtime and authorized private-channel blockers remain open.
+
+## Checkpoint - discount, media and attribute-set findings (ACTIVE)
+- Individually inspected CODE-054, 055, 056, 059, 060, 061, 063, 064, 065 and 066 against source. Read the nine linked open Issues and the two relevant #124 comments. CODE-060 remains an acceptance investigation, not a confirmed defect; no Issue was created for it. Earlier isolated fixtures were not rerun and their evidence remains historical.
+- The set-save source omits the property messages and reads a different existing-image input than the shared layout supplies; the product controller explicitly handles these inputs. The set-copy source also omits settings at attribute, property and subproperty levels. These observations agree with existing #124–#126 evidence; database, file and Joomla behavior remain unverified. No Issue update was needed.
+- Progress: 56/161 pages have partial individual records (34.8%); none is fully approved. Finding records cover 156/199 original CODE IDs (78.4%), plus CODE-201–212 and M-0122. These are partial records, not completed runtime reviews. No security hold was individually reviewed. CODE-062 is a security hold and was deliberately excluded from this ordinary batch.
+- `issue-sync.test.js` passed. Individual finding, Core handoff, triage, issue ledger and page CSVs parsed and had unique IDs; individual rows had nonempty fields. `git diff --check` passed with line-ending warnings. No Joomla, database, browser, filesystem or provider runtime was exercised.
+- Core remains clean at `2e2889680244db64b9e9f64da29608e02f543a70`; the locally known `origin/develop` has advanced to `a5e6d71f85045160861fd9737f40b4f8b9b21be8`. The inspected files in this group are unchanged against that tracking ref. Payment, marketplace and other paths differ and need separate comparison. No fetch, pull or Core changes.
+- Next: review the next ten ordinary unrecorded findings starting at CODE-067, excluding security holds; continue payment tracking comparison and incomplete page traces. Runtime and authorized private-channel blockers remain open.
+
+## Checkpoint - location, tax, shipping and module findings (ACTIVE)
+- Individually source-checked CODE-067, 068, 069, 070, 071, 073, 074, 075, 077 and 078 and read their ten existing open Issues. The records remain partial; historical isolated tests and fixtures were not rerun. Actual Joomla routing, database behavior, checkout, browser and storefront remain unverified.
+- Confirmed the source-level optional-state and country-filter mismatch, tax-list identifier and state-join issues, date-boundary arithmetic, shipping capability fallthrough and incomplete rate-copy bind. The shipping-address link and controller selection names differ. Product Tab's textual switches and Who Bought's multi-category SQL remain covered by their existing Issues; no Issue updates were needed.
+- Progress: 56/161 pages have partial individual records (34.8%); none is fully approved. Finding records cover 166/199 original CODE IDs (83.4%), plus CODE-201–212 and M-0122. These counts do not represent fully completed reviews. No security hold was individually reviewed.
+- `issue-sync.test.js` passed. Individual finding, Core handoff, triage, issue ledger and page CSVs parsed and had unique IDs; individual rows had nonempty fields. `git diff --check` passed with line-ending warnings.
+- Core remains clean at `2e2889680244db64b9e9f64da29608e02f543a70`; locally known `origin/develop` remains `a5e6d71f85045160861fd9737f40b4f8b9b21be8`. The inspected files and related forms/layouts in this batch are unchanged against that ref. No fetch, pull or Core changes.
+- Next: review the remaining ordinary unrecorded findings beginning with CODE-079 through CODE-084, then resume five-page source reviews. Continue payment tracking comparison; runtime and authorized private-channel blockers remain open.
+
+## Checkpoint - remaining ordinary CODE handoff findings (ACTIVE)
+- Individually source-checked the six remaining ordinary handoff findings CODE-079 through CODE-084, reviewed their existing open Issues and read the comments on #143 and #144. A six-item final group was used because the other unrecorded handoff findings are security holds. No Issue update was needed; CODE-082 remains an investigation. Historical isolated fixtures were not rerun.
+- Confirmed that synchronization counts selected users rather than successful saves; mail search lacks explicit grouping; a single cached AJAX detail selection is shared across products; multiple module layouts count a nullable object; and two discount tables require shopper-group options before inline mode is set. Exact-key source search found configuration storage/display references for the tax-exemption VAT option, but does not rule out dynamic consumers or establish final financial behavior.
+- Progress: 56/161 pages have partial individual records (34.8%); none is fully approved. Finding records cover 172/199 original CODE IDs (86.4%), plus CODE-201–212 and M-0122. These are partial source records, not completed runtime reviews. Of the 27 original IDs without records, 26 are security holds in the Core handoff; CODE-003 is triage-only and requires separate assessment. No security hold was individually reviewed.
+- `issue-sync.test.js` passed. Individual finding, Core handoff, triage, issue ledger and page CSVs parsed and had unique IDs; individual rows had nonempty fields. `git diff --check` passed with line-ending warnings. No Joomla, MySQL, browser, checkout or production runtime was exercised.
+- Core remains at `2e2889680244db64b9e9f64da29608e02f543a70`; locally known `origin/develop` remains `a5e6d71f85045160861fd9737f40b4f8b9b21be8`. Primary and checked related files are unchanged against that ref. No fetch, pull or Core changes.
+- Next: assess triage-only CODE-003 under the privacy procedure and begin a five-page source-review group. Continue payment tracking comparison; runtime and authorized private-channel blockers remain open.
+
+## Checkpoint - five getting-started pages and CODE-003 (ACTIVE)
+- Read all five articles individually: getting-started overview, introduction, minimum requirements, navigation panel and dashboard. Compared relevant Core Composer and release configuration, sidebar builders, dashboard view/model/templates, statistics helper and English labels. Each page has a partial individual record; linked workflows and runtime behavior are not fully verified.
+- Corrected the navigation guide: variant and quotation statistic menu entries are commented out; VirtueMart import depends on the component being installed and enabled; accounting and tool entries have specific conditions. Added dashboard chart controls, Google Charts dependency, detail links and PDF-plugin warning. Clarified that the Core release configuration is repository configuration rather than describing it as merely an example.
+- CODE-003 is a documentation-renderer finding, not a Core security hold. Its current renderer source still lacks explicit history and post-render fragment handling; historical browser results were not rerun. Added a partial finding record, preserved the existing documentation triage and made no renderer change or Core Issue.
+- Progress: 61/161 pages have partial individual records (37.9%); none is fully approved. Finding records cover 173/199 original CODE IDs (86.9%), including documentation-only CODE-003, plus CODE-201–212 and M-0122. The remaining 26 original unrecorded IDs are security holds; no security hold was individually reviewed. Counts do not indicate full reviews.
+- Rendered all five pages with the bundled Markdown parser and checked all 38 chapter-link targets; issue-sync tests and review CSV uniqueness/nonempty checks passed. `git diff --check` passed with line-ending warnings. Joomla, browser navigation, database, provider and accounting runtime remain untested. The historical page-inventory CSV could not be read by the issue-sync parser because of its CSV format; PowerShell Import-Csv successfully read it for selection.
+- Core remains at `2e2889680244db64b9e9f64da29608e02f543a70`; locally known `origin/develop` remains `a5e6d71f85045160861fd9737f40b4f8b9b21be8`. The tracking Composer file differs, while checked sidebar and dashboard files do not. No fetch, pull or Core changes.
+- Next: begin another five-page individual source-review group; recheck the payment documentation against the changed tracking ref and revisit partial reviews. Runtime and authorized private-channel blockers remain open.
+
+## Checkpoint - synchronization, editors, media, licensing and wizard (ACTIVE)
+- Read the five getting-started articles on synchronization, third-party media, editors, subscription policies and the configuration wizard, and compared the source paths recorded individually in SOURCE-REVIEW-REGISTER.csv. Added specific synchronization navigation and selection scope, editor filter examples, a qualified license-status description and a wizard model warning. The media article needed no change for the limited source paths inspected. Each page remains partial; complete runtime and dependent-flow reviews are outstanding.
+- Found CODE-213: the wizard view requests a model whose source requires a legacy configuration-model path not declared by the current Core manifest. Loading the actual model from the administrator source directory failed at that require in isolated PHP 8.4. This does not test Joomla autoloading, packaged ZIPs or upgraded installations with possible legacy files. Created #258 after the privacy, duplicate and dry-run checks; the follow-up synchronization reported unchanged and the Issue was read back.
+- CODE-032 / #110 is distinct: the welcome helper attempts an unchecked configuration copy only if execution reaches that point. The model failure may occur earlier; no configuration copy or destructive filesystem test was performed.
+- Progress: 66/161 pages have partial individual records (41.0%); none is fully approved. Finding records cover 173/199 original CODE IDs (86.9%), including documentation-only CODE-003, plus CODE-201–213 and M-0122. The remaining 26 original unrecorded IDs are security holds; no security hold was individually reviewed. Counts do not indicate full reviews.
+- Rendered the five pages using the bundled Markdown parser and verified all 11 chapter-link targets; issue-sync tests and review-register duplicate checks passed. Review rows have no empty fields. Some older handoff and ledger rows have intentionally blank fields. `git diff --check` passed with line-ending warnings. No Joomla, MySQL, browser, provider, upload or production runtime was exercised.
+- Core remains at `2e2889680244db64b9e9f64da29608e02f543a70`; locally known `origin/develop` remains `a5e6d71f85045160861fd9737f40b4f8b9b21be8`. The checked synchronization, editor and wizard sources and manifest are unchanged against that ref. No fetch, pull or Core changes.
+- Next: start the next five unrecorded individual pages and revisit partial traces; continue the payment tracking comparison. Runtime and authorized private-channel blockers remain open.
+
+## Checkpoint - category, communication and customer-input pages (ACTIVE)
+- Read five complete articles individually: category overview and category management, mail templates and communication overview, and customer-input overview. Compared the forms, models, controllers, views, tables, templates, helpers and English labels identified in the corresponding SOURCE-REVIEW-REGISTER.csv rows. Corrected the category SEO tab label, added order-confirmation mail prerequisites, described the newsletter statistics chart and added customer-input navigation. The category overview needed no change for the paths inspected.
+- These are partial source reviews: category access, storefront, media, accessory precedence and data flows; section-specific mail rendering and delivery; tracker creation; and customer-input frontend/privacy flows remain unverified. Existing #118, #140, #146, #147, #152 and #211 remain open where relevant; no Issue was changed in this group.
+- Progress: 71/161 pages have partial individual records (44.1%); none is fully approved. Finding records cover 173/199 original CODE IDs (86.9%), including documentation-only CODE-003, plus CODE-201–213 and M-0122. The remaining 26 original unrecorded IDs are security holds; no security hold was individually reviewed. Counts do not indicate full reviews.
+- Rendered all five pages using the bundled Markdown parser and verified 13 chapter-link targets; issue-sync tests and review-register duplicate/nonempty checks passed. `git diff --check` passed with line-ending warnings. No Joomla, database, mail, Google Charts, browser or storefront runtime was exercised.
+- Core remains at `2e2889680244db64b9e9f64da29608e02f543a70`; locally known `origin/develop` remains `a5e6d71f85045160861fd9737f40b4f8b9b21be8`. Checked category and mail source files were unchanged against that ref. No fetch, pull or Core changes.
+- Next: start the next five unrecorded individual pages, continuing customization and integration guides; revisit partial reviews and payment tracking comparison. Runtime and authorized private-channel blockers remain open.
+
+## Checkpoint - customization and e-conomic overview (ACTIVE)
+- Read five complete articles individually: customization overview, attribute sets, currency, templates and e-conomic overview. Compared the forms, views, models, controllers, tables, layouts, plugin manifest and classification named in SOURCE-REVIEW-REGISTER.csv. Added missing customization menu entries, attribute-set name length and task warning, template default ordering, and optional integration/account-mode guidance. The currency redirect needed no change for the paths inspected.
+- Found CODE-214 / #259: the attribute-set toolbar uses delete and publication tasks absent from the singular controller, while the plural controller file declares a singular class. Actual source declarations were checked by PHP 8.4 reflection with parent stubs and the Joomla 5.4.6 controller ancestry was inspected. Created the Issue after duplicate/privacy checks and a dry-run, then reconciled and read it back. Real Joomla dispatch, stored states and Joomla 6 remain untested; underlying deletion cleanup #151 and copy #124 are distinct.
+- Progress: 76/161 pages have partial individual records (47.2%); none is fully approved. Finding records cover 173/199 original CODE IDs (86.9%), including documentation-only CODE-003, plus CODE-201–214 and M-0122. The remaining 26 original unrecorded IDs are security holds; no security hold was individually reviewed. Counts do not indicate full reviews.
+- Rendered five pages with the bundled Markdown parser and verified 16 chapter-link targets; issue-sync tests and review-register duplicate/nonempty checks passed. `git diff --check` passed with line-ending warnings. No Joomla, database, browser, checkout, filesystem or provider runtime was exercised.
+- Core remains at `2e2889680244db64b9e9f64da29608e02f543a70`; locally known `origin/develop` remains `a5e6d71f85045160861fd9737f40b4f8b9b21be8`. Checked customization, plugin and classification paths are unchanged against that ref. No fetch, pull or Core changes.
+- Next: start the next five unrecorded individual pages, including e-conomic setup, account groups and synchronization; revisit partial reviews and payment tracking comparison. Runtime and authorized private-channel blockers remain open.
+
+## Checkpoint - e-conomic and cart/tax FAQs (ACTIVE)
+- Read five articles and compared the source paths and methods recorded in SOURCE-REVIEW-REGISTER.csv. Corrected e-conomic payment-terms and invoice-layout manifest defaults, described per-payment-method override precedence, product-save synchronization and batch size, continue-shopping routing, and the company billing exemption control. All five reviews are partial; no page is approved as complete.
+- Candidate account-group bulk-action defects need individual reproduction, duplicate assessment and issue registration: list checkboxes submit `cid[]` whereas delete reads `id`; the group helper quotes a comma-joined list as one SQL value; publish success/failure messages appear inverted. These are source observations only; no database or Joomla task dispatch was performed. A targeted GitHub search returned no matches, which is not an exhaustive duplicate check. Do not assign an issue number until the authorized workflow is complete.
+- Progress: 81/161 pages have partial individual records (50.3%); 0/161 fully approved. Finding records remain 173/199 original CODE IDs with partial work (86.9%), including documentation-only CODE-003, plus CODE-201–214 and M-0122. The remaining 26 original IDs are security holds; no security hold was individually reviewed in this group.
+- The e-conomic payment-settings unit test passed with stubs. Five pages rendered with the bundled Markdown parser and eight chapter links resolved. Issue-sync tests, CSV uniqueness/nonempty checks and `git diff --check` passed; Git reported line-ending warnings. Joomla, database, browser, checkout and provider runtime were not tested.
+- Core remains clean at `2e2889680244db64b9e9f64da29608e02f543a70`; locally known `origin/develop` remains `a5e6d71f85045160861fd9737f40b4f8b9b21be8`. The inspected e-conomic plugin, payment helper, account-group controller and list template show no diff against that local tracking ref. No fetch, pull or Core changes.
+- Next: investigate and register the account-group bulk-action candidates through the authorized workflow; continue the next five individual pages and revisit partial reviews and payment tracking drift. The private handbook and an authorized private security channel remain unavailable.
+
+## Follow-up - account-group bulk findings (ACTIVE)
+- Reproduced the three candidates using the actual controller and helper with synthetic input, model and database stubs; fixture is `accountgroup-bulk-probe.php` in the session files. Registered distinct CODE-215–217 and synchronized #260–#262 after duplicate/privacy checks and dry-run. A follow-up dry-run reported all three unchanged. No SQL, Joomla dispatch, provider or accounting runtime was exercised.
+- Progress remains 81/161 pages with partial records (50.3%), 0/161 fully approved; 173/199 original CODE IDs with partial work (86.9%), plus CODE-201–217 and M-0122. No security hold was individually reviewed. Continue the next five pages and pending security/private-channel work.
+
+## Checkpoint - payment FAQs and installation/update (ACTIVE)
+- Read five articles individually and inspected the manifest, plugin handlers, translation strings, installer and setup paths recorded in SOURCE-REVIEW-REGISTER.csv. Corrected the COD FAQ's obsolete e-conomic fields and labels; added an update warning about required-plugin enablement and postflight work. The FAQ overview, PayPal FAQ and installation guide needed no change for the inspected claims. All remain partial.
+- Progress: 86/161 pages have partial individual records (53.4%); 0/161 fully approved. Finding records cover 173/199 original CODE IDs with partial work (86.9%), plus CODE-201–217 and M-0122. No security hold was individually reviewed.
+- Five pages rendered with the bundled Markdown parser and nine chapter links resolved. Page-register uniqueness and nonempty fields and `git diff --check` passed; Git reported line-ending warnings. No Joomla installer, database, browser, payment or provider runtime was exercised.
+- Core remains at `2e2889680244db64b9e9f64da29608e02f543a70`; the inspected COD, PayPal, installer and manifest paths have no diff against locally known `origin/develop` `a5e6d71f85045160861fd9737f40b4f8b9b21be8`. No fetch, pull or Core changes.
+- Next: start the next five unrecorded pages in global configuration, return to partial reviews, and address payment-guide tracking drift. Continue to record actual blockers and do not mark source-only reviews complete.
+
+## Checkpoint - global configuration group (ACTIVE)
+- Read About, Cart, Categories, Dashboard and e-conomic Integration individually and inspected the form layouts, selected configuration defaults and helper methods listed in SOURCE-REVIEW-REGISTER.csv. Added e-conomic payment-method override precedence. The other four articles needed no change for the limited claims inspected; each remains partial.
+- Progress: 91/161 pages have partial individual records (56.5%); 0/161 fully approved. Finding records cover 173/199 original CODE IDs with partial work (86.9%), plus CODE-201–217 and M-0122. No security hold was individually reviewed.
+- Five pages rendered with the bundled Markdown parser and 11 chapter links resolved. Page-register uniqueness and nonempty fields and `git diff --check` passed; Git reported line-ending warnings. No Joomla UI, browser, checkout, database or provider runtime was exercised.
+- Core remains clean at `2e2889680244db64b9e9f64da29608e02f543a70`; the selected configuration layouts and payment-settings helper have no diff against local tracking `a5e6d71f85045160861fd9737f40b4f8b9b21be8`. No fetch, pull or Core changes.
+- Next: proceed with five further unrecorded global-configuration pages and continue the unresolved deeper reviews and payment tracking comparison.
+
+## Checkpoint - general, integration, manufacturer and order settings (ACTIVE)
+- Read five articles individually and inspected the configuration layouts, relevant labels and sources listed in SOURCE-REVIEW-REGISTER.csv. Clarified the two distinct internal form names for order and invoice number templates. The other four articles needed no change for the limited form claims inspected; all five remain partial.
+- Progress: 96/161 pages have partial individual records (59.6%); 0/161 fully approved. Finding records cover 173/199 original CODE IDs with partial work (86.9%), plus CODE-201–217 and M-0122. No security hold was individually reviewed.
+- Five pages rendered with the bundled Markdown parser and 22 chapter links resolved. Page-register uniqueness and nonempty fields and `git diff --check` passed; Git reported line-ending warnings. No Joomla UI, browser, checkout, database, mail or provider runtime was exercised.
+- Core remains at `2e2889680244db64b9e9f64da29608e02f543a70`; no Core changes, fetch or pull. Next: review the next five unrecorded pages and return to incomplete source and security investigations.
+
+## Checkpoint - price, products, SEO and user configuration (ACTIVE)
+- Read five articles individually and inspected the form layouts and relevant methods listed in SOURCE-REVIEW-REGISTER.csv. Clarified product-download directory statistics and unreadable/incomplete scans. The other four articles needed no change for the limited form claims inspected; all five remain partial.
+- Progress: 101/161 pages have partial individual records (62.7%); 0/161 fully approved. Finding records cover 173/199 original CODE IDs with partial work (86.9%), plus CODE-201–217 and M-0122. No security hold was individually reviewed.
+- Five pages rendered with the bundled Markdown parser and 23 chapter links resolved. Page-register uniqueness and nonempty fields and `git diff --check` passed; Git reported line-ending warnings. No Joomla UI, browser, checkout, filesystem, database or provider runtime was exercised.
+- Core remains at `2e2889680244db64b9e9f64da29608e02f543a70`; no Core changes, fetch or pull. Next: select five further unrecorded pages and continue the unresolved deeper reviews.
+
+## Checkpoint - import/export, introduction and media overviews (ACTIVE)
+- Read five articles individually and inspected the plugin, controller, model, template, renderer and media paths listed in SOURCE-REVIEW-REGISTER.csv. Added export batch-size and temporary-file lifecycle guidance. The other four articles needed no change for the limited claims inspected; all remain partial.
+- Progress: 106/161 pages have partial individual records (65.8%); 0/161 fully approved. Finding records cover 173/199 original CODE IDs with partial work (86.9%), plus CODE-201–217 and M-0122. No security hold was individually reviewed.
+- Five pages rendered with the bundled Markdown parser and 14 chapter links resolved. Page-register uniqueness and nonempty fields and `git diff --check` passed; Git reported line-ending warnings. No Joomla UI, browser, filesystem, database or import/export runtime was exercised.
+- Core remains at `2e2889680244db64b9e9f64da29608e02f543a70`; no Core changes, fetch or pull. Next: proceed with five further unrecorded pages and continue deeper reviews, payment drift and private security-channel follow-up.
+
+## Checkpoint - media and module pages (ACTIVE)
+- Read five articles and inspected the specific source excerpts, manifests, layouts and language files recorded in SOURCE-REVIEW-REGISTER.csv. Clarified that Default Media accepts images only and that missing login-greeting parameters have runtime fallbacks distinct from manifest defaults. The other three pages needed no change for the limited claims inspected; all five remain partial.
+- Progress: 111/161 pages have partial individual records (68.9%); 0/161 fully approved. Finding records remain 173/199 original CODE IDs with partial work (86.9%), plus CODE-201–217 and M-0122. CODE-036 and CODE-037 are existing private security holds; no security hold was individually reviewed.
+- The five pages rendered with the bundled Markdown parser and 25 chapter links resolved. Page-record uniqueness and nonempty fields and `git diff --check` passed; Git reported a line-ending warning. Joomla, database, filesystem, cache and browser runtime were not exercised.
+- Core HEAD remains `2e2889680244db64b9e9f64da29608e02f543a70`, documentation HEAD `5fda0904d762a466afcb3c7d400ad8d0ab1492cb`. No Core changes, fetch or pull. Next: inspect the next five unrecorded pages; revisit partial reviews, payment tracking drift and private security-channel follow-up.
+
+## Checkpoint - shopper-group modules and payment plugins (ACTIVE)
+- Read five articles and inspected the specific manifests, language strings, module layouts and payment methods recorded in SOURCE-REVIEW-REGISTER.csv. Corrected obsolete local e-conomic-field descriptions for 2Checkout and Bank Transfer, updated Bank Transfer labels, added a Bambora text-credential warning and documented the existing shopper-group product image argument mismatch. The logo article needed no change for the limited claims inspected. All five remain partial.
+- Progress: 116/161 pages have partial individual records (72.0%); 0/161 fully approved. Finding records remain 173/199 original CODE IDs with partial work (86.9%), plus CODE-201–217 and M-0122. No security hold was individually reviewed. Existing related Issues and holds are recorded in the page register; no new Issue was created.
+- Five pages rendered with the bundled Markdown parser and six chapter links resolved. Page-record uniqueness and nonempty fields and `git diff --check` passed. No Joomla, browser, checkout, bank, accounting or provider runtime was exercised.
+- Local tracking comparison showed no diff for the three reviewed payment plugin directories and the e-conomic settings helper against the locally known `origin/develop`; no fetch was performed. Core HEAD remains `2e2889680244db64b9e9f64da29608e02f543a70`; documentation HEAD remains `5fda0904d762a466afcb3c7d400ad8d0ab1492cb`. Next: continue five unrecorded pages, review other payment guides for the same drift, and revisit all partial reviews and security blockers.
+
+## Checkpoint - Billy and four payment plugins (ACTIVE)
+- Read five articles and inspected the specific manifests, source excerpts, selectors and language strings listed in SOURCE-REVIEW-REGISTER.csv. Corrected obsolete local e-conomic fields in EAN Transfer, ePay and GiroPay, updated EAN labels and documented Bao Kim's source-level VND/minimum condition. Billy needed no change for the limited claims inspected. All five remain partial.
+- Progress: 121/161 pages have partial individual records (75.2%); 0/161 fully approved. Finding records remain 173/199 original CODE IDs with partial work (86.9%), plus CODE-201–217 and M-0122. No security hold was individually reviewed and no new Issue was created.
+- Five pages rendered with the bundled Markdown parser and seven chapter links resolved. Page-record uniqueness and nonempty fields and `git diff --check` passed; Git reported a line-ending warning. Joomla, checkout, accounting, provider and database runtime were not exercised.
+- Comparing these five plugin directories to locally known `origin/develop` showed differences in ePay's installer and language file; their impact is not yet reviewed. No fetch was performed. Core HEAD remains `2e2889680244db64b9e9f64da29608e02f543a70`; documentation HEAD remains `5fda0904d762a466afcb3c7d400ad8d0ab1492cb`. Next: inspect the next five unrecorded pages, review remaining payment-guide drift and revisit partial reviews and security blockers.
+
+## Checkpoint - GLS and payment-plugin overview (ACTIVE)
+- Read five articles and inspected the manifests, layouts, language strings and source methods listed in SOURCE-REVIEW-REGISTER.csv. Corrected obsolete local e-conomic-field descriptions for Money Booker and PayGate, updated Money Booker account labels and documented PayGate's source-level ZAR conversion. The GLS and overview pages needed no change for the limited claims inspected. All five remain partial.
+- Progress: 126/161 pages have partial individual records (78.3%); 0/161 fully approved. Finding records remain 173/199 original CODE IDs with partial work (86.9%), plus CODE-201–217 and M-0122. No security hold was individually reviewed and no new Issue was created.
+- Five pages rendered with the bundled Markdown parser and 28 chapter links resolved. Page-record uniqueness and nonempty fields and `git diff --check` passed; Git reported a line-ending warning. No Joomla, shipping, provider, accounting or browser runtime was exercised.
+- No local tracking-ref differences were found in the three inspected plugin directories; no fetch was performed. Core HEAD remains `2e2889680244db64b9e9f64da29608e02f543a70`; documentation HEAD remains `5fda0904d762a466afcb3c7d400ad8d0ab1492cb`. Next: inspect the next five unrecorded pages and revisit partial reviews, remaining payment drift and private security-channel blockers.
+
+## Checkpoint - payment, shipping and Relatel pages (ACTIVE)
+- Read five articles and inspected the manifests and source excerpts listed in SOURCE-REVIEW-REGISTER.csv. Corrected Paymill's obsolete local e-conomic-field description and added the source-observed Giao Hang Nhanh shipment-weight limitation; the remaining three pages needed no change for the limited claims inspected. All five remain partial.
+- Progress: 131/161 pages have partial individual records (81.4%); 0/161 fully approved. Finding records remain 173/199 original CODE IDs with partial work (86.9%), plus CODE-201–217 and M-0122. No security hold was individually reviewed and no new Issue was created.
+- Five pages rendered with the bundled Markdown parser and eight chapter links resolved. Page-record uniqueness and nonempty fields and `git diff --check` passed; Git reported a line-ending warning. Joomla, shipping, provider, accounting, caller API and browser runtime were not exercised.
+- No local tracking-ref differences were found in the inspected plugin directories; no fetch was performed. Core HEAD remains `2e2889680244db64b9e9f64da29608e02f543a70`; documentation HEAD remains `5fda0904d762a466afcb3c7d400ad8d0ab1492cb`. Next: inspect five unrecorded pages; revisit partial reviews, remaining payment drift and private security-channel blockers.
+
+## Checkpoint - product and plugin pages (ACTIVE)
+- Read five articles, including the complete product guide, and inspected the specific source excerpts recorded in SOURCE-REVIEW-REGISTER.csv. Added current English product identity and layout labels. The other four pages needed no change for the limited claims inspected. All five remain partial; the long product article especially requires deeper tracing of its remaining workflows.
+- Progress: 136/161 pages have partial individual records (84.5%); 0/161 fully approved. Finding records remain 173/199 original CODE IDs with partial work (86.9%), plus CODE-201–217 and M-0122. No security hold was individually reviewed and no new Issue was created.
+- Five pages rendered with the bundled Markdown parser and 18 chapter links resolved. Page-record uniqueness and nonempty fields and `git diff --check` passed; Git reported a line-ending warning. Joomla, product storefront, shipping, browser and provider runtime were not exercised.
+- No local tracking-ref differences were found in the selected product and plugin paths; no fetch was performed. Core HEAD remains `2e2889680244db64b9e9f64da29608e02f543a70`; documentation HEAD remains `5fda0904d762a466afcb3c7d400ad8d0ab1492cb`. Next: inspect five unrecorded pages and revisit partial reviews and private security-channel blockers.
+
+## Checkpoint - suppliers, users and currency (ACTIVE)
+- Read five articles and inspected the forms and source excerpts listed in SOURCE-REVIEW-REGISTER.csv. Added current English currency-field labels; the other pages needed no change for the limited claims inspected. All five remain partial and do not substitute for full user, deletion, payment or provider tracing.
+- Progress: 141/161 pages have partial individual records (87.6%); 0/161 fully approved. Finding records remain 173/199 original CODE IDs with partial work (86.9%), plus CODE-201–217 and M-0122. No security hold was individually reviewed and no new Issue was created.
+- Five pages rendered with the bundled Markdown parser and four chapter links resolved. Page-record uniqueness and nonempty fields and `git diff --check` passed; Git reported a line-ending warning. Joomla, database, browser, mail and provider runtime were not exercised.
+- No local tracking-ref differences were found in the selected forms and models; no fetch was performed. Core HEAD remains `2e2889680244db64b9e9f64da29608e02f543a70`; documentation HEAD remains `5fda0904d762a466afcb3c7d400ad8d0ab1492cb`. Next: inspect unrecorded pages and return to detailed partial reviews and private security-channel blockers.
+
+## Checkpoint - VAT and historical changelog (ACTIVE)
+- Read three VAT articles and two historical changelog articles individually. Compared the specified VAT forms, selected models, tables, language strings and rate lookup with their descriptions; clarified the English tax-group name label. Historical release claims are preserved, not independently authenticated. Exact scope and limitations are recorded in SOURCE-REVIEW-REGISTER.csv; all five records remain partial.
+- Progress: 146/161 pages have partial individual records (90.7%); 0/161 fully approved. Finding records remain 173/199 original CODE IDs with partial work (86.9%), plus CODE-201–217 and M-0122. No security hold was individually reviewed and no new Issue was created.
+- Five pages rendered with the bundled Markdown parser and 21 chapter links resolved. Page-record uniqueness and nonempty fields and `git diff --check` passed; Git reported line-ending warnings. No Joomla, tax, database, checkout or historical-release runtime was exercised.
+- Core HEAD remains `2e2889680244db64b9e9f64da29608e02f543a70`. Next: review further historical pages, then deepen all partial records and continue independent finding analysis; do not treat partial counts as completed reviews.
+
+## In-progress checkpoint - tax lookup investigation (ACTIVE)
+- Deepened the partial VAT-rate review by inspecting the rate renderer, state validation, VAT user-location selection and product tax callers. A separate calculation lookup joins state codes without constraining the state record to the rate country. An equivalent in-memory SQLite fixture matched an unintended foreign state code; it did not execute the actual Joomla query. Added a cautious guide warning and registered CODE-218.
+- Created #263 after read-only duplicate comparison with #130 and #234 and a successful dry-run; subsequent dry-run reported unchanged. P1 is provisional and actual financial impact is unverified.
+- Progress remains 146/161 partial page records (90.7%) and 0/161 fully approved. Original finding coverage remains 173/199 partial (86.9%); CODE-218 is an additional investigation. No security hold was individually reviewed. The current deeper-review group is not complete.
+- The updated guide rendered; related ledger mappings and page-record uniqueness were checked and `git diff --check` passed with line-ending warnings. No Joomla, MySQL or checkout runtime was exercised. Continue the partial group, trace remaining tax callers and pursue other reviews without waiting on runtime access.
+
+## Checkpoint - historical releases 2.0.2 through 2.0.6 (ACTIVE)
+- Read five historical notes in full and compared their upgrade advice with the current source manifest and upgrade guide. Examined selected current currency deletion, tax-group deletion and VAT address paths for the corresponding historical topics without inferring that this proves the historical fixes. Added notices distinguishing old Joomla 3 compatibility and upgrade recommendations from current guidance. Also added the same direct-entry warning to the previously reviewed 1.5.0.6 note. Original release claims remain intact.
+- Progress: 151 partial page records exist, of which 150/161 inventory pages are covered (93.2%); 0/161 fully approved. One additional reviewed page, `orders/order-payments.md`, is outside that inventory. Earlier checkpoints counted it in the inventory numerator and thus overstated inventory coverage by one. Original finding coverage remains 173/199 partial (86.9%), plus CODE-201–218 and M-0122. No security hold was individually reviewed. Historical artifacts and ticket history remain unauthenticated.
+- Five newly reviewed pages rendered and ten chapter links resolved. Page-record uniqueness and nonempty fields and `git diff --check` passed; Git reported line-ending warnings. Neither historical nor current Joomla installation, database and checkout runtime was exercised.
+- Core HEAD remains `2e2889680244db64b9e9f64da29608e02f543a70`. Next: continue individual reviews, deepen partial entries including the in-progress tax group, and independently address remaining finding and documentation work.
+
+## Checkpoint - historical releases 2.0.7 and 2.1.x (ACTIVE)
+- Read five historical notes in full and inspected current source excerpts relevant to selected entries: tax-rate validation, user-session address selection, currency deletion, billing state rendering and installer plugin enablement. Added direct-entry historical compatibility notices; retained original release claims. Each page remains partial because historical artifacts and ticket histories are not authenticated and the corresponding current workflows are not fully traced.
+- Progress: 155/161 inventory pages have partial individual records (96.3%); 0/161 fully approved. The register also includes one reviewed page outside the inventory. Original finding coverage remains 173/199 partial (86.9%), plus CODE-201–218 and M-0122. No security hold was individually reviewed.
+- Five pages rendered and ten chapter links resolved. Page-record uniqueness and nonempty fields and `git diff --check` passed; Git reported line-ending warnings. No Joomla, browser, installation, database or checkout runtime was exercised.
+- Core remains at `2e2889680244db64b9e9f64da29608e02f543a70`. Continue with remaining unrecorded pages and deepen all partial reviews; this checkpoint is not completion.
+
+## Checkpoint - remaining release notes and PostDanmark location redirect (ACTIVE)
+- Read four historical release notes and the historical pickup-location redirect in full. Compared selected current manifest, installer and VAT-rate view excerpts and both PostNord manifests. Added historical compatibility notices to the release notes; the existing redirect already points to the current guide. Historical pull requests, release packages and provider functionality were not authenticated or exercised.
+- Progress: 160/161 inventory pages have partial individual records (99.4%); 0/161 fully approved. The register also includes one reviewed page outside the inventory. Original finding coverage remains 173/199 partial (86.9%), plus CODE-201–218 and M-0122. No security hold was individually reviewed.
+- Five pages rendered and nine chapter links resolved. Page-record uniqueness and nonempty fields and `git diff --check` passed with line-ending warnings. No Joomla, installer, database, checkout or provider runtime was exercised.
+- Core remains at `2e2889680244db64b9e9f64da29608e02f543a70`. Next: the remaining PostDanmark information redirect and four deeper partial reviews; then continue individual source tracing and finding work. A partial record is not an approved review.
+
+## Checkpoint - user management, currency and PostDanmark redirect (ACTIVE)
+- Inspected the remaining historical redirect and deepened four existing user and currency reviews using the specific source paths in SOURCE-REVIEW-REGISTER.csv. Clarified that synchronization counts selected users rather than successful saves, that Joomla administrator-account protection does not necessarily preserve redSHOP information, and that absent currency quotes can produce numeric conversion results.
+- Opened CODE-219 / #264 after comparing #72 and running a dry-run. Actual converter methods with synthetic nonempty rates and session stubs returned numeric values for missing target quotes; a known-rate ECB control passed. A follow-up dry-run reported unchanged. P1 is provisional; provider and financial impact remain unverified.
+- Progress: 161/161 inventory pages have partial individual records (100%); **0/161 fully approved**. One additional reviewed page is outside the inventory. This is coverage of partial records, not completion of the requested individual reviews or missing-documentation investigation. Original finding coverage remains 173/199 partial (86.9%), plus CODE-201–219 and M-0122. No security hold was individually reviewed.
+- Five pages rendered and five chapter links resolved. Page-record uniqueness and nonempty fields and `git diff --check` passed with line-ending warnings. No Joomla, MySQL, browser, checkout or provider runtime was exercised.
+- Core remains at `2e2889680244db64b9e9f64da29608e02f543a70`. Continue with substantive deeper reviews of all partial pages and findings, missing feature documentation, historical authenticity and private security-channel blockers.
+
+## In-progress checkpoint - finding CODE-009 (ACTIVE)
+- Rechecked both administrator order-item assignments and quotation conversion and traced the separate non-giftcard storefront checkout path. Checkout also assigns the product manufacturer ID to the order-item supplier field. The inspected supplier-email branch uses the current product supplier instead; no email effect is established. Added a qualified supplier-guide warning and updated #93 after a dry-run; subsequent dry-run reported unchanged.
+- CODE-009 remains partial: no actual order creation, database persistence, downstream integration or Joomla runtime was exercised. Continue the finding group; this single investigation is not a completed ten-finding batch. Page coverage remains 161/161 partial records and 0/161 fully approved; original finding coverage remains 173/199 partial (86.9%).
+- Core HEAD remains `2e2889680244db64b9e9f64da29608e02f543a70`. No Core modifications, commits, pushes or publication were performed.
+
+## In-progress checkpoint - export, payment and media findings (ACTIVE)
+- Re-exercised actual methods with synthetic PHP 8.4 stubs: CODE-001 COD nonmatching handler throws; CODE-002 PayPal reads an integer as an array and produces a warning converted to an exception by the fixture; CODE-006 manufacturer media deletion uses a section-only predicate; CODE-008 postcode range ignores a failed parent save and continues. Updated #71, #105, #97 and #73 after individual dry-runs; subsequent dry-runs were unchanged. No Joomla dispatch, SQL, file deletion, checkout or provider was tested.
+- Found CODE-220: order export `processData` performs nested full-batch traversal. Two synthetic input rows yielded four output rows and six stub queries. Added a qualified warning to the export guide and created #265 after comparing #111 and #109 and running a dry-run; subsequent dry-run was unchanged. CSV output and database behavior remain untested.
+- Page coverage remains 161/161 partial records (100%) and 0/161 fully approved; one additional page is outside inventory. Original finding coverage remains 173/199 partial (86.9%); CODE-220 is additional. These counts do not represent completed individual reviews. No security hold was individually reviewed. The ten-finding group remains incomplete.
+- Issue-sync tests passed; the changed guide rendered using the bundled Markdown parser; review CSV structure and identifier uniqueness and tracked-file `git diff --check` passed. A temporary page-register column mismatch introduced during editing was corrected and the check rerun successfully.
+- Core remains `2e2889680244db64b9e9f64da29608e02f543a70`, with no Core changes, commits, pushes or publication. Continue the finding group, including CODE-004 and CODE-005, then resume substantive page reviews and remaining authorized work. The private handbook was absent when checked.
+
+## Checkpoint - CODE-001 through CODE-010 (ACTIVE; partial)
+- Continued the ten-record group: actual CODE-004 import upload with memory-only stubs deleted the shared same-type root on a second upload, while a different type used a separate root; actual concurrency and export remain untested. CODE-005 query-builder stubs confirmed strict date endpoints and repeated count bounds. CODE-010 actual query-builder stubs emitted the price-list category predicate for a column absent from the install schema. Updated #109, #111 and #74 after dry-runs.
+- CODE-001–010 have individual records, but this group is **not fully validated**: CODE-003 is the documentation renderer and was not rerun here; CODE-007 and CODE-009 were examined earlier; real Joomla, database, browser, filesystem and provider checks remain open. No original finding is newly marked complete and prior partial-coverage counts remain unchanged. CODE-220 / #265 is additional.
+- Issue-sync tests passed; the follow-up dry-run reported ten selected Issues unchanged, including #265. All five review CSVs parsed with unique identifiers; tracked-file `git diff --check` passed with a line-ending warning. These checks do not replace further individual analysis.
+- Inventory remains 161/161 partial records (100%) and 0/161 fully approved; original findings 173/199 partial (86.9%); security holds remain individually unreviewed in this segment. Core `2e2889680244db64b9e9f64da29608e02f543a70` is clean; documentation HEAD `5fda0904d762a466afcb3c7d400ad8d0ab1492cb` remains dirty. Continue with CODE-011 onward, substantive partial-page reviews and private security-channel blockers.
+
+## Checkpoint - CODE-011 through CODE-020 (ACTIVE; partial)
+- Rechecked CODE-011 source and existing #75 evidence. Tested actual methods with synthetic PHP 8.4 stubs for CODE-012 coupon use boundaries, CODE-013 dated promotion condition, CODE-014 award item preparation through the Step caller, CODE-015 status validation query, CODE-016 plural quotation CSV handler, CODE-017 tax-request filter, CODE-019 subscription insertion and CODE-020 test-newsletter query/sender. Updated their existing Issues after dry-runs; follow-up dry-run reported all nine ordinary Issues unchanged.
+- CODE-018 remains a security hold; no authorized private reporting channel has been identified and it was not individually reviewed here. No SQL, real Joomla routing/UI, checkout, filesystem, provider or mail delivery was executed. These nine ordinary findings remain partial rather than fully verified; CODE-011's earlier SQLite fixture was not rerun in this group.
+- Issue-sync tests passed; the five review CSVs parsed with unique IDs; tracked-file `git diff --check` passed with a line-ending warning. These checks do not substitute for the remaining individual review or runtime work.
+- Coverage remains 161/161 inventory pages with partial records (100%) and 0/161 fully approved, plus one page outside inventory. Original findings remain 173/199 partial (86.9%), not completed. No security hold was individually reviewed in this group. Core remains clean at `2e2889680244db64b9e9f64da29608e02f543a70`; documentation HEAD remains `5fda0904d762a466afcb3c7d400ad8d0ab1492cb`. Continue with CODE-021 onward, deeper page reviews and private reporting-channel blockers.
+
+## Checkpoint - CODE-021 through CODE-030 (ACTIVE; partial)
+- Rechecked CODE-021 to CODE-024 against current source. CODE-021 also affects the `Filter.Result` search layout: updated the category guide and #81. For CODE-022, the actual navigation method with stubs suppressed the next image when the previous image setting was empty and emitted a missing next image when an existing previous path was supplied; text-mode controls passed. Updated #82.
+- For CODE-024, the actual inline script with DOM stubs overwrote a saved alias on initialization and selection change and cleared synthetic empty and unmapped IDs. The configuration maps the inputs and the order parser reads one alias; actual persistence and routing were not executed. Updated #83. CODE-023 remains source-checked with product metadata and overrides untested.
+- CODE-028 and CODE-029 manifest evidence was synchronized to #91 and #92; CODE-030 helper evidence was synchronized to #84. CODE-025 to CODE-027 remain security holds, not individually reviewed here because an authorized private reporting channel has not been identified. No Joomla, browser, database, search rendering or provider runtime was exercised. The group is partial, not fully validated.
+- Issue-sync tests passed; the follow-up dry-run reported six updated Issues unchanged. Five review CSVs parsed with unique IDs, the category guide rendered and `git diff --check` passed with line-ending warnings. Python was unavailable; CSV checks used the repository's Node parser instead.
+- Coverage remains 161/161 inventory pages with partial records (100%) and 0/161 fully approved; original findings remain 173/199 partial (86.9%), not completed. Core remains clean at `2e2889680244db64b9e9f64da29608e02f543a70`; documentation HEAD is `5fda0904d762a466afcb3c7d400ad8d0ab1492cb` and remains dirty. Continue with CODE-031 onward and deeper page reviews.
+
+## Checkpoint - CODE-031 through CODE-040 (ACTIVE; partial)
+- CODE-032: actual wizard helper/controller with non-writing stubs attempted the distributed-to-active copy on welcome, not general, and returned normal output when copy returned false. CODE-033: actual dashboard helper with a simplified builder and in-memory SQLite returned a single value for empty data and IDs plus visitor count for synthetic data. Updated #110 and #86; no actual configuration copy, Joomla database or dashboard was run.
+- CODE-035: the Joomla 5.4 standard dispatcher supplies `app` in module include scope. The actual cart module with equivalent-scope stubs handled nonzero and zero ItemID; the suspected missing-variable failure is not established on that path. Updated #87 without closing it and removed the unsupported manual warning. Actual Joomla, Joomla 6 and custom dispatchers remain untested.
+- CODE-038: actual Who Bought entry with query stubs selected products without order joins, both with and without a category join. CODE-039: actual Joomla 5.4 manifest parser with stub operations did not schedule Product Tab's `js` directory. Updated #88 and #89 and clarified the Product Tab guide; no SQL, ZIP or install was run.
+- CODE-040: actual metadata template and helper with a stub view selected `INDEX,FOLLOW` for a stored `NOINDEX,NOFOLLOW` value, while an explicit helper control preserved the latter. Inspected Joomla 5.4 template loader scope and updated #90. No browser, save, indexing or Joomla runtime was exercised. CODE-031 and CODE-034 retain earlier partial records; CODE-036/037 remain private security holds without an identified authorized reporting channel and were not individually reviewed.
+- Issue-sync tests passed; the follow-up dry-run reported six Issues unchanged. Five CSVs parsed with unique IDs, both changed module pages rendered and `git diff --check` passed with line-ending warnings. Two page-register column omissions introduced during editing were corrected before successful revalidation.
+- This group is **partial**, not fully validated. Coverage remains 161/161 inventory pages with partial records (100%) and 0/161 fully approved; original findings remain 173/199 partial (86.9%), not completed. Core remains clean at `2e2889680244db64b9e9f64da29608e02f543a70`; documentation HEAD remains `5fda0904d762a466afcb3c7d400ad8d0ab1492cb` and its worktree is dirty. Continue with CODE-041 onward and deeper page reviews.
+
+## Checkpoint - CODE-041 through CODE-050 (ACTIVE; partial)
+- CODE-041: actual coupon helper with stubs rejected a synthetic 20% coupon at subtotals 10 and 20 but accepted 21; fixed-value boundary controls passed. Updated #70. CODE-045: reran the existing offline Flatpay replay suite successfully; unfamiliar-state legacy callback remains untested and #100 remains an investigation.
+- CODE-047: actual accounting connection method with HTTPS disabled raised a null-client error after initialization failure in both provider branches. CODE-048: actual review controller with stubs raised a guest namespace error; login-required guest and authenticated controls passed. Updated #102 and #104; no provider request, Joomla or mail was performed.
+- CODE-049: actual import splitter and PHP CSV reread changed synthetic apostrophe, double-quote and backslash examples while plain and comma controls were preserved; fixture files were removed. CODE-050: actual gift-card method with stubs generated two codes but one message for quantity two; empty and single-unit controls passed. Updated #107 and #112. An initial #112 ledger replacement failed after the comment was written; a dry-run verified the existing comment and an idempotent retry persisted the ledger without a duplicate.
+- CODE-042/043/044/046 remain security holds; no authorized private reporting channel has been identified and they were not individually reviewed here. The group is **partial**, not fully validated. No real Joomla checkout, provider, browser, SQL import or mail delivery was exercised.
+- Issue-sync tests passed; the follow-up dry-run reported six Issues unchanged. Five CSVs parsed with unique IDs, fixture cleanup was verified and `git diff --check` passed with line-ending warnings.
+- Coverage remains 161/161 inventory pages with partial records (100%) and 0/161 fully approved; original findings remain 173/199 partial (86.9%), not completed. Core remains clean at `2e2889680244db64b9e9f64da29608e02f543a70`; documentation HEAD remains `5fda0904d762a466afcb3c7d400ad8d0ab1492cb` and its worktree is dirty. Continue with CODE-051 onward and deeper page reviews.
+
+## Checkpoint - CODE-051 through CODE-060 (ACTIVE; partial)
+- Rechecked the source for CODE-051–056 and CODE-059 against Core `2e2889680244db64b9e9f64da29608e02f543a70`; the inspected finding files are unchanged since `beacc4704dc24b9dc8f3b638324a9e8a6f96a06e`. Historical fixtures were not rerun and these Issues remain at the prior verified ledger revision. CODE-060 remains a browser acceptance investigation, not a confirmed defect.
+- CODE-057 / #119: current `PriceModel` sets the product ID before querying and handles a missing result; the original defect is no longer supported by current source. `php tests\unit\prices-list.php` passed with a valid product and SQLite/doubles. Missing/invalid product contexts, Joomla and MySQL remain unverified. Corrected both handoffs and triage and appended a qualified Issue comment without closing it.
+- CODE-058 / #120: the product-price endpoint checks remain. Source inspection also identified similar endpoint checks in the attribute-price helpers; the separate attribute path and its zero/section behavior need targeted validation. The existing price CRUD test stubs its table check and therefore does not test this defect. Appended qualified evidence to the Issue. `php tests\unit\attributeprices-list.php` passed but does not establish validator behavior.
+- Selected dry-runs found both Issue comments unchanged after synchronization. The group remains **partial**: re-run targeted original fixtures where available, review remaining Issue details and behavior, and continue the attribute-price investigation without treating source similarity as a runtime result. The initial group dry-run blocked stale-ledger records; it made no write.
+- Earlier coverage figures remain 161/161 inventory pages with partial records and 0/161 fully approved; 173/199 original findings have partial records, not completed reviews. No Joomla browser, MySQL or provider runtime was exercised. Continue the individual finding and page work; do not treat this checkpoint as completion.
+
+## Checkpoint - CODE-061 through CODE-070 (ACTIVE; partial)
+- CODE-061 / #122: a browser fixture containing the current copied Reset handler raised a `TypeError` and left two selected filters unchanged; its implicit submit event still fired and was intercepted. The actual Joomla form and resulting server list were not tested. Appended qualified evidence after a dry-run and confirmed the subsequent dry-run was unchanged.
+- CODE-067: inspected the optional state field and list query; #127 correctly describes the country-filter mismatch. CODE-068: inspected the currency validator and #128; actual Joomla prefix substitution and SQL remain unverified. CODE-069: inspected the rate list renderer; its link uses the rate ID, with actual route unverified.
+- CODE-070 / #130: rechecked the state join and grouped list query and compared it with the distinct calculation lookup CODE-218 / #263. Added this relationship and SQL-mode test requirements to #130; subsequent dry-run was unchanged. Historical equivalent SQLite evidence was not rerun and does not prove MySQL or checkout behavior.
+- CODE-062 remains a security hold; no private reporting channel was identified. CODE-063–066 retain earlier partial source records and need their fixtures/Issue evidence rechecked; the group is **partial**. Issue-sync tests passed; five registers parsed with unique IDs; `git diff --check` passed with line-ending warnings.
+- Earlier coverage figures remain 161/161 inventory pages with partial records and 0/161 fully approved; 173/199 original findings have partial records, not completed reviews. Core HEAD `2e2889680244db64b9e9f64da29608e02f543a70`; documentation HEAD `5fda0904d762a466afcb3c7d400ad8d0ab1492cb`. Continue at CODE-071 and return to outstanding group limitations; this checkpoint is not completion.
+
+## Checkpoint - CODE-071 through CODE-080 (ACTIVE; partial)
+- CODE-071 / #131: inspected the current order date predicate. Standalone PHP arithmetic for `Europe/Copenhagen` showed the fixed 24-hour boundary one hour late on 2025-03-30 and one hour early on 2025-10-26; an ordinary day matched next midnight. This did not invoke the model or establish Joomla's timezone. Appended qualified evidence and confirmed idempotent reconciliation.
+- CODE-072 and CODE-073: inspected the current shipping-box ID search and shipping-method renderer; #132 was read. The prior isolated fixtures were not rerun and Joomla/SQL behavior remains untested.
+- CODE-080 / #140: inspected the current mail-list search and Issue. An equivalent in-memory SQLite comparison returned an extra name-matching row outside the requested filters; grouped controls returned only matching rows. The actual model SQL was not executed in this check. Appended qualified evidence and confirmed idempotent reconciliation.
+- CODE-074–079 retain earlier partial individual records and require deeper source/Issue and fixture review. This group is **partial**. Issue-sync tests passed; the four selected Issues from this and the previous group reconciled unchanged. Five CSVs parsed with unique IDs; `git diff --check` passed with line-ending warnings.
+- Earlier coverage figures remain 161/161 inventory pages with partial records and 0/161 fully approved; 173/199 original findings have partial records, not completed reviews. Joomla 5/6 UI, MySQL and provider runtime were not tested. Core HEAD `2e2889680244db64b9e9f64da29608e02f543a70`; documentation HEAD `5fda0904d762a466afcb3c7d400ad8d0ab1492cb`. Continue with CODE-081 and return to outstanding limitations; this checkpoint is not completion.
+
+## Checkpoint - CODE-081 through CODE-090 (ACTIVE; partial)
+- CODE-081 / #141: the actual current template helper with seeded static records and configuration/language stubs selected the first product's template for both products in either order. The database, filesystem and Joomla storefront were not exercised. Appended qualified evidence and confirmed idempotent reconciliation.
+- CODE-083 / #143: read the Issue and its existing comment and rechecked the four cited module source patterns. Related and product modules use different guards. The historical layout fixtures were not rerun and no new storefront result was asserted.
+- CODE-089 / #149: the actual current postal validator with synthetic in-memory SQLite and parent/query doubles rejected `0999` because `999` existed and accepted a duplicate `A1 2BC`; numeric-duplicate and absent-code controls passed. MySQL collation and Joomla saves remain unverified. Appended qualified evidence and confirmed idempotent reconciliation.
+- CODE-088 and CODE-090 source was inspected; actual database driver types and filesystem behavior were not tested. CODE-082 and CODE-084–087 retain previous partial records requiring deeper review. The group is **partial**. Issue-sync tests passed; the selected Issues reconciled unchanged. Five CSVs parsed with unique IDs; `git diff --check` passed with line-ending warnings.
+- Earlier coverage figures remain 161/161 inventory pages with partial records and 0/161 fully approved; 173/199 original findings have partial records, not completed reviews. Core HEAD `2e2889680244db64b9e9f64da29608e02f543a70`; documentation HEAD `5fda0904d762a466afcb3c7d400ad8d0ab1492cb`. Continue at CODE-091 and return to outstanding group limitations; this checkpoint is not completion.
+
+## Checkpoint - CODE-091 through CODE-100 (ACTIVE; partial)
+- CODE-091 / #151: rechecked set deletion and its published-property helper query. Attributes without matching published properties can be skipped by that source path; previous stub evidence was not rerun and database/filesystem cleanup remains unverified.
+- CODE-094 / #153 and CODE-097 / #156: the actual current calculator with synthetic product/price/option doubles returned 1.5 versus 2 pieces for the two decimal settings, with equal results for a whole-piece control; a stubbed +5 option changed reported unit price 10 to 15 but left the 1.5-piece total at 15. The first fixture assertion incorrectly used strict float/integer equality and failed; corrected assertions passed. No database, tax calculation or checkout was exercised. Both Issue updates reconciled unchanged after controlled synchronization.
+- CODE-098 / #157: inspected controller, model and Issue; the controller ignores per-row return values and successful model paths return null, so a fix needs an explicit result contract. Real stock persistence and notifications remain untested.
+- CODE-093 and CODE-100 remain private security holds; no authorized private reporting channel was identified. CODE-092 and CODE-095–096 and CODE-099 retain previous partial evidence and need the outstanding runtime and fixture checks. The group is **partial**.
+- Issue-sync tests passed; the selected Issues reconciled unchanged. Five CSVs parsed with unique IDs; `git diff --check` passed with line-ending warnings. Earlier coverage remains 161/161 inventory pages with partial records and 0/161 fully approved; 173/199 original findings have partial records, not completed reviews. Core HEAD `2e2889680244db64b9e9f64da29608e02f543a70`; documentation HEAD `5fda0904d762a466afcb3c7d400ad8d0ab1492cb`. Continue at CODE-101 and return to outstanding limitations; this checkpoint is not completion.
+
+## Checkpoint - CODE-101 through CODE-110 (ACTIVE; partial)
+- CODE-102 / #160: rechecked the source and Issue comments; the current actual tag replacement with a stubbed renderer retained the ordinary tag and replaced the quoted form, and requested a different layout name from the shipped file. This reproduces existing evidence rather than adding a duplicate Issue comment. Full Twig environment, overrides and storefront remain untested; P1 versus P2 requires maintainer triage.
+- CODE-103 / #161: rechecked the numeric editor inputs and existing Issue. In a representative browser fixture the alphanumeric value became empty while a numeric leading-zero value remained intact. The actual Joomla form, persistence and shipping rate matching were not tested. No duplicate comment was added.
+- CODE-106 and CODE-108 remain private security holds; no authorized private reporting channel was identified. CODE-101, CODE-104–105 and CODE-107–110 retain earlier partial records and require deeper source/Issue and runtime review. The group is **partial**.
+- Issue-sync tests passed; five CSVs parsed with unique IDs; `git diff --check` passed with line-ending warnings. Earlier coverage remains 161/161 inventory pages with partial records and 0/161 fully approved; 173/199 original findings have partial records, not completed reviews. Core HEAD `2e2889680244db64b9e9f64da29608e02f543a70`; documentation HEAD `5fda0904d762a466afcb3c7d400ad8d0ab1492cb`. Continue at CODE-111 and return to outstanding limitations; this checkpoint is not completion.
+
+## Checkpoint - CODE-111 through CODE-120 (ACTIVE; partial)
+- CODE-112 / #168: actual current recursive controller with synthetic model, session and application doubles showed the first of two recipients but not the second, emitted four warnings, and advanced the progress counter to three. No actual mail or database was used.
+- CODE-115 / #171: actual current table validation with a stubbed parent replaced an existing, null and zero date after parent success; a failed-parent control preserved the old date. No Joomla save or storefront was exercised.
+- CODE-113 / #169 and CODE-114 / #170: rechecked toolbar, controller, dispatcher and rendered-selection source and existing Issue wording; earlier isolated evidence was not rerun and full Joomla dispatch remains unverified. No duplicate Issue comments were added.
+- Remaining records in this group retain earlier partial evidence; CODE-119 remains a private security hold. No private security details were published. The group is not complete and needs the individual source, regression and runtime checks recorded in the register.
+- Counts remain 161/161 inventory pages with partial entries and 0/161 fully approved; 173/199 original code findings have partial entries, not completed reviews. Core HEAD `2e2889680244db64b9e9f64da29608e02f543a70`; documentation HEAD `5fda0904d762a466afcb3c7d400ad8d0ab1492cb`. Continue with CODE-121 through CODE-130 and return to outstanding partial work.
+
+## Checkpoint - CODE-121 through CODE-130 (ACTIVE; partial)
+- CODE-121: rechecked the four view namespaces and MVC provider prefix; actual Joomla resolution and upgrade remain unverified.
+- CODE-122: actual current shopper-group table with input, filesystem and parent doubles returned successful storage and assigned the filename for both failed and successful simulated uploads. Real upload and persistence remain untested.
+- CODE-123: actual postal-code model with table and parent doubles emitted two warnings for an omitted endpoint and none for an empty endpoint; both controls performed one simulated save. Real Joomla submission remains untested.
+- CODE-124: the extracted current country-change handler executed in an isolated JavaScript VM without invoking the jQuery sentinel; no Joomla browser interaction was tested.
+- CODE-125 and CODE-126: reran `php tests\unit\fieldgroups-ordering.php` successfully with doubles; the earlier fixes and open/closed Issue discrepancies remain subject to the existing UAT limitations.
+- CODE-127, CODE-128 and CODE-130 were source-rechecked only; prior isolated reproductions were not rerun. CODE-129 remains a private security hold, and CODE-130's potential security concern remains private. Do not treat this group as complete.
+- The individual-review CSV parsed with 194 unique IDs and 11 columns; `git diff --check` passed with a line-ending warning. No Core changes, Issue writes or runtime tests occurred in this group. Counts remain 161/161 inventory pages with partial entries and 0/161 fully approved; 173/199 original findings have partial entries, not completed reviews. Continue with CODE-131 through CODE-140 and revisit every outstanding partial group.
+
+## Checkpoint - CODE-131 through CODE-140 (ACTIVE; partial)
+- CODE-131: actual current shipping-rate controller with input, model and redirect doubles emitted two undefined-key warnings and four warnings in total on pickup-shaped input; the rate-shaped control emitted none. Persistence and Joomla were not tested.
+- CODE-132: both actual shipping-box renderers with helper and layout doubles rendered IDs 1/2/4 for priorities 1/1/2/2, only ID 1 for 1/2/3, and all IDs for 1/1/1. This confirms the transition behavior without deciding intended priority policy; checkout, database and carrier were not tested.
+- CODE-133 through CODE-136 and CODE-138 through CODE-140: inspected the relevant source again, but did not rerun their previous isolated fixtures or exercise provider/checkout runtime. CODE-137 remains a private security hold. No public security details or new Issue comments were added.
+- This group remains partial. Counts remain 161/161 inventory pages with partial entries and 0/161 fully approved; 173/199 original code findings have partial entries, not completed reviews. Continue with CODE-141 through CODE-150 and revisit all incomplete groups.
+
+## Checkpoint - CODE-141 through CODE-150 (ACTIVE; partial)
+- CODE-142: actual pre-store handler with synthetic responses and parameter doubles mapped `Delivered` to null, and `Delevered` and `Picking` to their configured values. An initial fixture failed because the plugin constructor required arguments; the corrected constructor-free fixture passed. The real provider status spelling and event dispatch remain unverified.
+- CODE-144: actual similar-tags entry and helper with a forwarding cache stub raised a `count(null)` TypeError for an excluded synthetic route. Installed Joomla cache and storefront were not exercised.
+- CODE-146: current manufacturer slider layout with service doubles raised `DivisionByZeroError` for zero and rendered an empty slider at one. Real module configuration and other layouts were not rerun.
+- CODE-148: actual mega-menu sort helper with synthetic nested categories produced ascending names at both levels when descending was requested, and retained ordering 2/1 for ascending Ordering. Actual category query and storefront remain untested.
+- CODE-149 / #202: actual local Twig template in non-strict mode omitted the empty-cart link regardless of setting; strict mode raised an undefined-variable exception. Populated-cart controls rendered links. After verifying the three cited sources unchanged since the earlier revision, dry-run, controlled Issue comment, sync tests and idempotent reconciliation succeeded. Actual Joomla Twig strictness and alternate layouts remain unverified.
+- CODE-141, CODE-143, CODE-145, CODE-147 and CODE-150 were source-rechecked only; prior fixtures, real database and provider behavior were not rerun. Group remains partial. Counts remain 161/161 inventory pages with partial entries and 0/161 fully approved; 173/199 original findings have partial entries, not completed reviews. Continue with CODE-151 through CODE-160, then revisit the remaining partial groups and pages.
+
+## Checkpoint - CODE-151 through CODE-160 (ACTIVE; partial)
+- CODE-151 / #204: actual helper with synthetic query data returned null with one warning for id only, zero for catid only, 42 when both were 42, and zero for neither. Real Joomla menu shapes remain unverified. Verified unchanged source, then dry-ran and synchronized qualified evidence; the follow-up dry-run was unchanged.
+- CODE-155: the actual Facebook video layout and parameter stub followed by a paragraph were parsed by libxml with the paragraph inside the blockquote. Browser SDK and Joomla runtime remain untested.
+- CODE-156: actual current line counter returned 13 physical lines for a synthetic header and multiline CSV record; `fgetcsv` returned two records and the progress formula estimated two chunks. The temporary input was removed; actual importer and UI remain untested.
+- CODE-153, CODE-154 and CODE-157 through CODE-160 were source-rechecked only; prior reproductions were not rerun. CODE-152 retains earlier partial evidence and needs further source and runtime investigation. Do not treat this group as complete.
+- This checkpoint preserves ACTIVE status. Counts remain 161/161 inventory pages with partial entries and 0/161 fully approved; 173/199 original findings have partial entries, not completed reviews. Continue with CODE-161 through CODE-170, then return to partial groups and individual pages.
+
+## Checkpoint - CODE-161 through CODE-170 (ACTIVE; partial)
+- CODE-164 and CODE-166: actual coupon, voucher and order-discount list renderers with config/view doubles raised errors for synthetic null or numeric start and end dates respectively; formatted-date controls rendered and coupon/voucher zero dates rendered empty. Actual data and Joomla UI remain untested.
+- CODE-165: actual coupon and voucher save models and date-range trait with Joomla and parent doubles rejected start-only and reversed ranges, and accepted end-only, empty and ordered ranges. Persistence, intended open-ended semantics and redemption remain unverified.
+- CODE-167: actual newsletter controller with config, input and session doubles raised `ValueError` before queueing for batch size -1; size 2 produced two chunks. No mail or Joomla dispatch was exercised.
+- CODE-161 through CODE-163 and CODE-169 through CODE-170 were source-rechecked only; prior fixtures and actual checkout/database remain untested. CODE-168 remains a private security hold. No public security details or new Issue comments were added.
+- Group remains partial. Counts remain 161/161 inventory pages with partial entries and 0/161 fully approved; 173/199 original findings have partial entries, not completed reviews. Continue with CODE-171 through CODE-180, then revisit the outstanding partial groups and individual pages.
+
+## Checkpoint - CODE-171 through CODE-180 (ACTIVE; partial)
+- CODE-171 and CODE-172: actual promotion removal methods with cart/discount doubles raised an undefined-key warning converted to an exception for a final award; removing a middle award produced idx-bounded products 10/20/20 while product 30 remained beyond idx. Actual checkout and persistence remain untested.
+- CODE-176: actual search Twig layout rendered no custom-field selector with enabled setting and either synthetic populated or empty field data. Real helper data and Joomla rendering remain untested.
+- CODE-179: actual suggestion cache method in a Node VM raised `TypeError` for a synthetic substring result without a product number; supplying the number avoided the error. Browser AJAX and initialization remain untested.
+- CODE-173, CODE-175, CODE-177, CODE-178 and CODE-180 were source-rechecked only; prior fixtures, actual MySQL and Joomla/browser behavior were not rerun. CODE-174 remains a private security hold. No public security details or new Issue comments were added.
+- Group remains partial. Counts remain 161/161 inventory pages with partial entries and 0/161 fully approved; 173/199 original findings have partial entries, not completed reviews. Continue with CODE-181 through CODE-190, then revisit the outstanding partial groups and individual pages.
+
+## Checkpoint - CODE-181 through CODE-190 (ACTIVE; partial)
+- CODE-181 and CODE-182: actual wizard save with input/session doubles retained the old canonical registration introduction, stored the new text under an alternate key, then raised an undefined-key warning converted to exception for missing VATREMOVE before redirect. Joomla navigation, final configuration and storefront remain untested.
+- CODE-185: actual tax-rate table with database/input/parent doubles returned true for first-false second-true insert results and false for first-true second-false. Real driver and transaction behavior remain untested.
+- CODE-186: current extracted reset script with translation placeholders and mocked HTTP 200, 403 and 500 responses displayed the same success alert. No request or browser was used.
+- CODE-188: actual gift-card table with filesystem/input/parent doubles simulated deletion of both previous images and assigned both replacement names despite failed upload results; the successful-upload control also returned success. No real files or database were modified.
+- CODE-187 was source-rechecked only. CODE-183, CODE-184, CODE-189 and CODE-190 remain private security holds; no security details were published. Group remains partial.
+- Counts remain 161/161 inventory pages with partial entries and 0/161 fully approved; 173/199 original findings have partial entries, not completed reviews. Continue with CODE-191 through CODE-199, then revisit the outstanding partial groups and individual pages.
+
+## Checkpoint - CODE-191 through CODE-199 (ACTIVE; partial)
+- CODE-192: actual cart layout with synthetic empty cart and config doubles selected the extended branch for declared default `1`, and the corresponding branches for `simple` and `extended`. Real module binding, saved settings and refresh are untested.
+- CODE-193: actual Facebook Like layout emitted synthetic `0`, `false` and `true` unchanged in `data-share`; provider interpretation and Joomla form binding are untested.
+- CODE-197: actual category tree helper with query doubles and two synthetic id-only rows produced one entry and fourteen warnings. Real database and Joomla rendering remain untested.
+- CODE-191, CODE-194, CODE-195 and CODE-198 were source-rechecked only; prior fixtures, real MySQL and provider behavior were not rerun. CODE-196 and CODE-199 remain private security holds; no security details were published. This group remains partial.
+- Counts remain 161/161 inventory pages with partial entries and 0/161 fully approved; 173/199 original findings have partial entries, not completed reviews. Revisit outstanding partial groups and individually review further documentation pages in groups of five; do not treat these checkpoints as approval.
+
+## Checkpoint - five module pages (ACTIVE; partial)
+- Re-read the complete Price Filtering, Similar Tags, Product Compare, Mega Menu and redMASSCART pages and their listed source paths; the page register specifies exact methods and remaining gaps. None is approved as a complete individual review or Joomla runtime verification.
+- Improved guidance on price boundaries and candidate ordering, empty similar-tag results, comparison settings, multiple Mega Menu instances and mass-cart redirects.
+- New CODE-221 / #266: actual Mega Menu helper with synthetic menu and category stubs reused the first menu for a same-category second instance; a different-category control returned its own menu. Joomla rendering and end-level effects remain untested. Distinct from #201 and #204 after reviewing their root causes; synchronization dry-run, creation and subsequent unchanged dry-run succeeded.
+- The issue-sync tests passed. The repository CSV parser validated unique IDs and column counts: 162 page-register rows, 263 Core findings, 195 individual finding records, 264 ledger rows and 539 triage rows. `git diff --check` passed with a pre-existing line-ending warning. Python was unavailable; Node validation was used instead.
+- Core HEAD `2e2889680244db64b9e9f64da29608e02f543a70`; Graphify index `647c0dc795265544ea000acb0c9217da609db544` is stale, though the inspected module paths compared unchanged. Graph results cannot establish complete caller or test coverage. No Core changes, commits, pushes or publication occurred; no Joomla, browser, database or production runtime was exercised.
+- Original inventory progress remains 0/161 fully approved (0%); 173/199 original findings have partial records, not completed reviews. Continue with the next individual pages and return to all outstanding partial reviews; private security holds remain blocked.
+
+## Checkpoint - next five module pages (ACTIVE; partial)
+- Re-read Products, Product Tab, Discount, Multi Currencies and Manufacturer Scroller and the source paths recorded for each in the individual register. Added qualified guidance about product-selection ordering, guest shopper groups, currency selector filtering and multiple manufacturer media. These pages remain partial; no Joomla runtime was exercised.
+- New CODE-222 / #267 investigates duplicate manufacturer slides when a manufacturer has multiple published media rows. An equivalent isolated SQLite query returned manufacturer IDs 1 and 1 under a limit of two; the actual Joomla query, data and storefront were not run. Distinct from #198 and #199; Issue dry-run, creation and unchanged follow-up succeeded.
+- Issue-sync tests passed; the repository CSV parser validated unique IDs and column counts: 162 page rows, 264 Core findings, 196 individual finding records, 265 Issue ledger rows and 540 triage rows. `git diff --check` passed for this batch. Core HEAD remains `2e2889680244db64b9e9f64da29608e02f543a70` and the Core worktree is clean.
+- Original inventory progress remains 0/161 fully approved (0%); 173/199 original findings have partial records, not completed reviews. Keep ACTIVE and continue the next batch; all partial pages and findings require further investigation.
+
+## Checkpoint - third five module pages (ACTIVE; partial)
+- Re-read Who Bought, Free Shipping, module/plugin installation, Newsletter and Shopper Group Product with the source paths and methods listed in their individual records. Improved qualified price, installation, redirect and VAT guidance; no page was fully approved.
+- CODE-223 / #268 investigates the configured free-shipping rate ID being omitted from the AJAX refresh call. The module entry, cart response and client update were traced in source; Joomla, browser, checkout and actual rate selection remain untested. Its root cause differs from #163, #238 and #251; controlled synchronization and unchanged follow-up passed.
+- Issue-sync tests and CSV structure/unique-ID validation passed: 162 page rows, 265 Core findings, 197 individual finding records, 266 Issue ledger rows and 541 triage rows. `git diff --check` passed for this batch; Core HEAD remains `2e2889680244db64b9e9f64da29608e02f543a70` and the Core worktree is clean.
+- Original inventory progress remains 0/161 fully approved (0%); 173/199 original findings have partial records, not completed reviews. Keep ACTIVE, continue the next group and preserve the private security holds.
+
+## Checkpoint - fourth five module pages (ACTIVE; partial)
+- Re-read Search, Shopper Group Logo, Shopper Group Category, Login Greeting and the module overview; source paths and methods and unresolved coverage are recorded per page. Clarified search keyword click behavior, URL versus component popup settings, billing-name precedence and incomplete overview coverage. No page is approved as a complete review.
+- The page-register parser verified 162 unique records and 11 columns; `git diff --check` passed with existing line-ending warnings. Core HEAD remains `2e2889680244db64b9e9f64da29608e02f543a70` and the Core worktree is clean. No Joomla runtime, browser, multi-user caching or security validation was performed.
+- Original inventory progress remains 0/161 fully approved (0%); 173/199 original findings have partial records, not completed reviews. Continue with the remaining individual pages and return to these partial reviews. Security holds remain private.
+
+## Checkpoint - cart, category, Facebook, bank transfer and pickup (ACTIVE; partial)
+- Re-read all five pages and source listed in the individual register. Clarified the shared payment helper's two-decimal rounding and discount cap, and that pickup-name validation is client-side. Existing cart, category and Facebook guidance already described the behavior checked in this pass.
+- The category entry uses `mod_dir` for alternate-style includes without assigning it in the module directory. This is a lead, not a confirmed issue: inspect the actual Joomla include scope and reproduce before deciding whether it is distinct from existing findings. Fetching the Joomla dispatcher source failed due to proxy resolution; continue with other work and retry through an available source.
+- Page-register validation passed for 162 unique records and 11 columns; `git diff --check` passed with existing line-ending warnings. Core HEAD `2e2889680244db64b9e9f64da29608e02f543a70` remains clean. No Joomla, provider, payment or shipping runtime was exercised.
+- Original inventory progress remains 0/161 fully approved (0%); 173/199 original findings have partial records, not completed reviews. Keep ACTIVE; continue other individual pages and return to all partial reviews and private security holds.
+
+## Checkpoint - five plugin pages (ACTIVE; partial)
+- Re-read EAN Transfer, Shipper, Product Image Zoom, GLS update and plugin overview with the source paths recorded in their individual entries. Clarified an empty Shipper lookup, the zoom script's thumbnail naming assumption and the incomplete plugin overview. EAN and GLS update already contained the checked cautions.
+- CODE-224 / #269: the actual product zoom initializer threw for a synthetic custom image path and a missing `src` with DOM doubles; the parser matched a synthetic standard thumbnail. This does not establish real Joomla image URLs or browser behavior. Open and closed Issues were checked for zoom-related titles and bodies, dry-run and controlled creation passed, and a subsequent dry-run was unchanged.
+- Issue-sync tests passed; all five CSVs parsed with unique IDs: 162 page records, 266 Core findings, 198 individual finding records, 267 Issue ledger rows and 542 triage rows. `git diff --check` passed with existing line-ending warnings. Core HEAD `2e2889680244db64b9e9f64da29608e02f543a70` remains clean; no Joomla, browser, provider or shipping runtime was tested.
+- Original inventory progress remains 0/161 fully approved (0%); 173/199 original findings have partial records, not completed reviews. Keep ACTIVE; continue the next batch and revisit all partial pages and findings.
+
+## Checkpoint - payment and accounting pages (ACTIVE; partial)
+- Re-read 2Checkout, Bambora, Bao Kim, Billy and ePay with the source paths recorded for each page. Clarified Bambora's published-status filtering difference; other existing guidance accurately covers the behavior inspected in this pass. Private payment-security holds remain unresolved and no sensitive details were published.
+- Page-register validation passed for 162 unique records and 11 columns; `git diff --check` passed with existing line-ending warnings. Core HEAD `2e2889680244db64b9e9f64da29608e02f543a70` remains clean. No Joomla checkout, provider, accounting system or production environment was exercised.
+- Original inventory progress remains 0/161 fully approved (0%); 173/199 original findings have partial records, not completed reviews. Keep ACTIVE, continue the next group and return to all partial reviews.
+
+## Checkpoint - four payment pages and GLS Business (ACTIVE; partial)
+- Re-read GiroPay, PayGate, Paymill, Money Booker and GLS Business against the source listed in each page record. Clarified that Paymill's Sandbox setting alone does not establish a provider test transaction and that GLS Business returns no choices on an empty rate lookup. No page is fully approved; private payment-security holds remain unresolved.
+- Page-register validation passed for 162 unique records and 11 columns; `git diff --check` passed with existing line-ending warnings. Core HEAD `2e2889680244db64b9e9f64da29608e02f543a70` remains clean. No Joomla checkout, provider, shipping or production environment was exercised.
+- Original inventory progress remains 0/161 fully approved (0%); 173/199 original findings have partial records, not completed reviews. Keep ACTIVE and proceed to the next batch; all partial reviews require follow-up.
+
+## Checkpoint - shipping integrations and Relatel (ACTIVE; partial)
+- Re-read Default GLS, Giao Hang Nhanh, PostNord pickup and shipment, the historical PostDanmark redirect and Relatel against the source listed in each record. Documented that Giao Hang Nhanh's uninstall SQL deletes four specifically named redSHOP field definitions. The other inspected guidance already describes relevant limitations; no page is fully approved.
+- Page-register validation passed for 162 unique records and 11 columns; `git diff --check` passed with existing line-ending warnings. Core HEAD `2e2889680244db64b9e9f64da29608e02f543a70` remains clean. No uninstall, Joomla checkout, provider, labels or production activity was performed.
+- Original inventory progress remains 0/161 fully approved (0%); 173/199 original findings have partial records, not completed reviews. Keep ACTIVE and continue the next batch; review field-data dependencies and all other partial items separately.
+
+## Checkpoint - CODE-111 through CODE-120 (ACTIVE; partial)
+- Source and issue-level records for ordinary findings CODE-111–118 and CODE-120 are in `CODE-INDIVIDUAL-REVIEW.csv`; previous fixtures and evidence were not uniformly rerun. CODE-119 remains a private security hold, not an individually completed review. No security details were published.
+- CODE-117: the separate failed-save/send path overlaps existing CODE-034 / #103; no normal toolbar entry for `question.send` was found in the inspected question view and template. Joomla dispatch and the save-and-send failure path remain unverified.
+- CODE-118 / #174: the actual name helper with database doubles returned a single space and two PHP warnings when both queries returned null. Source also shows that subscription table store calls it when the submitted name is empty; actual save and persistence remain unverified. Dry-run, controlled Issue update and unchanged follow-up passed.
+- Issue-sync tests and five-register unique-ID checks passed (162 page rows, 266 Core findings, 198 individual finding rows, 267 Issue ledger rows, 542 triage rows); `git diff --check` passed with pre-existing line-ending warnings. Core HEAD `2e2889680244db64b9e9f64da29608e02f543a70` was clean on recheck. No real Joomla, database or mail runtime was exercised.
+- Original inventory progress remains 0/161 fully approved (0%); 173/199 original findings have partial records, not completed reviews. Continue with the next group and return to missing source, test and private-review evidence; `C:\Github\redSHOP-internal` is unavailable.
+
+## Checkpoint - CODE-121 through CODE-130 (ACTIVE; partial)
+- Rechecked source associated with the nine ordinary findings and their existing individual records. CODE-129 remains an unresolved private security hold, not an individually completed review. Prior Issue comparisons and fixtures are identified in the individual register; not all were repeated during this pass.
+- `php tests\unit\fieldgroups-ordering.php` passed with doubles for the field-group selector and ordering changes (CODE-125/126). The existing #180 owner-comment/status discrepancy remains for human UAT; no Issue status was changed.
+- CODE-130: self-pickup locations share the shipping-rates view and task rather than a separate location controller. `php tests\unit\shippingrates-pagination.php` passed with doubles, but its deletion and copy checks assert redirects with synthetic `id` arrays, not actual grid submission or dispatch. The copy selection input is a separate unverified lead; review its actual Joomla request behavior and existing CODE-074 / #134 before considering further reporting. Potential security aspects remain private.
+- Joomla UI, browser, MySQL and installation/upgrade behavior remain unverified. Original inventory progress remains 0/161 fully approved (0%); 173/199 original findings have partial records, not completed reviews. Continue with CODE-131–140 and return to outstanding private and runtime work.
+
+## Checkpoint - CODE-131 through CODE-140 follow-up (ACTIVE; partial)
+- Re-read the ordinary findings' source paths: shipping-rate and pickup save; both box renderers and box query; wrapper sort metadata; GLS lookup and address hook; self-pickup rates and shared renderer; FedEx and USPS rate guards; and Giao Hang Nhanh order event guard. Existing individual records retain prior fixture outcomes; those fixtures were not rerun in this follow-up.
+- CODE-132: the source query orders by priority without an explicit tie-breaker, so the omitted member of a tied group can depend on database ordering; real ordering and intended policy remain unverified. CODE-137 remains on private security hold, not a completed review. No Issue or security information was published in this follow-up.
+- Runtime and progress limitations remain unchanged: no Joomla checkout, provider, browser or MySQL integration exercised; 0/161 fully approved (0%) and 173/199 original findings have partial records, not completed reviews. Continue with CODE-141–150 and revisit incomplete groups.
+
+## Checkpoint - CODE-141 through CODE-150 follow-up (ACTIVE; partial)
+- Re-read Giao Hang Nhanh creation, cancellation, status and weight paths; similar-tags helper and entry; manufacturer, Who Bought and Product Tab layouts; mass-cart helper; Mega Menu sort; and cart module entry, calculator, layout, Twig and relevant manifests. Prior isolated fixtures were not rerun in this follow-up; the existing individual records retain their earlier test outcomes and limitations.
+- CODE-150 / #203: source tracing additionally established that `Cart::modifyCalculation` and `Discount::modifyDiscount` derive the displayed VAT-split discount from the same three cart, coupon and voucher components used by the module total calculator. Runtime sequencing and displayed-instance parameter selection remain unverified. Dry-run, controlled Issue comment and unchanged follow-up passed; the issue remains an investigation.
+- Issue-sync tests and five-register unique-ID checks passed (162 page rows, 266 Core findings, 198 individual finding rows, 267 Issue ledger rows, 542 triage rows); `git diff --check` passed with pre-existing line-ending warnings. No Joomla, provider, browser or real database runtime was exercised.
+- Original inventory progress remains 0/161 fully approved (0%); 173/199 original findings have partial records, not completed reviews. Continue with CODE-151–160 and all outstanding private, source and runtime follow-up.
+
+## Checkpoint - CODE-151 through CODE-160 follow-up (ACTIVE; partial)
+- Re-read the Mega Menu category mapping; product menu helper; Xmap category query; logo and Facebook video layouts; shared CSV import line counting and splitting; category filter inputs and portal helper; sample reminder scheduling; and VAT configuration input. Existing individual records retain prior fixture outcomes; those older fixtures were not rerun here.
+- CODE-225 / #270: actual second reminder attempted a stubbed failed send on its synthetic due date, then made no mail attempt the following day; the actual third reminder also made no next-day attempt. This investigates exact-date eligibility, distinct from #212's first-reminder units and #85's coupon-expiry arithmetic. Compared open and closed Issue titles/bodies, inspected both flagged Issues, ran dry-run, created the Issue and confirmed an unchanged subsequent dry-run. No real mail, database or Joomla cron was used. Added a concise caution to the product configuration guide.
+- Issue-sync tests passed. Repository CSV parser verified shapes and unique IDs: 162 page rows, 267 Core findings, 199 individual finding rows, 268 Issue ledger rows and 543 triage rows. `git diff --check` passed with pre-existing line-ending warnings. Python was unavailable; the repository's Node CSV parser was used instead.
+- Original inventory progress remains 0/161 fully approved (0%); 173/199 original findings have partial records, not completed reviews. The additional finding is not part of the original 199. Continue with CODE-161–170 and all outstanding private, source and runtime follow-up.
+
+## Checkpoint - CODE-161 through CODE-170 follow-up (ACTIVE; partial)
+- Re-read stockroom delivery form, validation and helper/query paths; coupon, voucher and order-discount date render/save paths; newsletter batch configuration and sender; mass-discount deletion; and promotion free-shipping application and removal. Previous synthetic fixture results are retained in the individual register and were not rerun here.
+- CODE-168 remains an unresolved private security hold, not a completed review. No new Issue or public security details were published. The checked source continues to support the existing scoped ordinary findings; actual Joomla, database, checkout and mail behavior remains unverified.
+- Original inventory progress remains 0/161 fully approved (0%); 173/199 original findings have partial records, not completed reviews. Continue with CODE-171–180 and return to missing source, test and private-review evidence.
+
+## Checkpoint - CODE-171 through CODE-180 follow-up (ACTIVE; partial)
+- Re-read promotion removal, price-filter state and layout, search module form and helper, search exclusion and suggestion paths, accessory price lookup and VAT wizard controls/controllers. Existing fixture results were not rerun except for the new callback investigation below. CODE-174 remains a private security hold, not a completed review. Actual Joomla routing, SQL, checkout and browser behavior remain unverified.
+- New CODE-226 / #271: category changes call the manufacturer lookup even if its optional destination is hidden. Actual source and shipped minified callbacks with synthetic DOM doubles threw for absent destinations with both empty and populated responses; controls with a destination hid or displayed it. Compared open and closed issues including #229 and #257, ran the issue-sync tests and dry-run, created #271 and confirmed unchanged reconciliation. Added a qualified note to the search guide and updated its partial source register.
+- Quality check: repository CSV parser accepted all four affected finding registers and found one CODE-226 in each; `git diff --check` passed with pre-existing line-ending warnings. No real Joomla, browser, AJAX or database was exercised.
+- Original inventory progress remains 0/161 fully approved (0%); 173/199 original findings have partial records, not completed reviews. CODE-226 is additional to the original inventory. Continue with CODE-181–190 and return to the missing source, tests and private-review evidence.
+
+## Checkpoint - CODE-181 through CODE-190 follow-up (ACTIVE; partial)
+- Re-read wizard save/finish and registration controls, tax-rate storage, order-reset feedback, ePay options and gift-card image replacement. CODE-183, CODE-184, CODE-189 and CODE-190 remain unresolved private holds. Previous synthetic fixtures were not rerun; no Joomla, database, filesystem upload or provider runtime was exercised.
+- Traced CODE-181 further to the default registration view and layout. The layout calls translation keys for both introductions rather than directly reading their configured values; the inspected view does not map those settings to the language keys. Recorded the separate source-only investigation as CODE-227 / #272 after comparing open and closed Issues, dry-run, creation and unchanged reconciliation. Qualified the User configuration guide and updated its partial source register; actual Joomla language overrides, persistence and rendering remain unverified.
+- Quality check: repository CSV parser accepted five affected registers with unique IDs; `git diff --check` passed with pre-existing line-ending warnings.
+- Original inventory progress remains 0/161 fully approved (0%); 173/199 original findings have partial records, not completed reviews. CODE-227 is additional to the original inventory. Continue with CODE-191–199 and return to missing source, tests and private-review evidence.
+
+## Checkpoint - CODE-191 through CODE-199 follow-up (ACTIVE; partial)
+- Re-read free-shipping rate query and threshold handling, cart and Facebook manifest defaults, category menu sort and dTree query, category link-list result mapping, and PayPal currency manifest/form. CODE-196 and CODE-199 remain unresolved private holds. Existing recorded synthetic fixtures were not rerun and no new issue was created for these findings.
+- Actual Joomla form binding, supported database query execution, browser behavior, shipping checkout, payment conversion and provider responses remain unverified. Category link-list helper also uses a global tree cache; subsequent inspection found the module entry clears that tree for each execution. Any remaining indirect-caller implications require separate investigation rather than assuming the unrelated Mega Menu cache report covers it.
+- Original inventory progress remains 0/161 fully approved (0%); 173/199 original findings have partial records, not completed reviews. Additional CODE-226 and CODE-227 are outside the original inventory. Continue individual source work and unresolved private and runtime follow-up.
+
+## In-progress page batch — category menu (ACTIVE; partial)
+- Re-read the complete category-menu page, module entry and manifest and the helper's tree paths. The entry clears the cached tree at each module execution, so the earlier global-cache lead is not established for ordinary independent instances.
+- Followed the previously recorded undefined `mod_dir` lead. Actual module entry with Joomla stubs and dTree selected failed to load the style when the variable was absent; inspected standard Joomla 5.4 development-branch dispatcher source does not supply that variable. Installed Joomla 5 and 6 dispatch and the other styles remain untested. Created CODE-228 / #273 after open/closed Issue comparison, dry-run and unchanged reconciliation; updated the guide and partial source record.
+- CSV parser accepted all five affected registers with unique IDs; `git diff --check` passed with pre-existing line-ending warnings. The isolated temporary probe was deleted. The page batch is not finished; continue with four more pages and retain all source/runtime limitations. Original inventory remains 0/161 fully approved (0%); 173/199 findings have partial records.
+
+## Checkpoint - five module pages follow-up (ACTIVE; partial)
+- Re-read category menu, manufacturer scroller, free-shipping, cart module and price-filter pages and relevant entry/manifest/layout/helper/model source. Added the qualified category tree loading warning tied to #273 and explained free-shipping's default-country and conditional state-filter behavior; the other guides already covered the rechecked facts. Updated individual source records with the inspected scope and explicit no-change reasons.
+- All five remain partial: alternate styles, actual Joomla rendering, database behavior, cart and checkout paths, browser interactions and private security matters are not fully verified. Existing synthetic tests were not rerun except the category entry probe documented above. This is a follow-up batch, not five fully approved reviews.
+- Quality check: five affected CSV registers parsed with unique IDs; `git diff --check` passed with pre-existing line-ending warnings. Original inventory remains 0/161 fully approved (0%); 173/199 original findings have partial records. Continue with the next individual batch.
+
+## Checkpoint - search, comparison, Mega Menu, Facebook and zoom follow-up (ACTIVE; partial)
+- Re-read all five pages and inspected their relevant module/plugin entry, form and selected layouts/helpers. Search was updated earlier in this run for #271; Mega Menu now documents its empty-category-list return; zoom now states the frontend nonzero-product-ID condition. Facebook's existing warnings remain appropriate within the inspected scope; multi-instance resize and share fallback are unverified leads, not new findings.
+- Actual `CompareProduct` with synthetic state and a session stub returned numeric positions instead of stored keys and did not remove a product without a category; exact-category removal succeeded. Recorded CODE-229 / #274 after open/closed comparison with #252, dry-run, creation and unchanged reconciliation; updated the comparison guide and source record. No actual Joomla session or client was exercised.
+- All five pages remain partial: browser, Joomla, provider, session and accessibility behavior and full dependency paths are not verified. Issue-sync tests passed; five CSV registers parsed with unique IDs and `git diff --check` passed with pre-existing line-ending warnings.
+- Original inventory remains 0/161 fully approved (0%); 173/199 original findings have partial records. Continue with the next individual batch; do not treat these follow-ups as completed reviews.
+
+## Checkpoint - VAT and order-discount follow-up (ACTIVE; partial)
+- Re-read the VAT overview, tax group, tax rate, currency and order-total discount pages. Continued the previously started tax form/model/table/lookup trace and traced the order-discount selector, shopper-group collection and cart calculation and configuration branches. The tax-group deletion guard depends on entity lookup; complete shared dispatch, pagination and database behavior remain to be verified. The VAT and currency pages retain their earlier individually recorded caveats and limitations; no additional approval is implied.
+- Updated the order-total discount guide for the global enable switch, the existing-product-discount setting and the observed selection-order risk. Actual `Discount::getDiscount` with synthetic user and rule dependencies selected threshold 100 for order 50/150/100 and threshold 150 for order 50/100/150 at subtotal 200. The intended precedence and real database and checkout behavior are not established. Registered CODE-230, compared related open and closed issues through the synchronization workflow, ran a dry-run, created #275 and confirmed unchanged reconciliation.
+- Quality check: documented issue-sync tests passed; the repository CSV parser accepted 162 page rows, 272 Core findings, 204 individual-finding rows, 273 Issue-ledger rows and 548 triage rows with unique IDs. `git diff --check` passed with pre-existing line-ending warnings. The temporary synthetic probe was deleted. An initially attempted `node --test` was unsupported by local Node 12; the documented direct test command passed. No Joomla, MySQL or checkout runtime was exercised.
+- Original inventory remains 0/161 fully approved (0%); 173/199 original findings have partial records, not completed individual reviews. CODE-230 is additional to the original 199. Continue the next individual batch and revisit the incomplete tax, discount, finding and private-security paths; `C:\Github\redSHOP-internal` remains unavailable.
+
+## Checkpoint - destination and customization follow-up (ACTIVE; partial)
+- Re-read the complete customization overview, country, state, postal-code and currency pages. Rechecked sidebar routes and English labels; country and state forms, validators and list queries; phone-prefix and language selector helpers; postal-code form, views, field providers, controller, save model and query; and currency form, model, table and converter paths. Selected shipping-plugin references use address postal-code values; this is not a full shipping-consumer trace.
+- Existing article guidance already covers the facts checked in this pass, so no artificial article changes were made. Updated all five source-review records with actual inspected paths and explicit no-change reasons. Earlier synthetic fixtures were not rerun. Actual Joomla UI, address and shipping flows, provider behavior and database execution remain unverified.
+- Quality check: source-review register parsed as 162 unique records with 11 columns; `git diff --check` passed with pre-existing line-ending warnings. Original inventory remains 0/161 fully approved (0%); 173/199 original findings have partial records. Continue the next batch; all partial pages and private holds remain open.
+
+## Checkpoint - CODE-001 through CODE-010 follow-up (ACTIVE; partial)
+- Rechecked the COD handler, PayPal notification handler, documentation renderer, shared import/export paths, order export query, media deletion predicate, currency conversion, postal-code save and validation, order-item supplier mappings and product category-search paths. Prior isolated fixtures were not rerun. These source checks do not complete the individual finding reviews or any separate private security review.
+- CODE-010: two additional product templates offer the same old category-column value. The product view obtains data through the shared model; actual routes, submissions and SQL behavior of these templates remain unverified. Recorded this as a follow-up lead rather than asserting additional affected UI or publishing new Issue evidence.
+- Individual-finding register parsed as 204 unique rows with 11 columns; `git diff --check` passed with pre-existing line-ending warnings. No Joomla, MySQL, browser, filesystem concurrency or payment-provider runtime was exercised. Original progress remains 0/161 fully approved (0%); 173/199 original findings have partial records, not completed individual reviews. Continue with the next batch and revisit all unresolved source, testing and private-review work.
+
+## Checkpoint - CODE-011 through CODE-020 follow-up (ACTIVE; partial)
+- Rechecked stock-image rule queries, coupon-use boundary, promotion date and award preparation, order-status validation, quotation CSV routing/model selection, user tax-request filtering, newsletter subscription state and test-message construction. Prior isolated fixtures were not rerun; these checks do not constitute full individual reviews.
+- CODE-018 remains a private security hold, not a completed review. No new Issue or security information was published. Actual Joomla routing, database, checkout, mail delivery and provider behavior remain unverified.
+- Individual-finding register parsed as 204 unique rows with 11 columns; `git diff --check` passed with pre-existing line-ending warnings. Original inventory remains 0/161 fully approved (0%); 173/199 original findings have partial records. Continue with CODE-021 through CODE-030 and return to missing source, test and private-review evidence.
+
+## Checkpoint - CODE-021 through CODE-030 follow-up (ACTIVE; partial)
+- Rechecked category description formatting paths, product navigation, SEO placeholders and alias controls, Flatpay and Bambora manifest options, and the terms reset and user helper. Prior isolated fixtures were not rerun and these source checks are not complete individual reviews.
+- CODE-025, CODE-026 and CODE-027 remain unresolved private security holds; no sensitive details were published. Actual Joomla rendering, routing, form binding, payment providers and checkout remain unverified.
+- Individual-finding register parsed as 204 unique rows with 11 columns; `git diff --check` passed with pre-existing line-ending warnings. Original inventory remains 0/161 fully approved (0%); 173/199 original findings have partial records. Continue with CODE-031 through CODE-040 and revisit missing source, tests and private-review evidence.
+
+## Checkpoint - CODE-031 through CODE-040 follow-up (ACTIVE; partial)
+- Rechecked purchase and sample coupon-duration arithmetic, wizard welcome copy, dashboard aggregation, question save/send, cart module dispatcher dependency, Who Bought product query, Product Tab asset manifest and product robots selector. Prior fixtures were not rerun and these source checks are not complete individual reviews.
+- CODE-036 and CODE-037 remain private security holds; no sensitive details were published. Actual Joomla dispatcher, SQL, mail, filesystem, module installation and browser behavior remain unverified.
+- Individual-finding register parsed as 204 unique rows with 11 columns; `git diff --check` passed with pre-existing line-ending warnings. Original inventory remains 0/161 fully approved (0%); 173/199 original findings have partial records. Continue with CODE-041 through CODE-050 and revisit missing source, test and private-review evidence.
+
+## Checkpoint - CODE-041 through CODE-050 follow-up (ACTIVE; partial)
+- Rechecked the coupon threshold, Flatpay invoice classifier, SOAP initialization, guest-review captcha call, CSV splitter/reader and gift-card issuance/mail source. No prior fixture or Joomla/provider tests were rerun in this follow-up. CODE-042 through CODE-044 and CODE-046 remain private holds.
+- Cross-checked the gift-card coupon's one remaining use against the separate CODE-012/#69 guard and recorded the source-level connection under CODE-050; full issuance and redemption remain untested. Existing CODE-012 already notes this impact.
+- This is not completion of the individual reviews: caller, private, actual integration and regression-test coverage remain incomplete. Original inventory remains 0/161 fully approved (0%); 173/199 original findings have partial records. Continue with CODE-051 through CODE-060 and revisit the partial evidence.
+
+## Checkpoint - CODE-051 through CODE-060 follow-up (ACTIVE; partial)
+- Rechecked gift-card value formatting, voucher lookup and callers, voucher display/form, discount list searches, category assignment, price context and overlap validation, bulk price updates and medium form selectors. These are source follow-ups, not completed individual reviews.
+- `php tests\unit\prices-list.php` and `php tests\unit\attributeprices-list.php` passed with offline doubles/SQLite; they do not prove the real overlap validator or Joomla/MySQL runtime. CODE-052 includes a separate request-state security lead requiring authorized private review; no sensitive details were synchronized. No authorized private reporting channel is available.
+- Original inventory remains 0/161 fully approved (0%); 173/199 original findings have partial records. Continue with CODE-061 through CODE-070; revisit partial reviews and security holds when private review is possible.
+
+## Checkpoint - CODE-061 through CODE-070 follow-up (ACTIVE; partial)
+- Rechecked source for media reset, attribute deletion, attribute-set copy/save, postal-code filtering, currency duplicate validation and tax-rate joins/link. Existing CODE-062 requires private handling. Prior browser, SQL and model fixtures were not rerun; these checks do not complete the reviews.
+- Register validation: 204 unique finding rows with 11 columns; `git diff --check` passed with pre-existing line-ending warnings. Original inventory remains 0/161 fully approved (0%); 173/199 original findings have partial records. Continue with CODE-071 through CODE-080 and revisit incomplete evidence.
+
+## In progress - CODE-071 through CODE-080 (ACTIVE)
+- Re-read the complete Product Tab guide, module manifest, entry, helper, both layouts and English language strings for CODE-077; the existing guide and CODE-077 already record the switch-value discrepancy. Compared the row divisor and image/AJAX paths with existing CODE-146, CODE-209 and CODE-083 records rather than creating duplicate findings. No Joomla form, database or storefront runtime was exercised.
+- This group is incomplete. Next inspect CODE-071 through CODE-076 and CODE-078 through CODE-080 individually, compare their current Issues, and record any actual new evidence without promoting source spot checks to completed reviews. The request-state security lead recorded under CODE-052 remains blocked on an authorized private channel.
+
+## Follow-up - CODE-071 through CODE-080 (ACTIVE; partial)
+- Rechecked current date-boundary arithmetic, shipping-box ID search, shipping-method column fall-through, shipping-rate copy mapping, shipping-address link/controller selection, rating product link, Who Bought category query, user synchronization return and mail search predicates. Earlier browser/query/model fixtures and current Issue text were not rerun or fetched in this pass.
+- No completed-review status is claimed. Original inventory remains 0/161 fully approved (0%); 173/199 original findings have partial records. Continue with CODE-081 through CODE-090 and return to missing Issue comparison, fix/regression assessment and runtime/private evidence.
+
+## In progress - CODE-081 through CODE-090 (ACTIVE)
+- Extended the partial CODE-082 caller inventory with shipping export/rate, discount VAT and template/cart rendering source references. This does not establish complete calculation outcomes or financial impact; earlier helper stubs were not rerun and Issue #142 was not updated.
+- Group remains incomplete: continue individually with CODE-081 and CODE-083 through CODE-090, then quality-check the group. The original full-review counts remain unchanged.
+
+## Follow-up - CODE-081 through CODE-090 (ACTIVE; partial)
+- Rechecked template selection/cache and Product Tab nullable-template use, discount table binding, gift-card fallback, category copy/save, state rendering, postal validation and template storage. Existing Issue wording and historical fixtures were not rechecked in this pass; all individual reviews remain partial.
+- Register validation found 204 unique finding rows with 11 columns; `git diff --check` passed with pre-existing line-ending warnings. Original inventory remains 0/161 fully approved (0%); 173/199 original findings have partial records. Continue with CODE-091 through CODE-100 and revisit unresolved evidence.
+
+## Additional CODE-082 investigation (ACTIVE; partial)
+- Ran the actual exemption helper with synthetic input types and discovered a separate conditional security lead. Recorded only a nonsensitive reference under CODE-082; no public Issue or exploit details were created. Actual database result types, Joomla behavior and impact remain unverified; detailed review requires an authorized private channel.
+- Continue with CODE-091 through CODE-100 and other independent work. The original full-review counts remain unchanged.
+
+## Follow-up - CODE-091 through CODE-100 (ACTIVE; partial)
+- Rechecked attribute-set deletion, accessory row removal, measurement calculator paths and callers, stock save and stockroom identifier references. CODE-093 and CODE-100 remain private holds. The earlier calculator, browser and stock fixtures were not rerun and Issue bodies were not fetched in this pass.
+- Register validation found 204 unique finding rows with 11 columns; `git diff --check` passed with pre-existing line-ending warnings. This is not completion of the individual reviews: original inventory remains 0/161 fully approved (0%); 173/199 original findings have partial records. Continue with CODE-101 through CODE-110 and revisit unresolved evidence.
+
+## CODE-058 regression investigation (ACTIVE; partial)
+- Executed the actual current `PriceTable::check` using in-memory SQLite and Joomla doubles. An enclosing range and a self-edit enclosing a second row were accepted; contained and touching overlaps were rejected, and disjoint/same-record controls passed. Updated the finding and appended qualified evidence to #120 after a dry-run; subsequent dry-run was unchanged.
+- This fixture is not Joomla/MySQL or storefront verification. Attribute-price validation, zero-boundary policy and actual persistence remain outstanding; original full-review counts remain unchanged. Continue with CODE-101 through CODE-110.
+
+## Follow-up - CODE-101 through CODE-110 (ACTIVE; partial)
+- Rechecked related-product serialization/parser, quantity-selectbox references, shipping postal inputs and rate helper, wrapper pricing, all-products update and image upload paths. CODE-106 and CODE-108 remain private holds. Previous fixtures and Issue bodies were not rerun or fetched for this pass; all reviews remain partial.
+- `node docs-review\issue-sync.test.js` passed; the individual register parsed as 204 unique rows with 11 columns and `git diff --check` passed with pre-existing line-ending warnings. Original inventory remains 0/161 fully approved (0%); 173/199 original findings have partial records. Continue with CODE-111 through CODE-120.
+
+## Follow-up - CODE-111 through CODE-120 (ACTIVE; partial)
+- Rechecked image-layout branches, newsletter toolbar/grid and recipient progress, question date and mail paths, shared date formatting, newsletter name lookup and country-sort configuration. CODE-119 remains a private hold. Prior fixtures and current Issue text were not rerun or fetched in this pass.
+- Register validation found 204 unique finding rows with 11 columns; `git diff --check` passed with pre-existing line-ending warnings. These source checks do not complete the reviews. Original inventory remains 0/161 fully approved (0%); 173/199 original findings have partial records. Continue with CODE-121 through CODE-130.
+
+## Product Tab category context investigation (ACTIVE; partial)
+- Re-read the complete Product Tab guide, manifest, entry, helper, both layouts and English language strings. The actual helper with synthetic input returned product-view ID 7 as category 7; a category-view control returned 7 plus a stubbed child and a zero-ID control returned 0. The associated list query uses a nonzero result as a category filter; actual routing, database and storefront behavior remain unverified.
+- Added a qualified guide warning and registered CODE-231. Compared open #137: that issue concerns textual No being interpreted as enabled, while this finding occurs with adjustment enabled on a non-category view. After distinct comparison and dry-run, created #276 and confirmed unchanged reconciliation.
+- Issue-sync tests passed; the five registers parsed with unique keys (273 Core findings, 205 individual rows, 274 Issue-ledger rows, 549 triage rows, 162 page rows). The guide installation link target exists; `git diff --check` passed with pre-existing line-ending warnings. No full manual renderer, Joomla or browser was run.
+- Original inventory remains 0/161 fully approved (0%); 173/199 original findings have partial records. Continue with CODE-121 through CODE-130 and remaining page batches; CODE-231 is additional to the original 199.
+
+## Product Tab sale-price investigation (ACTIVE; partial)
+- The default tab layout reads a discount-layout variable absent from the inspected module entry and parent layout. The actual layout with synthetic prices 100 and 80 warned and displayed 80; non-sale and hidden-price controls produced no warnings. Inherited module scope, real Joomla error handling and sale-price presentation intent remain unverified. Fixture: `files/product-tab-price-probe.php` in this session.
+- Updated the Product Tab guide and registered CODE-232. Compared #254 (image arguments), #143 (AJAX template count) and #137 (textual switches); after dry-run created #277, fetched it and confirmed an unchanged subsequent reconciliation.
+- Issue synchronization tests passed. All five ledgers parsed with unique keys (274 Core findings, 206 individual rows, 275 Issue rows, 550 triage rows, 162 page rows); documentation `git diff --check` passed with existing line-ending warnings.
+- Original inventory remains 0/161 fully approved (0%); 173/199 original findings have partial records. CODE-232 is additional to that inventory. Continue genuinely individual reviews and remaining Product Tab pricing and cart helper traces; do not treat these partial investigations as completed reviews.
+
+## CODE-121–130 follow-up (ACTIVE; partial)
+- Re-read current source and fetched current Issues for CODE-121–128 and CODE-130; updated their individual records. #180 remains closed despite its owner comment requesting further UAT and an open status; no status was changed. #181 is closed with merged #245. CODE-129 remains a security hold requiring an authorized private channel; no sensitive details were disclosed.
+- `php tests\unit\fieldgroups-ordering.php` and `php tests\unit\shippingrates-pagination.php` passed. These do not verify actual Joomla selector behavior or deletion. Five ledgers parsed with unique keys; `git diff --check` passed with existing line-ending warnings.
+- Product Tab follow-up also documented the short-description parameter and price visibility gates from the entry, manifest, layout and partially traced price helpers. No actual Joomla, browser, checkout or database was exercised. The page and findings remain partial; original approved-page progress is still 0/161 (0%), and 173/199 original findings have partial records. Next: continue CODE-131–140 and remaining page reviews, preserving the private holds.
+
+## CODE-131–140 follow-up (ACTIVE; partial)
+- Re-read current source and fetched current Issues for CODE-131–136 and CODE-138–140; updated individual records without claiming complete reviews. CODE-137 remains on private security hold. CODE-132: both actual shipping-box renderers with synthetic dependencies returned IDs 1/2/4 for priorities 1/1/2/2 and 1 for 1/2/3; an equal-priority control returned all IDs. Fixture: `files/shipping-box-priority-probe.php` in this session. Query, actual layout system, checkout and intended priority policy remain unverified.
+- Updated CODE-132 handoffs and #186 through a dry-run and marked comment; fetched the comment and confirmed unchanged reconciliation. Issue-sync tests and unique-key checks for all five ledgers passed; `git diff --check` passed with existing line-ending warnings.
+- Original approved-page progress remains 0/161 (0%); 173/199 original findings have partial records, not completed individual reviews. Next: continue CODE-141–150, remaining page reviews and the Product Tab helper traces. No Joomla, browser, provider or database runtime was exercised.
+
+## CODE-141–150 follow-up (ACTIVE; partial)
+- Re-read current handler, module, cart and layout source and fetched #194–203; updated the individual rows with the source and Issue checks and explicitly marked prior fixtures not rerun. #201's existing comment already covers the missing Ordering comparator. These checks do not establish provider behavior, actual Joomla event dispatch, checkout totals or browser rendering; no finding was promoted to fully reviewed.
+- Five ledgers parsed with unique keys; `git diff --check` passed with existing line-ending warnings. No new runtime tests were run in this follow-up.
+- Original approved-page progress remains 0/161 (0%); 173/199 original findings have partial records. Next: continue CODE-151–160 and remaining individual page work, including Product Tab's incompletely traced cart and price dependencies.
+
+## CODE-151–160 follow-up (ACTIVE; partial)
+- Re-read current source and fetched #204–213, including #205's evidence comments; updated the individual rows with what was actually checked. Existing tests and fixtures were not rerun in this follow-up. Joomla, database, actual provider, browser and mail behavior remain unverified where indicated.
+- Five ledgers parsed with unique keys; `git diff --check` passed with existing line-ending warnings. No finding was promoted to fully reviewed.
+- Original approved-page progress remains 0/161 (0%); 173/199 original findings have partial records. Next: continue CODE-161–170 and remaining individual page work, not automated register-only review.
+
+## Shipping-box source follow-up (ACTIVE; partial)
+- Re-read the complete shipping-box guide, form and filter XML, English field strings, box list model/table/controllers and relevant shared view, inline controller, form-save path and JavaScript. Rechecked box selection and four carrier call sites. Added Enter/Escape guidance and concise customer warnings; the exact scope and remaining inherited/dispatch paths are in `SOURCE-REVIEW-REGISTER.csv`. The page is not approved.
+- CODE-233 / #278: actual cart estimator with an empty synthetic cart and stubbed dimensions passed the final dimension array to volume quoting and used candidate lengths for height bounds. The quote implementation was stubbed; real driver and query behavior remain unverified. Compared #238, #189, #163 and #162; controlled distinct dry-run, creation, Issue fetch and unchanged reconciliation passed. CODE-104's malformed SQL is a separate defect which may mask this one.
+- CODE-234 / #279: actual box-dimension helper with a synthetic query stub threw PHP 8.4 `TypeError` for a returned object and null; zero-ID control returned `[]` without a query. UPS, USPSv4 and FedEx source call the helper for a nonempty selected box; Bring does so when its use-box option is enabled. CODE-139's earlier USPS address error may mask the latter path. Compared #278, #192, #186, #163 and #161; distinct dry-run, creation, Issue fetch and unchanged reconciliation passed. Priority P1 is provisional pending actual impact.
+- Fixtures are `files/shipping-rate-dimensions-probe.php` and `files/shipping-box-dimensions-probe.php` in this session. Issue-sync tests passed; all five ledgers parsed with unique IDs (276 Core findings, 208 individual records, 552 triage, 277 Issue ledger, 162 page records); `git diff --check` passed with existing line-ending warnings. No real Joomla database, storefront, checkout, event dispatch or carrier was exercised.
+- Local Core HEAD remains `2e2889680244db64b9e9f64da29608e02f543a70`, clean; documentation HEAD remains `5fda0904d762a466afcb3c7d400ad8d0ab1492cb` with existing dirty work preserved. Graphify index `647c0dc795265544ea000acb0c9217da609db544` remains stale. The private handbook is absent.
+- Progress remains **0/161 fully approved original pages (0%)** and **173/199 original findings with partial records (86.9%)**; partial records are not completed reviews. CODE-233 and CODE-234 are additional findings. Continue CODE-161–170 source and current-Issue follow-up, then remaining batches and incomplete shipping-box paths; keep security holds private.
+
+## CODE-161–170 follow-up (ACTIVE; partial)
+- Re-read current source and fetched #214–222 for CODE-161–167, 169 and 170; inspected relevant #214, #215, #216 and #217 comments. Prior fixtures were not rerun. CODE-168 remains a security hold requiring an authorized private channel; it was not treated as an ordinary Issue or completed review.
+- For CODE-162 and CODE-163, traced checkout's first-cart-product delivery estimate into the `order_delivery` input, order-template `{delivery_time}` replacement and the source path invoking order mail. Whether and how it appears depends on request and template and is unverified. Added specific same/separate-request and mail-sink regression guidance to #215 and #216 via dry-run and controlled comments; fetched both comments and verified unchanged reconciliation.
+- Individual records explicitly preserve outstanding runtime and semantic uncertainties. Issue-sync tests and five CSV structure/unique-key checks passed; `git diff --check` passed with existing line-ending warnings. No real Joomla, database, mail, storefront or checkout was exercised.
+- Original progress remains **0/161 fully approved pages (0%)** and **173/199 original findings with partial records (86.9%)**, not completed individual reviews. Next: CODE-171–180, unfinished shipping-box paths and other partial pages. Security holds remain private.
+
+## CODE-171–180 follow-up (ACTIVE; partial)
+- Followed up nine ordinary entries against current source and open Issues #223–231; the individual records distinguish earlier fixtures from this source follow-up. CODE-174 remains a private security hold and was not reviewed via an ordinary Issue. No finding was promoted to fully reviewed.
+- Prior fixtures were not rerun. Actual Joomla, browser, MySQL, checkout and dispatch remain unverified where applicable. Issue-sync tests passed; five CSV registers parsed with unique keys; `git diff --check` passed with existing line-ending warnings.
+- Original progress remains **0/161 fully approved pages (0%)** and **173/199 findings with partial records (86.9%)**, not completed individual reviews. Next: CODE-181–190 and unfinished source paths for pages and earlier findings. No Core fixes, commits, pushes or publication.
+
+## CODE-181–190 follow-up (ACTIVE; partial)
+- Re-read current wizard, tax-rate save, order-reset UI/controller, ePay option and payment-form source and gift-card storage, and fetched open Issues #232–237. Updated six individual records; no new Issue comment was needed. Prior fixtures were not rerun. Four findings (CODE-183, CODE-184, CODE-189 and CODE-190) remain private security holds and are not represented as completed reviews.
+- Tax-rate source also leaves its result unset for an empty association list; #234 already asks for an empty-groups test. Whether that input is reachable and actual driver behavior are unverified. Joomla, filesystem, provider, browser and database runtime remain untested.
+- Issue-sync tests passed; five registers parsed with unique keys; `git diff --check` passed with existing line-ending warnings. Original progress remains **0/161 fully approved pages (0%)** and **173/199 findings with partial records (86.9%)**, not completed individual reviews. Next: CODE-191–199 and unfinished page and finding paths.
+
+## CODE-191–199 follow-up (ACTIVE; partial)
+- Re-read free-shipping, cart, Facebook, category-menu and PayPal source and fetched open Issues #238–244 and applicable existing comments. Seven ordinary records remain partial; CODE-196 and CODE-199 remain private holds. No previous fixture was rerun.
+- For CODE-198, traced `CurrencyHelper::convert` dispatch and both conversion implementations: the implementations use the session currency for a falsey target, unless a plugin handles conversion earlier. The resulting value and PayPal behavior depend on actual settings and were not tested. The PayPal manifest changed since the old Issue revision; its currency mismatch remains in current source.
+- Issue-sync tests passed; five registers parsed with unique keys; `git diff --check` passed with existing line-ending warnings. No real Joomla, supported database, browser, checkout or provider was exercised. Original progress remains **0/161 fully approved pages (0%)** and **173/199 findings with partial records (86.9%)**, not completed individual reviews. Next: continue unfinished shipping-box page/controller paths and individual page batches; private holds remain pending an authorized private channel.

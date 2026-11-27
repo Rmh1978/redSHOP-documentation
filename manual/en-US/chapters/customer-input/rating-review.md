@@ -7,7 +7,9 @@ Open **Customer Input → Rating/Review** to manage reviews. Restrict moderation
 
 The form-backed list includes title, product, user, date, rating, favoured and published state. Publication and favoured are distinct controls.
 
-Search matches username, comment or product name, not the review title. Use the available sortable headings and pagination to navigate.
+Search matches username, comment or product name, not the review title. The model defaults to ID ascending unless a saved list selection applies. Use the available sortable headings and pagination to navigate.
+
+The user, date and publication headings are displayed as sortable, but the inspected model falls back to ID ordering for those fields. Check the resulting order before using it for moderation.
 
 The product-name link currently uses a review-edit task with the product ID. Open the product from Product Management instead of relying on that link.
 
@@ -45,4 +47,4 @@ Product templates support `{product_rating}`, `{product_rating_summary}`, `{form
 
 <h4 id="create-2">Storefront submission</h4>
 
-The inspected handler checks a Joomla token, applies the login-required setting, checks guest CAPTCHA, validates the form and checks for existing reviews. Submitted reviews are initially unpublished and not favoured in that path. Test guest and logged-in users, duplicates, moderation, notifications and accessible output in isolation; do not assume these checks alone establish complete security.
+The inspected handler checks a Joomla token, applies the login-required setting, attempts a guest CAPTCHA check, validates the form and checks for existing reviews. Guest submission may fail during the CAPTCHA check in the inspected version. Submitted reviews are initially unpublished and not favoured in that path. If a notification fails, a review may already have been saved; check the moderation list before retrying. Test guest and logged-in users, duplicates, moderation, notifications and accessible output in isolation; do not assume these checks alone establish complete security.

@@ -5,6 +5,8 @@ Stockrooms define locations used for stock and delivery information. Enable stoc
 <h2 id="listingScreen">Stockroom list</h2>
 <h4 id="field">Fields</h4>
 
+The list shows each stockroom's name, delivery unit and range, stock-list visibility and published state. Search matches text within the name. The name heading is sortable; the list defaults to ID order.
+
 The editor contains a required name, minimum stock amount, delivery-time unit (days or weeks), minimum and maximum delivery times, show-on-stock-list and published options, plus a description. The minimum stock amount and description are hidden from the list by the form definition; open the record to edit them.
 
 Minimum and maximum delivery times default to zero; new stockrooms default to Published and Show on stock list. The configured delivery-unit default does not match either available option, so explicitly select Days or Weeks before saving and verify the saved value.

@@ -1,0 +1,8 @@
+area,status,evidence,remaining_action
+Navigation,source-verified,manual/en-US/menu.md and chapter navigation checked against relative chapter paths,Published renderer/browser routing not run
+Relative-links,passed,0 broken relative Markdown links found across manual/en-US,Verify fragment/anchor behavior in browser
+Renderer,source-observed,index.html loads marked.js and assets/js/manual.js; no browser renderer test run,Run browser render and back/forward/hash tests
+Responsive-layout,not-run,No browser viewport evidence,Test desktop/mobile layouts and navigation
+Accessibility,not-run,No keyboard/screen-reader evidence,Test keyboard, labels, contrast and alt text
+Tables-code-headings,source-observed,Manual articles use Markdown tables, code, HTML IDs and heading structures,Run renderer and HTML validation
+Screenshots-images,partial,Historical images are not trusted as current UI; no new screenshots invented,Human screenshot replacement where function is verified

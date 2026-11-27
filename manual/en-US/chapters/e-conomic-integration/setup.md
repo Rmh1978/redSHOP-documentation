@@ -14,7 +14,8 @@ The optional integration requires both Joomla plugin settings and redSHOP config
 | **Select Account** | Choose e-conomic or Reviso. The manifest defaults to e-conomic; an existing saved choice may differ. |
 | **Agreement number, username and password** | The form shows these for Reviso. Obtain the correct test-account details from the provider. |
 | **Get Agreement Token** | The form shows the grant/renew control for e-conomic. Granting access opens an external authorization flow; use only the approved test account and verify the provider's current process first. |
-| **Debtor group, payment terms, layout and unit IDs** | Map the plugin to the corresponding accounting settings. The manifest leaves these fields empty for a new configuration. Confirm the intended identifiers with the accounting administrator. |
+| **Debtor group, payment terms, layout and unit IDs** | Map the plugin to the corresponding accounting settings. For a new configuration, the manifest leaves debtor group and unit empty but defaults payment terms to `2` and invoice layout to `19`. Existing settings may differ; confirm all identifiers with the accounting administrator. |
+| **Payment-method overrides** | Optionally select a payment method and set a payment terms ID and/or invoice layout ID. A single matching override takes precedence over preserved legacy payment-plugin values, then the plugin defaults. Check each payment method and avoid duplicate override rows. |
 | **Creditor (supplier) number** | Used by an inspected merchant-fee cashbook path. Confirm the correct account and treatment before enabling it. |
 | **Create Cashbook Entry** | The manifest defaults this to Yes; saved settings may differ. Check the actual booking and payment flow before using it. |
 | **Debtor reference extra fields** | Select the individual and company extra fields used for debtor references, where applicable. Verify that the selected fields and values are appropriate for the test account. |

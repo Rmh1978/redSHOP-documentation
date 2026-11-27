@@ -14,6 +14,6 @@ Use disposable orders to test success, pending, failure, repeated notifications,
 - **Payment types:** choose the methods supported by the provider. The manifest's new-record default includes a code that the inspected selector does not offer; verify the selected methods after saving rather than relying on that default.
 - **Order statuses:** success, failure and capture selectors list published statuses and default to codes `C`, `P` and `S` respectively. Verify their meaning and the actual transitions in your shop.
 - **Payment adjustment and eligibility:** operand defaults to `-`, price to blank and type to Percentage; Total is the fixed-amount option. Private-person and business visibility default to Yes; shopper group defaults to `0`. Test eligible and ineligible customers and compare totals independently.
-- **Accounting:** e-conomic payment conditions and layout identifiers start blank. Verify any mappings with the integration.
+- **Accounting:** the current manifest has no local e-conomic fields. Review the central [e-conomic settings](chapters/e-conomic-integration/setup.md) and any preserved legacy values.
 
 These are manifest defaults for a new configuration, not necessarily settings already saved in an existing shop. Reopen and verify the actual configuration on an isolated installation.

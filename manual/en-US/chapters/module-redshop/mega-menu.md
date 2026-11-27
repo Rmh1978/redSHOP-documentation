@@ -14,7 +14,11 @@ For a new module, the manifest provides these options; saved settings can differ
 | Alternative Layout / Module Class Suffix | Select an installed layout and optional styling. |
 | Caching / Cache Time | Defaults are No Caching and 900 seconds; global caching is also offered. |
 
-Select the intended menu and category and verify the resulting hierarchy; the helper combines menu items and redSHOP categories.
+Select the intended menu and category and verify the resulting hierarchy; the helper combines menu items and redSHOP categories. In the inspected helper, an empty category list causes it to return no menu items, even if the selected Joomla menu has entries. Verify the selected category and its available category list when the module is empty.
+
+If multiple Mega Menu instances appear on the same page, test them together. In an isolated helper test, two instances using the same category but different Joomla menus both returned the first menu's items. The installed Joomla rendering has not been verified.
+
+The manifest's module class suffix and the parameter read for the inner menu list use different names. Check both the module wrapper and the menu list in the rendered page before relying on a custom styling selector; Joomla module chrome and saved settings have not been tested.
 
 The inspected helper checks one category key but reads another from menu data. With an `id`-only synthetic menu item it did not retain the category ID; verify real category submenus and links on your installation.
 

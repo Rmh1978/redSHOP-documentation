@@ -26,7 +26,7 @@ The current image upload control has client-side type and size settings, but the
 
 1. Open a product in **Product Management**. The product editor provides a main image control.
 2. Save the product first. For an existing product, select **Add additional images** to open its media dialog.
-3. Add or edit a media record in that product context. Select a record and use **Default Media** to designate a primary item for product, property or subproperty media. The dialog also shows primary media, ordering and published state.
+3. Add or edit a media record in that product context. Select an image record and use **Default Media** to designate the primary image for a product, property or subproperty. Other media types cannot be set as the default. The dialog also shows primary media, ordering and published state.
 4. Save, return to the product and preview it. Confirm the intended main image and additional gallery images appear correctly for the active product template.
 
 For a new property image, the current model attempts to set the first image as primary only when that property has no other images and no main image. Verify the result rather than assuming this behavior applies to every media section.

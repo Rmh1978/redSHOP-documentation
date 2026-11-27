@@ -2,7 +2,7 @@
 
 The optional `mod_redshop_categories` site module offers category navigation in several display styles. It is separate from the [Shopper Group Category menu](chapters/module-redshop/shoppergroup-category.md). [Install and configure the module](chapters/module-redshop/install-module-plugin.md), assign its position and pages, and use disposable categories to evaluate the selected style before publishing.
 
-The inspected source has known problems in both the default link list and dTree styles. Category links may be missing, and dTree may fail to render. Select a sorting option explicitly and verify the full menu on an isolated shop; do not assume that changing the sort choice resolves the other problems.
+The inspected source has known problems in both the default link list and tree styles. Category links may be missing. Tree styles also depend on a directory variable that the module does not define; in an isolated test without that variable dTree failed to load. Actual Joomla rendering is unverified. Select a sorting option explicitly and verify the full menu on an isolated shop; do not assume that changing the sort choice resolves the other problems.
 
 For a new module, the manifest declares these settings; existing saved values may differ:
 

@@ -29,6 +29,8 @@ Create, edit, publish, unpublish and delete definitions as permitted. Select rec
 
 For a fixed-value example, enter a price of `50`, a value of `50` and a validity of `30` days in the shop's currency and settings. These are example values, not a recommendation to sell the card while the known issues remain.
 
+If an issued free-shipping coupon is successfully applied, also verify how fulfillment is recorded. The inspected checkout path hides shipping selection for the free-shipping flag and does not read the submitted shipping method when saving the order; actual checkout behavior remains under investigation.
+
 <h4 id="action-2">Save</h4>
 
 Use **Apply** to save while continuing to edit, or **Save** to save the definition. **Cancel/Close** leaves the editor. Reopen the definition to check values and images.
@@ -42,6 +44,12 @@ Create a disposable gift-card definition and select suitable non-sensitive image
 <h5 id="show-gift-card">Show gift cards</h5>
 
 The component provides a gift-card list menu layout. Configure a test menu item, then check published and unpublished definitions and the active template.
+
+For a customer-defined amount, the gift-card detail template can use
+`{customer_amount_lbl}` and `{customer_amount}` for the amount label and
+input, and `{customer_quantity_lbl}` and `{customer_quantity}` for the
+quantity label and input. These controls are populated for Customer Amount
+cards; verify the add-to-cart form and resulting order on an isolated shop.
 
 <h5 id="order-gift-card">Purchase and redeem</h5>
 

@@ -16,8 +16,14 @@ For a new module, the manifest provides these defaults; saved values can differ:
 
 Review these settings together before publishing; enabling a display option does not establish that the calculated price or checkout behavior is correct.
 
+For discounted products, test both VAT settings: the inspected layout passes the VAT option to its regular-price helper but calculates the comparison discount price separately. Verify displayed values against the product page and cart for each shopper group.
+
+The layout calls both price helpers even when its **Show Price** option is No. In an isolated test with a synthetic shared product and discount, the net-price helper returned a lower value after the regular-price helper ran. Check prices in other page elements as well; actual storefront and cart effects are unverified.
+
+When images are enabled, the default layout passes thumbnail arguments in an order that differs from the image helper's signature. Verify images and links with distinct product IDs and dimensions on a disposable shop; the actual storefront result has not been tested.
+
 The module is awaiting a private security review. Check its suitability and access behavior with your site maintainer before enabling it.
 
-With AJAX cart enabled, the inspected layout calls `count()` on the detail-template result. An isolated PHP 8 test raised an error for a template object; test the module on a disposable shop before enabling this combination.
+With AJAX cart enabled, the inspected layout calls `count()` on the detail-template result even when **Show Add To Cart** is No. An isolated PHP 8 test raised an error for a template object; test the module on a disposable shop before enabling this combination.
 
 Create representative categories, products and shopper groups on a test shop. Check guest and logged-in users, group changes, empty groups, unpublished products, displayed prices and cart behavior. A filtered module listing is not a replacement for independently testing access to direct product and category URLs.

@@ -143,6 +143,8 @@ interface and available controls may differ.
 
 For a new product, provide a name, product number, category and product template. The editor checks product-number uniqueness and requires a discount price below the base price when both are entered; a nonzero maximum order quantity must not be less than the minimum. Discount end dates cannot precede start dates. The new-record defaults include base price and minimum quantity zero and **Published** Yes, so review publication before saving an unfinished product.
 
+In the current English administrator language file, Product Number is labelled **SKU** and Product Template is labelled **Product Layout**. Labels may differ with the installed translation.
+
 <h4 id="informationTab">Product Information tab</h4>
 
 <ul>
@@ -200,6 +202,8 @@ For an existing product, authorized administrators can open <b>Product Files</b>
 <li><b>Uploads are published immediately.</b> Prepare and verify the file and policy before uploading. The file list provides publish/unpublish controls; upload a new version instead of replacing an existing binary.</li>
 <li>Test with disposable customer accounts and paid/mock orders: purchase, subscription and license policies have different entitlement checks, so a published file alone does not grant everyone access.</li>
 </ol>
+
+In the Product Files screen, search by product name, SKU or ID; the list is limited to 100 results. Without a search, it shows software products and products with existing files. The version must start with a letter or digit and use at most 64 letters, digits, dots, underscores, plus or minus signs. Subscription plan choices come from the selected product; verify the intended policy and plan before uploading.
 
 <b>Subscription</b>
 
@@ -315,7 +319,7 @@ Select an attribute set and decide whether to copy it, or add product-specific a
 
 An attribute has a name, description, order, dropdown/radio display, required, multi-selection, hide-price and published controls. Add properties (options) with names, order, price/operator, virtual product number, extra field, tooltip, alert, image and default-selection settings. A property can have nested subproperties with their own name, number, order, price/operator, publication and default selection; the nested group has title, required, multiselect and display controls.
 
-Price operators include `+`, `-`, `=`, `*` and `/`. Test each operator and resulting price with the actual template, tax and quantity settings; multiplication by 1.15 is a factor, not an instruction to enter a percentage. Existing options may offer image, stock and price-management controls. Verify changes after saving and reopen before relying on them for orders.
+Price operators include `+`, `-`, `=`, `*` and `/`. Test each operator and resulting price with the actual template, tax and quantity settings; multiplication by 1.15 is a factor, not an instruction to enter a percentage. Existing options may offer image, stock and price-management controls. See [attribute option prices](chapters/product-management/price-management.md#attribute-option-prices) for their separate rules and limitations. Verify changes after saving and reopen before relying on them for orders.
 
 Deleting an existing attribute, property or subproperty sends a separate deletion request; do not assume Cancel will undo it. In the current editor a subproperty may remain visible after a deletion request, so reopen the record and check the saved result before retrying.
 

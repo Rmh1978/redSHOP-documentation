@@ -58,6 +58,7 @@ async function run() {
     assert.throws(() => parseArgs(['--ids', 'not-an-id']), /Invalid review ID/);
     assert.throws(() => parseArgs(['--ids', 'CODE-012', '--distinct-from', 'broken']), /Invalid distinct-from/);
     assert.deepStrictEqual(parseArgs(['--ids', 'AUD-003-008,M-0122']).ids, ['AUD-003-008', 'M-0122']);
+    assert.strictEqual(parseArgs(['--ids', 'CODE-012', '--continue-on-blocked']).continueOnBlocked, true);
     const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'redshop-issue-sync-'));
     const ledger = path.join(directory, 'ledger.csv');
     const findings = path.join(directory, 'findings.csv');
@@ -134,6 +135,21 @@ async function run() {
         fs.writeFileSync(findings, serializeCsv(table([Object.assign({}, finding, { evidence_state: 'Security investigation' })])));
         result = await sync(fakeApi(), apply, ledger, findings, () => {});
         assert.strictEqual(result.blocked, 1);
+
+        fs.writeFileSync(ledger, serializeCsv(table([
+            ledgerRow,
+            Object.assign({}, ledgerRow, { review_id: 'CODE-013', sync_status: 'pending-sync' })
+        ])));
+        fs.writeFileSync(findings, serializeCsv(table([
+            finding,
+            Object.assign({}, finding, { id: 'CODE-013', title: 'Second finding', file: 'libraries/redshop/src/Helper/Cart.php', evidence_state: 'Source-level defect' })
+        ])));
+        const continueOptions = parseArgs(['--all', '--continue-on-blocked']);
+        result = await sync(fakeApi(), continueOptions, ledger, findings, () => {}, (row, item) => {
+            if (row.review_id === 'CODE-012') throw new Error('Core revision changed');
+        });
+        assert.strictEqual(result.blocked, 1);
+        assert.strictEqual(result.pendingSync, 1);
     } finally {
         for (const filename of [ledger, findings]) if (fs.existsSync(filename)) fs.unlinkSync(filename);
         fs.rmdirSync(directory);

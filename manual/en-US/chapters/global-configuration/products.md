@@ -18,6 +18,8 @@ The distributed configuration uses `cm`, `gram` and zero unit decimals. Existing
 
 The Download group contains global download count and period fields and the product-download root. The distributed settings specify five downloads and 30 days; existing shop settings may differ. The current configuration screen suggests a `redshop-private/product-downloads` directory beside the Joomla root when no root is configured and warns about an existing root inside the site. Check access and migration before changing an existing path; changing a setting does not necessarily move existing files.
 
+The download-directory statistics shown by the inspected screen count readable regular files without following symbolic links. An unreadable directory or incomplete scan does not establish that it is empty; check storage permissions and backups separately.
+
 The separate Upload group configures the product-upload root, displays directory statistics and offers an age-based cleanup. Cleanup deletes files: verify retention requirements and back up the directory before using it. These paths are not interchangeable with the protected Product Files storage configured in component options.
 
 For the current protected Product Files workflow, permission and storage requirements, see the Product Types section in [Products](chapters/product-management/products-redshop.md). Product media is not protected download storage. Test download authorization, direct access, limits and expiry for both protected and any legacy downloads.
@@ -35,9 +37,11 @@ Set the first and second catalog reminder delays, discount duration in days, dis
 The colour-sample group provides three reminder settings, coupon duration in days and discount percentage. Distributed values are 1, 2 and 3 for the reminders, 4 days for duration and 5 for percentage; existing settings may differ. A sample-days field is present in the template inside a `hidden` container, so do not assume it is available in the interface.
 
 The first reminder currently calculates its setting in minutes even though the
-field describes days. In the inspected sample coupon path, a configured day is
-also calculated as `23 * 59 * 59` seconds, not 24 hours. Test reminder timing
-and coupon expiry with a mail sink before using this workflow.
+field describes days. The inspected second and third reminder handlers require
+the scheduled date to match the current date; an unsent reminder may be missed
+if that day is skipped or sending fails. In the inspected sample coupon path,
+a configured day is also calculated as `23 * 59 * 59` seconds, not 24 hours.
+Test reminder timing and coupon expiry with a mail sink before using this workflow.
 
 <h4 id="product-template">Product template</h4>
 

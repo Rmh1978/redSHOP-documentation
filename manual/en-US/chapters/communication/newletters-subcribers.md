@@ -7,9 +7,12 @@ Open **Components → redSHOP → Communication → Newsletter Subscribers**. Su
 
 The list includes the user, newsletter, subscription date and publication state. Open the user name to edit the subscription. Email is searchable but is not a displayed list column. Displayed dates are converted from UTC to the Joomla timezone in the inspected view.
 
-For guest subscriptions, the displayed user name can be misleading. Verify the email and subscription details before editing or deleting a record.
+For guest subscriptions, the displayed user name can be misleading. An isolated helper test also found a potentially unrelated name for a registered subscriber whose billing lookup returned no result. Verify the email and subscription details before editing or deleting a record; the real database and Joomla list have not been tested.
 
 Search matches the stored subscription name or email. Use the available sortable headings and pagination to navigate the records.
+The user and newsletter headings sort by their stored IDs, not necessarily
+alphabetically by the displayed names. The sort selector offers stored-name
+ascending and descending choices; saved list state can affect the initial order.
 
 <h4 id="action-1">Actions</h4>
 
@@ -31,6 +34,13 @@ Save or Save & Close persists changes; Cancel returns without saving the current
 <h2 id="working">Consent and unsubscribe</h2>
 
 The storefront includes newsletter and account unsubscribe paths. The inspected removal helper deletes matching subscription records by email and, when configured, default newsletter; logged-in requests additionally use the current user's ID/email. Verify which subscriptions are affected, guest and logged-in behavior, cancellation messages and subsequent recipient selection on a disposable shop.
+For a signed-in user, the helper substitutes the account email for the
+submitted email. When the saved default newsletter value is an empty string,
+its deletion query does not add a newsletter restriction. Verify the affected records
+before relying on cancellation for a shop with multiple newsletters.
+The checkout code also has a sign-off path that passes no email; for a guest,
+the inspected helper returns without deleting a subscription. Whether a
+checkout exposes that path depends on the installation and remains unverified.
 
 The inspected signup path can insert a published subscription even when confirmation is enabled. Do **not** rely on the confirmation switch alone to enforce consent. Investigate and correct this separately before sending real newsletters.
 

@@ -1,6 +1,6 @@
 ## Customer Input
 
-Moderate customer contributions and consider privacy before publishing them.
+In the redSHOP administrator navigation, open **Customer Input** to moderate customer contributions. Consider privacy before publishing them.
 
 - [Questions](chapters/customer-input/questions.md): product questions and answers.
-- [Ratings and reviews](chapters/customer-input/rating-review.md): review moderation and storefront display.
+- [Rating/Review](chapters/customer-input/rating-review.md): review moderation and storefront display.

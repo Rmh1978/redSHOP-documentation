@@ -1,4 +1,7 @@
 ## redSHOP 2.1.5
+
+> **Historical release note:** The Joomla compatibility and upgrade advice below describes redSHOP 2.x, not current releases. Check [Updating redSHOP](chapters/getting-started-general/updating-redshop.md) and current release requirements before upgrading.
+
 redCOMPONENT is pleased to announce the immediate availability of redSHOP 2.1.5 This is a maintenance release with bug fixes, refactoring and improvements.
 
 <b>Important note: redSHOP 2.x is only compatible with Joomla 3.x.</b> If your site is still in Joomla 2.5 or early note that your version is not any more maintained and update is recommended.

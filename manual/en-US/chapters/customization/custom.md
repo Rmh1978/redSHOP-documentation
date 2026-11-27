@@ -5,7 +5,7 @@ Custom field groups organize related custom fields within a section. A group is 
 <a id="overview-1"></a><a id="field-1"></a><a id="action-1"></a>
 ### Find a group
 
-Open **Custom Field Groups** in redSHOP customization. The list shows name, section, description, publication state and ID. Search by name, enter `id:` followed by the record ID, or filter by section. Name and ID are available for sorting; the current publication heading falls back to name ordering. Open the name to edit it; inline name editing is available when enabled and permitted.
+Open **Custom Field Groups** in redSHOP customization. The list shows name, section, description, publication state and ID. Search by name, enter `id:` followed by the record ID, or filter by section. Sort by name, publication state or ID. Open the name to edit it; inline name editing is available when enabled and permitted.
 
 Use **New**, or select records for **Copy**, **Delete**, **Publish** or **Unpublish**, subject to your permissions. Before changing or deleting a group, back up the shop and review fields that refer to it.
 
@@ -23,7 +23,7 @@ For example, create a **Specifications** group in the product section, then assi
 <a id="add"></a>
 ### Associate fields
 
-Open the relevant field in **Custom Fields**, select its section and group, and save. Verify that the group belongs to the field's section and that the assignment remains after reopening. The current selector can omit groups or show groups from another section; if the intended group is unavailable, contact your maintainer rather than selecting an unrelated group. The field form also contains separate frontend, administrator, required and published settings; some settings depend on the section and type. Review the [custom-fields guide](chapters/customization/redshop.md) for field examples.
+Open the relevant field in **Custom Fields**, select its section and group, and save. The refreshed selector lists groups for the selected section; it returns at most 99 groups ordered by ID. If the intended group is unavailable, contact your maintainer rather than selecting an unrelated group. Reopen the field and verify its saved assignment. The field form also contains separate frontend, administrator, required and published settings; some settings depend on the section and type. Review the [custom-fields guide](chapters/customization/redshop.md) for field examples.
 
 <a id="check"></a>
 ### Verify the result

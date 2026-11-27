@@ -21,6 +21,8 @@ recipient and numbering settings before use.
 
 The form has a current/first invoice number value, an **Order Number Template**, an **Invoice Number Template**, and a switch for invoice numbers on free orders. Review accounting requirements and existing numbers with the responsible accountant before changing them; back up the shop and do not reset orders to configure numbering.
 
+For technical troubleshooting, the form stores the Order Number Template as `invoice_number_template` and the Invoice Number Template as `real_invoice_number_template`. Follow the displayed labels when configuring them; do not assume the similarly named internal keys mean the same thing.
+
 The inspected parser replaces runs of two to six identical `#`, `X` or `x` characters with a zero-padded number. For example, `INV-####` formats the number 23 as `INV-0023`. Test the exact chosen format and integration before use.
 
 The distributed configuration uses `##` for both order and invoice number templates and leaves the first invoice number blank. These values are not a recommendation for an existing accounting sequence.

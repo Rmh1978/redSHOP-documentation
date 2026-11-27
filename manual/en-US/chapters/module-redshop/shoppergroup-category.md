@@ -11,7 +11,7 @@ For a new module, the manifest provides these settings; existing saved values ca
 | Show Sub-menu Items | Expand child items; defaults to No. |
 | Menu Tag ID | Optional ID for the root menu list. |
 | Menu Class Suffix / Module Class Suffix | Optional menu and module styling settings. |
-| Target Position | Optional popup window positioning values for applicable menu links. |
+| Target Position | Optional popup window positioning values for applicable URL menu links. In the default component-link layout, the popup uses fixed window options instead. |
 | Alternative Layout | Select an installed alternative layout. |
 | Caching / Cache Time | Defaults are Use Global and 900 seconds; No Caching is also available. |
 

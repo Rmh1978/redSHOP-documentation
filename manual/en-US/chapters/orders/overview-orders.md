@@ -4,6 +4,7 @@ Use the order tools to review and manage customer transactions:
 
 - [Order list](chapters/orders/order-list.md) covers finding and updating orders.
 - [Add order](chapters/orders/add-order.md) describes administrator-created orders.
+- [Order payments](chapters/orders/order-payments.md) explains the payment overview, ledger and payment actions on the order page.
 - [Order statuses](chapters/orders/order-status-list.md) explains status records and transitions.
 - [Quotations](chapters/orders/quotations.md) covers quotes and their workflow.
 - [Product order search](chapters/orders/product-order-search.md) helps locate orders by product.

@@ -1,4 +1,7 @@
 ## redSHOP 1.5.0.6
+
+> **Historical release note:** This describes a 2015 Joomla 3 release. Its upgrade recommendation and compatibility statements are historical, not guidance for current installations. See [Updating redSHOP](chapters/getting-started-general/updating-redshop.md) and verify current release requirements before upgrading.
+
 ### redSHOP 1.5.0.6 released for Joomla 3 (2015-12-22)
 redCOMPONENT is pleased to announce the immediate availability of redSHOP 1.5.0.6
 

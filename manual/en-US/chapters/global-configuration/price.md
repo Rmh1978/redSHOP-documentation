@@ -31,6 +31,8 @@ verify each case rather than assuming the mode alone determines the result.
 The billing/shipping selector chooses which address is used in relevant
 paths. A product tax group can override the default group.
 
+Some shipping methods use a separate VAT lookup with a known state-field mismatch. Verify shipping VAT independently of product VAT for applicable destinations; see [Shipping Methods](chapters/shipping/shipping-methods.md).
+
 The distributed configuration has no default country or state selected, no
 default group selected, Webshop mode, billing-address basis, **After**
 discount, and a VAT-after-discount value of `0.000`. It enables the VAT-number

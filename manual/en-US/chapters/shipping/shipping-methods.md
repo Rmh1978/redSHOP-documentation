@@ -14,6 +14,8 @@ Shipping methods are provided by installed redSHOP shipping plugins. Their confi
 
 Open redSHOP administration and select **Shipping Methods**. The list identifies each plugin, its version, enabled state and whether it declares support for rates or locations. Availability depends on installed and enabled plugins; do not assume the standard method is appropriate for every carrier.
 
+The standard method-list view hides its filter controls; use the available headings and pagination to find a method.
+
 The list can incorrectly show rate support for a location-only method. Check the method's own configuration and available editor actions rather than relying solely on that indicator.
 
 <h2 id="overview-1">Method configuration</h2>
@@ -21,6 +23,8 @@ The list can incorrectly show rate support for a location-only method. Check the
 <h4 id="field-1">Fields</h4>
 
 Open a method to review its name, shipping class, published state and plugin-specific settings. For example, the standard shipping plugin defines Pacsoft-label and shipping extra-field options. Consult the specific plugin's documentation and avoid entering real provider credentials on a shared test system.
+
+For **redSHOP - Standard Shipping**, **Select Extra Field** allows multiple shipping gateway fields; the shipping template must include `{shipping_extrafields}` to display them. **Allow create pacsoft label** defaults to Yes for a new configuration, though saved values can differ. The automatic-label code also contains a legacy allowance for the standard method, so do not assume setting this option to No alone disables automatic labels; review the global integration and automatic-label settings.
 
 <h4 id="action-1">Actions</h4>
 
@@ -32,7 +36,7 @@ Save changes or close the editor. A **Shipping Rates** or **Shipping Location** 
 
 The rate list contains the method's records, including names, rate values, priorities and IDs. A location-enabled plugin can instead use the location workflow.
 
-Open a name to edit it, or select rows for toolbar actions. Use the available sortable headings and pagination to navigate the records; this list does not provide a separate search filter. Location lists show the location name and ID rather than rate value and priority.
+Open a name to edit it, or select rows for toolbar actions. The list can be sorted by ID, name, rate value and priority (other values are ignored and fall back to ID ascending). The page size and current page are remembered in shared list state, not separately for each method; the page resets to the first page when the page size or shipping method changes. This list does not provide a separate search filter. Only methods from the redSHOP shipping plugin group can be opened. The shipping method is identified by the `extension_id` URL parameter, which edit, save, copy and cancel actions keep. Opening the list without a valid method redirects to redSHOP administration with a warning. Location lists show the location name and ID rather than rate value and priority.
 
 <h4 id="action-2">Actions</h4>
 
@@ -62,6 +66,12 @@ Country, state and shopper-group controls support multiple selections. Customer 
 For the shared rate selector, weight, volume and order-total comparisons include the entered boundaries. An end value of zero makes that respective comparison unrestricted. Dimension checks are made for the relevant product volumes; a pair of zero boundaries for a dimension leaves that dimension unrestricted. Do not assume every shipping plugin uses these rules.
 
 Use the product and category selections to limit a rate where appropriate, and check excluded products separately. A priority is used when ordering candidate rates; overlapping rules and individual plugins can affect the final choice. Set the rate value and VAT options for the intended charge, then verify both the shipping amount and tax at checkout.
+
+In the shared storefront selector, a product restriction matches when at least one cart product is selected; a category restriction matches when at least one cart product belongs to a selected category. If both restrictions are set, both conditions apply, but they need not match the same product. An excluded product in the cart prevents that rate from matching. Other plugins and the administrator path can behave differently, so test mixed carts.
+
+For methods using the shared shipping VAT lookup, the lookup can compare a state code to the wrong field. Verify the shipping VAT against the expected amount for each applicable destination before relying on it.
+
+Shopper-group default shipping is a separate choice for some methods. A matching zero-rate VAT record can cause its calculated shipping amount to be zero even when the group's configured rate is nonzero. Verify the charge and order total with a disposable customer.
 
 The editor checks that a name is supplied and uses client-side comparisons for order-total and postal-code boundaries. The save model also compares those two pairs, but these checks do not establish validation of every range or the meaning of every empty value. Use the store's configured units and test exact boundaries, decimal amounts and representative postal codes, including leading zeroes, before relying on a rate.
 

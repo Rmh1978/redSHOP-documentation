@@ -24,7 +24,7 @@ The discount controls accept a fixed amount and a separate percentage; both star
 
 <h4 id="action-2">Save actions</h4>
 
-The order toolbar appears after billing information has been applied. Save creates the order and invokes order mail; **Save without sending order mail** uses the admin-only mail path, not necessarily a complete suppression of all notifications. **Save + Pay** saves and invokes the selected payment method's payment-information path; its behavior depends on the plugin and is not proof of payment. Confirm recipient and side effects with a safe mail transport and test provider.
+The order toolbar appears after billing information has been applied. Save creates the order and invokes order mail; **Save without sending order mail** uses the admin-only mail path, not necessarily a complete suppression of all notifications. **Save + Pay** saves and invokes the selected payment method's payment-information path; its behavior depends on the plugin and is not proof of payment. The plugin's answer is accepted as Paid, Partial Paid or Unpaid only when it reports one of those statuses; otherwise the order is stored as Unpaid and a warning is shown (see [Order payments](order-payments.md)). The e-conomic payment-terms and design-layout values are no longer copied from the payment plugin into administrator-created orders. Confirm recipient and side effects with a safe mail transport and test provider.
 
 <h2 id="order-management">Order workflows</h2>
 <h4 id="create-order-1">Existing customer</h4>

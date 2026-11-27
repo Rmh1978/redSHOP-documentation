@@ -32,7 +32,7 @@ Tax groups and rates are in the product group; currencies, countries, states and
 
 <h2 id="importExport">Import/export</h2>
 
-Data and XML import/export entries are distinct; available data types depend on installed plugins. Back up and test imports on an isolated copy. The sidebar also contains a VirtueMart import action with confirmation; do not run it on a live shop without a reviewed migration plan.
+Data and XML import/export entries are distinct; available data types depend on installed plugins. Back up and test imports on an isolated copy. A VirtueMart import entry appears when that component is installed and enabled; do not run a migration on a live shop without a reviewed migration plan.
 
 <h2 id="customization">Customization</h2>
 
@@ -44,12 +44,14 @@ Question and review lists support moderation. Verify publication and privacy beh
 
 <h2 id="accounting">Accounting</h2>
 
-Accounting entries depend on enabled integration settings. Provider connection, permissions, mappings and posting must be tested separately; see [e-conomic setup](chapters/e-conomic-integration/setup.md).
+The account-group entries appear when the e-conomic integration is enabled with its plugin, or when the Billy integration plugin is enabled. Provider connection, permissions, mappings and posting must be tested separately; see [e-conomic setup](chapters/e-conomic-integration/setup.md).
 
 <h2 id="statistics">Statistics</h2>
 
-The sidebar includes customer, order, product, variant and quotation reports as well as other statistics views. Verify report calculations and access with representative test data; see the dashboard warning in [redSHOP dashboard](chapters/getting-started-general/redshop-main-menu.md).
+The sidebar includes customer, order and product reports, along with visitor, turnover and other statistics views. Variant and quotation report entries are not enabled in the inspected sidebar. Verify report calculations and access with representative test data; see the dashboard warning in [redSHOP dashboard](chapters/getting-started-general/redshop-main-menu.md).
 
 <h2 id="configuration">Configuration and tools</h2>
 
-Use the configuration and tools entries available to your account. Before a reset, import, optimization or cleanup, inspect the action, take a verified backup and rehearse it on a disposable shop.
+Configuration includes plugin management, Marketplace, template reset and access settings. Tools include image and update tools; log and release entries depend on their respective plugin or permissions. Before a reset, import, optimization or cleanup, inspect the action, take a verified backup and rehearse it on a disposable shop.
+
+See [Backend access management](chapters/getting-started-general/backend-access.md) for the group rules screen and testing precautions.

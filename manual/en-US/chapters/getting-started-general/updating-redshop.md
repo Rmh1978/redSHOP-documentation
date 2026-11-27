@@ -21,4 +21,6 @@ An update can change files, bundled extensions, configuration and database schem
 
 The current Core manifest uses Joomla's upgrade mechanism and declares MySQL update schemas; the installer also processes bundled libraries, modules and plugins on update. This source behavior does not prove that every historical redSHOP or Joomla version has a direct upgrade path. In particular, the former Joomla 2.5/3 and redSHOP 1.x instructions are not a current migration recipe: use the documented path for each intermediate release and test it separately.
 
+The inspected installer also runs a required-plugin enablement step during updates, and its postflight performs schema and Marketplace reconciliation. Review the resulting extension states and installer messages rather than assuming every plugin state remains unchanged. Version-specific migration checks can stop an update; investigate their reported error before retrying.
+
 The exact Joomla 5 and Joomla 6 upgrade paths and package compatibility must be established for the versions being deployed. Do not apply a rehearsed plan to production until its results and rollback have been reviewed.

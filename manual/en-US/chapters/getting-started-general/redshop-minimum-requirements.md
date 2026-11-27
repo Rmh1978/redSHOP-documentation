@@ -4,7 +4,7 @@ redSHOP runs as a Joomla extension. The supported environment depends on the exa
 
 ### Current development source
 
-The current Core development `composer.json` declares PHP `^8.3` and Joomla `^5.4 || ^6.0`. Its Joomla package repository is pinned to 5.4.6. The example Core release configuration separately lists PHP 8.2 and Joomla 5.4; these declarations have different roles and are not, on their own, a tested compatibility matrix for every distributed package.
+The inspected Core development `composer.json` declares PHP `^8.3` and Joomla `^5.4 || ^6.0`. Its Joomla package repository is pinned to 5.4.6. The repository's Core release configuration separately lists PHP 8.2 and Joomla 5.4; these declarations have different roles and do not, on their own, establish a tested compatibility matrix for every distributed package.
 
 Joomla 6 requires PHP 8.3 or later. A compatible Joomla release also has its own database, web-server and PHP extension requirements. Check those requirements together with the actual redSHOP package and every required plugin or module. A Composer constraint or an example configuration is not evidence that a particular Joomla 5 or Joomla 6 installation or upgrade has passed acceptance testing.
 

@@ -7,7 +7,7 @@ Wrappings allow a shop to offer optional product packaging. Open **Wrappings** i
 
 The list includes the wrapping name, image, price, use-for-all-products setting and publication state. Open a name to edit the record.
 
-Search by wrapping name and use sortable headings and pagination to navigate. The all-products indicator can be changed from the list; it is separate from publication. Before changing an individual indicator, clear any selected rows: otherwise a previously selected wrapping may be changed instead. Reopen or refresh the list and check the intended record.
+Search by wrapping name and use sortable headings and pagination to navigate. The model defaults to ID ascending unless a saved list selection applies. The all-products indicator can be changed from the list; it is separate from publication. Before changing an individual indicator, clear any selected rows: otherwise a previously selected wrapping may be changed instead. Reopen or refresh the list and check the intended record.
 
 The price and publication headings currently fall back to ID ordering instead of sorting by those values. Use the name or ID ordering to locate records.
 
@@ -22,7 +22,7 @@ Depending on permissions, the toolbar offers **New**, **Delete**, **Publish**, *
 - **Wrapping Price:** amount for the wrapping. Check the displayed price and tax with the shop's product and template settings.
 - **Product Name:** select one or more products to associate with this wrapping.
 - **Category Name:** select a category to make the wrapping available to matching products.
-- **Wrapping Image:** optionally upload an image with a lowercase `.jpg`, `.jpeg`, `.gif` or `.png` extension. The editor displays an existing image when available. An upload failure may not prevent the record from being saved, so reopen it and check that the new image is actually available.
+- **Wrapping Image:** optionally upload an image; the upload path checks for `jpg`, `jpeg`, `gif` and `png` extensions. The editor displays an existing image when available. An upload failure may not prevent the record from being saved, and replacement can remove the previous file first. Keep a backup, then reopen the record and check that the new image is available.
 - **Use for all products:** defaults to Yes for a new record. Choose No when the option should apply only to the selected products or category.
 - **Published:** defaults to Yes for a new record. An unpublished wrapping is not eligible in the inspected product renderer.
 
@@ -46,5 +46,7 @@ The product renderer supports a named wrapper template reference, for example `{
 <h4 id="how-to">Test a wrapping</h4>
 
 Using disposable products and a mocked or offline payment, choose a wrapping on the product page and check the cart, checkout and saved order. Compare matching and nonmatching products, quantities, mixed carts, price and VAT, including the result without a wrapping. Do not rely on an old example price or assume all templates expose the control.
+
+In the inspected cart flow, the wrapping price is added to the product's unit price; checkout calculates the line total using the quantity and carries the wrapping ID and price into the order item. Adding the same product with a different selected wrapping is treated as a different cart variant in the inspected add-to-cart path. Verify the resulting lines and amounts in your shop, including any discounts and tax settings.
 
 When wrapping is selected, the displayed product price without VAT may include VAT on the wrapping. Verify both tax-inclusive and tax-exclusive displays and compare them separately with checkout.

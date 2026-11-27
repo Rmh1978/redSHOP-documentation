@@ -30,6 +30,8 @@ Add `{supplier_name}` to the relevant product template if the supplier name shou
 
 Open a product and choose the supplier in **Additional Information**, then save the product. Preview the product with the intended template. The current supplier selector query does not filter on publication state; the supplier-name replacement also has no explicit published-state check. Do not rely on unpublishing a supplier to hide its name without verifying your installation.
 
+For products with different supplier and manufacturer IDs, the inspected storefront checkout and two administrator order-item paths assign the manufacturer ID to the order item's supplier field. Verify stored order data independently. The inspected supplier-email path looks up the product's supplier separately; an email impact from the order-item field has not been established.
+
 <h4 id="publish">Publish</h4>
 
 Select the supplier and use the list's Publish action where permitted. Verify the resulting state and product display.

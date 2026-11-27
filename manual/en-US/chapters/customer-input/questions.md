@@ -5,7 +5,7 @@ Open **Customer Input → Questions** in redSHOP administration. Questions and a
 <h2 id="overview-1">Question list</h2>
 <h4 id="field-1">Fields</h4>
 
-The list identifies questions, products, answer counts, publication and associated customer name and email. Search matches question text, and a product filter is available. Use the sortable headings and pagination to navigate.
+The list identifies questions, products, answer counts, publication and associated customer name and email. Search matches question text, and a product filter is available. The list query includes top-level questions; answers are accessed through their question. Its default order is question date descending unless a saved list selection applies. Use the sortable headings and pagination to navigate.
 
 <h4 id="action-1">Actions</h4>
 

@@ -13,12 +13,13 @@ For a new plugin configuration, the inspected manifest declares these defaults; 
 
 | Setting | Default and considerations |
 | --- | --- |
-| Payment operand / Payment price / Discount Type | Operand `-`, blank price and Percentage. Total is the fixed-amount alternative. Verify charges, discounts and final totals with disposable orders. |
-| Show on Private Person / Show on Business | Both default to Yes; choose the eligible customer types. |
-| Order Status transactions | Defaults to status code `C`; its meaning depends on your configured statuses and does not prove receipt of money. |
-| Select Shopper Group | Multiple groups can be selected. Review and test the saved selection for matching and nonmatching customers. |
+| Payment fee or discount / Payment adjustment amount / Adjustment amount type | Operand `-`, blank amount and Percentage. Total is the fixed-amount alternative. Verify charges, discounts and final totals with disposable orders. |
+| Show for private / business customers | Both default to Yes; choose the eligible customer types. |
+| Order status after successful payment | Defaults to status code `C`; its meaning depends on your configured statuses and does not prove receipt of money. |
+| Available to shopper groups | Multiple groups can be selected. Review and test the saved selection for matching and nonmatching customers. |
 | Enter Extra Info / Select Extra Field | Extra information starts with placeholder text; replace or clear it with approved instructions. Multiple payment extra fields can be selected. |
-| E-conomic payment conditions and layout IDs | Both start blank; use only mappings approved for the accounting integration. |
+
+The current COD manifest does not expose e-conomic payment conditions or layout IDs. Review the central integration settings and optional payment-method overrides in [Set up the e-conomic integration](chapters/e-conomic-integration/setup.md) instead; preserved settings from an older installation can still affect the resolved values.
 
 The plugin's nonmatching payment-handler branch has a known source-level error, so compatibility with other payment methods and the full checkout flow must be tested before relying on it. Do not relabel a credit-card plugin as COD.
 

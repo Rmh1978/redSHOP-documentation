@@ -40,6 +40,8 @@ The progress display may omit recipient details after the first row. Do not trea
 
 The inspected signup code may publish an entry before confirmation, and the configuration test-mail result is not a reliable delivery confirmation. Do not send to real subscribers until consent, unsubscribe, message content, authorization and delivery are independently verified. See [Newsletter subscribers](chapters/communication/newletters-subcribers.md) and [Newsletter configuration](chapters/global-configuration/newsletter.md).
 
+The optional AcyMailing product integration is separate from this redSHOP newsletter flow. See [Products in Joomla content](chapters/plugin-redshop/product-content.md).
+
 <h4 id="create">Create a newsletter</h4>
 
 1. Choose **New**, enter the name and subject, compose the body and select a suitable template.

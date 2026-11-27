@@ -26,6 +26,8 @@ Use the available list filters and toolbar to create, edit, publish, unpublish o
 
 The editor includes a section-specific hints panel. Changing a template does not by itself configure when an email is sent.
 
+For the regular order-confirmation path, Joomla's mail sending must be enabled and a published template must exist for the applicable order or catalogue-order section. Other mail sections can have different conditions.
+
 Tags are section-specific. For example, the order mail tag list includes `{order_id_lbl}`, `{order_id}`, `{order_number_lbl}` and `{order_number}`; verify rendered content in the intended mail path rather than assuming every tag works in every section. Restrict who may edit HTML and BCC addresses.
 
 <h4 id="action-2">Actions</h4>

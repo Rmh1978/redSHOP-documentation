@@ -28,8 +28,14 @@ For a new configuration, the inspected manifest also declares these defaults:
 
 Keep tokens, invoice details and customer data out of source control, screenshots and shared logs. Protect Joomla administrator and backup access.
 
+### Cashbook on the order list
+
+For a booked Billy invoice, the order list can show the amount already registered and offer **Register [amount] in Billy Cashbook** when verified payment funds are available and you have edit permission. The displayed availability is calculated locally; the registration also checks the invoice and its balance with Billy. An authorization alone is not a captured payment.
+
+An unknown earlier amount, unresolved operation or conflicting payment records requires reconciliation before another registration. If a request's outcome is uncertain, check Billy with the accountant before retrying; an error or missing response does not prove that no entry was created. Available controls depend on the installed version and order state.
+
 ### Test before live use
 
 Using disposable customers, products and orders, compare both systems after each action. Check account and tax mappings, domestic and international addresses, discounts and shipping, invoice draft and booking modes, payment-specific settings, cashbook entries, email, reminders, retries, duplicates, cancellation and reconciliation. Test failures and recovery without assuming an unsuccessful response means no remote change occurred.
 
-The plugin has separate invoice creation and booking calls; a cashbook path checks the order payment status and configured cashbook setting. Those source paths are not proof that all payment and accounting scenarios are correct. Resolve discrepancies with the provider and accountant before authorizing production use.
+The plugin has separate invoice creation, booking and cashbook calls. Those source paths are not proof that all payment and accounting scenarios are correct. Resolve discrepancies with the provider and accountant before authorizing production use.

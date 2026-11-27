@@ -5,13 +5,13 @@ Product price discounts are separate from mass discounts and per-product shopper
 <h2 id="overview-1">Discount list</h2>
 <h4 id="product-price-1">Fields and filters</h4>
 
-The list shows the threshold, condition, type, discount amount, dates and publication state. Filter by shopper group, type or publication state, and sort using the available column headings. The search box currently does not filter this list; use the other filters instead.
+The list shows the threshold, condition, type, discount amount, dates and publication state. Filter by shopper group, type or publication state, and sort using the available column headings. The default order is ID ascending. The search box currently does not filter this list; use the other filters instead.
 
 If inline editing is enabled and you have permission to edit, the list offers inline changes to the threshold and discount amount. These changes may fail shopper-group validation; use the complete editor and reopen the rule to verify its settings.
 
 <h4 id="actions-1">Actions</h4>
 
-Create a rule with **New**, or open an existing row to edit it. Select rows to publish, unpublish or delete them as permitted. Back up before changing active discounts.
+Create a rule with **New**, or use the edit button on an existing row. Select rows to publish, unpublish or delete them as permitted. Back up before changing active discounts.
 
 <h2 id="overview-2">Discount details</h2>
 <h4 id="product-price-2">Fields</h4>

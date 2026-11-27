@@ -18,6 +18,10 @@ Use an isolated site and disposable data to verify column names, filtering, enco
 4. Select **Start Export**, wait for the process and download to finish, and inspect any messages.
 5. Verify the file's headers, record count, filtering and contents before use. Store the file securely. Avoid simultaneous exports of the same type because they use a shared temporary filename.
 
+The inspected export screen requests records in batches of 100 and starts the download when processing finishes. The shared export helper deletes its temporary file after sending it; retain your downloaded copy in an approved location and verify it independently.
+
+For order exports, the current processing code repeats the full batch for each input row. An isolated test of two input rows produced four output rows; the full Joomla export has not been tested. Compare individual order-item IDs and counts with the source data before using the file for reconciliation or migration.
+
 ### Product export options
 
 The product exporter offers separate **Extra Fields** and **Attributes Data**
@@ -32,24 +36,30 @@ query applies both filters. Check the exported products and their associated
 categories before using the file, especially when products belong to more than
 one category.
 
+Category exports include image-name columns, not the image files themselves.
+Back up media files separately and verify category image references after a
+migration. When a category has no main image, the inspected exporter can
+repeat missing-image lookups and skip the separate thumbnail fallback. Check
+warnings and the exported image columns before using the file.
+
 ### Export types in the Core manifest
 
 The manifest lists the following types. The actual list on a site depends on installed and enabled plugins:
 
 | Type | Check in the exported data |
 |---|---|
-| <a id="attributes"></a>Attributes, properties and sub-properties | Product and attribute associations and values. |
+| <a id="attributes"></a>Attributes, properties and sub-properties | Product and attribute associations and values. The product selector permits multiple products; no selection adds no product filter. |
 | <a id="categories"></a>Categories | IDs, `parent_id`, names and hierarchy; the category export omits the root category and orders records by level. |
-| <a id="custom-fields"></a>Custom fields | Field configuration and associations. |
-| <a id="manufacturers"></a>Manufacturers | Names and identifiers. |
-| <a id="newsletter"></a>Newsletter subscribers | Subscription data and personal information. |
+| <a id="custom-fields"></a>Custom fields | Field definitions, option values and selected field-data rows. The field-data query joins product records, so do not assume it exports every value from every section. |
+| <a id="manufacturers"></a>Manufacturers | Names, identifiers, grouped product IDs and image reference; verify product associations and back up image files separately. |
+| <a id="newsletter"></a>Newsletter subscribers | Subscription IDs, names, email, newsletter and date. The selected columns do not establish consent or publication state; verify these separately. |
 | <a id="products"></a>Products | Product details and selected category/manufacturer filters, if offered. |
-| <a id="stockroom"></a>Product stockroom data | Product, stockroom and quantity values. |
-| <a id="related"></a>Related products | Both sides of the relationship. |
-| <a id="shipping"></a>Shipping addresses | Customer associations and personal information. |
-| <a id="shopper-1"></a>Shopper-group attribute prices | Product, attribute, group and price. |
-| <a id="shopper-2"></a>Shopper-group product prices | Product, group, quantity ranges and price. |
-| <a id="users"></a>Users | Account identifiers and personal information. |
+| <a id="stockroom"></a>Product stockroom data | Product number and name, stockroom name, quantity, preorder stock and ordered preorder. The query reads product-stockroom associations; do not assume it lists products without one. |
+| <a id="related"></a>Related products | `related_sku` and `product_sku` identify the related product and its owning product by product number. Verify both sides before importing. |
+| <a id="shipping"></a>Shipping addresses | Shipping-type address records and customer associations, including personal information. |
+| <a id="shopper-1"></a>Shopper-group attribute prices | Property and sub-property price rows, including section, product, shopper group, quantity range and discount dates. Verify associations and prices before use. |
+| <a id="shopper-2"></a>Shopper-group product prices | Product number, group, quantity ranges, price and discount dates. The query excludes products with an empty product number. |
+| <a id="users"></a>Users | Billing-type user records and personal information. The query requires a Joomla user-group association and groups by user ID, so do not assume every customer is included. The password column is emitted empty, not as a password backup. |
 | Orders | The current order exporter includes order-item, status, address and total fields; review its date-filtered record count and contents carefully. |
 
 See [Data Import](chapters/import-export/data-import.md) for the corresponding import workflow. The current manifest lists an order export but not a matching order import plugin.

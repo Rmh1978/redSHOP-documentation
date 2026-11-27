@@ -2,22 +2,30 @@
 
 These optional site modules provide navigation, product displays, cart tools and integrations. Availability and compatibility depend on the exact package and installed Joomla/redSHOP versions. Install and test each module on an isolated shop first; menu visibility or a product listing is not a substitute for access checks.
 
-Choose a guide for the module you intend to use:
+Choose a guide for the module you intend to use. This list is not a complete catalogue of modules in the source or Marketplace:
 
 - [How to install module/plugin on Joomla administrator?](chapters/module-redshop/install-module-plugin.md)
 - [redSHOP - Price Filtering](chapters/module-redshop/price-filtering.md)
+- [redSHOP - Category product filters](chapters/module-redshop/category-product-filters.md)
 - [redSHOP - Cart module](chapters/module-redshop/cart-module.md)
+- [redSHOP - Minicart module](chapters/module-redshop/minicart.md)
 - [redSHOP - Category module](chapters/module-redshop/category-menu.md)
+- [redSHOP - Category scrollers](chapters/module-redshop/category-scrollers.md)
 - [redSHOP - Mega menu](chapters/module-redshop/mega-menu.md)
 - [redSHOP - redMASSCART](chapters/module-redshop/redmasscart.md)
 - [redSHOP - Product Compare](chapters/module-redshop/product-compare.md)
+- [redSHOP - Wishlist](chapters/module-redshop/wishlist.md)
 - [redSHOP - Search](chapters/module-redshop/search.md)
 - [redSHOP - Shoppergroup Category menu](chapters/module-redshop/shoppergroup-category.md)
 - [redSHOP - Discount](chapters/module-redshop/discount.md)
 - [redSHOP - Manufacturer Scroller](chapters/module-redshop/manufacturer-scroller.md)
+- [redSHOP - Featured Product](chapters/module-redshop/featured-product.md)
+- [redSHOP - Product Scroller](chapters/module-redshop/product-scroller.md)
+- [redSHOP - Product Slideshow](chapters/module-redshop/product-slideshow.md)
 - [redSHOP - Product Tab Module](chapters/module-redshop/product-tab.md)
 - [redSHOP - Who Bought](chapters/module-redshop/who-bought.md)
 - [redSHOP - Product](chapters/module-redshop/product.md)
+- [redSHOP - Related Products](chapters/module-redshop/related-products.md)
 - [redSHOP Tags - Similar](chapters/module-redshop/similar.md)
 - [redSHOP - Newsletter](chapters/module-redshop/newsletter.md)
 - [redSHOP - Promoting Free Shipping](chapters/module-redshop/free-shipping.md)

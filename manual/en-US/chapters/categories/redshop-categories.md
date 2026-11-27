@@ -32,7 +32,7 @@ The template selector above the list is a **bulk assignment**, not a search filt
 
 <h2 id="detailsScreen">Category editor</h2>
 
-The current editor has Category Information, Metadata, Fields, Accessory Product and Product Filters tabs; plugins can add tabs. Images appear in the information view, rather than a separate image tab.
+The current editor has Category Information, SEO, Fields, Accessory Product and Product Filters tabs; plugins can add tabs. Images appear in the information view, rather than a separate image tab.
 
 <h4 id="informationTab">Category information</h4>
 
@@ -46,7 +46,7 @@ The current editor has Category Information, Metadata, Fields, Accessory Product
 
 The information view provides main and back-image controls. The storefront output depends on the active template. See [media management](chapters/media/working-medias.md) for associations and deletion precautions.
 
-<h4 id="seoTab">Metadata</h4>
+<h4 id="seoTab">SEO and metadata</h4>
 
 The editor provides page title, heading, SEF URL, canonical URL, keywords, description, language and robots settings, plus an append/prepend/replace choice for global SEO. Test generated metadata and URLs with the actual menu, language and SEO configuration; entering a value does not itself verify the resulting route or canonical URL.
 
@@ -68,7 +68,7 @@ Use Apply to save and remain in the editor, Save to save and close, Save &amp; N
 
 The master filter switch defaults to **No**. When enabled, choose product attributes and turn on subcategory, manufacturer, price-slider or product-custom-field filters as needed; these switches also default to **No**. The attribute choices are based on products associated with the category. When custom-field filtering is enabled, select supported product fields: checkbox, checkboxes list, single select or multi-select.
 
-The editor states that the `mod_redshop_category_product_filters` module must be installed, enabled and assigned to the menu item for the category. Save and test the module on the intended storefront menu and layout, including the effect of subcategories.
+The editor states that the `mod_redshop_category_product_filters` module must be installed, enabled and assigned to the menu item for the category. See [Category product filters](chapters/module-redshop/category-product-filters.md), and test the module on the intended storefront menu and layout, including the effect of subcategories.
 
 The module can fail to render manufacturer, category, custom-field or attribute
 choices when no filter selection has yet been supplied. Verify the initial

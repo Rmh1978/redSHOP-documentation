@@ -4,6 +4,8 @@
 
 In Joomla administration choose **Components → redSHOP**. The installation screen also offers a Dashboard action. Access requires redSHOP management permission.
 
+The optional **Quick Icon - redSHOP** plugin can add a shortcut to a Joomla Quick Icons module. Its **Group** setting must match the module's group; the plugin default is `mod_quickicon`. Enabling a shortcut does not grant redSHOP access. Check the installed plugin and module on your Joomla version.
+
 <h2 id="linkButtons">Navigate to shop sections</h2>
 
 Use the [navigation panel](chapters/getting-started-general/redshop-navigation-panel.md) to reach products, orders, discounts, shipping, customers, configuration and other available sections. Menu entries vary with configuration, permissions and installed extensions; the current dashboard is not the historical grid of section buttons.
@@ -19,3 +21,7 @@ For regular shop settings use [Configuration](chapters/global-configuration/star
 The current dashboard template includes cards labelled total sales, order count, total members and total visitors, a sales chart, newest orders and newest customers. A Billy revenue panel is included when that integration plugin is enabled.
 
 **Do not use the four card values for accounting or operational decisions:** the inspected data query returns a union of order IDs, user-info IDs and a visitor count rather than the four aggregates expected by the template. The results can therefore be mislabelled. Reconcile against independently verified order and payment records while this is investigated. Chart and report accuracy also require isolated testing.
+
+The chart offers daily, weekly, monthly and yearly periods and bar or line views. It loads Google Charts, so the chart also depends on the browser being able to reach that service. The newest-order rows link to order details; the newest-customer rows link to customer records and show order counts and amounts.
+
+If the dashboard warns that no PDF library is available, check that an appropriate redSHOP PDF plugin is installed and enabled before using PDF-dependent features.

@@ -2,6 +2,160 @@
 
 ## GitHub synchronization
 
+**CODE-281 (open; #321):** Guest wishlist button omits the form target consumed by its click handler. Actual handler with synthetic layout attributes and DOM stubs prevented default and did not submit; target control submitted. Browser and Joomla remain unverified.
+
+**CODE-280 (open; #320):** Actual Related Products module entry raised a null query error with enabled and selected stockroom in isolated include scope; no-selection control rendered. Joomla include scope and actual stock filtering remain unverified.
+
+**CODE-279 (open; #319):** Actual Product Slideshow default layout rendered fixed placeholder images for different synthetic product lists with asset calls stubbed. Product query, XML write and Joomla browser behavior remain unverified.
+
+**CODE-278 (open; #318):** Actual Main Category Scroller thumbnail helper raised an error with no full media and a synthetic existing default-image file; no-default control returned noimage. Real Joomla media and storefront are unverified; distinct from #316.
+
+**CODE-277 (open; #317):** Actual minicart layout with fixed synthetic populated cart and stubs rendered identically with opposing display settings. Shared cart total calculation reads a cart-module record. Real cart recalculation and Joomla rendering remain unverified.
+
+**CODE-276 (open; #316):** Main Category Scroller's actual default layout raised a PHP 8.4 TypeError for synthetic integer and null menu IDs supplied by a router stub. Router source returns an ID or null. Real Joomla routing and rendering remain unverified.
+
+**CODE-275 (open; #315):** Actual category export processing with media stubs repeated missing full-image lookups and skipped a separately stubbed thumbnail; Joomla export and filesystem unverified.
+
+**CODE-274 (open investigation; #314):** Actual product editor button with stubs points to a singular view while the selector layout belongs to the plural view. Actual Joomla modal dispatch and insertion unverified.
+
+**CODE-273 (open; #312):** Standalone PostNord label controller and client with synthetic input and mocked cURL emitted an empty consignee name for a present empty company field. Company and absent-field controls passed; Joomla and provider behavior unverified.
+
+**CODE-272 (open; #313):** PostNord client reads a different weight key from the standalone controller and the order label source. Actual standalone controller and client with mocked cURL emitted empty shipment and item weights; order dispatch and provider behavior unverified.
+
+**CODE-271 (open investigation; #311):** Product statistics sets a session SQL mode containing a mode described as removed in the MySQL 8 worklog. Actual model statement was captured with a stub; real database acceptance is unverified.
+
+**CODE-270 (open; #310):** Product statistics order-count heading is absent from the model sort allowlist. Actual product and base model state with stubs fell back to product name in both directions; Joomla browser and database remain unverified.
+
+**CODE-269 (open; #309):** Order statistics export treats grouped report rows as individual orders; the actual controller with synthetic rows and stubs failed on an empty list and warned on a missing order ID. Full Joomla export is unverified.
+
+**CODE-268 (open; #308):** Customer and product statistics exports concatenate CSV values without quoting. Each actual controller with synthetic data and stubs produced an extra column for a name containing a comma; full Joomla exports are unverified.
+
+**CODE-267:** Custom field list review hold; source-only concern requires authorized private assessment. Runtime impact and exploitability unverified; no ordinary Issue.
+
+**CODE-266 (open; #307):** Attribute stockroom save reads the first association before checking an empty result. Actual model with stubs emitted two PHP warnings; real Joomla error handling and insert unverified.
+
+**CODE-265 (open; #306):** Attribute stockroom save can update an earlier row before rejecting a later one. Actual model with SQLite and doubles reproduced partial persistence; Joomla and MySQL unverified.
+
+**CODE-264:** Pricing review hold; source-only concern requires authorized private assessment. Runtime impact and exploitability unverified; no ordinary Issue.
+
+**CODE-263 (open; #305):** The product attribute status heading requests an ordering field absent from the model whitelist. Actual redSHOP state population with stubs fell back to ID; full Joomla browser and database remain unverified.
+
+**CODE-254 (open; #297):** Catalogue and sample request views use delete tasks while controllers expose remove; list selections and controller input names also differ. Actual redSHOP base dispatch with task-map stubs and bundled Joomla grid helper reproduced the contracts; full Joomla dispatch is unverified.
+
+**CODE-253 (open; #296):** Actual sample-request model bulk update and delete with SQLite and query stubs returned success but changed no rows for IDs 1 and 2; single-ID controls passed. Joomla dispatch and MySQL unverified; separate model and workflow from #261.
+
+**CODE-252 (open; #295):** The standard sample template and request details use names replaced by current schema. Actual Twig with schema-shaped rows and a stubbed colour helper omitted names and passed null; an equivalent SQLite detail join failed on the old column. Real Joomla and MySQL remain unverified; distinct from #294.
+
+**CODE-251 (open; #294):** Actual sample store with SQLite and stubbed dependencies recreated a retained colour with a new ID and removed all colours when the input was absent. Existing requests store colour IDs. Real Joomla, MySQL, inline editing and request display remain unverified.
+
+**CODE-262:** Attribute editor publication field differs from the stored column. Actual bundled Joomla table binding with event stubs ignored the editor field; full form save remains unverified.
+
+**CODE-261:** Product attribute filter form and list query use different request state. Actual model with stubs ignored nested product input; Joomla submission remains unverified.
+
+**CODE-260:** Investigate guest checkout newsletter sign-off. Actual helper skips removal for a guest and empty email; checkout control reachability and runtime remain unverified.
+
+**CODE-259:** Customer tag account detail links contain literal PHP and the edit form identifier differs from the model. Actual Twig and model probes used stubs; full browser behavior unverified.
+
+**CODE-258:** Customer tag toolbar task and selection contracts differ from the handlers. Actual redSHOP dispatch with task-map stubs and earlier Joomla grid helper probe support the mismatch; full UI unverified.
+
+**CODE-257:** Customer tag publication targets a table different from the install schema. Actual model with isolated SQLite and stubs returned false; Joomla dispatch and MySQL remain unverified.
+
+**CODE-256:** Customer tag deletion quotes multiple IDs together and leaves the transaction open after success. Actual model with isolated SQLite and stubs demonstrated both; Joomla dispatch and MySQL remain unverified.
+
+**CODE-255 (security hold):** Customer tag handling requires authorized private review. Runtime exposure and exploitability are unverified; no ordinary Issue has been created.
+
+**CODE-250 (security hold):** Catalogue request handling requires authorized private review. Runtime exposure and exploitability are unverified; no ordinary Issue has been created.
+
+**CODE-249 (open; #293):** Actual catalogue mail method with a database stub failed to resolve its unimported helper. In a separate actual-controller probe successful storage and failed mail stubs produced the sent-success message. Joomla autoload, database, browser and mail are unverified.
+
+**CODE-248 (open; #292):** Currency Layer's eligible refresh fetches data but then reads and may rewrite the existing cache instead. Actual initialization with a simulated clock and mocked provider retained synthetic rate 2 instead of fetched 3; no-cache control returned 3. Real Joomla and provider behavior are unverified; distinct from #72 and #264.
+
+**CODE-247 (security hold):** Order export selection requires authorized private review. Runtime exposure and exploitability are unverified; no ordinary Issue has been created.
+
+**CODE-246 (open; #291):** Product Scroller passes `LIMIT 5` as a query limit. Public Joomla Database 3.4.0 source casts it to integer and its MySQL builder omits a nonpositive limit; a separate PHP 8.4 cast produced 0. Installed framework and SQL execution remain unverified.
+
+**CODE-245 (open; #290):** Actual Product Scroller `ShowProducts` with synthetic prices rendered its old-price layout for both saved `no` and `yes`, while numeric string `0` used the single-price branch. Form binding and actual storefront remain unverified; separate module and option from #137, category query #289 and diagnostic #288.
+
+**CODE-244 (open; #288):** Product Scroller unconditionally queues a diagnostic error in its lookup; actual module entry with stubs queued the message. Joomla message display remains unverified.
+
+**CODE-243 (open; #289):** Actual Product Scroller query construction with synthetic category IDs produced an incorrect `IN` expression; an equivalent SQLite predicate selected an unintended synthetic ID. In a separate stubbed fixture the actual category helper returned child and grandchild objects with `id` but no `category_id`, which the scroller reads. Integrated descendants, Joomla query builder, MySQL and storefront behavior remain unverified.
+
+**CODE-242 (open; #287):** Actual `Price::getPrice` compounded a synthetic 10% discount across two calls using a shared product when the price-record stub returned null; price-record and no-discount controls remained stable. Actual `getNetPrice` returned 90 alone versus 81 after `getPrice` on the same synthetic product with a preseeded discount. Real rule selection, cached helper integration, storefront and checkout remain unverified.
+
+**CODE-241 (open investigation; #286):** The actual shared cart renderer omitted module ID from tag data for two synthetic module IDs; source tag code tests an unassigned local before building form identifiers. Real tag output, repeated-product pages and browser behavior remain unverified. Distinct from #143, #57, #268 and #251.
+
+**CODE-240 / #285 (open):** The actual stock-image `doStore` returned true after a synthetic filename-update exception despite retaining a table error. The parent store, media helper and database were stubbed; actual Joomla save and filesystem effects remain unverified.
+
+**CODE-239 / #284 (open investigation):** The inspected free-shipping checkout layout skips shipping selection and the order-save path does not read a submitted method. Physical-order fulfillment policy, actual checkout, persistence and downstream impact remain unverified.
+
+**CODE-238 / #283 (open):** Ahamove order-item serialization assigns properties to an uninitialized element. The actual method threw on a synthetic nonempty order-item list, while empty input returned `[]`. Event dispatch and provider behavior are unverified.
+
+**CODE-237 (open; #282):** Ahamove's cart remark builder reads a malformed product key. The actual method with a synthetic cart item warned and passed null to a product stub; an order-item object control passed its ID. Real checkout and provider behavior are unverified.
+
+**CODE-236 (open; #281):** Shopper-group default shipping retains an initial zero amount when a matched VAT row has zero rate. The actual helper with synthetic dependencies returned 0 for a configured 100 shipping amount and a zero-rate VAT row, versus 100 without a row and 125 at a 0.25 rate. Actual database selection and checkout are unverified; distinct from CODE-235's query predicate.
+
+**CODE-235 (open; #280):** The shipping VAT helper compares the numeric tax-rate field with a state code. The actual query-construction method was exercised with synthetic input and stubs; database and checkout behavior remain unverified. Distinct from #263's product-tax state join.
+
+**CODE-234 (open; #279):** The selected-box dimension lookup calls `count()` on an object or null. The actual helper threw a PHP 8.4 `TypeError` with synthetic database results; database, carrier dispatch and Joomla checkout remain unverified.
+
+**CODE-233 (open; #278):** Cart estimator overwrites scalar volume with a dimension array and compares height bounds against length. The actual method with synthetic dependencies confirmed the quote inputs; real database execution and Joomla checkout remain unverified. Distinct from CODE-104's malformed SQL.
+
+**CODE-232 (open; #277):** Product Tab's sale-price layout reads a variable not set in the inspected entry or parent layout. The actual layout with synthetic prices emitted an undefined-variable warning; Joomla rendering and intended presentation are unverified.
+
+**CODE-231 (open; #276):** Product Tab category adjustment uses a non-category request ID as a category ID in synthetic helper tests. Actual Joomla routing and database behavior remain unverified.
+
+**CODE-230 (open; #275):** The actual order-discount selector chose different overlapping synthetic rules when their iteration order changed. The associated ID query has no explicit order. Intended precedence, supported database ordering and checkout impact remain unverified.
+
+**CODE-229 (open; #274):** Comparison product-key lookup returns numeric array positions instead of stored keys and uses substring matching. The actual class with synthetic state retained an item on categoryless removal while exact-category removal succeeded; Joomla and session persistence are untested. Distinct from #252 request parameter names.
+
+**CODE-228 (open; #273):** Four category tree styles use an undefined module-directory variable in the inspected entry. The actual entry with Joomla stubs failed to load dTree when the variable was absent; standard Joomla 5.4 development dispatcher source does not expose it. Installed Joomla and all styles remain unverified. Distinct from #241 sorting and #242 dTree query alias.
+
+**CODE-227 (open; #272):** Normal configuration stores two registration introductions, but the inspected default frontend layout renders corresponding language keys rather than reading those settings. Source-only investigation; Joomla language overrides and rendering are unverified. Distinct from #232's wizard session-key mismatch.
+
+**CODE-226 (open; #271):** Category changes invoke the search module's manufacturer callback even when its optional destination is not rendered. The actual source and shipped minified callbacks threw with DOM doubles for both empty and populated responses; controls with a destination hid or displayed it. Browser, AJAX and Joomla are unverified. Distinct from #256 selector visibility, #257 query construction and #229 suggestion initialization.
+
+**CODE-224 (open; #269):** Product zoom indexes a thumbnail filename match without checking missing or nonmatching URLs. The actual initializer threw for synthetic paths with DOM doubles; browser and Joomla behavior remain unverified. See the Core handoff for tests and scope.
+
+**CODE-223 (open; #268):** The free-shipping module passes its configured rate ID initially, but the AJAX cart refresh calls the helper without an ID and writes the result into the module message. Source only; actual browser and checkout behavior are untested. Distinct from #238 method enablement, #163 postal filtering and #251 cart-module settings.
+
+**CODE-222 (open; #267):** Manufacturer scroller limits joined published media rows instead of distinct manufacturers. An equivalent SQLite query returned the same manufacturer twice under a limit of two when it had two published media rows. Actual Joomla SQL and storefront are untested; confirm intended image selection. Distinct from #198 image links and #199 slider divisor.
+
+**CODE-221 (open; #266):** Mega Menu's in-request category-tree cache uses category ID but not the selected Joomla menu or end level. Actual helper with synthetic stubs returned the first menu for a second instance sharing its category; a distinct-category control returned its own menu. Joomla rendering is untested. Distinct from #204 category query keys and #201 sorting.
+
+**CODE-220 (open; #265):** Order export processing repeats the full batch for each input row; the actual method with synthetic helper stubs returned four rows for two input rows. The shared export helper writes each transformed row, but SQL, CSV and Joomla runtime remain untested. Distinct from CODE-005 / #111 date boundaries and CODE-004 / #109 concurrent temporary-file reuse.
+
+**CODE-009 (#93; further source evidence):** In addition to the two administrator paths, non-giftcard storefront checkout assigns order-item supplier ID from manufacturer ID. Quotation conversion uses product supplier; the inspected supplier-email branch reads the current product supplier rather than this stored field. Persistence, downstream effects and checkout remain unverified; the Issue was updated and a subsequent dry-run reported unchanged.
+
+**CODE-219 (open; #264):** Both currency converters substitute rate 1 for an absent individual quote. Actual methods with synthetic nonempty rates returned a value for a missing target; provider, payment and Joomla paths are untested. Distinct from CODE-007 / #72's Currency Layer explicit-target bypass.
+
+**CODE-218 (open; #263):** Tax calculation lookup joins states by three-character code without constraining country. An equivalent isolated SQLite fixture matched a foreign country's two-character state code when three-character codes were shared; the actual Joomla query, database and checkout are untested. Distinct from CODE-070 / #130's administrator-list display issue and CODE-185 / #234's association-write failure.
+
+**CODE-215–217 (open; #260, #261, #262):** Account-group list deletion reads a different selection key; bulk SQL quotes multiple IDs together; and publication feedback is inverted. Actual controller/helper methods were exercised with synthetic stubs. Database and Joomla runtime are unverified.
+
+**CODE-212 (open; GitHub #257):** The actual category-dependent search manufacturer lookup generated one quoted comma-separated value for two synthetic IDs with database stubs. SQL, Joomla and browser behavior remain unverified.
+
+**CODE-211 (open; GitHub #256):** Search module's default Twig reads a differently capitalized manufacturer visibility key. With categories hidden an isolated actual-layout render omitted the configured selector; its request-name contract also needs verification. Joomla, browser, AJAX and search results are unverified.
+
+**CODE-209 (open; GitHub #254):** Four product-module layouts and the AcyMailing integration pass product ID and link before dimensions to the image helper which expects dimensions first. The actual AcyMailing method with stubs confirmed the mismatched arguments; real image lookup, email and module rendering remain unverified.
+
+**CODE-210 (open; GitHub #255):** Products module exclusion and Related Products lookup use `pid` while the product view and module links use `id`. The actual Related Products entry with stubs did not call the lookup for `id=42`, but did for `pid=42`. Joomla routing and actual module results remain unverified.
+
+**CODE-207 (open; GitHub #252):** Product Compare module removal sends `pid` while the handler reads `id`; shared comparison sends `cid` while the handler reads `catid`. Source only; dispatch and session behavior unverified. Distinct from #205 menu-result counting.
+
+**CODE-208 (open; GitHub #253):** Mega Menu form stores `moduleclass_sfx` while the entry reads `class_sfx` for the inner list. Joomla wrapper and actual form/storefront behavior remain unverified. Distinct from #201 and #204.
+
+**CODE-206 (open; GitHub #251):** The shared cart-module parameter lookup does not select a displayed instance; initial module rendering uses instance parameters while total calculation and refresh use the shared lookup. Multiple-instance effect and intended policy remain unverified. Distinct from #203 and #239.
+
+**CODE-205 (open; GitHub #250):** Voucher Amount is marked sortable but absent from the model allowlist and falls back to ID in the shared list state path. Source inspection only; Joomla and database behavior remain unverified. Separate voucher model and form from #249 and separate from voucher percentage formatting #115.
+
+**CODE-204 (open; GitHub #249):** Promotion Description and Publication headings are marked sortable but absent from the model allowlist and fall back to ID in the shared list state path. Source inspection only; Joomla and database behavior remain unverified. Distinct affected model and form from #246, #187 and #183.
+
+**CODE-203 (open; GitHub #248):** Mass-discount table validation and explicit-product update with isolated parent/database stubs accepted 150% or fixed 120 against price 100 and generated negative discount prices; a 12% control generated 88. Actual Joomla, database, storefront and checkout remain unverified. Distinct from CODE-169 / #221 deletion reset.
+
+**CODE-202 (open; GitHub #247):** Review storage precedes administrator notification; the actual model returned failure after a successful table stub and failed mailer stub. A retry may encounter the duplicate check. Joomla database, controller and mail delivery remain unverified. Distinct from guest CAPTCHA CODE-048.
+
+**CODE-201 (open; GitHub #246):** Review-list user, date and publication headings are marked sortable but absent from the model's allowlist and fall back to `r.id` in the shared list state path at Core `2e2889680244db64b9e9f64da29608e02f543a70`. Source inspection only; Joomla requests and database behavior remain unverified. Distinct from manufacturer and wrapping list findings because the affected model and form differ.
+
 **Maintainer pause:** Project work and issue writes are paused pending explicit
 resumption. Ledger: 176 synced, 52 security holds, 15 test-only and no pending
 ordinary sync. Inventory: 145 partial, one historical annotation and 15
@@ -49,7 +203,7 @@ verification or close outstanding findings.
 
 **CODE-192 (open; GitHub #239):** Cart module manifest output default is not an offered option. Actual cart layout selected its extended branch for synthetic `1` and the expected branches for `simple` and `extended` (`mod_redshop_cart.xml:29-34`, `Cart/Cart.php:25-37`). Joomla binding, persistence and storefront remain unverified; distinct from #202's empty-cart button.
 
-**CODE-191 (open; GitHub #238):** Actual free-shipping message helper returned its free-rate message for a synthetic disabled extension and zero-price rate using in-memory SQLite and Joomla/query stubs (`Shipping/Rate.php:257-264,348-375`). MySQL, Joomla plugin discovery and checkout remain unverified. Distinct from #163's postal filtering, #162's calculator SQL and #189's GLS address handler.
+**CODE-191 (open; GitHub #238):** Actual free-shipping message helper returned its free-rate message for a synthetic disabled extension and zero-price rate using in-memory SQLite and Joomla/query stubs (`Shipping/Rate.php:257-264,348-375`). Source rechecked at `2e2889680244db64b9e9f64da29608e02f543a70`; both the module and AJAX cart (`Cart/Render.php:209-212`) call the helper. MySQL, Joomla plugin discovery, AJAX cart and checkout remain unverified. Distinct from #163's postal filtering, #162's calculator SQL and #189's GLS address handler.
 
 **CODE-190 (open; security hold):** A source-level newsletter module rendering investigation requires an authorized private security review. Runtime exposure and exploitability are unverified; no sensitive details or public issue recorded.
 
@@ -79,7 +233,7 @@ verification or close outstanding findings.
 
 **CODE-178 (open; GitHub #229):** Search module refers to `makeUrl()` and loads the suggestion script, but inspected default scripts/layout do not initialize `_b.AutoSuggest` or define `makeUrl`. Node VM with both actual scripts left synthetic keyword handlers unset and `makeUrl` undefined. Other scripts/overrides, Joomla asset loading and browser remain unverified. See `mod_redshop_search.php:19-20,55-60,112-140` and `src/assets/com_redshop/js/redshop.search.js:1-69`. Distinct from #227's custom-field rendering.
 
-**CODE-177 (open; GitHub #228):** Product editor accepts five accessory price operators, but `libraries/redshop/src/Helper/Accessory.php:124-137` generates a CASE for only plus, minus and equals. Its generated CASE adapted to SQLite returned NULL for synthetic multiplication/division; the actual price helper converts NULL to zero when VAT is disabled. Actual MySQL, Joomla, storefront and checkout remain unverified. See `ProductModel.php:1490-1508` and `Product/Accessory.php:38-41`.
+**CODE-177 (open; GitHub #228):** Product editor accepts five accessory price operators, but `libraries/redshop/src/Helper/Accessory.php:124-137` generates a CASE for only plus, minus and equals. Its generated CASE adapted to SQLite returned NULL for synthetic multiplication/division; the actual price helper converts NULL to zero when VAT is disabled. Cart accessory reconstruction and accessory tag pricing consume the lookup value. Actual MySQL, Joomla, storefront and checkout remain unverified.
 
 **CODE-176 (open; GitHub #227):** Search module's default layout does not render custom-field selectors: `mod_redshop_search.php:145-161` omits helper field data from the Twig context and `tmpl/default.html.twig:40-57` loops only when that data is empty. The real Twig layout emitted no selector with synthetic populated or empty field data. Actual Joomla, database, overrides and submitted search remain unverified. Distinct from #226's category exclusion query.
 
@@ -119,9 +273,9 @@ verification or close outstanding findings.
 
 **CODE-164 (open; GitHub #217):** Coupon and voucher list date renderers each raised an `Error` for a schema-permitted synthetic null start date with Joomla/config stubs; zero and valid dates rendered. Actual stored rows, blank-date save and Joomla UI remain unverified. Voucher evidence reconciled with GitHub.
 
-**CODE-163 (open; GitHub #216; investigation):** Actual product delivery helper with query-builder stub and in-memory SQLite selected an unpublished 1–2 day stockroom over a published 3–4 day stockroom. Intended publication policy, real MySQL and Joomla storefront remain unverified. Separate from CODE-162 / #215's Weeks conversion.
+**CODE-163 (open; GitHub #216; investigation):** Actual product delivery helper with query-builder stub and in-memory SQLite selected an unpublished 1–2 day stockroom over a published 3–4 day stockroom. Current source assigns the first cart product's result to `order_delivery`, which order template tags read; checkout can call order mail. Request scope and actual output remain unverified. Intended publication policy, real MySQL and Joomla storefront remain unverified. Separate from CODE-162 / #215's Weeks conversion.
 
-**CODE-162 (open; GitHub #215; investigation):** The actual product delivery helper divides Weeks values by seven and truncates: synthetic values 1–2 display `0-0 weeks` and 8–15 display `1-2 weeks`. Intended input/storage units and rounding, real persistence and storefront remain unverified. Separate from CODE-161 / #214's radio default mismatch.
+**CODE-162 (open; GitHub #215; investigation):** The actual product delivery helper divides Weeks values by seven and truncates: synthetic values 1–2 display `0-0 weeks` and 8–15 display `1-2 weeks`. Current source assigns the first cart product's result to `order_delivery`, which order template tags read; checkout can call order mail. Request scope and actual output remain unverified. Intended input/storage units and rounding, real persistence and storefront remain unverified. Separate from CODE-161 / #214's radio default mismatch.
 
 **CODE-161 (open; GitHub #214):** Stockroom delivery-unit default `1` matches neither `Days` nor `Weeks`; the bundled Joomla switcher layout rendered neither checked with the XML default and options in an isolated stubbed invocation. Actual new-record binding, persistence and storefront remain unverified. Related to general output acceptance M-0225.
 
@@ -131,7 +285,7 @@ verification or close outstanding findings.
 
 **CODE-160 (open; GitHub #213; investigation):** The VAT-after-discount number field has no fractional step despite a `0.16` tooltip example. A synthetic Chrome field starting at `0.000` reported step mismatch for `0.16`; actual Joomla validation and save are unverified and the toolbar source submits directly.
 
-**CODE-159 (open; GitHub #212):** The first sample reminder treats the setting described as days as minutes. The actual helper called a mail stub at 60 seconds for synthetic value 1; scheduler, database, Joomla and delivery remain unverified. Separate from coupon-expiry issue CODE-031 / #85.
+**CODE-159 (open; GitHub #212):** The first sample reminder treats the setting described as days as minutes. The actual helper called a mail stub at 60 seconds for synthetic value 1; site dispatch invokes a daily-gated cron path, so actual timing depends on invocation. Dispatch, cron timing, database, Joomla and delivery remain unverified. Separate from coupon-expiry issue CODE-031 / #85.
 
 **CODE-158 (open; GitHub #211):** Category product filter layout assumes selection arrays exist. Actual manufacturer, category, custom-field and attribute branches emitted warnings and `TypeError` with synthetic choices and empty input; Joomla routing and storefront remain unverified.
 
@@ -145,11 +299,13 @@ verification or close outstanding findings.
 
 **CODE-153 (open; GitHub #206):** Xmap category-tree query references undefined alias `b`; actual method and a query-builder stub produced a query rejected by an in-memory SQLite database. MySQL, installed Xmap and Joomla are unverified. This is separate from CODE-152 / #205's later menu-result error.
 
-**CODE-152 (open; GitHub #205):** Product Compare and filter layouts, failed non-AJAX accessory-add and both Xmap product paths raised `TypeError` for synthetic object and null menu results. The unchanged extracted datafeed method did likewise with stubs; its full CLI, real database, Joomla workflows and extension installation remain unverified. Latest follow-up reconciled.
+**CODE-152 (open; GitHub #205):** Product Compare and filter layouts, failed non-AJAX accessory-add and both Xmap product paths raised `TypeError` for synthetic object and null menu results. The unchanged extracted datafeed method did likewise with stubs. Failed reorder and product/manufacturer breadcrumbs also count menu results in source; these additional paths, full CLI, real database, Joomla workflows and extension installation remain unverified. Issue follow-up synchronized.
 
 **CODE-151 (open; GitHub #204):** Mega Menu checks `id` but reads `catid` from a menu query. Actual helper emitted a missing-key warning for synthetic id-only data; real Joomla menu data and hierarchy are unverified.
 
-**CODE-150 (open; GitHub #203; investigation):** Cart module discount line can display with the discount-inclusion setting disabled in the actual isolated layout while the calculator excludes a synthetic discount. Real cart field relationships and Joomla storefront remain unverified.
+**CODE-225 (open; GitHub #270; investigation):** Second and third sample reminders require an exact due date. An isolated fixture found no next-day attempt after a failed second-reminder stub and no third-reminder attempt on the following day. Cron, delivery and the intended catch-up policy remain unverified; distinct from CODE-159 / #212 and CODE-031 / #85.
+
+**CODE-150 (open; GitHub #203; investigation):** Cart module discount line can display with the discount-inclusion setting disabled in the actual isolated layout while the calculator excludes a synthetic discount. Current source derives the displayed discount fields from the same three discount components used by the calculator in two cart calculation paths; real sequencing, module-instance settings and Joomla storefront remain unverified.
 
 **CODE-149 (open; GitHub #202):** Cart module passes `showEmptyBtn` but default Twig checks `showEmptBtn`. Actual template omitted the empty-cart button with synthetic enabled setting; installed Joomla and alternative layouts are unverified.
 
@@ -157,13 +313,13 @@ verification or close outstanding findings.
 
 **CODE-147 (open; GitHub #200):** Mass-cart helper silently skips unknown product numbers. Actual helper with synthetic database and cart stubs skipped an unknown while processing known and unpublished products; real database, cart and Joomla UI remain unverified.
 
-**CODE-146 (open; GitHub #199):** Manufacturer scroller and Who Bought default layouts divide by their scroll-count settings. Actual layouts raised `DivisionByZeroError` for string zero with isolated stubs; manufacturer rendered with one. Joomla forms and storefront are unverified; follow-up reconciled.
+**CODE-146 (open; GitHub #199):** Manufacturer scroller and Who Bought default layouts divide by their scroll-count settings. Product Tab's default layout also uses its products-per-row setting as a divisor, and its manifest declares zero outside the offered choices. Actual layouts raised `DivisionByZeroError` for synthetic zero in isolated fixtures; Joomla forms and storefront are unverified. Product Tab follow-up reconciled.
 
 **CODE-145 (open; GitHub #198):** Manufacturer scroller default layout does not link its image despite the Image Link setting. Actual layout rendered an unlinked image and linked name with isolated stubs; Joomla storefront and alternate layouts remain unverified.
 
 **CODE-144 (open; GitHub #197):** Similar Tags module counts a nullable helper result. Actual helper and module entry raised `TypeError` for excluded synthetic routes with a forwarding cache stub; Joomla 5.4.0 and 6.0.0 cache source preserves callback results. Installed runtime and storefront remain unverified.
 
-**CODE-143 (open; GitHub #196):** Giao Hang Nhanh dynamic fee weight ignores cart-row quantity. Actual handler sent weight 2 to a stubbed fee method for quantities 1 and 3; provider units, checkout and actual requests remain unverified.
+**CODE-143 (open; GitHub #196):** Giao Hang Nhanh dynamic fee weight ignores cart-row quantity. Actual handler sent weight 2 to a stubbed fee method for quantities 1 and 3; shipment creation also adds weight once per order row in source. Shipment execution, provider units, checkout and actual requests remain unverified; follow-up synchronized.
 
 **CODE-142 (open; GitHub #195):** Giao Hang Nhanh stores its delivered mapping under `delevered` but lowercases provider statuses as keys. Actual handler mapped synthetic `Delivered` to null with parameter stubs; real provider spelling and event dispatch remain unverified.
 
@@ -185,7 +341,7 @@ verification or close outstanding findings.
 
 **CODE-133 (open; GitHub #187):** Wrapping price and publication headings are sortable but absent from the model ordering allowlist. Actual model state with stubs falls back to ID; Joomla UI and database remain unverified.
 
-**CODE-132 (open; GitHub #186):** The shipping-box tag renderer omits the first entry after each priority change. The actual renderer with isolated stubs rendered boxes 1 and 3 for priorities 1, 2, 2; intended priority semantics and checkout remain unverified.
+**CODE-132 (open; GitHub #186):** Both shipping-box renderers omit the first entry after each priority change. Both actual renderers with isolated stubs returned IDs 1, 2, 4 for priorities 1, 1, 2, 2; equal-priority controls returned all IDs. Intended priority semantics and checkout remain unverified.
 
 **CODE-131 (open; GitHub #185):** The location form omits rate-only fields read by shared save methods. Actual controller and model methods emitted missing-key warnings and PHP 8.4 deprecations with isolated input and table stubs; real Joomla request and persistence remain unverified.
 
@@ -213,7 +369,7 @@ verification or close outstanding findings.
 
 **CODE-119 (open; security hold):** Newsletter confirmation association and recipient selection require authorized private review. Runtime impact and exploitability are unverified; no Issue created.
 
-**CODE-118 (open; GitHub #174):** Actual guest subscriber list renderer and name helper used a stubbed zero-ID billing record instead of the stored subscriber name. Real database and Joomla UI are unverified.
+**CODE-118 (open; GitHub #174):** Actual guest subscriber list renderer and name helper used a stubbed zero-ID billing record instead of the stored subscriber name. A further actual-helper fixture returned an unrelated synthetic name when a registered user's billing lookup failed and its fallback matched another `users_info_id`; two null results produced a blank name and two warnings. The subscription table also calls the helper when the submitted name is empty; normal save behavior is unverified. Real database and Joomla UI are unverified.
 
 **CODE-117 (open; GitHub #173):** Actual answer-send controller reports success when the actual mail helper returns false for a stubbed missing template. Joomla and delivery are unverified; separate from CODE-034's save error.
 
@@ -231,9 +387,9 @@ verification or close outstanding findings.
 
 **CODE-111 (open; GitHub #167):** The product back-image editor uses a non-inline layout whose thumbnail URL is uninitialized. Actual layout fixtures emitted an empty source and a warning; Joomla UI and image persistence are unverified.
 
-**CODE-110 (open; GitHub #166):** Wrapping image save ignores a false upload result. Actual table method returned success and assigned the image name with isolated upload and store stubs; filesystem, database and Joomla UI are unverified.
+**CODE-110 (open; GitHub #166):** Wrapping image save ignores a false upload result. The actual table method returned success and assigned the filename with failed and successful upload stubs; unsupported-extension and parent-failure controls were also tested. Filesystem, database and Joomla UI remain unverified.
 
-**CODE-109 (open; GitHub #165):** An all-products inline action may target an already checked wrapper instead of the clicked wrapper. Actual grid script and model were run separately with isolated stubs; Joomla UI and database updates are unverified.
+**CODE-109 (open; GitHub #165):** An all-products inline action may target an already checked wrapper instead of the clicked wrapper. Current actual grid handler with synthetic DOM stubs retained prior IDs for both tasks; the historical separate model probe was not rerun. Joomla UI and database updates are unverified.
 
 **CODE-108 (open; security hold):** Wrapping list search requires private review. Runtime and exploitability are unverified.
 
@@ -249,25 +405,25 @@ verification or close outstanding findings.
 
 **CODE-102 (open; GitHub #160):** The quantity-select helper requests a differently named file from the shipped layout; local Twig with a stub filter reports a syntax error in the shipped file, and stubbed replacement leaves the ordinary tag unchanged. Full redSHOP Twig loading, overrides and storefront remain unverified.
 
-**CODE-101 (open; GitHub #159):** Child-product names containing delimiters can be mislabelled in the related-products selection. Actual selection parser was exercised with isolated stubs; Joomla UI and database are unverified.
+**CODE-101 (open; GitHub #159):** Actual related-product update functions with isolated stubs mislabelled comma-containing names and omitted the second label for a colon-containing first name. Normal, selected-ID and empty controls passed; Joomla UI and database remain unverified.
 
 **CODE-100 (open; security hold):** Inventory reset authorization and request handling require private review; runtime and exploitability are unverified.
 
-**CODE-099 (open; GitHub #158):** Inventory reset link omitted the stockroom identifier in an actual template fixture with a schema-shaped row; Joomla UI and database are unverified.
+**CODE-099 (open; GitHub #158):** Inventory reset link omitted the stockroom identifier in an actual template fixture with a schema-shaped row. The legacy CSV view uses the same mismatched property: its actual method with stubs omitted a matching row and warned for an `id`-only stockroom, while an alias control included it. Joomla CSV dispatch, UI and database are unverified.
 
 **CODE-098 (open; GitHub #157):** Inventory save ignores a rejected row while processing others and sets a success redirect. The actual controller and model were exercised with isolated stubs; Joomla UI and database are unverified.
 
-**CODE-097 (open; GitHub #156):** An actual price-per-piece calculator fixture changed reported unit price with a stubbed extra option but left the calculated total unchanged. Database and checkout unverified.
+**CODE-097 (open; GitHub #156):** An actual price-per-piece calculator fixture changed reported unit price with separate stubbed plus, minus and percentage options but left the calculated total unchanged. Database, tax and checkout unverified.
 
-**CODE-096 (open; GitHub #155):** Calculator range lookup truncates area/volume/circumference measurements. Actual area and volume methods passed 1 for 1.5 with isolated stubs while Area Quantity passed 1.5; real database and checkout unverified.
+**CODE-096 (open; GitHub #155):** Calculator range lookup truncates area/volume/circumference measurements. Actual area and volume passed 1 for 1.5, circumference passed 1 for approximately 1.57, and Area Quantity passed 1.5 with isolated stubs; real database and checkout unverified.
 
-**CODE-095 (open; GitHub #154):** Calculator measurement metadata contains product length instead of price per piece in three methods. An actual area fixture displayed 10 but returned 2 in isolated stubs; Joomla cart remains unverified.
+**CODE-095 (open; GitHub #154):** Calculator measurement metadata contains product length instead of price per piece in three methods. Actual area, volume and circumference branches displayed 10 but returned 2 in isolated stubs; Joomla cart remains unverified.
 
 **CODE-094 (open; GitHub #153):** Price-per-piece calculator rounds fractional piece counts when the decimal option is enabled. Actual calculator with isolated stubs returned 1.5 pieces for No and 2 for Yes; Joomla checkout and tax remain unverified.
 
 **CODE-093 (open; security hold):** Attribute-property publication scope and request-local caching require private review; no runtime behavior or exploitability established.
 
-**CODE-092 (open; GitHub #152):** Accessory deletion removes the editor row before its request completes; an isolated actual-JavaScript test left the row absent after simulated HTTP 500. Joomla UI and server remain unverified.
+**CODE-092 (open; GitHub #152):** Accessory deletion removes the editor row before its request completes; an isolated actual-JavaScript test left the row absent after simulated HTTP 500. The category editor also calls this function in source; its UI, Joomla and server remain unverified. Follow-up synchronized.
 
 **CODE-091 (open; GitHub #151):** Attribute-set deletion uses a published-only property lookup to identify attributes before deleting the set. Actual methods exercised with stubs; SQL execution and Joomla remain unverified.
 
@@ -277,19 +433,19 @@ verification or close outstanding findings.
 
 **CODE-088 (open; GitHub #148):** The actual state-list renderer labels integer `3` as three-letter but string `"3"` as two-letter with isolated stubs, whereas the address helper compares loosely. Database driver result types and Joomla UI remain unverified.
 
-**CODE-087 (open; GitHub #147):** Category copy ignores a failed save and returns success; an isolated actual-method test with failing bind also reached a stubbed media-copy call with target zero. The inherited controller reports the selected count; Joomla controller and filesystem remain unverified. Distinct from CODE-086.
+**CODE-087 (open; GitHub #147):** Category copy ignores a failed save and returns success; an isolated actual-method test with failing bind also reached a stubbed media-copy call with target zero. The category toolbar invokes `CategoryController::copy`, which selects its success message from the model's return. The earlier inherited-controller and selected-count attribution was incorrect. Actual Joomla controller and filesystem remain unverified. Distinct from CODE-086.
 
 **CODE-086 (open; GitHub #146):** Category copy passes existing product-filter parameters to a save method that clears them and accesses missing form input. Actual methods in isolated stubs reached a deliberately failing bind with empty parameters and emitted warnings; database persistence and Joomla UI remain unverified.
 
 **CODE-085 (open; GitHub #145):** The fallback gift-card detail template omits the customer-amount tag. The actual layout with isolated stubs rendered no amount input in fallback but did with a custom template containing the tag; Joomla and checkout remain unverified. Distinct from #112 and #113.
 
-**CODE-084 (open; GitHub #144):** Product-price and order-total discount inline editing bind the edited field without the shopper-group association, but both table validations require that association. Each actual table rejected a valid inline threshold and discount amount in isolated stubs and accepted each with a bound group. Joomla controllers and UI remain unverified.
+**CODE-084 (open; GitHub #144):** Product-price and order-total discount inline editing bind the edited field without the shopper-group association, but both table validations require that association. At current Core, each actual table rejected a valid inline threshold and discount amount with the missing-group error in isolated parent stubs and accepted each with a bound group; a zero discount was separately rejected. Joomla controllers, persisted associations and UI remain unverified.
 
 **CODE-083 (open; GitHub #143):** Product Tab's AJAX add-to-cart layout calls `count()` on the detail-template result, which is an object or null. Actual Product Tab layout with isolated dependencies raised PHP 8.4 `TypeError` for both; actual Who Bought and Shopper Group Product layouts raised it for an object. Aesir Products has the same source pattern but was not executed. Joomla storefront remains unverified. Distinct from CODE-077's textual option handling.
 
 **CODE-082 (open investigation; GitHub #142):** The actual exemption helper returned the same result for a stubbed approved user with both values of Apply VAT for Tax Exempt and did not read the setting. The option is exposed in Price configuration, but complete saved-configuration and tax-calculation paths remain unverified; no actual tax error is established.
 
-**CODE-081 (open; GitHub #141):** `getAjaxDetailBox()` caches its selected template under one key regardless of product template. The actual helper with seeded records returned the first product's template for the second in both tested orders; Joomla storefront and database remain unverified.
+**CODE-081 (open; GitHub #141):** `getAjaxDetailBox()` caches its selected template under one key regardless of product template. The actual helper with seeded records returned the first product's template for the second in both tested orders. With no configured default a missing match first also cached null for a later named match; disabled AJAX returned null. Joomla storefront, template files and database remain unverified.
 
 **CODE-080 (open; GitHub #140):** Mail list name/subject search is not grouped before section and publication predicates. The actual model and Joomla 5.4.6's locked database query builder produced the ungrouped expression with isolated dependencies; SQL execution and Joomla UI remain unverified. A name match can bypass either filter under SQL operator precedence.
 
@@ -716,11 +872,11 @@ At Core `beacc470`, `component/admin/src/Model/StockroomModel.php:31-51` rejects
 
 **Category follow-up:** CODE-056 (GitHub #118) tracks bulk template assignment selecting an error message after the model executes the update and returns null. An isolated database stub confirmed the model result; Joomla UI and real database behavior remain unverified.
 
-**Price rule follow-up:** CODE-057 (GitHub #119) tracks a product lookup executed before the price model initializes its product ID. An isolated constructor mock captured the incomplete query; Joomla UI and real SQL execution remain unverified. It is separate from the submit-script issue M-0122 (#95).
+**Price rule follow-up:** CODE-057 (GitHub #119) tracked a lookup before initialization. At Core `2e2889680244db64b9e9f64da29608e02f543a70` the product ID is assigned before the query; the valid-product SQLite test with doubles passed. Missing/invalid product contexts, Joomla and MySQL remain unverified; the Issue stays open for maintainer assessment. This is separate from M-0122 (#95).
 
 **Related CODE-010 evidence:** the product price list submits `c.category_name` for category search, while the install schema uses `name`. An isolated query mock confirmed the resulting predicate; Joomla and database execution remain unverified. Extend #74 rather than duplicate the category-search issue.
 
-**Price range follow-up:** CODE-058 (GitHub #120) tracks the price-rule validator accepting a new interval that encloses an existing one. An isolated table mock confirmed the condition; Joomla save and storefront precedence remain unverified.
+**Price range follow-up:** CODE-058 (GitHub #120) tracks price-rule validators accepting a new interval that encloses an existing one. Actual attribute-price table and endpoint helpers with SQLite and doubles also accepted an enclosing range; Joomla save and storefront precedence remain unverified.
 
 **Price list save follow-up:** CODE-059 (GitHub #121) tracks both list-save actions invoking unscoped product-table updates twice. Isolated controller/database stubs confirmed execution count and query shape; real SQL performance and triggers remain unverified.
 
@@ -831,7 +987,7 @@ The currency selector uses codes as values (`component/admin/src/Model/Configura
 
 **Customer questions and reviews (INPUT-001–008):** The current admin forms are `component/admin/forms/question.xml` and `rating.xml`; question user name/email and review email/company/images are hidden. Product question/answer loops are paired and nested (`libraries/redshop/src/Tags/Sections/Product.php:2095-2125`), correcting the historical incomplete example. Storefront handlers check Joomla tokens (`component/site/src/Controller/AskquestionController.php:42`, `ProductratingController.php:35`); review login, CAPTCHA, duplicate and initial publication paths are at `ProductratingController.php:59-156`. Runtime authorization, privacy, escaping, moderation, spam, images and notification tests remain open. Admin save error handling has a separate CODE-034 finding.
 
-**Marketplace modules:** Search, cart, newsletter, price filtering, product compare and free-shipping promotion are classified Marketplace modules (`marketplace/classification.json:106-125,666-700`). Their current parameters are in their `modules/site/mod_redshop_*/` manifests. Search supports configurable field visibility and AJAX; cart reads current session state and has caching options; newsletter has separate subscribe/unsubscribe controls. The compare module checks `COMPARE_PRODUCTS`, price filter reads the selected range from request/user state, and the shipping promotion passes the configured rate ID to the free-shipping helper. Replaced old setup screenshots and documented consent, price, session and checkout verification. The cart-menu path references an unassigned local variable (CODE-035); Joomla include scope and runtime behavior require verification.
+**Marketplace modules:** Search, cart, newsletter, price filtering, product compare and free-shipping promotion are classified Marketplace modules (`marketplace/classification.json:106-125,666-700`). Their current parameters are in their `modules/site/mod_redshop_*/` manifests. Search supports configurable field visibility and AJAX; cart reads current session state and has caching options; newsletter has separate subscribe/unsubscribe controls. The compare module checks `COMPARE_PRODUCTS`, price filter reads the selected range from request/user state, and the shipping promotion passes the configured rate ID to the free-shipping helper. Replaced old setup screenshots and documented consent, price, session and checkout verification. For CODE-035 the inspected Joomla 5.4 standard dispatcher supplies the module's `$app`; actual runtime and alternative dispatchers remain unverified.
 
 Discount, currencies and login greeting are also Marketplace modules (`marketplace/classification.json:642-657`). The discount helper filters by publication, date and shopper group; currencies are selected in the module and the active currency is session-based; the greeting displays username or order-helper full name. The greeting template has no explicit output escaping (CODE-036). Checkout and rendered output require runtime verification.
 
@@ -918,11 +1074,11 @@ These are source/mock-test findings, not claims of a complete payment-plugin aud
 | CODE-004 | High | OPEN | Shared import upload deletes the existing type-specific temporary directory before creating a new one (`C:/Github/redSHOP-rmh/libraries/redshop/src/Plugin/AbstractImportPlugin.php:119-131`); export uses a type-specific shared filename (`C:/Github/redSHOP-rmh/libraries/redshop/src/Plugin/AbstractExportPlugin.php:147-150`). Concurrent jobs of the same type can interfere. Reproduce in a disposable isolated environment and review per-job isolation and cleanup; no Core change was made. GitHub #109 is a nonsensitive concurrency tracker, distinct from CSV field corruption #107; privacy and authorization review remains separate. |
 | CODE-005 | Medium | OPEN | GitHub #111. At Core `beacc4704dc24b9dc8f3b638324a9e8a6f96a06e`, the order export excludes timestamps at the exact first and last seconds of selected dates due to strict query bounds (`plugins/redshop_export/order/order.php:72-90,159-168`). An isolated PHP query mock confirmed count/data predicates; SQL, timezone and multi-batch runtime remain unverified. The earlier claimed count/data midnight mismatch is not established. |
 | CODE-006 | High | OPEN | The `medium.remove` action calls `MediumModel::delete` (`C:/Github/redSHOP-rmh/component/admin/src/Controller/MediumController.php:1048-1063`); for a manufacturer record its cleanup deletes all media rows with the same `section_id` without restricting `media_section` (`component/admin/src/Model/MediumModel.php:175-203`). This can remove unrelated records with matching IDs. Reproduce only with disposable data and separately review/fix the Core deletion path. GitHub #97. |
-| CODE-007 | High | OPEN | `CurrencyLayer::convert` initializes its rate array only when the target is empty, then defaults missing currency rates to 1 (`C:/Github/redSHOP-rmh/libraries/redshop/src/Currency/CurrencyLayer.php:70-103`). An isolated PHP mock with USD=1 and EUR=0.9 returned 100 for explicit USD→EUR conversion of 100 without requesting rates (expected 90). Check affected callers and provider behavior and fix Core separately; no live provider call was made. |
+| CODE-007 | High | OPEN | `CurrencyLayer::convert` initializes its rate array only when the target is empty, then defaults missing currency rates to 1 (`C:/Github/redSHOP-rmh/libraries/redshop/src/Currency/CurrencyLayer.php:70-103`). An earlier isolated PHP mock with USD=1 and EUR=0.9 returned 100 for explicit USD→EUR conversion of 100 without requesting rates (expected 90). The Flatpay ledger passes an explicit payment currency through `CurrencyHelper::convert`; CurrencyLayer selection and absence of an event override are prerequisites. This caller was source-inspected only; payment and provider behavior remain unverified. #72 was updated with this qualified evidence. |
 | CODE-008 | High | OPEN | `ZipcodeModel::save` ignores the return value of each `parent::save` and returns true after the loop (`C:/Github/redSHOP-rmh/component/admin/src/Model/ZipcodeModel.php:49-60`). An isolated PHP mock confirmed success was reported when the parent save failed. Review failure handling, partial range writes and an approved Core fix separately. |
-| CODE-009 | Medium | OPEN | Two administrator order-item creation paths assign `supplier_id` from the product's `manufacturer_id` (`C:/Github/redSHOP-rmh/component/admin/src/Model/OrderModel.php:314`, `component/admin/src/Model/AddorderModel.php:360`). Determine affected workflows and downstream use with distinct disposable supplier/manufacturer IDs; no runtime test or Core change was made. Supplier confirmation email separately reads the current product supplier. GitHub #93. |
+| CODE-009 | Medium | OPEN | Two administrator order-item creation paths assign `supplier_id` from the product's `manufacturer_id` (`C:/Github/redSHOP-rmh/component/admin/src/Model/OrderModel.php:314`, `component/admin/src/Model/AddorderModel.php:360`), while quotation-to-order conversion assigns the product supplier (`component/admin/src/Model/QuotationModel.php:785`). These are source observations only; determine persisted values and downstream effects with disposable distinct IDs. Supplier confirmation email separately reads the current product supplier. GitHub #93. |
 | CODE-010 | Medium | OPEN | Product-list category search option submits `c.name` but marks itself selected only for `c.category_name` (`C:/Github/redSHOP-rmh/component/admin/tmpl/products/default.php:152-157`). Check the displayed selection and subsequent search after submission in an isolated administrator; no runtime test or Core change was made. |
-| CODE-011 | Medium | OPEN | `Stockroom::getStockAmountImage` accepts product/variant section and ID but its rule query joins product-stock rows without restricting either (`C:/Github/redSHOP-rmh/libraries/redshop/src/Helper/Stockroom.php:1110-1152`); the product renderer uses the first result (`libraries/redshop/src/Product/Stock.php:128-140`). Different stockrooms may supply another product's image. Verify with disposable products and review a Core fix separately. |
+| CODE-011 | Medium | OPEN | `Stockroom::getStockAmountImage` accepts product/variant section and ID but its rule query joins product-stock rows without restricting either (`C:/Github/redSHOP-rmh/libraries/redshop/src/Helper/Stockroom.php:1109-1153`); product, comparison and bundle rendering call it. Actual helper with SQLite and query stubs returned product 2's stockroom rule for product 1; disabled-stockroom control returned no result. Joomla, supported databases and intended shared-rule semantics remain unverified. GitHub #75. |
 | CODE-012 | High | OPEN | Coupon application rejects `amount_left <= 1` (`C:/Github/redSHOP-rmh/libraries/redshop/src/Helper/CartDiscount.php:146-150`), while gift-card mail creates coupons with `amount_left = 1` (`libraries/redshop/src/Mail/Giftcard.php:58-75`). An isolated PHP mock confirmed one remaining use is rejected as exhausted and two proceeds to the next validation. Reproduce the full checkout and separately review a Core fix; no real code or payment was used. |
 | CODE-013 | High | OPEN | Promotion date check uses `date('yy-m-d')` (`C:/Github/redSHOP-rmh/plugins/redshop_promotion/promotion/helpers/Helper.php:92-105`), duplicating the two-digit year. An isolated mock with both dates set to the current ISO date and a qualifying subtotal returned false. Reproduce in Joomla with time zones and review a plugin fix separately. |
 | CODE-014 | High | OPEN | Promotion award helper calls `getProductById($promotion_id, $award_id, $amount)` (`C:/Github/redSHOP-rmh/plugins/redshop_promotion/promotion/helpers/Helper.php:203-225`); the function expects product ID, user ID and related flag (`libraries/redshop/src/Helper/Product.php:5974-5978`). An isolated mock confirmed lookup of promotion ID 901 and award line ID 7 with category from 901. Verify cart, stock and order effects and review a plugin fix separately. GitHub #94. |
@@ -932,35 +1088,35 @@ These are source/mock-test findings, not claims of a complete payment-plugin aud
 | CODE-018 | High | OPEN | Minimum-order cart warning is conditional on the `{minimum_order_total}` template tag and injects checkout-blocking CSS plus a link hardcoded to product 3624 and ItemID 40 (`C:/Github/redSHOP-rmh/libraries/redshop/src/Tags/Sections/Cart.php:336-414`); the older JavaScript minimum check is commented out (`src/assets/com_redshop/js/redshop.common.js:2050-2057`). The inspected paths do not demonstrate server-side enforcement. Test direct checkout, alternate templates and absent product in an isolated shop; review a Core fix separately. |
 | CODE-019 | High | OPEN | Newsletter subscription helper sets a pending `$data['published'] = 0` when confirmation is required, but inserts the literal `1` (`C:/Github/redSHOP-rmh/libraries/redshop/src/Helper/Newsletter.php:165-195`); bulk recipient selection filters published subscriptions (`component/admin/src/Model/NewslettersModel.php:148-161`). Test signup and recipient selection before and after confirmation in an isolated mail-sink environment; review a Core fix separately. GitHub #98. |
 | CODE-020 | High | OPEN | Newsletter test-mail model reads `template_desc` although its query does not select it (`C:/Github/redSHOP-rmh/component/admin/src/Model/ConfigurationModel.php:389-400,503-510`); the configuration controller ignores the send return and displays a sent message (`component/admin/src/Controller/ConfigurationController.php:205-210`). Reproduce received content and mailer-failure behavior in isolation; review a Core fix separately. |
-| CODE-021 | Medium | OPEN | The category configuration exposes separate long/short description limits and suffixes, but inspected long and short description tags both use the short settings (`C:/Github/redSHOP-rmh/component/admin/tmpl/configuration/default_category_suffix.php:15-48`; `libraries/redshop/src/Tags/Sections/Categorydetail.php:348-365`; `libraries/redshop/src/Tags/Sections/Categoryproduct.php:284-309`). Test active templates and review a Core fix separately. |
+| CODE-021 | Medium | OPEN | The category configuration exposes separate long/short description limits and suffixes, but inspected long and short description tags both use the short settings (`component/admin/tmpl/configuration/default_category_suffix.php:15-48`; `libraries/redshop/src/Tags/Sections/Categorydetail.php:348-365`; `libraries/redshop/src/Tags/Sections/Categoryproduct.php:284-309`; `libraries/redshop/src/Layouts/Filter/Result.php:238-255,300-317`, rendered by `SearchController::findProducts`). Test active templates and review a Core fix separately. |
 | CODE-022 | Medium | OPEN | The next-product image branch checks the previous image's existence before rendering the next image (`C:/Github/redSHOP-rmh/libraries/redshop/src/Tags/Sections/Product.php:1372-1385`). Test both images independently and together in an isolated shop; review a Core fix separately. |
 | CODE-023 | Medium | OPEN | The SEO editor lists `{saving}` for titles and keywords (`C:/Github/redSHOP-rmh/component/admin/tmpl/configuration/default_seo.php:90,325`), but inspected product title/keyword replacement paths omit it while description handles it (`component/site/src/View/Product/HtmlView.php:154-185,283-309,369-400`). Test each field/page type and review hints or replacement separately. GitHub #99. |
-| CODE-024 | Medium | OPEN | SEO menu alias inputs are updated from selected menu aliases on both page load and selection change (`C:/Github/redSHOP-rmh/component/admin/tmpl/configuration/default_seo_general.php:396-410`), potentially replacing a manually different value when configuration is saved. Verify preservation and intended behavior in an isolated UI; review a Core fix separately. |
+| CODE-024 | Medium | OPEN | SEO menu alias inputs are updated from selected menu aliases on load and change (`component/admin/tmpl/configuration/default_seo_general.php:396-410`). Actual script with DOM stubs overwrote a distinct value and cleared synthetic empty/unmapped IDs; actual browser, save and routing remain untested. `Router::parse` reads the order-detail alias. Verify intended behavior in an isolated UI; review a Core fix separately. |
 | CODE-025 | High | OPEN | Bambora's notification handler marks payment Paid when request fields are present without validating the supplied hash in that handler (`C:/Github/redSHOP-rmh/plugins/redshop_payment/rs_payment_bambora/src/Extension/Bambora.php:165-181`); the controller accepts the returned status (`component/site/src/Controller/OrderController.php:238-290`). Review the full callback trust boundary and provider verification separately; no live request was made. |
 | CODE-026 | High | OPEN | Bambora's HTTP client disables TLS peer verification (`C:/Github/redSHOP-rmh/plugins/redshop_payment/rs_payment_bambora/src/Extension/Bambora.php:121-150`). Separately review all provider requests and certificate validation. |
 | CODE-027 | High | OPEN | Bambora checkout assigns rather than compares the provider success code (`C:/Github/redSHOP-rmh/plugins/redshop_payment/rs_payment_bambora/src/Extension/Bambora.php:97-105`), so the error branch may not be reached as intended. Verify with mocked success, error and malformed responses. |
 | CODE-028 | Medium | OPEN | Flatpay live-key field uses `showon="test_mod:0"` while the mode field is `test_mode` (`C:/Github/redSHOP-rmh/plugins/redshop_payment/rs_payment_flatpay/rs_payment_flatpay.xml:38-61`). Verify field visibility and saved settings in Joomla. |
 | CODE-029 | Medium | OPEN | Flatpay and Bambora currency selectors list `GPB` rather than `GBP` (`C:/Github/redSHOP-rmh/plugins/redshop_payment/rs_payment_flatpay/rs_payment_flatpay.xml`, `plugins/redshop_payment/rs_payment_bambora/rs_payment_bambora.xml`). Review provider currency support and migration before changing existing configuration. |
 | CODE-030 | Medium | OPEN | The configuration reset-terms action calls `updateUserTermsCondition()` without an ID (`C:/Github/redSHOP-rmh/component/admin/src/Controller/ConfigurationController.php:576-580`), but the helper immediately returns for ID zero (`libraries/redshop/src/Helper/User.php:170-176`). Verify the UI in an isolated shop and review the intended bulk reset and authorization separately. |
-| CODE-031 | Medium | OPEN | Purchase-discount and sample coupon expiries multiply configured days by `23 * 59 * 59` seconds instead of a full day (`C:/Github/redSHOP-rmh/libraries/redshop/src/Helper/Cron.php:100-101,210-218`, `libraries/redshop/src/Helper/Sample.php:239-240`). Verify actual date handling, timezone and existing coupons before reviewing a Core change. |
+| CODE-031 | Medium | OPEN | Purchase-discount and sample coupon expiries multiply configured days by `23 * 59 * 59` seconds instead of a full day (`C:/Github/redSHOP-rmh/libraries/redshop/src/Helper/Cron.php:100-101,210-218`, `libraries/redshop/src/Helper/Sample.php:239-240`). The second purchase-mail schedule uses the same multiplier (`Cron.php:222-246`), despite its label specifying days; first and third mail calculations use 24 hours. These paths are source-inspected only. Verify actual date handling, timezone, mail and existing coupons before reviewing a Core change. GitHub #85. |
 | CODE-032 | High | OPEN | Rendering the wizard welcome page calls `copyTempFile()`, which attempts to copy `config.dist.php` over the active `config.php` and ignores the result (`C:/Github/redSHOP-rmh/libraries/redshop/src/Helper/WizardTemplate.php:68,147-153`; `component/admin/src/Controller/WizardController.php:28-33`). The active configuration is loaded from that destination (`libraries/redshop/src/Helper/Config.php:95-97`). Verify both writable and protected-file cases on a disposable installation; do not rerun on a live shop. GitHub #110 tracks data integrity without authorization conclusions. |
 | CODE-033 | High | OPEN | The dashboard template treats the first four values as sales, order count, member count and visitor count (`C:/Github/redSHOP-rmh/component/admin/tmpl/redshop/default.php:45-112`), while its query unions order IDs, user-info IDs and a visitor count and loads a column (`libraries/redshop/src/Helper/Statistic.php:26-48`). With representative data, verify incorrect labels, empty result handling and intended definitions in isolation before a Core fix. |
 | CODE-034 | Medium | OPEN | Question model returns a non-empty error array when its parent save fails (`C:/Github/redSHOP-rmh/component/admin/src/Model/QuestionModel.php:84-85`), while the controller treats a truthy result as a saved question (`component/admin/src/Controller/QuestionController.php:65-72`). At historical revision `67dd75b6a0` the model returned false; closed #59 described a green error message, not the current false success. Reproduce failure reporting and send behavior on a disposable installation before a separate Core fix. GitHub #103. |
-| CODE-035 | Medium | OPEN | Cart module calls `$app->getMenu()` when a cart ItemID exists but has no `$app` assignment in the module file (`C:/Github/redSHOP-rmh/modules/site/mod_redshop_cart/mod_redshop_cart.php:35-47`). Verify Joomla module include scope and both routed paths on a disposable installation before concluding the impact or proposing a plugin fix. |
+| CODE-035 | Medium | OPEN | Cart module uses `$app` without assigning it in its own file, but the inspected standard Joomla 5.4 dispatcher supplies and extracts `app`. The actual module passed nonzero and zero ItemID with equivalent-scope stubs. No missing-variable failure is established on that path; Joomla 6, real runtime and custom dispatchers remain unverified. #87 remains open pending human review. |
 | CODE-036 | Medium | OPEN | Login greeting template outputs configured text and user-derived username/full name without explicit HTML escaping (`C:/Github/redSHOP-rmh/modules/site/mod_redshop_logingreeting/tmpl/default.php:19-23`). Verify upstream validation, escaping and impact with disposable accounts before a separately approved fix. |
 | CODE-037 | High | OPEN | Shopper-group category helper uses `$key` for cache get/store without assigning it and reads authorized levels without using them (`C:/Github/redSHOP-rmh/modules/site/mod_redshop_shoppergroup_category/helper.php:36-40,153`). Verify cache controller semantics, group/session isolation and Joomla menu access filtering on an isolated installation; separately authorize any module fix. |
 | CODE-038 | Medium | OPEN | Who Bought module selects published products, optional category and a limit but does not query orders or current product (`C:/Github/redSHOP-rmh/modules/site/mod_redshop_who_bought/mod_redshop_who_bought.php:33-60`); the template renders those rows. Verify intended semantics with sample orders before a separately approved module fix. |
-| CODE-039 | Medium | OPEN | Product Tab module loads scripts under `js/` (`C:/Github/redSHOP-rmh/modules/site/mod_redproducttab/mod_redproducttab.php:33-36`), but its manifest lists `tmpl` and `css`, not `js` (`modules/site/mod_redproducttab/mod_redproducttab.xml:12-16`). Inspect an actual package/install and test tabs before a separately approved packaging or module fix. |
-| CODE-040 | High | OPEN | Product metadata selector passes `$detail->metarobot_info` instead of `$this->detail->metarobot_info` (`C:/Github/redSHOP-rmh/component/admin/tmpl/product/edit_product_meta_data.php:172-175`); the view assigns `$this->detail` (`component/admin/src/View/Product/HtmlView.php:813`) and the helper defaults an empty selection to INDEX,FOLLOW. Verify template scope, reopen/save and resulting metadata on a disposable shop before a separately approved Core fix. |
-| CODE-041 | Medium | OPEN | Coupon validation compares subtotal directly to raw `value` before checking the coupon type (`C:/Github/redSHOP-rmh/libraries/redshop/src/Helper/CartDiscount.php:151-157`); percentage is converted to a monetary amount only later (218-225). The unit mismatch is source-confirmed; reproduce lower/equal/higher subtotals with fixed and percentage coupons before separately reviewing a Core fix. |
+| CODE-039 | Medium | OPEN | Product Tab loads scripts under `js/` (`modules/site/mod_redproducttab/mod_redproducttab.php:29-32`), but its manifest omits that folder. The actual Joomla 5.4 manifest parser with stub copy operations did not schedule `js`; Marketplace package validation checks declared entries. Inspect an actual ZIP and fresh/upgrade installs before a separately approved fix. |
+| CODE-040 | High | OPEN | Product metadata selector passes `$detail->metarobot_info` instead of `$this->detail->metarobot_info` (`component/admin/tmpl/product/edit_product_meta_data.php:172-175`). Actual template and helper with a stub view selected INDEX,FOLLOW for NOINDEX,NOFOLLOW; the inspected Joomla 5.4 template loader does not assign local `$detail`. Reopen/save and storefront metadata on Joomla 5 and 6 remain untested; review a Core fix separately. |
+| CODE-041 | Medium | OPEN | Coupon validation compares subtotal to raw `value` before checking coupon type (`libraries/redshop/src/Helper/CartDiscount.php:151-157,218-225`). Actual helper with stubs rejected a synthetic 20% coupon at subtotals 10 and 20 but accepted 21; fixed-value boundary controls passed. Joomla checkout remains untested. |
 | CODE-042 | High | OPEN | Coupon user validation retrieves `SUM(coupon_value)` via `loadResult()` and then reads `$userData->userid` (`C:/Github/redSHOP-rmh/libraries/redshop/src/Helper/CartDiscount.php:168-179`). The scalar/property mismatch is source-confirmed; test prior transaction, ownership and later control flow on PHP/Joomla before concluding runtime impact or separately fixing Core. |
 | CODE-043 | Medium | OPEN | Coupon XML declares multiple users (`C:/Github/redSHOP-rmh/component/admin/forms/coupon.xml:61-71`), but its custom selector explicitly configures one selection and reads only the first stored value (`libraries/redshop/src/Form/Field/CouponuserField.php:46-83`). Install schema declares one integer `userid` and checkout compares it with a user ID. Investigate rendered UI, save/load and validation, including upgrades; end-to-end behavior is not established. |
 | CODE-044 | High | OPEN | Checkout subtracts coupon usage by ID without a remaining-count predicate in that update (`C:/Github/redSHOP-rmh/component/site/src/Model/CheckoutModel.php:1395-1407`) after earlier cart validation (`libraries/redshop/src/Helper/CartDiscount.php:146-150`). Examine surrounding transaction/locking and reproduce simultaneous carts, retries and failure rollback on an isolated database; a race is not yet confirmed. |
-| CODE-045 | High | OPEN | Flatpay enters its configured failure branch for any response not `success` and `authorized`/`settled`, including provider lookup errors and pending/unknown states (`plugins/redshop_payment/rs_payment_flatpay/src/Extension/Flatpay.php:394-400,464-489`). Verify resulting Core behavior and preserve configured success/failure order statuses while separating indeterminate outcomes. GitHub #100. |
+| CODE-045 | High | OPEN | Current Flatpay source preserves legacy pending and generic failed lookups; the offline replay fixture passed for both. The classifier returned `no_payment` for synthetic unrecognized invoice states, and source inspection indicates the legacy callback then reaches its configured failure branch (`plugins/redshop_payment/rs_payment_flatpay/src/Extension/Flatpay.php:553-650`, `src/Helper/FlatpayOutcome.php:168-213`). The unrecognized full callback and provider behavior remain untested. GitHub #100. |
 | CODE-046 | High | OPEN | Flatpay payment ownership, amount/currency verification and concurrent replay remain open (`plugins/redshop_payment/rs_payment_flatpay/src/Extension/Flatpay.php:325-340,394-400`; `docs/codex-progress.md:25-29`; DIST-23). Investigate full provider and Core paths; no end-to-end exploit or race is asserted. |
-| CODE-047 | High | OPEN | The e-conomic connection path catches a SOAP client initialization failure but proceeds to invoke the missing client (`plugins/economic/economic/economic.php:153-184`). An isolated PHP mock with network wrappers disabled confirmed an uncaught `Error`; verify both provider branches and Joomla behavior with isolated mocks. This is a concrete error-path finding under the broader ECON-006 review. GitHub #102. |
-| CODE-048 | High | OPEN | The guest product-review path references the verification utility without a leading backslash from a namespace (`component/site/src/Controller/ProductratingController.php:77-78`). An isolated PHP mock confirmed a class-not-found `Error`; test guest and authenticated reviews on Joomla separately. GitHub #104. |
-| CODE-049 | High | OPEN | The shared importer calls `addslashes()` on parsed values before writing CSV chunks (`libraries/redshop/src/Plugin/AbstractImportPlugin.php:192-235`). An isolated disposable fixture confirmed that an apostrophe-containing field is reread with an added backslash. Verify other CSV edge cases and end-to-end imports before a separate Core fix. GitHub #107. |
+| CODE-047 | High | OPEN | The e-conomic connection path catches a SOAP client initialization failure but proceeds to invoke the missing client (`plugins/economic/economic/economic.php:153-184`). Actual method with HTTPS disabled raised an `Error` in both provider branches; successful connection and Joomla remain untested. GitHub #102. |
+| CODE-048 | High | OPEN | The guest product-review path references the verification utility without a leading backslash (`component/site/src/Controller/ProductratingController.php:77-78`). Actual controller with stubs raised a class error for an allowed guest; denied-guest and authenticated controls passed. Joomla and delivery remain untested. GitHub #104. |
+| CODE-049 | High | OPEN | The shared importer calls `addslashes()` on parsed values before writing CSV chunks (`libraries/redshop/src/Plugin/AbstractImportPlugin.php:192-235`). Actual splitter and PHP CSV reread changed synthetic apostrophe, double-quote and backslash examples; plain and comma controls passed. Full Joomla import remains untested. GitHub #107. |
 
 ## Stage 21 — newly identified issues
 
@@ -994,6 +1150,14 @@ At Core commit `2f193132a218de96f5ccbe6b6074cbf0acadbcfd`, the default gallery c
 | CHANGE-004 | Medium | OPEN | Preserve all 15 historical release articles verbatim during migration |
 | CHANGE-005 | Medium | OPEN | Validate generated release documents and staging publication workflow |
 | CHANGE-006 | Medium | OPEN | Review Joomla 6 compatibility statements and legacy API references in old release notes |
+
+### Attribute-set toolbar source-review follow-up
+
+- **CODE-214 / #259:** List toolbar delete and publication tasks differ from the available singular controller methods; the plural controller file declares a singular class. Actual source declarations were checked with isolated PHP parent stubs, and Joomla 5.4.6 form-controller ancestry was inspected. Actual Joomla dispatch and persisted states remain untested.
+
+### Wizard model source-review follow-up
+
+- **CODE-213 / #258:** The actual wizard model requires a legacy configuration-model file absent from the source manifest; an isolated PHP 8.4 load failed at the require. The wizard view requests that model. A packaged installation, Joomla autoloader and upgrade leftovers remain untested. See the Core handoff.
 
 ### Changelog source-review follow-up
 

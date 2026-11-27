@@ -6,8 +6,15 @@ Both module options are initially blank. The condition text is displayed alongsi
 
 With an empty cart the helper returns a no-products message. For a selected zero-price rate, it compares the product subtotal with the rate's order-total boundaries: below the minimum it reports the remaining amount; within the range it reports free shipping; above a nonzero maximum it reports no available free rate. The helper also considers some address and customer restrictions, but this message is not a substitute for checkout eligibility.
 
+When no customer country is available, the inspected helper filters using the
+configured default shipping country. It applies the state filter only when a
+state is available. Verify the resulting message for guests as well as signed-in
+customers; actual checkout eligibility can differ.
+
 Use a real rate configured in your test shop rather than assuming an example ID applies to your installation. Check the message with an empty cart and carts below and above the threshold, with different addresses, taxes, discounts and shipping methods. Checkout's actual shipping calculation is authoritative; a promotional message alone does not establish that an order qualifies for free shipping.
 
 Take particular care with alphanumeric postal codes: the message helper does not apply the rate's postal boundaries in the same way for those destinations. Check the final shipping option and price rather than relying on the message.
 
 The message can also be based on a rate belonging to a disabled shipping plugin. Verify that the intended method is enabled and actually available at checkout before using the message in a campaign.
+
+After an AJAX add-to-cart update, check the message again. The inspected refresh path requests a free-shipping message without passing the module's configured rate ID, so it may select a different rate. Actual browser and Joomla behavior remain unverified.

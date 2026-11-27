@@ -2,6 +2,8 @@
 
 The optional site module `mod_redshop_search` provides product search controls. [Install and configure the module](chapters/module-redshop/install-module-plugin.md), assign a position and menu pages, and publish it on a test shop.
 
+Joomla Smart Search and legacy search plugins are separate integrations; see [Product search integrations](chapters/plugin-redshop/product-search-integrations.md).
+
 ### Module options
 
 These are manifest defaults for a new configuration; saved settings can differ.
@@ -13,9 +15,23 @@ These are manifest defaults for a new configuration; saved settings can differ.
 | **Default search type** | Choose the initial field combination, including product name, number, description or virtual product number. The manifest default is empty; check the saved selection. |
 | **Search by category name / product field data** | Category-name search defaults to No; product-field-data search defaults to Yes. These settings are separate from showing a custom-field control. |
 | **Show search type, keyword, category and manufacturer** | Control the corresponding form elements; each defaults to Yes. Product-search and keyword titles also default to Yes. |
-| **Standard search text** | Optional initial keyword; the manifest default is empty. |
+| **Standard search text** | Optional initial keyword; the manifest default is empty. The default layout clears the keyword field when it is clicked, so test this behavior if using a prefilled value. |
 | **Show custom field / product fields** | The control defaults to hidden. In the current default layout, configured custom-field selectors are not rendered; check whether your installed layout has been corrected before relying on them. This is separate from keyword search in product-field data. |
 | **Exclude categories** | Select categories to exclude and verify the result set; do not treat this as access control. The inspected search predicates filter category associations, so a product assigned to both excluded and other categories may still appear. The intended policy and actual Joomla results need verification. |
 | **Module class suffix / alternative layout** | Adjust presentation for the active Joomla template and check responsive output. The suffix starts empty. |
+
+In the inspected default layout, enabling **Show manufacturer** while hiding
+the category control did not render a standalone manufacturer selector in an
+isolated template test. The category-dependent selector and submitted results
+still need testing in Joomla.
+
+When the category control is shown but the manufacturer control is hidden,
+the inspected category-change callback can raise a JavaScript error because
+its manufacturer container is absent. Browser behavior remains unverified.
+
+For the category-dependent manufacturer control, the inspected search model
+combines multiple manufacturer IDs into a single quoted query value. An
+isolated model test confirmed the generated query, not its database result;
+verify choices for categories containing several manufacturers.
 
 Test ordinary and AJAX search, category/manufacturer filters, custom fields, excluded and unpublished products, access restrictions, pagination and routes using representative disposable products. An exclusion or hidden control is not a substitute for access control. Actual output and available controls depend on the selected template and module options.

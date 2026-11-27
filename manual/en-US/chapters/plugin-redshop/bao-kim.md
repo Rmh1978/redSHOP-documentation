@@ -13,6 +13,8 @@ The **Extra** section supplies the provider account email, API key and secret ke
 
 The **Advanced** section selects success and failure order statuses. Their manifest defaults are codes `C` and `P`; check the shop's actual status definitions. The success selector lists published statuses, while the failure selector's query does not apply that filter. Verify saved values and actual transitions with the provider's authorized test facilities.
 
+The inspected checkout handler requires the shop currency code `VND` and an order total of at least 10,000 before it sends the checkout request. This is a source-level condition, not confirmation of current provider requirements; verify the behavior on an isolated shop.
+
 These are manifest defaults for a new configuration, not necessarily settings already saved in an existing shop.
 
 Provider compatibility, callbacks and Joomla checkout have not been tested here.

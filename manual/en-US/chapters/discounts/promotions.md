@@ -5,11 +5,11 @@ Promotion rules are provided by installed `redshop_promotion` plugins. In the re
 <h2 id="overview-1">Promotion list</h2>
 <h4 id="promotions-1">Fields</h4>
 
-The list includes the promotion name, description and publication state. Search matches the name; use the available ordering controls to sort the list.
+The list includes the promotion name, description and publication state. Search matches the name; the default order is ID ascending. The Description and Publication headings appear sortable, but the inspected list model falls back to ID ordering for both. Verify the order before acting on a selection.
 
 <h4 id="actions-1">Actions</h4>
 
-Create a rule with **New**, or open an existing row to edit it. Select rows to publish, unpublish or delete them as permitted. Plugin availability and permissions affect the available choices.
+Create a rule with **New**, or use the edit button on an existing row. Select rows to publish, unpublish, copy or delete them as permitted. Plugin availability and permissions affect the available choices; verify copied rules before enabling them.
 
 <h2 id="overview-2">Promotion details</h2>
 <h4 id="promotions-2">Conditions and awards</h4>
@@ -28,6 +28,8 @@ With the bundled Promotion plugin:
 Other plugins can define different fields and behavior.
 
 The plugin adds an award cart line and can set free shipping, but actual checkout, stock, tax and overlapping promotions need isolated testing.
+
+For a free-shipping promotion, also check how fulfillment is recorded. In the inspected checkout path the free-shipping flag hides shipping selection and the order-save path does not read the submitted shipping method. Actual checkout behavior and the intended policy remain under investigation.
 
 In an isolated test of the promotion methods, removing a non-free-shipping promotion restored earlier shipping values even though another promotion's free-shipping award remained. Cart persistence and discount recalculation were stubbed. Test overlapping promotions and shipping totals after a separately reviewed fix.
 

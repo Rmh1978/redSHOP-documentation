@@ -15,7 +15,7 @@ Use **New** to add a state or select records and choose **Delete**. Before editi
 ### Add or edit a state
 
 1. Select **New** or open an existing record, then select its country.
-2. Enter the required state name, three-letter code and two-letter code. The state form limits the codes to three and two characters respectively, and the table checks each code for duplicates within the country.
+2. Enter the required state name and codes. The English form labels the code fields **3-Digit Code** and **2-Digit Code**; both are text fields limited to three and two characters respectively. The table checks each code for duplicates within the country.
 3. Choose whether the two- or three-letter abbreviation is displayed. The form defaults to the two-letter option. Save and find the result in the list.
 4. Test the selection and dependent address, tax and shipping behavior using disposable records on an isolated copy.
 

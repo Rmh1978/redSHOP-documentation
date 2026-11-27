@@ -23,7 +23,7 @@ The distributed category description, short-description and title limits and
 the product title and description limits are zero, with blank suffixes. The
 product short-description limit and suffix are blank. Saved settings may differ.
 
-In the inspected category-detail and category-product paths, both the long and short category description tags use the **short description** length and suffix settings. Verify actual output before relying on the separate long-description controls.
+In the inspected category-detail, category-product and search filter-result paths, both the long and short category description tags use the **short description** length and suffix settings. Verify actual output before relying on the separate long-description controls.
 
 <h2 id="template">Templates</h2>
 

@@ -13,7 +13,7 @@ The currency table refuses deletion when the record's code equals the configured
 ### Add a currency
 
 1. Select **New** in the currency list.
-2. Enter the currency name and code and save. Both fields are required and start empty. The duplicate-code validation currently constructs an incorrect table identifier, so saving may fail; verify the result and any errors before proceeding.
+2. Enter the currency name and code and save. In the current English form these are labelled **Currency** and **Currency Code**; both are required and start empty. The duplicate-code validation currently constructs an incorrect table identifier, so saving may fail; verify the result and any errors before proceeding.
 3. Find the saved entry in the list and verify it against the relevant provider's supported currencies.
 
 <a id="use-currency"></a>
@@ -23,6 +23,10 @@ In redSHOP's price configuration, review the shop currency, currency symbol and 
 
 The general configuration includes a **Currency Libraries** choice, including European Central Bank and Currency Layer options; Currency Layer has a separate access-key field. Provider availability, credentials, rate freshness and supported currencies must be checked for the exact installation. Keep access keys out of logs and screenshots.
 
+Currency Layer can continue using an existing cached rate even after requesting an update. Independently check the rate and converted totals against a current trusted source; do not assume that a recent cache timestamp means the rate was refreshed.
+
 **Conversion requires particular care:** a source-level defect in the current Currency Layer implementation can return the unchanged amount when an explicit target currency is supplied. Do not rely on that conversion path for payments or accounting until the defect has been resolved and verified.
+
+The inspected ECB and Currency Layer conversion methods also substitute `1` for an individual missing currency rate; an empty rate set can return the original amount. An apparently successful conversion is therefore not proof that both rates were available. Check the rates and independently verify the amount before using it.
 
 Before any currency change, back up the shop and rehearse it on an isolated copy. Independently calculate representative conversions and test product, cart, checkout, tax, shipping, discounts and payment totals, including unavailable or stale rates and rounding. Check what happens to existing orders and invoices; do not assume past amounts are immutable or automatically converted.

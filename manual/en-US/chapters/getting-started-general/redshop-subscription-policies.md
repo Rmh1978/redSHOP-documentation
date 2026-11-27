@@ -6,6 +6,8 @@ Historical redCOMPONENT subscription packages and prices are not reliable guidan
 
 Verify the exact product, extension access, duration, license and renewal terms in the applicable agreement.
 
+When the license client is enabled and your account has access, the dashboard's license screen can show the license status, expiry, update entitlement date and installation count. A displayed status does not replace the provider's agreement; protect license credentials and do not share them in support screenshots.
+
 <h4 id="support">Technical support</h4>
 
 Confirm the current support channel, eligibility, response expectations and supported versions with your provider.

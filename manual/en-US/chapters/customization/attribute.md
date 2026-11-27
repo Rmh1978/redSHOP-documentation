@@ -7,17 +7,24 @@ An attribute set groups product attributes and their options for use with produc
 
 Open **Attribute Sets** in redSHOP customization. The list shows the set name, publication state and ID; select a sortable column heading to change the order, or open a name to edit the set. Select rows for **Copy**, **Delete**, **Publish** or **Unpublish**, or choose **New**. The product editor's set selector is populated from published sets.
 
+The Delete, Publish and Unpublish toolbar tasks may not reach their intended handlers in the current source. Verify the saved state on an isolated installation before relying on these actions.
+
 Copying a set currently may not preserve every attribute, property and subproperty setting, including publication, display and selection controls. Reopen the copy and compare its attributes and options with the original before using it.
 
 <a id="overview-2"></a><a id="attribute-2"></a><a id="field-2"></a><a id="action-2"></a><a id="working"></a><a id="create-1"></a>
 ### Create or edit a set
 
-1. Select **New**, enter the required set name and choose its publication state. A new set defaults to Published Yes; choose No while preparing an unfinished set.
+1. Select **New**, enter the required set name (up to 250 characters) and choose its publication state. A new set defaults to Published Yes; choose No while preparing an unfinished set.
 2. Select **New Attribute**. Enter its required name and optional description and order. Choose dropdown or radio display, required or multiple selection, price visibility and publication as appropriate.
 3. Add properties for the available options. Each property can have an operator and price, order, number, extra field, tooltip, alert, image and default-selection setting. Add subproperties when an option needs another level of choices; configure that group's title, display, required and multiple-selection settings.
 4. Save, or use **Apply** to save while continuing to edit. Reopen the set and verify the saved entries and ordering. Use a disposable product to validate selections and calculate expected prices independently.
 
 The set editor currently does not pass property tooltip and alert text through its save path, and its property image input does not match the save path. Reopen the set and verify these values and images; do not rely on them without testing.
+
+Property and subproperty layouts also provide **Add Price** controls for
+separate option-price rules. Save the option first and verify the selected
+option in the dialog; see [attribute option prices](chapters/product-management/price-management.md#attribute-option-prices)
+for validation and overlap limitations.
 
 For example, create a **Size** attribute with **Small** and **Large** properties, then choose whether a size is required and whether its price is adjusted. Test the resulting choices with the product's actual template and cart settings.
 

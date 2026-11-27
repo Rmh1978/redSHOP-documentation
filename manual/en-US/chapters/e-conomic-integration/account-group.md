@@ -4,7 +4,7 @@ An e-conomic account group in redSHOP holds accounting mappings. The current acc
 
 ### Account-group list
 
-The list displays the group name, account and discount-product mappings, publication state and ID. Open a name to edit it; sortable headings and pagination help navigate. The source defaults to ID ascending and does not provide search or filter controls in this list. The toolbar provides New, Publish, Unpublish and Delete; select records for bulk actions. Review product and configuration references before unpublishing or deleting a group.
+The list displays the group name, account and discount-product mappings, publication state and ID. Open a name to edit it; sortable headings and pagination help navigate. The source defaults to ID ascending and does not provide search or filter controls in this list. The toolbar provides New, Publish, Unpublish and Delete. The selected-row and bulk-action handling requires further verification; do not assume the indicated action or message reflects a successful change. Review product and configuration references before unpublishing or deleting a group, and verify the resulting records on an isolated copy.
 
 ### Fields
 

@@ -1,8 +1,8 @@
 # GitHub Copilot instructions — redSHOP documentation
 
-The maintainer paused the project. Wait for explicit resumption before further
-review, issue writes or documentation work. Then read the checkpoint and
-recheck both worktrees and the Core revision.
+The maintainer explicitly paused the project; it is PAUSED. Wait for an explicit
+resume before project actions, then read the checkpoint and recheck both
+worktrees and the Core revision.
 
 You are editing the **redSHOP documentation repository**, not implementing changes in the product.
 
@@ -29,9 +29,9 @@ You are editing the **redSHOP documentation repository**, not implementing chang
 
 ## Autonomous modernization workflow
 
-- The project is PAUSED. Do not resume review, issue writes or manual edits until the maintainer explicitly resumes it. On resumption, treat it as one continuous project, use safe batches, and record blockers and the next concrete task in the checkpoint.
-- On explicit resumption, check remaining issue reviews, synchronization, tests and manual pages; ordinary issue/label writes and documentation edits are authorized only within the resumed scope and existing security policy.
-- Begin with `docs-review/RESUME.md` and `WORK-PROGRESS.md`, check the current Core revision against the checkpoint and review only documentation affected by intervening Core changes.
+- When explicitly resumed, treat the project as one continuous loop: select an unfinished actionable task, perform and verify it, update applicable Issues and registers, checkpoint actual progress, then immediately start the next. A later explicit pause takes precedence.
+- Check remaining issue reviews, synchronization, tests and manual pages; ordinary issue/label writes and documentation edits are authorized only within the resumed scope and existing security policy.
+- Begin with `docs-review/RESUME.md` and `WORK-PROGRESS.md`, compare both current worktrees and revisions with the checkpoint, recheck affected findings and GitHub Issues, and revisit pages affected by intervening Core changes. Then continue the incomplete individual reviews without repeating still-valid work.
 - Analyze code and document everything verifiable even when a runtime test, credentials or test-site approval is unavailable. Record the exact remaining blocker and a reproducible test plan in the master register, then continue elsewhere.
 - Maintain `docs-review/WORK-PROGRESS.md`, the master register and triage register throughout the work. Record current stage, completed and next tasks, changes, open issues, blockers, tests and decisions so future sessions can resume.
 - Immediately register newly discovered product or extension code defects in both `docs-review/CORE-BUGS.md` and `docs-review/CORE-BUGS.csv` as well as the shared master and triage registers. Reuse existing IDs and distinguish verified defects, risks and open investigations. After a Core revision change, reverify relevant findings, update their evidence and reopen affected manual pages when fixes change behavior.

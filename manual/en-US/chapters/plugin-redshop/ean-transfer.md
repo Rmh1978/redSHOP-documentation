@@ -14,11 +14,12 @@ The inspected handler returns to the checkout flow and may send an order email i
 | Setting | Purpose and new-install manifest default |
 |---|---|
 | Payment Plugin Description | Checkout tooltip; initially blank. |
-| Show on Private Person, Show on Business | Customer-type visibility; both default to Yes. |
-| E-conomic Payment Conditions ID, Design and Layout ID | Optional integration identifiers, initially blank. Verify mappings with the accounting integration. |
-| Order Status transactions | Select an existing order status; the manifest default is code `C`, whose meaning depends on your configured statuses. It does not confirm invoice delivery or payment. |
-| Select Shopper Group | Choose applicable shopper groups; the selection starts blank. Test members and nonmembers before enabling the method. |
+| Show for private customers, Show for business customers | Customer-type visibility; both default to Yes. |
+| Order status after successful payment | Select an existing order status; the manifest default is code `C`, whose meaning depends on your configured statuses. It does not confirm invoice delivery or payment. |
+| Available to shopper groups | Choose applicable shopper groups; the selection starts blank. Test members and nonmembers before enabling the method. |
 | Enter Extra Info | Customer-facing information. The manifest contains the placeholder `Please enter your Extra Info`; replace or clear it with approved instructions before use. |
 | Logo | Optional image, initially blank. Check its checkout display and accessibility. |
+
+The current manifest does not offer local e-conomic fields. Review the central [e-conomic settings](chapters/e-conomic-integration/setup.md) and any preserved legacy values before using accounting mappings.
 
 These are manifest defaults for a new configuration, not necessarily the values saved in an existing shop. Reopen the plugin after saving and test the complete invoice and payment workflow separately.

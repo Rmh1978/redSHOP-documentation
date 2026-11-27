@@ -11,6 +11,10 @@ Provider compatibility and checkout have not been verified here. Confirm support
 3. Configure an appropriate redSHOP shipping method and rates, including applicable destinations, prices, VAT and delivery type. See [Shipping Methods](chapters/shipping/shipping-methods.md).
 4. On an isolated storefront, test the applicable checkout template, address and rate combinations. Select a pickup point, complete a disposable order and inspect the saved pickup information. Test a missing postcode, no results and service errors, as well as mobile and keyboard operation.
 
+For configured pickup-point rates, the shared shipping VAT lookup can compare a state code to the wrong field. Verify the calculated shipping VAT against the expected amount for each applicable destination before relying on it.
+
+The plugin can also offer shopper-group default shipping separately from configured rates. A matching zero-rate VAT record can cause that default charge to become zero even when the group's configured charge is nonzero. Verify the choice and order total with a disposable customer.
+
 ### Configure shipment labels
 
 1. Separately install and enable the approved PostNord shipment integration plugin. Its form requires the API key, customer number and sender address, postal code, city, contact, phone and email; these fields have blank manifest defaults. The key is a text field, so do not assume it is masked or encrypted. The sandbox switch defaults to Disabled for a new configuration; verify the saved value before testing.
@@ -19,3 +23,11 @@ Provider compatibility and checkout have not been verified here. Confirm support
 4. Verify the returned label and tracking number, failed requests, duplicate attempts, status transitions and any tracking email or SMS options. Reconcile results with the provider before enabling automatic generation.
 
 The plugin has a sandbox setting, but its presence is not proof that a particular provider account supports the test endpoint. Resolve provider and environment prerequisites before enabling production use.
+
+### Generate a label without creating an order
+
+The administrator menu **Orders → Generate PackSoft Label** opens a separate PostNord label form. The receiver and sender sections contain company, name, address, postal code, city, country, phone and email; the form marks name, address, postal code, city, phone and email as required. Sender defaults are drawn from shop and shipment-plugin settings. The receiver country defaults to Denmark.
+
+Shipment options include an optional old order ID for fetching address data, service, weight in kilograms, contents and note. The default service is **MyPack Home Delivery (17)** and default weight is 1 kg; other options include **Business Parcel (18)** and **MyPack Collect (19)**. The Collect choice displays pickup-point fields and the chooser. The old-order lookup uses the order's billing record for receiver details and may fill sender details from a separate address; check both against the intended shipment.
+
+**Generate Label** can create an external shipment without creating a redSHOP order. The inspected controller/client combination can send an empty weight even when one is entered, and an empty receiver company can produce an empty receiver name in the request. Provider acceptance and actual labels are unverified. Do not rely on this workflow until the integration has been corrected and tested with an approved provider mock or sandbox; verify the complete payload and label before production use.

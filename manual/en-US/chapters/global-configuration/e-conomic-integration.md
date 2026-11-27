@@ -10,6 +10,8 @@ The current source includes an optional `economic/economic` Marketplace plugin a
 4. Review the plugin's debtor group, payment terms, layout, unit, creditor, cashbook and debtor-reference settings with the accounting administrator. Do not invent IDs or reuse production values.
 5. In redSHOP configuration, review the e-conomic settings and account-group mappings before enabling the integration. Test with disposable products, customers and orders; keep real booking and live provider connections disabled.
 
+Payment terms and invoice layout can also be overridden per payment method in the e-conomic plugin. A unique matching override takes precedence over preserved legacy payment-plugin values and the central defaults; verify each setting in the isolated setup before testing invoices.
+
 ### redSHOP configuration
 
 The current configuration screen contains:
